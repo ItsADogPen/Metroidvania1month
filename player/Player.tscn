@@ -1,0 +1,211 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scenes/player/PlayerScriptNew.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/idle/01.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/idle/02.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/idle/03.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/idle/04.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/idle/05.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/idle/06.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/idle/07.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/idle/08.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/idle/09.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/idle/10.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/jump/jump_00000.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/jump/jump_00001.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/jump/jump_00002.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/jump/jump_00003.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/jump/jump_00004.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/jump/jump_00005.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/run/run_00000.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/run/run_00001.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/run/run_00002.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/run/run_00003.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/run/run_00004.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/run/run_00005.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/run/run_00006.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/run/run_00007.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00000.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00001.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00002.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00003.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00004.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00005.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00006.png" type="Texture" id=32]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "run",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "attackstab",
+"speed": 15.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 18.5, 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "attack1"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "attackstab" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 43.5, 2.5 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:shape:extents")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 18.5, 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false, true ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+collision_layer = 3
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -20 )
+frames = SubResource( 1 )
+animation = "attackstab"
+frame = 6
+
+[node name="Hitbox" type="Area2D" parent="AnimatedSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Hitbox"]
+position = Vector2( 43.5, 2.5 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack1 = SubResource( 4 )
+
+[node name="Floor_Ray" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+enabled = true
+cast_to = Vector2( 0, 22 )
+collision_mask = 2
+
+[node name="Up_Ray" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+enabled = true
+cast_to = Vector2( 0, -21 )
+collision_mask = 2
+
+[node name="Side_Ray_Left" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+enabled = true
+cast_to = Vector2( -11, 0 )
+collision_mask = 3
+
+[node name="Side_Ray_Right" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+enabled = true
+cast_to = Vector2( 11, 0 )
+collision_mask = 3
+
+[node name="Corner_Ray_Left" type="RayCast2D" parent="."]
+position = Vector2( -6, -2 )
+enabled = true
+cast_to = Vector2( 0, 4 )
+collision_mask = 3
+
+[node name="Corner_Ray_Right" type="RayCast2D" parent="."]
+position = Vector2( 8, -2 )
+enabled = true
+cast_to = Vector2( 0, 4 )
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color( 0.662745, 1, 0.0666667, 1 )
+position = Vector2( 1, -19 )
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="AnimatedSprite/Hitbox" to="." method="_on_Hitbox_body_entered"]
