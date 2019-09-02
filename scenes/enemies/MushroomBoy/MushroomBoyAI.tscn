@@ -43,38 +43,40 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 13
+frame = 15
 playing = true
 
 [node name="Floor_Ray" parent="." index="2"]
+visible = false
 collision_mask = 2
 
 [node name="Up_Ray" parent="." index="3"]
+visible = false
 collision_mask = 2
 
 [node name="Side_Ray_Left" parent="." index="4"]
-position = Vector2( -26, 25 )
+position = Vector2( -28, 25 )
 enabled = true
 cast_to = Vector2( -10, 0 )
-collision_mask = 2
+collision_mask = 3
 
 [node name="Side_Ray_Right" parent="." index="5"]
 position = Vector2( -4, 25 )
 enabled = true
 cast_to = Vector2( 10, 0 )
-collision_mask = 2
+collision_mask = 3
 
 [node name="Corner_Ray_Left" parent="." index="6"]
 position = Vector2( -26, 33 )
 enabled = true
 cast_to = Vector2( 0, 10 )
-collision_mask = 2
+collision_mask = 3
 
 [node name="Corner_Ray_Right" parent="." index="7"]
 position = Vector2( -4, 33 )
 enabled = true
 cast_to = Vector2( 0, 10 )
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="." index="9"]
 position = Vector2( -16, 25 )

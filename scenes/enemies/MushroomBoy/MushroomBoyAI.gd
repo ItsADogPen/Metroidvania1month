@@ -42,21 +42,17 @@ func _ai_Patrol():
 	
 	if !corner_ray_R.is_colliding() || !corner_ray_L.is_colliding():
 		
-		var current_motion = motion
-		var colli_math = (int(corner_ray_R.is_colliding()) - int(corner_ray_L.is_colliding()))
+		var colli_math = int(corner_ray_R.is_colliding()) - int(corner_ray_L.is_colliding())
 		
-		current_motion.x = current_motion.x * colli_math
-		motion.x = current_motion.x
+		motion.x = (motion.x)*colli_math
 		
 		pass
 	
 	if side_ray_R.is_colliding() || side_ray_L.is_colliding():
 		
-		var current_motion = motion
-		var colli_math = (int(side_ray_R.is_colliding()) - int(side_ray_L.is_colliding()))
+		var colli_math = int(side_ray_R.is_colliding()) - int(side_ray_L.is_colliding())
 		
-		current_motion.x = current_motion.x * colli_math
-		motion.x = current_motion.x
+		motion.x = (motion.x)*colli_math
 		
 		pass
 	
