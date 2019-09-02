@@ -1,0 +1,82 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scenes/enemies/TemplateAI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/MushroomBoy/MushroomBoyAI.gd" type="Script" id=2]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush3.png" type="Texture" id=3]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush4.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush5.png" type="Texture" id=5]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush6.png" type="Texture" id=6]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush7.png" type="Texture" id=7]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush8.png" type="Texture" id=8]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush9.png" type="Texture" id=9]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush10.png" type="Texture" id=10]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush11.png" type="Texture" id=11]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush12.png" type="Texture" id=12]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush13.png" type="Texture" id=13]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush14.png" type="Texture" id=14]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush15.png" type="Texture" id=15]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush16.png" type="Texture" id=16]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush17.png" type="Texture" id=17]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush18.png" type="Texture" id=18]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush19.png" type="Texture" id=19]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush20.png" type="Texture" id=20]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush21.png" type="Texture" id=21]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush22.png" type="Texture" id=22]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush23.png" type="Texture" id=23]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush24.png" type="Texture" id=24]
+[ext_resource path="res://assets/enemies/Mushroomboy/Walking/Walk left and right MonsterMush25.png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 17.822
+
+[node name="MushroomBoyAI" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "walk"
+frame = 13
+playing = true
+
+[node name="Floor_Ray" parent="." index="2"]
+collision_mask = 2
+
+[node name="Up_Ray" parent="." index="3"]
+collision_mask = 2
+
+[node name="Side_Ray_Left" parent="." index="4"]
+position = Vector2( -26, 25 )
+enabled = true
+cast_to = Vector2( -10, 0 )
+collision_mask = 2
+
+[node name="Side_Ray_Right" parent="." index="5"]
+position = Vector2( -4, 25 )
+enabled = true
+cast_to = Vector2( 10, 0 )
+collision_mask = 2
+
+[node name="Corner_Ray_Left" parent="." index="6"]
+position = Vector2( -26, 33 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 2
+
+[node name="Corner_Ray_Right" parent="." index="7"]
+position = Vector2( -4, 33 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="." index="9"]
+position = Vector2( -16, 25 )
+shape = SubResource( 2 )
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/player/PlayerScriptNew.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/idle/01.png" type="Texture" id=2]
@@ -11,50 +11,52 @@
 [ext_resource path="res://assets/player/idle/08.png" type="Texture" id=9]
 [ext_resource path="res://assets/player/idle/09.png" type="Texture" id=10]
 [ext_resource path="res://assets/player/idle/10.png" type="Texture" id=11]
-[ext_resource path="res://assets/player/jump/jump_00000.png" type="Texture" id=12]
-[ext_resource path="res://assets/player/jump/jump_00001.png" type="Texture" id=13]
-[ext_resource path="res://assets/player/jump/jump_00002.png" type="Texture" id=14]
-[ext_resource path="res://assets/player/jump/jump_00003.png" type="Texture" id=15]
-[ext_resource path="res://assets/player/jump/jump_00004.png" type="Texture" id=16]
-[ext_resource path="res://assets/player/jump/jump_00005.png" type="Texture" id=17]
-[ext_resource path="res://assets/player/run/run_00000.png" type="Texture" id=18]
-[ext_resource path="res://assets/player/run/run_00001.png" type="Texture" id=19]
-[ext_resource path="res://assets/player/run/run_00002.png" type="Texture" id=20]
-[ext_resource path="res://assets/player/run/run_00003.png" type="Texture" id=21]
-[ext_resource path="res://assets/player/run/run_00004.png" type="Texture" id=22]
-[ext_resource path="res://assets/player/run/run_00005.png" type="Texture" id=23]
-[ext_resource path="res://assets/player/run/run_00006.png" type="Texture" id=24]
-[ext_resource path="res://assets/player/run/run_00007.png" type="Texture" id=25]
-[ext_resource path="res://assets/player/attackstab/stab_00000.png" type="Texture" id=26]
-[ext_resource path="res://assets/player/attackstab/stab_00001.png" type="Texture" id=27]
-[ext_resource path="res://assets/player/attackstab/stab_00002.png" type="Texture" id=28]
-[ext_resource path="res://assets/player/attackstab/stab_00003.png" type="Texture" id=29]
-[ext_resource path="res://assets/player/attackstab/stab_00004.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00000.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00001.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00002.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00003.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00004.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00005.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00006.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/run/run_00000.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/run/run_00001.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/run/run_00002.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/run/run_00003.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/run/run_00004.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/run/run_00005.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/run/run_00006.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/run/run_00007.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/jump/jump_00000.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/jump/jump_00001.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/jump/jump_00002.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/jump/jump_00003.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/jump/jump_00004.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/jump/jump_00005.png" type="Texture" id=32]
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "jump",
+"name": "attackstab",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "run",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": false,
-"name": "attackstab",
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "jump",
 "speed": 15.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="CapsuleShape2D" id=2]
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
@@ -64,9 +66,9 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -20 )
-frames = SubResource( 16 )
+frames = SubResource( 1 )
 animation = "attackstab"
-frame = 4
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -96,13 +98,13 @@ cast_to = Vector2( 11, 0 )
 collision_mask = 3
 
 [node name="Corner_Ray_Left" type="RayCast2D" parent="."]
-position = Vector2( -12, -2 )
+position = Vector2( -6, -2 )
 enabled = true
 cast_to = Vector2( 0, 4 )
 collision_mask = 3
 
 [node name="Corner_Ray_Right" type="RayCast2D" parent="."]
-position = Vector2( 14, -2 )
+position = Vector2( 8, -2 )
 enabled = true
 cast_to = Vector2( 0, 4 )
 collision_mask = 3
@@ -118,6 +120,6 @@ drag_margin_bottom = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.662745, 1, 0.0666667, 1 )
 position = Vector2( 1, -19 )
-shape = SubResource( 17 )
+shape = SubResource( 2 )
 
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

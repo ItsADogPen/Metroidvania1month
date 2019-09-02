@@ -1,6 +1,14 @@
 extends KinematicBody2D
 class_name Player
 
+## Stat Variables ###
+var hp : int
+
+#####################
+
+
+
+
 var motion: Vector2 = Vector2()
 onready var anim_player = $AnimationPlayer
 onready var animation = $AnimatedSprite
@@ -124,7 +132,7 @@ func _controls(delta):
 	
 	# attack buttons
 	
-	if attack_button:
+	if attack_button && !isAir:
 		_state_Machine("attacking")
 	
 	
