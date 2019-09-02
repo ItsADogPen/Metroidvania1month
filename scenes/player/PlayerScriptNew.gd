@@ -57,7 +57,7 @@ func _anim_Check():
 		if stateMachine == "jump":
 			animation.play("jump")
 	if stateMachine == "attacking":
-		animation.play("attackstab")
+		anim_player.play("attack1")
 	
 	
 	pass
@@ -90,9 +90,9 @@ func _controls(delta):
 			_state_Machine("run")
 	
 	if motion.x < 0:
-		animation.flip_h = true
+		animation.scale.x = -1
 	if motion.x > 0:
-		animation.flip_h = false
+		animation.scale.x = 1
 	
 	if motion.x < -ACCEL:
 		motion.x = -ACCEL
@@ -122,7 +122,6 @@ func _controls(delta):
 				_state_Machine("walljumping")
 				motion.y = JUMP_SPEED
 				motion.x -= WALL_JUMP_SPEED
-			
 			
 			print("WALL JUMPING AYY LMAO")
 		
@@ -209,9 +208,14 @@ func _attack_Machine():
 
 func _on_AnimatedSprite_animation_finished():
 	
-	if animation.animation == "attackstab":
+	if animation.animation == "attack1":
 		
 		_state_Machine("idle")
 	
 	
 	pass
+
+
+func _on_Hitbox_body_entered(body):
+	if body.is_in_group("enemies"):
+		body.hp_current -= 5
