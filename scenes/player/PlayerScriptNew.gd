@@ -26,6 +26,8 @@ onready var dash_ray_R = $Dash_Check_Right
 onready var hitbox = $Hitbox
 onready var hitbox_shape = $Hitbox/CollisionShape2D
 
+onready var map = get_parent()
+
 var stateMachine : String = "idle"
 var isAir : bool
 var isWall = [false, "none"]
@@ -93,18 +95,18 @@ func _die(die_anim : String):
 func _anim_Check():
 	
 	if isDead == false:
-		if stateMachine != "attacking":
-			if stateMachine == "idle":
-				animation.play("idle")
-			if stateMachine == "run":
-				animation.offset.x = 0
-				if animation.scale.x == -1:
-					animation.offset.x = 15
-				animation.play("run")
-			if stateMachine == "jump":
-				animation.play("jump")
+		
 		if stateMachine == "attacking":
 			anim_player.play("attack2")
+		if stateMachine == "run":
+			animation.offset.x = 0
+			if animation.scale.x == -1:
+				animation.offset.x = 15
+			animation.play("run")
+		if stateMachine == "jump":
+			animation.play("jump")
+		if stateMachine == "idle":
+			animation.play("idle")
 	
 	
 	if motion.x < 0:
@@ -123,27 +125,21 @@ func _controls(delta):
 	var jump = Input.is_action_just_pressed("jump")
 	var attack_button = Input.is_action_just_pressed("basic_attack")
 	var dash = Input.is_action_just_pressed("dash")
+	var shield = Input.is_action_just_pressed("shield")
 	
 	
 	# === x movement ===
 	
 	motion.x += (int(right) - int(left))*SPEED
 	
-	if stateMachine != "dash":
-		if stateMachine != "walljumping":
-			if ((right&&left) && isAir == false) || ((!right && !left) && isAir == false):
-				motion.x = 0
-			else:
-				SPEED = ACCEL
-		
-		if motion.x == 0 && stateMachine != "attacking":
+	if ((right&&left) && isAir == false) || ((!right && !left) && isAir == false):
+		motion.x = 0
+		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
 			_state_Machine("idle")
-		
+	else:
+		SPEED = ACCEL
 		if left || right:
-			if isAir == false:
-				_state_Machine("run")
-	
-	
+			_state_Machine("run")
 	
 	if motion.x < -ACCEL:
 		motion.x = -ACCEL
@@ -180,9 +176,7 @@ func _controls(delta):
 			_state_Machine("jump")
 		
 	
-	# attack buttons
-	
-	if stateMachine != "dash":
+	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
 			_state_Machine("attacking")
 			print(stateMachine)
@@ -236,8 +230,30 @@ func _controls(delta):
 		yield(animation,"animation_finished")
 		_state_Machine("idle")
 		
+		pass
+	
+	if shield:
 		
+		var preload_shield = ProjectilesPreloader._return_Resource("ProjectileShield")
 		
+		_state_Machine("shield")
+		print("SHIELD")
+		animation.play("stabground-pre")
+		yield(animation,"animation_finished")
+		
+		var load_shield = preload_shield.instance()
+		map.projectiles_container.add_child(load_shield)
+		load_shield.global_position = self.global_position
+		yield(get_tree().create_timer(0.2),"timeout")
+		load_shield._play_Anim("beginning")
+		
+		animation.play("stabground-loop")
+		yield(get_tree().create_timer(2),"timeout")
+		animation.play("stabground-end")
+		load_shield._play_Anim("end")
+		yield(animation,"animation_finished")
+		load_shield._destroy()
+		_state_Machine("idle")
 		
 		pass
 	
@@ -250,16 +266,13 @@ func _state_Machine(arg1):
 	# Pass a String into arg1 to modify state of stateMachine
 	#i.e. arg1 == "run": stateMachine = "run"
 	#
-	
 	stateMachine = arg1
-	
 	
 	pass
 
 func _gravity(delta):
 	
 	var jump = Input.is_action_just_pressed("jump")
-	
 	
 	motion.y += GRAV
 	

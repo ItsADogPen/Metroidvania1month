@@ -1,0 +1,1 @@
+extends "res://scenes/projectiles/ProjectileTemplate.gd"

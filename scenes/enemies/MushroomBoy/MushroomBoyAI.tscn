@@ -37,13 +37,14 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 17.822
 
-[node name="MushroomBoyAI" index="0" instance=ExtResource( 1 )]
+[node name="MushroomBoyAI" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 15
+frame = 17
 playing = true
 
 [node name="Floor_Ray" parent="." index="2"]

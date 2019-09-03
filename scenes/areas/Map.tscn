@@ -20,5 +20,7 @@ tile_data = PoolIntArray( -589742, 536870932, 0, -589741, 536870933, 0, -589740,
 position = Vector2( 5163.09, 843.371 )
 
 [node name="MushroomBoyAI" parent="." instance=ExtResource( 4 )]
-position = Vector2( 5177.7, 1013.28 )
+position = Vector2( 5177.7, 992.28 )
+
+[node name="Projectiles_Container" type="Node" parent="."]
 
