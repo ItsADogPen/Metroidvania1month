@@ -30,9 +30,10 @@ func _initialize():
 func _physics_process(delta):
 	
 	_check_HP()
-	_ai_Patrol()
 	
-	motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+	if isDead == false:
+		_ai_Patrol()
+		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
 	
 	pass
 

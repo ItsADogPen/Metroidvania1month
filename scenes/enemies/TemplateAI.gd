@@ -4,6 +4,8 @@ extends KinematicBody2D
 var hp : int = 1
 var hp_current : int = 1
 
+var isDead : bool = false
+
 #####################
 
 ## Vector Variables and ETC ##
@@ -65,7 +67,8 @@ func _check_HP():
 
 func _die(die_anim : String):
 	
-	animation.play("die")
+	isDead = true
+	animation.play(die_anim)
 	yield(animation,"animation_finished")
 	yield(get_tree().create_timer(0.35),"timeout")
 	self.queue_free()

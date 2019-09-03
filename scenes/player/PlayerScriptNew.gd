@@ -2,7 +2,10 @@ extends KinematicBody2D
 class_name Player
 
 ## Stat Variables ###
-var hp : int
+var hp : int = 1
+var hp_current : int = 1
+
+var isDead : bool = false
 
 #####################
 
@@ -39,33 +42,69 @@ const JUMP_SPEED = -400
 const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.875)
 const WALL_JUMP_SPEED = JUMP_SPEED*2
 
+func _ready():
+	
+	_initialize()
+	
+	pass
+
+func _initialize():
+	
+	hp = 10
+	hp_current = hp
+	
+	
+	pass
+
 func _physics_process(delta):
 	
-	_anim_Check()
-	_controls(delta)
+	
 	_floor_Check()
 	_gravity(delta)
 	_wall_Check()
 	
-	motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+	if isDead == false:
+		_anim_Check()
+		_controls(delta)
+		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+	
+	if Input.is_action_just_pressed("Death_Test_Button"):
+		_die("die")
 	
 	pass
 
+func _check_HP():
+	
+	if hp_current <= 0:
+		_die("die")
+	
+	pass
+
+func _die(die_anim : String):
+	
+	isDead = true
+	animation.play(die_anim)
+	yield(animation,"animation_finished")
+	yield(get_tree().create_timer(0.35),"timeout")
+	print("DED")
+	
+	pass
 
 func _anim_Check():
 	
-	if stateMachine != "attacking":
-		if stateMachine == "idle":
-			animation.play("idle")
-		if stateMachine == "run":
-			animation.offset.x = 0
-			if animation.scale.x == -1:
-				animation.offset.x = 15
-			animation.play("run")
-		if stateMachine == "jump":
-			animation.play("jump")
-	if stateMachine == "attacking":
-		anim_player.play("attack2")
+	if isDead == false:
+		if stateMachine != "attacking":
+			if stateMachine == "idle":
+				animation.play("idle")
+			if stateMachine == "run":
+				animation.offset.x = 0
+				if animation.scale.x == -1:
+					animation.offset.x = 15
+				animation.play("run")
+			if stateMachine == "jump":
+				animation.play("jump")
+		if stateMachine == "attacking":
+			anim_player.play("attack2")
 	
 	
 	if motion.x < 0:
