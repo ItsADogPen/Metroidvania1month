@@ -1,37 +1,52 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://scenes/player/PlayerScriptNew.gd" type="Script" id=1]
-[ext_resource path="res://assets/player/idle/01.png" type="Texture" id=2]
-[ext_resource path="res://assets/player/idle/02.png" type="Texture" id=3]
-[ext_resource path="res://assets/player/idle/03.png" type="Texture" id=4]
-[ext_resource path="res://assets/player/idle/04.png" type="Texture" id=5]
-[ext_resource path="res://assets/player/idle/05.png" type="Texture" id=6]
-[ext_resource path="res://assets/player/idle/06.png" type="Texture" id=7]
-[ext_resource path="res://assets/player/idle/07.png" type="Texture" id=8]
-[ext_resource path="res://assets/player/idle/08.png" type="Texture" id=9]
-[ext_resource path="res://assets/player/idle/09.png" type="Texture" id=10]
-[ext_resource path="res://assets/player/idle/10.png" type="Texture" id=11]
-[ext_resource path="res://assets/player/jump/jump_00000.png" type="Texture" id=12]
-[ext_resource path="res://assets/player/jump/jump_00001.png" type="Texture" id=13]
-[ext_resource path="res://assets/player/jump/jump_00002.png" type="Texture" id=14]
-[ext_resource path="res://assets/player/jump/jump_00003.png" type="Texture" id=15]
-[ext_resource path="res://assets/player/jump/jump_00004.png" type="Texture" id=16]
-[ext_resource path="res://assets/player/jump/jump_00005.png" type="Texture" id=17]
-[ext_resource path="res://assets/player/run/run_00000.png" type="Texture" id=18]
-[ext_resource path="res://assets/player/run/run_00001.png" type="Texture" id=19]
-[ext_resource path="res://assets/player/run/run_00002.png" type="Texture" id=20]
-[ext_resource path="res://assets/player/run/run_00003.png" type="Texture" id=21]
-[ext_resource path="res://assets/player/run/run_00004.png" type="Texture" id=22]
-[ext_resource path="res://assets/player/run/run_00005.png" type="Texture" id=23]
-[ext_resource path="res://assets/player/run/run_00006.png" type="Texture" id=24]
-[ext_resource path="res://assets/player/run/run_00007.png" type="Texture" id=25]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00000.png" type="Texture" id=26]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00001.png" type="Texture" id=27]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00002.png" type="Texture" id=28]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00003.png" type="Texture" id=29]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00004.png" type="Texture" id=30]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00005.png" type="Texture" id=31]
-[ext_resource path="res://assets/player/New/Attacks/StabFix/stab_00006.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/NewNew/idle/Idle1.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/NewNew/idle/Idle2.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/NewNew/idle/Idle3.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/NewNew/idle/Idle4.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/NewNew/idle/Idle5.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/NewNew/idle/Idle6.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/NewNew/idle/Idle7.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/NewNew/idle/Idle8.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/NewNew/idle/Idle9.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/NewNew/idle/Idle10.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/NewNew/jump/Jump1.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/NewNew/jump/Jump2.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/NewNew/jump/Jump3.png" type="Texture" id=14]
+[ext_resource path="res://assets/player/NewNew/jump/Jump4.png" type="Texture" id=15]
+[ext_resource path="res://assets/player/NewNew/jump/Jump5.png" type="Texture" id=16]
+[ext_resource path="res://assets/player/NewNew/jump/Jump6.png" type="Texture" id=17]
+[ext_resource path="res://assets/player/NewNew/jump/Jump7.png" type="Texture" id=18]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab2.png" type="Texture" id=19]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab3.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab4.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab5.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab6.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun1.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun2.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun3.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun4.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun5.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun6.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun7.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/NewNew/run/NormalRun8.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/NewNew/dash/Dash11.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/NewNew/dash/Dash12.png" type="Texture" id=33]
+[ext_resource path="res://assets/player/NewNew/dash/Dash13.png" type="Texture" id=34]
+[ext_resource path="res://assets/player/NewNew/dash/Dash14.png" type="Texture" id=35]
+[ext_resource path="res://assets/player/NewNew/dash/Dash15.png" type="Texture" id=36]
+[ext_resource path="res://assets/player/NewNew/dash/Dash17.png" type="Texture" id=37]
+[ext_resource path="res://assets/player/NewNew/dash/Dash1.png" type="Texture" id=38]
+[ext_resource path="res://assets/player/NewNew/dash/Dash2.png" type="Texture" id=39]
+[ext_resource path="res://assets/player/NewNew/dash/Dash3.png" type="Texture" id=40]
+[ext_resource path="res://assets/player/NewNew/dash/Dash4.png" type="Texture" id=41]
+[ext_resource path="res://assets/player/NewNew/dash/Dash5.png" type="Texture" id=42]
+[ext_resource path="res://assets/player/NewNew/dash/Dash6.png" type="Texture" id=43]
+[ext_resource path="res://assets/player/NewNew/dash/Dash7.png" type="Texture" id=44]
+[ext_resource path="res://assets/player/NewNew/dash/Dash8.png" type="Texture" id=45]
+[ext_resource path="res://assets/player/NewNew/dash/Dash9.png" type="Texture" id=46]
+[ext_resource path="res://assets/player/NewNew/dash/Dash10.png" type="Texture" id=47]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -40,54 +55,69 @@ animations = [ {
 "name": "idle",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "jump",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "attackstab",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "run",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
 "loop": false,
-"name": "attackstab",
-"speed": 15.0
+"name": "dash-post",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 47 ), ExtResource( 47 ) ],
+"loop": false,
+"name": "dash-pre",
+"speed": 25.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18.5, 3 )
 
 [sub_resource type="Animation" id=4]
-resource_name = "attack1"
-length = 0.3
+resource_name = "attack2"
+length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "attackstab" ]
+"values": [ 0, 1, 2, 3, 4 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:playing")
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_activate_Attack_Hitbox"
+}, {
+"args": [  ],
+"method": "_deactivate_Hitbox"
+} ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:shape")
+tracks/2/path = NodePath(".:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -96,46 +126,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ SubResource( 3 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 43.5, 2.5 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:shape:extents")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 18.5, 3 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("AnimatedSprite/Hitbox/CollisionShape2D:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, false, true ]
+"values": [ "attackstab" ]
 }
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=5]
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 2, 2 )
@@ -144,20 +138,22 @@ collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -20 )
+position = Vector2( 7.5, -50 )
 frames = SubResource( 1 )
 animation = "attackstab"
-frame = 6
+frame = 1
 
-[node name="Hitbox" type="Area2D" parent="AnimatedSprite"]
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2( 0, -20 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Hitbox"]
-position = Vector2( 43.5, 2.5 )
-shape = SubResource( 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 43.5, -2.5 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/attack1 = SubResource( 4 )
+root_node = NodePath("../AnimatedSprite")
+anims/attack2 = SubResource( 4 )
 
 [node name="Floor_Ray" type="RayCast2D" parent="."]
 position = Vector2( 1, -19 )
@@ -195,6 +191,16 @@ enabled = true
 cast_to = Vector2( 0, 4 )
 collision_mask = 3
 
+[node name="Dash_Check_Left" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+cast_to = Vector2( -250, 0 )
+collision_mask = 3
+
+[node name="Dash_Check_Right" type="RayCast2D" parent="."]
+position = Vector2( 1, -19 )
+cast_to = Vector2( 250, 0 )
+collision_mask = 3
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 1.5, 1.5 )
@@ -206,6 +212,13 @@ drag_margin_bottom = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.662745, 1, 0.0666667, 1 )
 position = Vector2( 1, -19 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="body_entered" from="AnimatedSprite/Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
