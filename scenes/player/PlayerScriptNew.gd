@@ -22,7 +22,6 @@ onready var dash_ray_L = $Dash_Check_Left
 onready var dash_ray_R = $Dash_Check_Right
 onready var hitbox = $Hitbox
 onready var hitbox_shape = $Hitbox/CollisionShape2D
-onready var dash_timer = $DashTimer
 
 var stateMachine : String = "idle"
 var isAir : bool
@@ -299,17 +298,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_player.stop(true)
 	_state_Machine("idle")
 	print("anim_player STOPPED")
-	
-	pass
-
-#func _dash_Machine():
-#
-#	ACCEL = ACCEL*2
-#
-#	pass
-
-func _on_DashTimer_timeout():
-	
-	ACCEL = 500
 	
 	pass
