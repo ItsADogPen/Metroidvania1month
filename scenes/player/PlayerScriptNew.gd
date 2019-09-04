@@ -60,18 +60,18 @@ func _physics_process(delta):
 		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
 	
 	if Input.is_action_just_pressed("Death_Test_Button"):
-		_die("die")
+		_player_death()
 
 func _check_HP():
 	
 	if hp_current <= 0:
-		_die("die")
+		_player_death()
 
-func _die(die_anim : String):
+func _player_death():
 	
 	isDead = true
-	animation.play(die_anim)
-	yield(animation,"animation_finished")
+	animation.play("die")
+	yield(animation, "animation_finished")
 	yield(get_tree().create_timer(0.35),"timeout")
 	print("DED")
 
@@ -92,7 +92,6 @@ func _anim_Check():
 			animation.play("jump")
 		if stateMachine == "idle":
 			animation.play("idle")
-	
 	
 	if motion.x < 0:
 		animation.scale.x = -1
@@ -121,11 +120,11 @@ func _controls(delta):
 	if ((right&&left) && isAir == false) || ((!right && !left) && isAir == false):
 		motion.x = 0
 		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
-			_state_Machine("idle")
+			stateMachine = "idle"
 	else:
 		SPEED = ACCEL
 		if left || right:
-			_state_Machine("run")
+			stateMachine = "run"
 	
 	if motion.x < -ACCEL:
 		motion.x = -ACCEL
@@ -148,7 +147,7 @@ func _controls(delta):
 		canDoubleJump = true
 		
 		if stateMachine != "walljumping":
-			_state_Machine("jump")
+			stateMachine = "jump"
 		
 		if jump && canDoubleJump:
 			
@@ -180,12 +179,12 @@ func _controls(delta):
 	
 	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
-			_state_Machine("attacking")
+			stateMachine = "attacking"
 			print(stateMachine)
 	
 	if dash:
 		
-		_state_Machine("dash")
+		stateMachine = "dash"
 		animation.play("dash-pre")
 		yield(animation,"animation_finished")
 		
@@ -230,7 +229,7 @@ func _controls(delta):
 		
 		animation.play("dash-post")
 		yield(animation,"animation_finished")
-		_state_Machine("idle")
+		stateMachine = "idle"
 		
 		pass
 	
@@ -238,7 +237,7 @@ func _controls(delta):
 		
 		var preload_shield = ProjectilesPreloader._return_Resource("ProjectileShield")
 		
-		_state_Machine("shield")
+		stateMachine = "shield"
 		print("SHIELD")
 		animation.play("stabground-pre")
 		yield(animation,"animation_finished")
@@ -255,18 +254,11 @@ func _controls(delta):
 		load_shield._play_Anim("end")
 		yield(animation,"animation_finished")
 		load_shield._destroy()
-		_state_Machine("idle")
+		stateMachine = "idle"
 		
 		pass
 	
 	motion.normalized()
-
-func _state_Machine(arg1):
-	
-	# Pass a String into arg1 to modify state of stateMachine
-	#i.e. arg1 == "run": stateMachine = "run"
-	#
-	stateMachine = arg1
 
 func _gravity(delta):
 	
@@ -317,28 +309,17 @@ func _on_AnimatedSprite_animation_finished():
 	
 	if animation.animation == "attackstab":
 		
-		_state_Machine("idle")
-		
-		pass
+		stateMachine = "idle"
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.hp_current -= 5
 
-func _activate_Attack_Hitbox():
-	
-	hitbox_shape.disabled = false
-
-func _deactivate_Hitbox():
-	
-	hitbox_shape.disabled = true
-
 func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	anim_player.stop(true)
-	_state_Machine("idle")
+	stateMachine = "idle"
 	print("anim_player STOPPED")
-
 
 func _on_HitboxTimer_timeout():
 	
