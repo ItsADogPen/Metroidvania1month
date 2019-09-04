@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/projectiles/ProjectileTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/projectiles/Shield/ProjectileShield.gd" type="Script" id=2]
@@ -22,6 +22,127 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Animation" id=3]
+resource_name = "ColliShape"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShieldLeftArea/CollisionShape2D:shape:extents")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 23.3164, 12.0887 ), Vector2( 23.3164, 53.8891 ), Vector2( 23.3164, 50.0054 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShieldLeftArea/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShieldLeftArea/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -89, -12 ), Vector2( -89, -54 ), Vector2( -89, -50 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShieldRightArea/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 23.1506, 12.1608 ), Vector2( 23.1506, 54.0069 ), Vector2( 23.1506, 50.3176 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ShieldRightArea/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 79, -12 ), Vector2( 79, -54 ), Vector2( 79, -50 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ColliShapeBackwards"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ShieldLeftArea/CollisionShape2D:shape:extents")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 23.3164, 50.0054 ), Vector2( 23.3164, 31.3183 ), Vector2( 23.3164, 5.06022 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ShieldLeftArea/CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -89, -50 ), Vector2( -89, -31 ), Vector2( -89, -5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ShieldRightArea/CollisionShape2D:shape:extents")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 23.1506, 50.1554 ), Vector2( 23.1506, 30.8439 ), Vector2( 23.1506, 5.13135 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ShieldRightArea/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 79, -50 ), Vector2( 79, -31 ), Vector2( 79, -5 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 23.3164, 12.0887 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 23.1506, 12.1608 )
+
 [node name="ProjectileShield" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
@@ -30,5 +151,21 @@ position = Vector2( 0, -100 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "beginning"
-frame = 2
 
+[node name="AnimationPlayer" parent="." index="1"]
+anims/ColliShape = SubResource( 3 )
+anims/ColliShapeBackwards = SubResource( 5 )
+
+[node name="ShieldLeftArea" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldLeftArea" index="0"]
+position = Vector2( -89, -12 )
+shape = SubResource( 4 )
+
+[node name="ShieldRightArea" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldRightArea" index="0"]
+position = Vector2( 79, -12 )
+shape = SubResource( 6 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

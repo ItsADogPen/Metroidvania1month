@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/enemies/TemplateAI.gd" type="Script" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 156.918
+radius = 23.3647
 
 [node name="TemplateAI" type="KinematicBody2D"]
 script = ExtResource( 1 )

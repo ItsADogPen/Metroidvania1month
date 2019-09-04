@@ -6,6 +6,7 @@ var hp : int = 1
 var hp_current : int = 1
 
 var isDead : bool = false
+var canDoubleJump : bool = false
 
 #####################
 
@@ -25,6 +26,7 @@ onready var dash_ray_L = $Dash_Check_Left
 onready var dash_ray_R = $Dash_Check_Right
 onready var hitbox = $Hitbox
 onready var hitbox_shape = $Hitbox/CollisionShape2D
+onready var hitbox_timer = $HitboxTimer
 
 onready var map = get_parent()
 
@@ -33,7 +35,7 @@ var isAir : bool
 var isWall = [false, "none"]
 
 const UP = Vector2(0,-1)
-var ACCEL = 500
+var ACCEL = 900
 var SPEED = 0
 var dash_distance = 450
 const SLOPE_SLIDE_STOP = 640
@@ -41,7 +43,7 @@ const FRIC = 1
 const GRAV = 10
 const GRAV_CAP = 1000
 const JUMP_SPEED = -400
-const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.875)
+const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.925)
 const WALL_JUMP_SPEED = JUMP_SPEED*2
 
 func _ready():
@@ -97,11 +99,13 @@ func _anim_Check():
 	if isDead == false:
 		
 		if stateMachine == "attacking":
-			anim_player.play("attack2")
+			animation.play("attackstab")
+			hitbox_timer.start()
+			
 		if stateMachine == "run":
 			animation.offset.x = 0
-			if animation.scale.x == -1:
-				animation.offset.x = 15
+#			if animation.scale.x == -1:
+#				animation.offset.x = 15
 			animation.play("run")
 		if stateMachine == "jump":
 			animation.play("jump")
@@ -112,9 +116,12 @@ func _anim_Check():
 	if motion.x < 0:
 		animation.scale.x = -1
 		hitbox.scale.x = -1
+		animation.offset.x = 15
 	if motion.x > 0:
 		animation.scale.x = 1
 		hitbox.scale.x = 1
+		if animation.offset.x != 0:
+			animation.offset.x = 0
 	
 	pass
 
@@ -150,31 +157,47 @@ func _controls(delta):
 	# === y movement ===
 	
 	if isAir == false:
+		
+		canDoubleJump = false
+		
 		if jump:
 			
 			motion.y = JUMP_SPEED
 	
 	if isAir == true:
 		
-		if jump && isWall[0] == true:
-			
-			if isWall[1] == "left" && right:
-				
-				_state_Machine("walljumping")
-				motion.y = JUMP_SPEED
-				motion.x += WALL_JUMP_SPEED
-				
-			elif isWall[1] == "right" && left:
-				
-				_state_Machine("walljumping")
-				motion.y = JUMP_SPEED
-				motion.x -= WALL_JUMP_SPEED
-			
-			print("WALL JUMPING AYY LMAO")
+		canDoubleJump = true
 		
 		if stateMachine != "walljumping":
 			_state_Machine("jump")
 		
+		if jump && canDoubleJump:
+			
+			motion.y = DOUBLE_JUMP_SPEED
+			
+			pass
+	
+#	if isAir == true:
+#
+#		if jump && isWall[0] == true:
+#
+#			if isWall[1] == "left" && right:
+#
+#				_state_Machine("walljumping")
+#				motion.y = JUMP_SPEED
+#				motion.x += WALL_JUMP_SPEED
+#
+#			elif isWall[1] == "right" && left:
+#
+#				_state_Machine("walljumping")
+#				motion.y = JUMP_SPEED
+#				motion.x -= WALL_JUMP_SPEED
+#
+#			print("WALL JUMPING AYY LMAO")
+#
+#		if stateMachine != "walljumping":
+#			_state_Machine("jump")
+#
 	
 	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
@@ -323,7 +346,11 @@ func _attack_Machine():
 
 func _on_AnimatedSprite_animation_finished():
 	
-	
+	if animation.animation == "attackstab":
+		
+		_state_Machine("idle")
+		
+		pass
 	
 	
 	pass
@@ -350,5 +377,14 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	anim_player.stop(true)
 	_state_Machine("idle")
 	print("anim_player STOPPED")
+	
+	pass
+
+
+func _on_HitboxTimer_timeout():
+	
+	hitbox_shape.disabled = false
+	yield(get_tree().create_timer(0.1),"timeout")
+	hitbox_shape.disabled = true
 	
 	pass

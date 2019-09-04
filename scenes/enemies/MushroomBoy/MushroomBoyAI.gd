@@ -18,6 +18,8 @@ func _initialize():
 	
 	SPEED = 0
 	ACCEL = 200
+	GRAV = 10
+	GRAV_CAP = 1000
 	
 	var math = [1,-1]
 	var pick_math = math[randi()%math.size()]
@@ -30,6 +32,8 @@ func _initialize():
 func _physics_process(delta):
 	
 	_check_HP()
+	_gravity(delta)
+	_floor_Check()
 	
 	if isDead == false:
 		_ai_Patrol()
@@ -37,6 +41,30 @@ func _physics_process(delta):
 	
 	pass
 
+func _gravity(delta):
+	
+	motion.y += GRAV
+	
+	if up_ray.is_colliding():
+		motion.y = 0
+		motion.y = ACCEL*0.5
+	
+	if motion.y > GRAV_CAP:
+		motion.y = GRAV_CAP
+	
+	if !isAir:
+		motion.y = 0
+	
+	pass
+
+func _floor_Check():
+	
+	if corner_ray_L.is_colliding() || corner_ray_R.is_colliding():
+		isAir = false
+	else:
+		isAir = true
+	
+	pass
 
 func _ai_Patrol():
 	
