@@ -8,8 +8,6 @@ func _ready():
 	_initialize()
 	_connect_Signals()
 	set_physics_process(true)
-	
-	pass
 
 func _initialize():
 	
@@ -25,9 +23,7 @@ func _initialize():
 	var pick_math = math[randi()%math.size()]
 	
 	motion.x += (pick_math * (SPEED+ACCEL))
-	
-	
-	pass
+
 
 func _physics_process(delta):
 	
@@ -38,8 +34,6 @@ func _physics_process(delta):
 	if isDead == false:
 		_ai_Patrol()
 		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
-	
-	pass
 
 func _gravity(delta):
 	
@@ -54,8 +48,6 @@ func _gravity(delta):
 	
 	if !isAir:
 		motion.y = 0
-	
-	pass
 
 func _floor_Check():
 	
@@ -63,8 +55,6 @@ func _floor_Check():
 		isAir = false
 	else:
 		isAir = true
-	
-	pass
 
 func _ai_Patrol():
 	
@@ -84,6 +74,3 @@ func _ai_Patrol():
 		motion.x = (motion.x)*colli_math
 		
 		pass
-	
-	
-	pass

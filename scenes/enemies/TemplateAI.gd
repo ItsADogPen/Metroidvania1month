@@ -54,16 +54,11 @@ func _initialize():  # OVERRIDE THIS IN EACH INDIVIDUAL ENEMY AI
 func _modify_HP(damage:int):
 	
 	hp_current = hp_current - damage
-	
-	pass
 
 func _check_HP():
 	
 	if hp_current <= 0:
 		_die("die")
-	
-	
-	pass
 
 func _die(die_anim : String):
 	
@@ -72,15 +67,10 @@ func _die(die_anim : String):
 	yield(animation,"animation_finished")
 	yield(get_tree().create_timer(0.35),"timeout")
 	self.queue_free()
-	
-	pass
 
 func _connect_Signals():
 	
 	detection_rad.connect("body_entered",self,"_ai_Detect")
-	
-	
-	pass
 
 ########################################
 #ALL AI LOGICS BELOW SHOULD ONLY BE OVERIDDEN AND CODED IN INDIVIDUAL ENEMY AI. THIS IS JUST A TEMPLATE THAT WILL INTERACT WITH VARIOUS FUNCTIONS
@@ -95,22 +85,15 @@ func _ai_Patrol():
 	# move character to position
 	# reverse logic to move character back
 	# repeat
-	
-	
 	pass
 
 func _ai_Detect(body):
 	
 	# for working with detection_rad of Class.Area2D
-	
 	print(body.get_name())
-	
-	
-	
 	pass
 
 func _ai_Attack_Machine():
 	
 	# for behaviour related to active actions
-	
 	pass

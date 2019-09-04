@@ -7,12 +7,7 @@ func _play_Anim(anim_string : String):
 	elif anim_string == "end":
 		anim_player.play("ColliShapeBackwards")
 	animation.play(anim_string)
-	
-	pass
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	anim_player.stop(true)
-	
-	pass

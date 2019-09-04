@@ -10,8 +10,6 @@ onready var area2D_shape = $Area2D/CollisionShape2D
 func _play_Anim(anim_string : String):
 	
 	animation.play(anim_string)
-	
-	pass
 
 func _destroy():
 	

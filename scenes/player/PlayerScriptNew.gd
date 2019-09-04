@@ -4,13 +4,9 @@ class_name Player
 ## Stat Variables ###
 var hp : int = 1
 var hp_current : int = 1
-
 var isDead : bool = false
 var canDoubleJump : bool = false
-
 #####################
-
-
 
 
 var motion: Vector2 = Vector2()
@@ -46,22 +42,13 @@ const JUMP_SPEED = -400
 const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.925)
 const WALL_JUMP_SPEED = JUMP_SPEED*2
 
-func _ready():
-	
-	_initialize()
-	
-	pass
 
-func _initialize():
+func _ready():
 	
 	hp = 10
 	hp_current = hp
-	
-	
-	pass
 
 func _physics_process(delta):
-	
 	
 	_floor_Check()
 	_gravity(delta)
@@ -74,15 +61,11 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Death_Test_Button"):
 		_die("die")
-	
-	pass
 
 func _check_HP():
 	
 	if hp_current <= 0:
 		_die("die")
-	
-	pass
 
 func _die(die_anim : String):
 	
@@ -91,8 +74,6 @@ func _die(die_anim : String):
 	yield(animation,"animation_finished")
 	yield(get_tree().create_timer(0.35),"timeout")
 	print("DED")
-	
-	pass
 
 func _anim_Check():
 	
@@ -122,8 +103,6 @@ func _anim_Check():
 		hitbox.scale.x = 1
 		if animation.offset.x != 0:
 			animation.offset.x = 0
-	
-	pass
 
 func _controls(delta):
 	
@@ -281,8 +260,6 @@ func _controls(delta):
 		pass
 	
 	motion.normalized()
-	
-	pass
 
 func _state_Machine(arg1):
 	
@@ -290,8 +267,6 @@ func _state_Machine(arg1):
 	#i.e. arg1 == "run": stateMachine = "run"
 	#
 	stateMachine = arg1
-	
-	pass
 
 func _gravity(delta):
 	
@@ -308,8 +283,6 @@ func _gravity(delta):
 	
 	if !isAir && !jump:
 		motion.y = 0
-	
-	pass
 
 func _floor_Check():
 	
@@ -317,8 +290,6 @@ func _floor_Check():
 		isAir = false
 	else:
 		isAir = true
-	
-	pass
 
 func _wall_Check():
 	
@@ -338,11 +309,9 @@ func _wall_Check():
 			isWall[1] = "left"
 		
 		pass
-	pass
 
 func _attack_Machine():
 	pass
-
 
 func _on_AnimatedSprite_animation_finished():
 	
@@ -351,10 +320,6 @@ func _on_AnimatedSprite_animation_finished():
 		_state_Machine("idle")
 		
 		pass
-	
-	
-	pass
-
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("enemies"):
@@ -363,22 +328,16 @@ func _on_Hitbox_body_entered(body):
 func _activate_Attack_Hitbox():
 	
 	hitbox_shape.disabled = false
-	
-	pass
 
 func _deactivate_Hitbox():
 	
 	hitbox_shape.disabled = true
-	
-	pass
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	anim_player.stop(true)
 	_state_Machine("idle")
 	print("anim_player STOPPED")
-	
-	pass
 
 
 func _on_HitboxTimer_timeout():
@@ -386,5 +345,3 @@ func _on_HitboxTimer_timeout():
 	hitbox_shape.disabled = false
 	yield(get_tree().create_timer(0.1),"timeout")
 	hitbox_shape.disabled = true
-	
-	pass
