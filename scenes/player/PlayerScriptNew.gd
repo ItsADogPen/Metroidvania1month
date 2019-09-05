@@ -2,19 +2,19 @@ extends KinematicBody2D
 class_name Player
 
 # Constants
-const UP = Vector2(0,-1)
-const DOWN = Vector2(0,1)
 const ACCEL = 900
 const ACCEL_UPGRADE = 1200
 const DASH_DIST = 450
-const SLOPE_SLIDE_STOP = 640
+const SLOPE_SLIDE_STOP = 4
+const SNAP_DOWN = Vector2(0, 16)
+const SNAP_ANGLE = 0.89
 const FRIC = 1
 const GRAV = 10
 const GRAV_CAP = 1000
 const JUMP_SPEED = -400
 const JUMP_UPGRADE_SPEED = -200
-const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.925)
-const WALL_JUMP_SPEED = JUMP_SPEED*2
+const DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
+const WALL_JUMP_SPEED = JUMP_SPEED * -2
 
 # Instance variables
 var hp : int = 1
@@ -69,7 +69,11 @@ func _physics_process(delta):
 	if isDead == false:
 		_anim_Check()
 		_controls(delta)
-		motion = move_and_slide(motion, DOWN, SLOPE_SLIDE_STOP)
+		
+		if stateMachine == "jump":
+			motion = move_and_slide(motion, Vector2.UP, true)
+		else:
+			motion = move_and_slide_with_snap(motion, SNAP_DOWN, Vector2.UP, true, SLOPE_SLIDE_STOP, SNAP_ANGLE)
 	
 	if Input.is_action_just_pressed("Death_Test_Button"):
 		_player_death()
@@ -155,6 +159,7 @@ func _controls(delta):
 	# === y movement ===
 	if jump && remaining_jumps > 0:
 		remaining_jumps -= 1
+		isAir = true
 		
 		# Set speed depending on which jump this is
 		if remaining_jumps == 1:
