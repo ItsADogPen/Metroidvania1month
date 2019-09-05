@@ -17,9 +17,10 @@ const WALL_JUMP_SPEED = JUMP_SPEED*2
 var hp : int = 1
 var hp_current : int = 1
 var isDead : bool = false
-var canDoubleJump : bool = false
+var canDoubleJump : bool = true
 var stateMachine : String = "idle"
 var isAir : bool
+var remaining_jumps : int = 2
 var isWall = [false, "none"]
 var SPEED = 0
 
@@ -66,6 +67,14 @@ func _check_HP():
 	
 	if hp_current <= 0:
 		_player_death()
+
+# Reset the number of jumps the player has, called when player hits floor
+func _reset_jumps():
+	print("Reseting number of jumps...")
+	if canDoubleJump:
+		remaining_jumps = 2
+	else:
+		remaining_jumps = 1
 
 func _player_death():
 	
@@ -128,26 +137,17 @@ func _controls(delta):
 	motion.x = clamp(motion.x, -ACCEL, ACCEL)
 
 	# === y movement ===
-	if isAir == false:
+	if jump && remaining_jumps > 0:
+		remaining_jumps -= 1
 		
-		canDoubleJump = false
-		
-		if jump:
-			
+		# Set speed depending on which jump this is
+		if remaining_jumps == 1:
 			motion.y = JUMP_SPEED
-	
-	if isAir == true:
-		
-		canDoubleJump = true
-		
-		if stateMachine != "walljumping":
-			stateMachine = "jump"
-		
-		if jump && canDoubleJump:
-			
+		else:
 			motion.y = DOUBLE_JUMP_SPEED
-			
-			pass
+	
+	if isAir and stateMachine != "walljumping":
+		stateMachine = "jump"
 	
 #	if isAir == true:
 #
@@ -274,6 +274,7 @@ func _floor_Check():
 	
 	if corner_ray_L.is_colliding() || corner_ray_R.is_colliding():
 		isAir = false
+		_reset_jumps()
 	else:
 		isAir = true
 
