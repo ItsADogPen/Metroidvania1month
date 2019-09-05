@@ -44,7 +44,6 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 20
 playing = true
 
 [node name="Floor_Ray" parent="." index="2"]
@@ -85,4 +84,3 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="Detection2D" index="0"]
 position = Vector2( -16.1198, 24.9744 )
-

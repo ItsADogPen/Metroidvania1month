@@ -1,7 +1,7 @@
 extends Node
 
-onready var floor_tileset = $Floor
-onready var projectiles_container = $Projectiles_Container
+onready var floor_tileset = $Tilesets/Floor
+onready var projectiles = $Projectiles
 
 func _ready():
 	

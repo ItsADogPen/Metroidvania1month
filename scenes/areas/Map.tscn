@@ -8,7 +8,9 @@
 [node name="Map" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Floor" type="TileMap" parent="."]
+[node name="Tilesets" type="Node2D" parent="."]
+
+[node name="Floor" type="TileMap" parent="Tilesets"]
 modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
 position = Vector2( 4894, 480 )
 tile_set = ExtResource( 2 )
@@ -19,8 +21,7 @@ tile_data = PoolIntArray( -589742, 536870932, 0, -589741, 536870933, 0, -589740,
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 11197.9, 731.993 )
 
-[node name="Projectiles_Container" type="Node" parent="."]
+[node name="Projectiles" type="Node2D" parent="."]
 
 [node name="MushroomBoyAI" parent="." instance=ExtResource( 4 )]
 position = Vector2( 9738.97, 799.528 )
-
