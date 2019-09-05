@@ -167,39 +167,34 @@ func _controls(delta):
 	if isAir and stateMachine != "walljumping":
 		stateMachine = "jump"
 	
-#	if isAir == true:
-#
-#		if jump && isWall[0] == true:
-#
-#			if isWall[1] == "left" && right:
-#
-#				_state_Machine("walljumping")
-#				motion.y = JUMP_SPEED
-#				motion.x += WALL_JUMP_SPEED
-#
-#			elif isWall[1] == "right" && left:
-#
-#				_state_Machine("walljumping")
-#				motion.y = JUMP_SPEED
-#				motion.x -= WALL_JUMP_SPEED
-#
-#			print("WALL JUMPING AYY LMAO")
-#
-#		if stateMachine != "walljumping":
-#			_state_Machine("jump")
-#
+	# Handle wall jumping
+	if isAir:
+		if jump && isWall[0]:
+			
+			if isWall[1] == "left" && right:
+				stateMachine = "walljumping"
+				motion.y = JUMP_SPEED
+				motion.x += WALL_JUMP_SPEED
+			
+			elif isWall[1] == "right" && left:
+				stateMachine = "walljumping"
+				motion.y = JUMP_SPEED
+				motion.x -= WALL_JUMP_SPEED
+		
+		if stateMachine != "walljumping":
+			stateMachine = "jump"
 	
 	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
 			stateMachine = "attacking"
 			print(stateMachine)
 	
+	# Handle dashing
 	if dash and upgrades["dash"]:
 		
 		stateMachine = "dash"
 		animation.play("dash-pre")
 		yield(animation,"animation_finished")
-		
 		
 		var ray_checkers = [dash_ray_L,dash_ray_R]
 		for i in ray_checkers: i.enabled = true
@@ -237,14 +232,12 @@ func _controls(delta):
 			math_vector.x = (math_vector.x)*facing
 			
 			global_position = global_position + math_vector
-			
 		
 		animation.play("dash-post")
 		yield(animation,"animation_finished")
 		stateMachine = "idle"
-		
-		pass
 	
+	# Handle shield move
 	if shield and upgrades["shield_aoe"]:
 		
 		var preload_shield = ProjectilesPreloader._return_Resource("ProjectileShield")
@@ -267,8 +260,6 @@ func _controls(delta):
 		yield(animation,"animation_finished")
 		load_shield._destroy()
 		stateMachine = "idle"
-		
-		pass
 	
 	motion.normalized()
 
@@ -304,7 +295,6 @@ func _wall_Check():
 	
 	if side_ray_R.is_colliding() || side_ray_L.is_colliding():
 		
-		
 		isWall[0] = true
 		var math = (int(side_ray_R.is_colliding()) - int(side_ray_L.is_colliding()))
 		
@@ -312,8 +302,6 @@ func _wall_Check():
 			isWall[1] = "right"
 		elif math < 0:
 			isWall[1] = "left"
-		
-		pass
 
 func _attack_Machine():
 	pass
