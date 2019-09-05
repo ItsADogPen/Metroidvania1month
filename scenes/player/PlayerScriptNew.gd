@@ -1,39 +1,10 @@
 extends KinematicBody2D
 class_name Player
 
-## Stat Variables ###
-var hp : int = 1
-var hp_current : int = 1
-var isDead : bool = false
-var canDoubleJump : bool = false
-#####################
-
-
-var motion: Vector2 = Vector2()
-onready var anim_player = $AnimationPlayer
-onready var animation = $AnimatedSprite
-onready var floor_ray = $Floor_Ray
-onready var corner_ray_L = $Corner_Ray_Left
-onready var corner_ray_R = $Corner_Ray_Right
-onready var up_ray = $Up_Ray
-onready var side_ray_L = $Side_Ray_Left
-onready var side_ray_R = $Side_Ray_Right
-onready var dash_ray_L = $Dash_Check_Left
-onready var dash_ray_R = $Dash_Check_Right
-onready var hitbox = $Hitbox
-onready var hitbox_shape = $Hitbox/CollisionShape2D
-onready var hitbox_timer = $HitboxTimer
-
-onready var map = get_parent()
-
-var stateMachine : String = "idle"
-var isAir : bool
-var isWall = [false, "none"]
-
+# Constants
 const UP = Vector2(0,-1)
-var ACCEL = 900
-var SPEED = 0
-var dash_distance = 450
+const ACCEL = 900
+const DASH_DIST = 450
 const SLOPE_SLIDE_STOP = 640
 const FRIC = 1
 const GRAV = 10
@@ -42,6 +13,35 @@ const JUMP_SPEED = -400
 const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.925)
 const WALL_JUMP_SPEED = JUMP_SPEED*2
 
+# Instance variables
+var hp : int = 1
+var hp_current : int = 1
+var isDead : bool = false
+var canDoubleJump : bool = false
+var stateMachine : String = "idle"
+var isAir : bool
+var isWall = [false, "none"]
+var SPEED = 0
+
+# Player sprite elements
+var motion: Vector2 = Vector2()
+onready var anim_player = $AnimationPlayer
+onready var animation = $AnimatedSprite
+onready var hitbox = $Hitbox
+onready var hitbox_shape = $Hitbox/CollisionShape2D
+onready var hitbox_timer = $HitboxTimer
+
+# Collision dection rays
+onready var floor_ray = $Floor_Ray
+onready var corner_ray_L = $Corner_Ray_Left
+onready var corner_ray_R = $Corner_Ray_Right
+onready var up_ray = $Up_Ray
+onready var side_ray_L = $Side_Ray_Left
+onready var side_ray_R = $Side_Ray_Right
+onready var dash_ray_L = $Dash_Check_Left
+onready var dash_ray_R = $Dash_Check_Right
+
+onready var map = get_parent()
 
 func _ready():
 	
@@ -200,7 +200,7 @@ func _controls(delta):
 		elif !ray_checkers[0].is_colliding() && animation.scale.x == -1:
 			
 			var math_vector = Vector2()
-			math_vector.x = (math_vector.x+dash_distance)*-1
+			math_vector.x = (math_vector.x+DASH_DIST)*-1
 			
 			global_position = global_position + math_vector
 			
@@ -212,7 +212,7 @@ func _controls(delta):
 		elif !ray_checkers[1].is_colliding() && animation.scale.x == 1:
 			
 			var math_vector = Vector2()
-			math_vector.x = math_vector.x + dash_distance
+			math_vector.x = math_vector.x + DASH_DIST
 			
 			global_position = global_position + math_vector
 			
@@ -221,7 +221,7 @@ func _controls(delta):
 			var facing = animation.scale.x
 			
 			var math_vector = Vector2()
-			math_vector.x = math_vector.x+dash_distance
+			math_vector.x = math_vector.x+DASH_DIST
 			math_vector.x = (math_vector.x)*facing
 			
 			global_position = global_position + math_vector
