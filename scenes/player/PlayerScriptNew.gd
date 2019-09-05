@@ -63,8 +63,12 @@ func _ready():
 
 func _physics_process(delta):
 	
-	_floor_Check()
 	_gravity(delta)
+	if is_on_floor():
+		isAir = false
+		_reset_jumps()
+	else:
+		isAir = true
 	
 	if isDead == false:
 		_anim_Check()
@@ -270,14 +274,6 @@ func _gravity(delta):
 	motion.y += GRAV
 	if motion.y > GRAV_CAP:
 		motion.y = GRAV_CAP
-
-func _floor_Check():
-	
-	if corner_ray_L.is_colliding() || corner_ray_R.is_colliding():
-		isAir = false
-		_reset_jumps()
-	else:
-		isAir = true
 
 func _attack_Machine():
 	pass
