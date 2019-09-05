@@ -58,8 +58,12 @@ onready var map = get_parent()
 
 func _ready():
 	
+	# Setup player stats
 	hp = 10
 	hp_current = hp
+	
+	# Setup signals
+	connect("upgrade_gained", self, "_on_upgrade_gained")
 
 func _physics_process(delta):
 	
@@ -299,6 +303,21 @@ func _on_HitboxTimer_timeout():
 	hitbox_shape.disabled = false
 	yield(get_tree().create_timer(0.1),"timeout")
 	hitbox_shape.disabled = true
+
+# Triggers when a new upgrade is found, connected to "upgrade_found" signal
+func _on_upgrade_gained(power_gained : String):
+	
+	if upgrades.has(power_gained):
+		upgrades[power_gained] = true
+	else:
+		print("Error: No such upgrade as %s" % power_gained)
+
+# Called when player takes damage
+func take_damage(damage : int):
+	
+	hp_current -= damage
+	if hp_current <= 0:
+		_player_death()
 
 # DEBUG function to test upgrades
 func toggle_upgrades():
