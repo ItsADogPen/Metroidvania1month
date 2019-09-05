@@ -265,19 +265,9 @@ func _controls(delta):
 
 func _gravity(delta):
 	
-	var jump = Input.is_action_just_pressed("jump")
-	
 	motion.y += GRAV
-	
-	if up_ray.is_colliding():
-		motion.y = 0
-		motion.y = ACCEL*0.5
-	
 	if motion.y > GRAV_CAP:
 		motion.y = GRAV_CAP
-	
-	if !isAir && !jump:
-		motion.y = 0
 
 func _floor_Check():
 	
