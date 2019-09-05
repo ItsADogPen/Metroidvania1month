@@ -3,13 +3,16 @@ class_name Player
 
 # Constants
 const UP = Vector2(0,-1)
+const DOWN = Vector2(0,1)
 const ACCEL = 900
+const ACCEL_UPGRADE = 1200
 const DASH_DIST = 450
 const SLOPE_SLIDE_STOP = 640
 const FRIC = 1
 const GRAV = 10
 const GRAV_CAP = 1000
 const JUMP_SPEED = -400
+const JUMP_UPGRADE_SPEED = -200
 const DOUBLE_JUMP_SPEED = (JUMP_SPEED*0.925)
 const WALL_JUMP_SPEED = JUMP_SPEED*2
 
@@ -17,12 +20,22 @@ const WALL_JUMP_SPEED = JUMP_SPEED*2
 var hp : int = 1
 var hp_current : int = 1
 var isDead : bool = false
-var canDoubleJump : bool = true
 var stateMachine : String = "idle"
 var isAir : bool
 var remaining_jumps : int = 2
 var isWall = [false, "none"]
 var SPEED = 0
+
+# Upgrades the player can collect over time
+var upgrades = {
+	"double_jump" : false,
+	"jump_speed" : false,
+	"move_speed" : false,
+	"attack_speed" : false,
+	"attack_aoe" : false,
+	"shield_aoe" : false,
+	"dash" : false
+}
 
 # Player sprite elements
 var motion: Vector2 = Vector2()
@@ -58,10 +71,13 @@ func _physics_process(delta):
 	if isDead == false:
 		_anim_Check()
 		_controls(delta)
-		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+		motion = move_and_slide(motion, DOWN, SLOPE_SLIDE_STOP)
 	
 	if Input.is_action_just_pressed("Death_Test_Button"):
 		_player_death()
+	
+	if Input.is_action_just_pressed("ui_page_up"):
+		toggle_upgrades()
 
 func _check_HP():
 	
@@ -70,8 +86,7 @@ func _check_HP():
 
 # Reset the number of jumps the player has, called when player hits floor
 func _reset_jumps():
-	print("Reseting number of jumps...")
-	if canDoubleJump:
+	if upgrades["double_jump"]:
 		remaining_jumps = 2
 	else:
 		remaining_jumps = 1
@@ -123,28 +138,31 @@ func _controls(delta):
 	var shield = Input.is_action_just_pressed("shield")
 	
 	# === x movement ===
-	motion.x += (int(right) - int(left))*SPEED
+	motion.x += (int(right) - int(left)) * SPEED
 	
 	if (right == left and not isAir):
 		motion.x = 0
 		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
 			stateMachine = "idle"
 	else:
-		SPEED = ACCEL
+		SPEED = ACCEL + (int(upgrades["move_speed"]) * ACCEL_UPGRADE)
 		if left || right:
 			stateMachine = "run"
 	
-	motion.x = clamp(motion.x, -ACCEL, ACCEL)
-
+	if upgrades["move_speed"]:
+		motion.x = clamp(motion.x, -ACCEL_UPGRADE, ACCEL_UPGRADE)
+	else:
+		motion.x = clamp(motion.x, -ACCEL, ACCEL)
+	
 	# === y movement ===
 	if jump && remaining_jumps > 0:
 		remaining_jumps -= 1
 		
 		# Set speed depending on which jump this is
 		if remaining_jumps == 1:
-			motion.y = JUMP_SPEED
+			motion.y = JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
 		else:
-			motion.y = DOUBLE_JUMP_SPEED
+			motion.y = DOUBLE_JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
 	
 	if isAir and stateMachine != "walljumping":
 		stateMachine = "jump"
@@ -176,7 +194,7 @@ func _controls(delta):
 			stateMachine = "attacking"
 			print(stateMachine)
 	
-	if dash:
+	if dash and upgrades["dash"]:
 		
 		stateMachine = "dash"
 		animation.play("dash-pre")
@@ -227,7 +245,7 @@ func _controls(delta):
 		
 		pass
 	
-	if shield:
+	if shield and upgrades["shield_aoe"]:
 		
 		var preload_shield = ProjectilesPreloader._return_Resource("ProjectileShield")
 		
@@ -321,3 +339,10 @@ func _on_HitboxTimer_timeout():
 	hitbox_shape.disabled = false
 	yield(get_tree().create_timer(0.1),"timeout")
 	hitbox_shape.disabled = true
+
+# DEBUG function to test upgrades
+func toggle_upgrades():
+	var new_value = not upgrades["double_jump"]
+	print("Setting all player upgrades to %s..." % str(new_value))
+	for key in upgrades.keys():
+		upgrades[key] = new_value
