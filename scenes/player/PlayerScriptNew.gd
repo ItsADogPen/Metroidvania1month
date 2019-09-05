@@ -304,7 +304,7 @@ func _on_HitboxTimer_timeout():
 	yield(get_tree().create_timer(0.1),"timeout")
 	hitbox_shape.disabled = true
 
-# Triggers when a new upgrade is found, connected to "upgrade_found" signal
+# Triggers when a new upgrade is found, connected to "upgrade_gained" signal
 func _on_upgrade_gained(power_gained : String):
 	
 	if upgrades.has(power_gained):
