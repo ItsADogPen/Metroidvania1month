@@ -105,6 +105,7 @@ func _anim_Check():
 
 func _controls(delta):
 	
+	# Get player input
 	var left = Input.is_action_pressed("ui_left")
 	var right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_just_pressed("jump")
@@ -112,12 +113,10 @@ func _controls(delta):
 	var dash = Input.is_action_just_pressed("dash")
 	var shield = Input.is_action_just_pressed("shield")
 	
-	
 	# === x movement ===
-	
 	motion.x += (int(right) - int(left))*SPEED
 	
-	if ((right&&left) && isAir == false) || ((!right && !left) && isAir == false):
+	if (right == left and not isAir):
 		motion.x = 0
 		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
 			stateMachine = "idle"
@@ -126,14 +125,9 @@ func _controls(delta):
 		if left || right:
 			stateMachine = "run"
 	
-	if motion.x < -ACCEL:
-		motion.x = -ACCEL
-	elif motion.x > ACCEL:
-		motion.x = ACCEL
-	
-	
+	motion.x = clamp(motion.x, -ACCEL, ACCEL)
+
 	# === y movement ===
-	
 	if isAir == false:
 		
 		canDoubleJump = false
