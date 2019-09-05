@@ -23,7 +23,6 @@ var isDead : bool = false
 var stateMachine : String = "idle"
 var isAir : bool
 var remaining_jumps : int = 2
-var isWall = [false, "none"]
 var SPEED = 0
 
 # Upgrades the player can collect over time
@@ -66,7 +65,6 @@ func _physics_process(delta):
 	
 	_floor_Check()
 	_gravity(delta)
-	_wall_Check()
 	
 	if isDead == false:
 		_anim_Check()
@@ -168,18 +166,17 @@ func _controls(delta):
 		stateMachine = "jump"
 	
 	# Handle wall jumping
-	if isAir:
-		if jump && isWall[0]:
-			
-			if isWall[1] == "left" && right:
-				stateMachine = "walljumping"
-				motion.y = JUMP_SPEED
-				motion.x += WALL_JUMP_SPEED
-			
-			elif isWall[1] == "right" && left:
-				stateMachine = "walljumping"
-				motion.y = JUMP_SPEED
-				motion.x -= WALL_JUMP_SPEED
+	if isAir and jump:
+		
+		if side_ray_L.is_colliding() && right:
+			stateMachine = "walljumping"
+			motion.y = JUMP_SPEED
+			motion.x += WALL_JUMP_SPEED
+		
+		elif side_ray_R.is_colliding() && left:
+			stateMachine = "walljumping"
+			motion.y = JUMP_SPEED
+			motion.x -= WALL_JUMP_SPEED
 		
 		if stateMachine != "walljumping":
 			stateMachine = "jump"
@@ -276,22 +273,6 @@ func _floor_Check():
 		_reset_jumps()
 	else:
 		isAir = true
-
-func _wall_Check():
-	
-	if !side_ray_R.is_colliding() && !side_ray_L.is_colliding():
-		isWall[0] = false
-		isWall[1] = "none"
-	
-	if side_ray_R.is_colliding() || side_ray_L.is_colliding():
-		
-		isWall[0] = true
-		var math = (int(side_ray_R.is_colliding()) - int(side_ray_L.is_colliding()))
-		
-		if math > 0:
-			isWall[1] = "right"
-		elif math < 0:
-			isWall[1] = "left"
 
 func _attack_Machine():
 	pass
