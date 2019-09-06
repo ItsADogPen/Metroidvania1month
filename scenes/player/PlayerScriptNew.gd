@@ -6,8 +6,8 @@ const ACCEL = 900
 const ACCEL_UPGRADE = 1200
 const DASH_DIST = 450
 const SLOPE_SLIDE_STOP = 4
-const SNAP_DOWN = Vector2(0, 16)
-const SNAP_ANGLE = 0.89
+const SNAP_DOWN = Vector2(0, 48)
+const SNAP_ANGLE = 1.55
 const FRIC = 1
 const GRAV = 10
 const GRAV_CAP = 1000
@@ -45,10 +45,6 @@ onready var hitbox_shape = $Hitbox/CollisionShape2D
 onready var hitbox_timer = $HitboxTimer
 
 # Collision dection rays
-onready var floor_ray = $Floor_Ray
-onready var corner_ray_L = $Corner_Ray_Left
-onready var corner_ray_R = $Corner_Ray_Right
-onready var up_ray = $Up_Ray
 onready var side_ray_L = $Side_Ray_Left
 onready var side_ray_R = $Side_Ray_Right
 onready var dash_ray_L = $Dash_Check_Left
