@@ -166,15 +166,20 @@ func _controls(delta):
 	
 	# === y movement ===
 	if jump && remaining_jumps > 0:
-		remaining_jumps -= 1
-		isAir = true
 		
-		# Set speed depending on which jump this is
-		if remaining_jumps == 1:
-			motion.y = JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
-		else:
-			motion.y = DOUBLE_JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
-	
+		# Only jump if on ground or doublejumps are unlocked
+		if not isAir or upgrades["double_jump"]:
+			
+			# If already in the air, only allow one jump
+			remaining_jumps = 0 if isAir else 1
+			isAir = true
+			
+			# Set speed depending on which jump this is
+			if remaining_jumps == 1:
+				motion.y = JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
+			else:
+				motion.y = DOUBLE_JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
+		
 	if isAir and stateMachine != "walljumping":
 		stateMachine = "jump"
 	
