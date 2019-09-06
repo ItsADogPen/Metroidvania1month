@@ -50,6 +50,8 @@ onready var side_ray_R = $Side_Ray_Right
 onready var dash_ray_L = $Dash_Check_Left
 onready var dash_ray_R = $Dash_Check_Right
 
+onready var ShieldScene = preload("res://src/player/skills/shield/Shield.tscn")
+
 onready var map = get_parent()
 
 func _ready():
@@ -247,15 +249,12 @@ func _controls(delta):
 	
 	# Handle shield move
 	if shield and upgrades["shield_aoe"]:
-		
-		var preload_shield = ProjectilesPreloader._return_Resource("ProjectileShield")
-		
 		stateMachine = "shield"
 		print("SHIELD")
 		animation.play("stabground-pre")
 		yield(animation,"animation_finished")
 		
-		var load_shield = preload_shield.instance()
+		var load_shield = ShieldScene.instance()
 		map.projectiles_container.add_child(load_shield)
 		load_shield.global_position = self.global_position
 		yield(get_tree().create_timer(0.2),"timeout")

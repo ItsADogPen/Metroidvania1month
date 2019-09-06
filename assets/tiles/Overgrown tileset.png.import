@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Overgrown tileset.png-957fde4735967d7e61198514c7fb5b26.stex"
+path="res://.import/Overgrown tileset.png-941a304c54b3748fbb01efd4613d4c2d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overgrown tileset.png"
-dest_files=[ "res://.import/Overgrown tileset.png-957fde4735967d7e61198514c7fb5b26.stex" ]
+source_file="res://assets/tiles/Overgrown tileset.png"
+dest_files=[ "res://.import/Overgrown tileset.png-941a304c54b3748fbb01efd4613d4c2d.stex" ]
 
 [params]
 

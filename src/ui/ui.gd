@@ -1,38 +1,34 @@
 extends CanvasLayer
 
 
-onready var menus = {
-	"escape": get_node("EscapeMenu")
-}
+onready var menus_node = get_node("Menus")
 
-var enabled = false
+onready var menus = [
+	{
+		"name": "escape",
+		"node": get_node("Menus/EscapeMenu"),
+		"action": "ui_menu",
+	}
+]
+
 
 var open_uis = []
 
 func _ready():
-	disable()
-	for child in get_children():
+	for child in menus_node.get_children():
 		child.hide()
 		child.connect("close", self, "_on_close_ui")
 
-func enable():
-	enabled = true
-	set_process_input(true)
-
-func disable():
-	enabled = false
-	set_process_input(false)
-
 func reset():
-	for child in get_children():
+	for child in menus_node.get_children():
 		child.hide()
 	open_uis.clear()
 	Flow.resume()
 
-func open_ui(ui_name, information=null):
+func open_ui(menu, information=null):
 	# naming is a soupie here.
-	var menu = menus[ui_name]
-	if information:
+	if menu in open_uis:
+		return
 		menu.initialize(information)
 	menu.show()
 	if menu.should_pause:
@@ -50,9 +46,9 @@ func _on_close_ui(menu):
 		Flow.resume()
 
 func _input(event):
-	if not enabled:
-		print("Something wrong with UI")
-		return
-		
-	if Input.is_action_just_pressed("ui_menu"):
-		open_ui("escape")
+	for menu in menus:
+		if event.is_action_pressed(menu.action) and not event.is_echo():
+			if menu.node in open_uis:
+				_on_close_ui(menu.node)
+			else:
+				open_ui(menu.node)

@@ -25,3 +25,6 @@ func _on_exit_menu_button_pressed():
 	
 func _on_exit_desktop_button_pressed():
 	Flow.quit()
+
+func close():
+	emit_signal("close", self)

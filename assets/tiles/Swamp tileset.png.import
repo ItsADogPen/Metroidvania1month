@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Swamp tileset.png-e75d54668e183a1840ee6e1bc3910a44.stex"
+path="res://.import/Swamp tileset.png-e2d678202030af7e63b40abaf2e822bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Swamp tileset.png"
-dest_files=[ "res://.import/Swamp tileset.png-e75d54668e183a1840ee6e1bc3910a44.stex" ]
+source_file="res://assets/tiles/Swamp tileset.png"
+dest_files=[ "res://.import/Swamp tileset.png-e2d678202030af7e63b40abaf2e822bc.stex" ]
 
 [params]
 
