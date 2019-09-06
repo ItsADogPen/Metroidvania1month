@@ -10,18 +10,30 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scenes/enemies/enemy.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scenes/player/PlayerScriptNew.gd"
+}, {
+"base": "Node2D",
+"class": "Soul",
+"language": "GDScript",
+"path": "res://scenes/souls/Soul.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Enemy": "",
+"Player": "",
+"Soul": ""
 }
 
 [application]
 
 config/name="metroidvaniamonth"
-run/main_scene="res://scenes/areas/Map.tscn"
+run/main_scene="res://scenes/areas/Room.tscn"
 config/icon="res://icon.png"
 
 [autoload]

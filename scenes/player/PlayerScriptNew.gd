@@ -290,7 +290,7 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("enemies"):
-		body.hp_current -= 5
+		body.take_damage(5)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	
