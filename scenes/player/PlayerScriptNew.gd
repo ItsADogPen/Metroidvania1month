@@ -2,8 +2,6 @@ extends KinematicBody2D
 class_name Player
 
 # Constants
-const ACCEL = 900
-const ACCEL_UPGRADE = 1200
 const DASH_DIST = 450
 const SLOPE_SLIDE_STOP = 4
 const SNAP_DOWN = Vector2(0, 48)
@@ -11,10 +9,12 @@ const SNAP_ANGLE = 1.55
 const FRIC = 1
 const GRAV = 10
 const GRAV_CAP = 1000
-const JUMP_SPEED = -400
-const JUMP_UPGRADE_SPEED = -200
-const DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
-const WALL_JUMP_SPEED = JUMP_SPEED * -2
+
+# Stats that can change with upgrades
+var ACCEL = 900
+var JUMP_SPEED = -400
+var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
+var WALL_JUMP_SPEED = JUMP_SPEED * -2
 
 # Instance variables
 var hp : int = 1
@@ -151,14 +151,11 @@ func _controls(delta):
 		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
 			stateMachine = "idle"
 	else:
-		SPEED = ACCEL + (int(upgrades["move_speed"]) * ACCEL_UPGRADE)
+		SPEED = ACCEL
 		if left || right:
 			stateMachine = "run"
 	
-	if upgrades["move_speed"]:
-		motion.x = clamp(motion.x, -ACCEL_UPGRADE, ACCEL_UPGRADE)
-	else:
-		motion.x = clamp(motion.x, -ACCEL, ACCEL)
+	motion.x = clamp(motion.x, -ACCEL, ACCEL)
 	
 	# === y movement ===
 	if jump && remaining_jumps > 0:
@@ -172,9 +169,9 @@ func _controls(delta):
 			
 			# Set speed depending on which jump this is
 			if remaining_jumps == 1:
-				motion.y = JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
+				motion.y = JUMP_SPEED
 			else:
-				motion.y = DOUBLE_JUMP_SPEED + (int(upgrades["jump_speed"]) * JUMP_UPGRADE_SPEED)
+				motion.y = DOUBLE_JUMP_SPEED
 		
 	if isAir and stateMachine != "walljumping":
 		stateMachine = "jump"
@@ -310,6 +307,18 @@ func _on_upgrade_gained(power_gained : String):
 	
 	if upgrades.has(power_gained):
 		upgrades[power_gained] = true
+		
+		# Implement passive upgrades
+		match power_gained:
+			"move_speed":
+				ACCEL *= 1.333
+			"jump_speed":
+				JUMP_SPEED *= 1.25
+				WALL_JUMP_SPEED *= 1.25
+				DOUBLE_JUMP_SPEED *= 1.25
+			"attack_speed":
+				anim_player.playback_speed = 1.4
+		
 	else:
 		print("Error: No such upgrade as %s" % power_gained)
 
@@ -322,7 +331,5 @@ func take_damage(damage : int):
 
 # DEBUG function to test upgrades
 func toggle_upgrades():
-	var new_value = not upgrades["double_jump"]
-	print("Setting all player upgrades to %s..." % str(new_value))
 	for key in upgrades.keys():
-		upgrades[key] = new_value
+		_on_upgrade_gained(key)
