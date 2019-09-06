@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://scenes/enemies/enemy.gd"
+"path": "res://src/enemies/enemy.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://scenes/player/PlayerScriptNew.gd"
+"path": "res://src/player/PlayerScriptNew.gd"
 }, {
 "base": "Node2D",
 "class": "Soul",
 "language": "GDScript",
-"path": "res://scenes/souls/Soul.gd"
+"path": "res://src/souls/Soul.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="metroidvaniamonth"
-run/main_scene="res://scenes/areas/Room.tscn"
+run/main_scene="res://src/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
