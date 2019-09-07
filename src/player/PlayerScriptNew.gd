@@ -23,6 +23,7 @@ var isDead : bool = false
 var stateMachine : String = "idle"
 var isAir : bool
 var remaining_jumps : int = 2
+var last_checkpoint
 var SPEED = 0
 
 # Upgrades the player can collect over time
@@ -101,11 +102,20 @@ func _reset_jumps():
 
 func _player_death():
 	
+	# Death animation
 	isDead = true
 	animation.play("die")
 	yield(animation, "animation_finished")
-	yield(get_tree().create_timer(0.35),"timeout")
-	print("DED")
+	yield(get_tree().create_timer(1.2),"timeout")
+	
+	# Teleport player back to last checkpoint
+	if last_checkpoint != null:
+		position = last_checkpoint.position + Vector2(0, -60)
+	
+	# Reset health and anim
+	isDead = false
+	hp_current = hp
+	animation.play("idle")
 
 func _anim_Check():
 	
@@ -301,7 +311,7 @@ func _on_HitboxTimer_timeout():
 	yield(get_tree().create_timer(0.1),"timeout")
 	hitbox_shape.disabled = true
 
-# Triggers when a new upgrade is found, connected to "upgrade_gained" signal
+# Triggers when a new upgrade is found
 func unlock_upgrade(power_gained : String):
 	
 	print("Upgrade signal received for %s" % power_gained)
@@ -329,6 +339,9 @@ func take_damage(damage : int):
 	hp_current -= damage
 	if hp_current <= 0:
 		_player_death()
+
+func set_checkpoint(point):
+	last_checkpoint = point
 
 # DEBUG function to test upgrades
 func toggle_upgrades():

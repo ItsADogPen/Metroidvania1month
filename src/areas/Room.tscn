@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/areas/room.gd" type="Script" id=1]
 [ext_resource path="res://assets/Environment/caves/cave5.png" type="Texture" id=2]
@@ -9,7 +9,16 @@
 [ext_resource path="res://src/tiles/Placeholder_Tiles.tres" type="TileSet" id=7]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/enemies/Slime/Slime.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/souls/DoubleJumpSoul.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/environment/Checkpoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/souls/Soul.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/upgrade-souls/Double Jump buff/DoubleJumpFrames.tres" type="SpriteFrames" id=12]
+[ext_resource path="res://assets/upgrade-souls/JumpBuff/JumpBuffSoulFrames.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://assets/upgrade-souls/SpeedBuff/SpeedBuffSoulFrames.tres" type="SpriteFrames" id=14]
+[ext_resource path="res://assets/upgrade-souls/AttackBuff/AttackBuffSoulFrames.tres" type="SpriteFrames" id=15]
+[ext_resource path="res://assets/upgrade-souls/AttackSkill/AttackSkillSoulFrames.tres" type="SpriteFrames" id=16]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/ShieldSkillSoulFrames.tres" type="SpriteFrames" id=17]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/DashBuffSoulFrames.tres" type="SpriteFrames" id=18]
+[ext_resource path="res://src/portal/Portal.tscn" type="PackedScene" id=19]
 
 [node name="Room" type="Node2D"]
 position = Vector2( 9.26562, 31.9671 )
@@ -53,6 +62,7 @@ motion_scale = Vector2( 0.023, 0.023 )
 texture = ExtResource( 6 )
 
 [node name="Tilesets" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Floor" type="TileMap" parent="Tilesets"]
 modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
@@ -65,6 +75,7 @@ tile_data = PoolIntArray( -589742, 536870932, 0, -589741, 536870933, 0, -589740,
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="MushroomBoyAI" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 9738.97, 799.528 )
@@ -72,7 +83,52 @@ position = Vector2( 9738.97, 799.528 )
 [node name="Slime" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 11542.6, 604.43 )
 
-[node name="Souls" type="Node2D" parent="."]
+[node name="Checkpoints" type="Node2D" parent="."]
+editor/display_folded = true
 
-[node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 10 )]
-position = Vector2( 8935.42, 820.974 )
+[node name="Checkpoint00" parent="Checkpoints" instance=ExtResource( 10 )]
+position = Vector2( 11081.3, 864.584 )
+
+[node name="Checkpoint01" parent="Checkpoints" instance=ExtResource( 10 )]
+position = Vector2( 12748.8, 3615.77 )
+
+[node name="Souls" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10232.6, 1332.48 )
+sprite_frames = ExtResource( 12 )
+
+[node name="JumpSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10408.2, 1327.35 )
+upgrade = "jump_speed"
+sprite_frames = ExtResource( 13 )
+
+[node name="MoveSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10314.4, 1329.93 )
+upgrade = "move_speed"
+sprite_frames = ExtResource( 14 )
+
+[node name="AttackSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10360.4, 1331.72 )
+upgrade = "attack_speed"
+sprite_frames = ExtResource( 15 )
+
+[node name="AttackSkillSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10273.7, 1331.17 )
+upgrade = "attack_aoe"
+sprite_frames = ExtResource( 16 )
+
+[node name="ShieldSkillSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10495.9, 1336.02 )
+upgrade = "shield_aoe"
+sprite_frames = ExtResource( 17 )
+
+[node name="DashSoul" parent="Souls" instance=ExtResource( 11 )]
+position = Vector2( 10450.6, 1329.15 )
+upgrade = "dash"
+sprite_frames = ExtResource( 18 )
+
+[node name="Portal" parent="." instance=ExtResource( 19 )]
+position = Vector2( 11748.1, 762.402 )
+flipped = true
