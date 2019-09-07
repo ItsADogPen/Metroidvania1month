@@ -47,7 +47,7 @@ onready var rays = {
 	"left_corner": $RayCasts/LeftCorner
 }
 
-onready var hit_detection_area = $AttackDetectionArea
+onready var hit_detection_area: Area2D = $AttackDetectionArea
 
 
 export(int) var patrol_distance
@@ -109,9 +109,8 @@ func set_chase(player):
 	
 
 func _on_body_entered_attack_zone(body):
-	if state == State.CHASE and body is Player:
-		attack()
-
+	return
+	
 func _initialize():
 	if level == "Monster":
 		stats.health = MONSTER_HEALTH
@@ -182,6 +181,9 @@ func chase():
 	restore_speed()
 	
 	motion.x = get_chasing_direction() * (SPEED + ACCELERATION)
+	
+	if hit_detection_area.overlaps_body(chasing):
+		attack()
 	
 func attack():
 	motion.x = 0
