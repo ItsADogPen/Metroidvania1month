@@ -307,4 +307,3 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 48, 96, 16, 16 )
-

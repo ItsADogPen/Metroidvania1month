@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=16 format=2]
+
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning1.png" type="Texture" id=1]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning2.png" type="Texture" id=2]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning3.png" type="Texture" id=3]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning4.png" type="Texture" id=4]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning5.png" type="Texture" id=5]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning6.png" type="Texture" id=6]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning7.png" type="Texture" id=7]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoning8.png" type="Texture" id=8]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear1.png" type="Texture" id=9]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear2.png" type="Texture" id=10]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear3.png" type="Texture" id=11]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear4.png" type="Texture" id=12]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear5.png" type="Texture" id=13]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear6.png" type="Texture" id=14]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/SouShieldsummoningDissapear7.png" type="Texture" id=15]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "disappear",
+"speed": 5.0
+} ]

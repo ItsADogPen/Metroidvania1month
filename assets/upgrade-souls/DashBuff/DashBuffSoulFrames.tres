@@ -1,0 +1,31 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=2]
+
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff1.png" type="Texture" id=1]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff2.png" type="Texture" id=2]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff3.png" type="Texture" id=3]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff4.png" type="Texture" id=4]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff5.png" type="Texture" id=5]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff6.png" type="Texture" id=6]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff7.png" type="Texture" id=7]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuff8.png" type="Texture" id=8]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear9.png" type="Texture" id=9]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear10.png" type="Texture" id=10]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear11.png" type="Texture" id=11]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear12.png" type="Texture" id=12]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear13.png" type="Texture" id=13]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear14.png" type="Texture" id=14]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear15.png" type="Texture" id=15]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/SoulDashBuffDissapear16.png" type="Texture" id=16]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "disappear",
+"speed": 5.0
+} ]
