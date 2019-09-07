@@ -1,30 +1,13 @@
-extends "res://src/enemies/enemy.gd"
-
-
-func _ready():
-	
-	randomize()
-	set_physics_process(false)
-	_initialize()
-	set_physics_process(true)
-
-func _initialize():
-	stats.health = 10
-	
-	# random placement
-	var math = [1,-1]
-	var pick_math = math[randi()%math.size()]
-	motion.x += (pick_math * (SPEED + ACCELERATION))
+extends Enemy
 
 
 func _physics_process(delta):
-	
 	move_gravity(delta)
 	check_movement_direction()
 	
 	if is_alive():
 		movement()
-		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+		motion = move_and_slide(motion, Vector2(0, -1), SLOPE_SLIDE_STOP)
 
 func move_gravity(delta):
 	
@@ -45,4 +28,9 @@ func check_movement_direction():
 
 
 func movement():
+	if motion.x == 0:
+		reboot_horizontal_motion()
+		
+	restore_speed()
+	
 	horizontal_patrol()

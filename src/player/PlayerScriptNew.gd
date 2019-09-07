@@ -53,16 +53,12 @@ onready var dash_ray_R = $Dash_Check_Right
 onready var ShieldScene = preload("res://src/player/skills/shield/Shield.tscn")
 onready var map = get_parent()
 
-# Custom Signals
-signal upgrade_gained(power_gained)
 
 func _ready():
 	
 	# Setup player stats
 	hp = 10
 	hp_current = hp
-	
-	connect("upgrade_gained", self, "unlock_upgrade")
 
 func _physics_process(delta):
 	
@@ -87,6 +83,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("ui_page_up"):
 		toggle_upgrades()
+		
+	# Doesn't do the trick
+	motion.y = max(motion.y, JUMP_SPEED)
 
 func _check_HP():
 	

@@ -76,4 +76,3 @@ position = Vector2( 11542.6, 604.43 )
 
 [node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 10 )]
 position = Vector2( 8935.42, 820.974 )
-

@@ -1,47 +1,45 @@
 extends Enemy
 
-func _ready():
+
 	
-	randomize()
-	set_physics_process(false)
-	_initialize()
-	set_physics_process(true)
-
-func _initialize():
-	stats.health = 10
-	
-	# random placement
-	var math = [1,-1]
-	var pick_math = math[randi()%math.size()]
-	motion.x += (pick_math * (SPEED + ACCELERATION))
-
-
 func _physics_process(delta):
-	
-#	move_gravity(delta)
-#	check_movement_direction()
+	move_gravity(delta)
+	check_movement_direction()
 	
 	if is_alive():
 		movement()
-		motion = move_and_slide(motion, UP, SLOPE_SLIDE_STOP)
+		print(motion)
+		motion = move_and_slide(motion, Vector2(0, 1), SLOPE_SLIDE_STOP)
 
 func move_gravity(delta):
+	if MAX_GRAVITY < 0:
+		motion.y = max(motion.y + GRAVITY, MAX_GRAVITY)
+	else:
+		motion.y = min(motion.y + GRAVITY, MAX_GRAVITY)
 	
-	motion.y = min(motion.y + GRAVITY, MAX_GRAVITY)
-	
+
+		
 	if rays.up.is_colliding():
-		motion.y = ACCELERATION * 0.5
+		if MAX_GRAVITY <= 0:
+			motion.y = -ACCELERATION * 0.5
+		else:
+			motion.y = ACCELERATION * 0.5
 	
 	if !isAir:
 		motion.y = 0
 
-#func check_movement_direction():
-#
-#	if rays.left_corner.is_colliding() || rays.right_corner.is_colliding():
-#		isAir = false
-#	else:
-#		isAir = true
+func check_movement_direction():
+	
+	if rays.left_corner.is_colliding() || rays.right_corner.is_colliding():
+		isAir = false
+	else:
+		isAir = true
 
 
 func movement():
+	if motion.x == 0:
+		reboot_horizontal_motion()
+		
+	restore_speed()
+	
 	horizontal_patrol()

@@ -2,7 +2,6 @@ extends KinematicBody2D
 class_name Enemy
 
 
-
 const UP = Vector2(0, -1)
 
 
@@ -58,12 +57,32 @@ var stats = {
 
 var transforming = false
 
+func reboot_horizontal_motion():
+	var math = [1,-1]
+	var pick_math = math[randi() % math.size()]
+	motion.x = (pick_math * (SPEED + ACCELERATION))
+	print(motion.x)
+
+func restore_speed():
+	if motion.x > 0:
+		if motion.x < SPEED + ACCELERATION:
+			motion.x  = SPEED + ACCELERATION
+	elif motion.x < 0:
+		if motion.x > -(SPEED + ACCELERATION):
+			motion.x  = -(SPEED + ACCELERATION)
+
 func is_alive():
 	return stats.health > 0
 
-func _initialize():  # OVERRIDE THIS IN EACH INDIVIDUAL ENEMY AI
+
+func _initialize():
+	if level == "Monster":
+		stats.health = MONSTER_HEALTH
+	else:
+		stats.health = REGULAR_HEALTH
 	
-	pass
+	# random placement
+	reboot_horizontal_motion()
 
 func take_damage(damage: int):
 	if is_alive() and not transforming:
@@ -75,7 +94,6 @@ func take_damage(damage: int):
 
 
 func _transform():
-	print("Transforming")
 	stats.health = MONSTER_HEALTH
 	stats.transformed = true
 	transforming = true
@@ -106,21 +124,29 @@ func _ready():
 	
 	if level == "Monster":
 		_transform()
+		
+	randomize()
+	set_physics_process(false)
+	_initialize()
+	set_physics_process(true)
 
+func horizontal_patrol():
+#	print(rays.right_corner.is_colliding(), " ", rays.left_corner.is_colliding())
+	if not rays.right_corner.is_colliding() || not rays.left_corner.is_colliding():
+		var move_direction = int(rays.right_corner.is_colliding()) - int(rays.left_corner.is_colliding())
+		motion.x = (SPEED + ACCELERATION) * move_direction
+	
+	print(rays.right.is_colliding(), " ", rays.left.is_colliding())
+	if rays.right.is_colliding() || rays.left.is_colliding():
+		print(rays.right.get_collider(), rays.left.get_collider(), self)
+		var move_direction = int(rays.right.is_colliding()) - int(rays.left.is_colliding())
+		print(move_direction)
+		motion.x = -(SPEED + ACCELERATION) * move_direction
 ########################################
 #ALL AI LOGICS BELOW SHOULD ONLY BE OVERIDDEN AND CODED IN INDIVIDUAL ENEMY AI. THIS IS JUST A TEMPLATE THAT WILL INTERACT WITH VARIOUS FUNCTIONS
 #FROM ABOVE
 ########################################
 
-
-func horizontal_patrol():
-	if not rays.right_corner.is_colliding() || not rays.left_corner.is_colliding():
-		var move_direction = int(rays.right_corner.is_colliding()) - int(rays.left_corner.is_colliding())
-		motion.x *= move_direction
-	
-	if rays.right.is_colliding() || rays.left.is_colliding():
-		var move_direction = int(rays.right.is_colliding()) - int(rays.left.is_colliding())
-		motion.x *= move_direction
 
 
 func movement():
