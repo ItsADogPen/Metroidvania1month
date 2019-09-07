@@ -59,9 +59,6 @@ func _ready():
 	# Setup player stats
 	hp = 10
 	hp_current = hp
-	
-	# Setup signals
-	connect("upgrade_gained", self, "_on_upgrade_gained")
 
 func _physics_process(delta):
 	
@@ -302,7 +299,9 @@ func _on_HitboxTimer_timeout():
 	hitbox_shape.disabled = true
 
 # Triggers when a new upgrade is found, connected to "upgrade_gained" signal
-func _on_upgrade_gained(power_gained : String):
+func unlock_upgrade(power_gained : String):
+	
+	print("Upgrade signal received for %s" % power_gained)
 	
 	if upgrades.has(power_gained):
 		upgrades[power_gained] = true
@@ -331,4 +330,4 @@ func take_damage(damage : int):
 # DEBUG function to test upgrades
 func toggle_upgrades():
 	for key in upgrades.keys():
-		_on_upgrade_gained(key)
+		unlock_upgrade(key)

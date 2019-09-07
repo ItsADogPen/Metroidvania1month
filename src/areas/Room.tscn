@@ -72,4 +72,5 @@ position = Vector2( 9738.97, 799.528 )
 
 [node name="TestSoul" parent="Souls" instance=ExtResource( 9 )]
 position = Vector2( 8824.79, 813.918 )
+upgrade = "double_jump"
 frames = ExtResource( 10 )
