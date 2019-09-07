@@ -51,14 +51,18 @@ onready var dash_ray_L = $Dash_Check_Left
 onready var dash_ray_R = $Dash_Check_Right
 
 onready var ShieldScene = preload("res://src/player/skills/shield/Shield.tscn")
-
 onready var map = get_parent()
+
+# Custom Signals
+signal upgrade_gained(power_gained)
 
 func _ready():
 	
 	# Setup player stats
 	hp = 10
 	hp_current = hp
+	
+	connect("upgrade_gained", self, "unlock_upgrade")
 
 func _physics_process(delta):
 	

@@ -14,3 +14,4 @@ script = ExtResource( 1 )
 position = Vector2( 11349.3, 856.212 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
+
