@@ -61,7 +61,6 @@ func reboot_horizontal_motion():
 	var math = [1,-1]
 	var pick_math = math[randi() % math.size()]
 	motion.x = (pick_math * (SPEED + ACCELERATION))
-	print(motion.x)
 
 func restore_speed():
 	if motion.x > 0:
@@ -136,11 +135,10 @@ func horizontal_patrol():
 		var move_direction = int(rays.right_corner.is_colliding()) - int(rays.left_corner.is_colliding())
 		motion.x = (SPEED + ACCELERATION) * move_direction
 	
-	print(rays.right.is_colliding(), " ", rays.left.is_colliding())
+#	print(rays.right.is_colliding(), " ", rays.left.is_colliding())
 	if rays.right.is_colliding() || rays.left.is_colliding():
-		print(rays.right.get_collider(), rays.left.get_collider(), self)
+#		print(rays.right.get_collider(), rays.left.get_collider(), self)
 		var move_direction = int(rays.right.is_colliding()) - int(rays.left.is_colliding())
-		print(move_direction)
 		motion.x = -(SPEED + ACCELERATION) * move_direction
 ########################################
 #ALL AI LOGICS BELOW SHOULD ONLY BE OVERIDDEN AND CODED IN INDIVIDUAL ENEMY AI. THIS IS JUST A TEMPLATE THAT WILL INTERACT WITH VARIOUS FUNCTIONS

@@ -8,6 +8,14 @@ func _physics_process(delta):
 	if is_alive():
 		movement()
 		motion = move_and_slide(motion, Vector2(0, -1), SLOPE_SLIDE_STOP)
+		
+	set_orientation()
+		
+func set_orientation():
+	if motion.x < 0:
+		sprite.scale.x = -1
+	elif motion.x > 0:
+		sprite.scale.x = 1
 
 func move_gravity(delta):
 	
