@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=37 format=2]
+[gd_resource type="SpriteFrames" load_steps=74 format=2]
 
 [ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleNormal1.png" type="Texture" id=1]
 [ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleNormal2.png" type="Texture" id=2]
@@ -30,29 +30,66 @@
 [ext_resource path="res://assets/enemies/Slime green and red/Attack/NormalAttackFall14.png" type="Texture" id=28]
 [ext_resource path="res://assets/enemies/Slime green and red/Attack/NormalAttackFall15.png" type="Texture" id=29]
 [ext_resource path="res://assets/enemies/Slime green and red/Attack/NormalAttackFall16.png" type="Texture" id=30]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil1.png" type="Texture" id=31]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil2.png" type="Texture" id=32]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil3.png" type="Texture" id=33]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil4.png" type="Texture" id=34]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil5.png" type="Texture" id=35]
-[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil6.png" type="Texture" id=36]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack1.png" type="Texture" id=31]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack2.png" type="Texture" id=32]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack3.png" type="Texture" id=33]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack4.png" type="Texture" id=34]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack5.png" type="Texture" id=35]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack6.png" type="Texture" id=36]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack7.png" type="Texture" id=37]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack8.png" type="Texture" id=38]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack9.png" type="Texture" id=39]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack10.png" type="Texture" id=40]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack11.png" type="Texture" id=41]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack12.png" type="Texture" id=42]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack13.png" type="Texture" id=43]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack14.png" type="Texture" id=44]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack15.png" type="Texture" id=45]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack16.png" type="Texture" id=46]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack17.png" type="Texture" id=47]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack18.png" type="Texture" id=48]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack19.png" type="Texture" id=49]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack20.png" type="Texture" id=50]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack21.png" type="Texture" id=51]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack22.png" type="Texture" id=52]
+[ext_resource path="res://assets/enemies/Slime green and red/Attack/EvilTornadoAttack23.png" type="Texture" id=53]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm1.png" type="Texture" id=54]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm2.png" type="Texture" id=55]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm3.png" type="Texture" id=56]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm4.png" type="Texture" id=57]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm5.png" type="Texture" id=58]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm6.png" type="Texture" id=59]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm7.png" type="Texture" id=60]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm8.png" type="Texture" id=61]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm9.png" type="Texture" id=62]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm10.png" type="Texture" id=63]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm11.png" type="Texture" id=64]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm12.png" type="Texture" id=65]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm13.png" type="Texture" id=66]
+[ext_resource path="res://assets/enemies/Slime green and red/Idle/IdleEvilForm14.png" type="Texture" id=67]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil1.png" type="Texture" id=68]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil2.png" type="Texture" id=69]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil3.png" type="Texture" id=70]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil4.png" type="Texture" id=71]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil5.png" type="Texture" id=72]
+[ext_resource path="res://assets/enemies/Slime green and red/Transformation/TransformationNormaltoevil6.png" type="Texture" id=73]
 
 [resource]
 animations = [ {
-"frames": [  ],
+"frames": [ null ],
 "loop": true,
 "name": "normal_death",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ null ],
 "loop": true,
 "name": "normal_idle",
-"speed": 9.0
+"speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "normal_walk",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -64,7 +101,17 @@ animations = [ {
 "name": "normal_attack",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"loop": false,
+"name": "transformed_attack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
+"loop": true,
+"name": "transformed_walk",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "transformation",
 "speed": 5.0

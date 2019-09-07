@@ -1,43 +1,44 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/enemies/Slime/Slime.gd" type="Script" id=2]
 [ext_resource path="res://src/enemies/Slime/SlimeFrames.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.0619, 15.5046 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 64.1756, 59.9341 )
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 84.2309 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 26.6649, 5.5392 )
 
-[node name="Slime" instance=ExtResource( 1 )]
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 13.0845, 53.3148 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32.2776, 10.6141 )
+
+[node name="Slime" index="0" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
-level = ""
 GRAVITY = -10
 MAX_GRAVITY = -1000
 
 [node name="AnimatedSprite" parent="." index="0"]
 position = Vector2( 0, 59.9455 )
 frames = ExtResource( 3 )
-animation = "normal_idle"
-frame = 5
-playing = true
+animation = "normal_attack"
+frame = 9
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 0.0182648, 24.713 )
 rotation = 2.35212
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="AttackDetectionArea" index="0"]
+position = Vector2( 0, 84.4697 )
 shape = SubResource( 4 )
-
-[node name="DetectionArea" parent="." index="3"]
-position = Vector2( 0, 60.4245 )
-
-[node name="CollisionShape2D" parent="DetectionArea" index="0"]
-position = Vector2( 0, -0.552811 )
-shape = SubResource( 5 )
 
 [node name="RayCasts" parent="." index="4"]
 position = Vector2( 0, 60.4245 )
@@ -86,3 +87,9 @@ shape = SubResource( 3 )
 position = Vector2( 0, 60.4245 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxNormal" index="0"]
+position = Vector2( 0.166911, -7.26832 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBoxNormal" index="1"]
+position = Vector2( 2.50344, 49.0006 )
+shape = SubResource( 6 )

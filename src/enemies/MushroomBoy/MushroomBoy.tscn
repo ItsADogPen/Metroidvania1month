@@ -1,36 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.gd" type="Script" id=2]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoyFrames.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "death"
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 14.719, 17.1155 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 47.2541, 19.0477 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 47.1464, 21.7962 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 24.9641, 12.4547 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 26.1634, 13.5806 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 80.8549, 23.8588 )
 
 [node name="MushroomBoy" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
+level = "Transform"
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
-animation = "normal_walk"
-frame = 2
-playing = true
+animation = "transformed_attack"
+frame = 27
 offset = Vector2( 15, -43 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/death = SubResource( 2 )
+anims/death = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( -0.539968, -17.3042 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
-[node name="CollisionShape2D" parent="DetectionArea" index="0"]
-position = Vector2( 0, -18.24 )
-shape = null
+[node name="CollisionShape2D" parent="AttackDetectionArea" index="0"]
+position = Vector2( 0, -18.7594 )
+shape = SubResource( 3 )
 
 [node name="Down" parent="RayCasts" index="0"]
 position = Vector2( 0, 0.154643 )
@@ -63,3 +78,27 @@ position = Vector2( 14.8786, 0.0439809 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collision_mask = 3
+
+[node name="NormalHitBox" type="Area2D" parent="." index="5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalHitBox" index="0"]
+position = Vector2( -3.7867, -22.4688 )
+shape = SubResource( 4 )
+
+[node name="TransformedHitBoxLeft" type="Area2D" parent="." index="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxLeft" index="0"]
+position = Vector2( -40.9856, -12.7715 )
+shape = SubResource( 5 )
+
+[node name="TransformedHitBoxRight" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxRight" index="0"]
+position = Vector2( 35.5477, -14.1162 )
+shape = SubResource( 6 )
+
+[node name="TransformedHitBoxTotal" type="Area2D" parent="." index="8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxTotal" index="0"]
+position = Vector2( -2.94523, -23.9824 )
+shape = SubResource( 7 )

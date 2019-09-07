@@ -4,13 +4,23 @@ extends Enemy
 func _physics_process(delta):
 	move_gravity(delta)
 	check_movement_direction()
+	set_animation()
 	
 	if is_alive():
-		movement()
+		if state == State.PATROL:
+			patrol()
+		elif state == State.CHASE:
+			chase()
+		elif state == State.ATTACK:
+			pass
+		elif state == State.TRANSFORMING:
+			pass
+		elif state == State.DYING:
+			pass
 		motion = move_and_slide(motion, Vector2(0, -1), SLOPE_SLIDE_STOP)
 		
 	set_orientation()
-		
+	
 func set_orientation():
 	if motion.x < 0:
 		sprite.scale.x = -1
@@ -33,12 +43,3 @@ func check_movement_direction():
 		isAir = false
 	else:
 		isAir = true
-
-
-func movement():
-	if motion.x == 0:
-		reboot_horizontal_motion()
-		
-	restore_speed()
-	
-	horizontal_patrol()
