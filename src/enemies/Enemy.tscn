@@ -37,3 +37,4 @@ shape = SubResource( 1 )
 [node name="LeftCorner" type="RayCast2D" parent="RayCasts"]
 
 [node name="RightCorner" type="RayCast2D" parent="RayCasts"]
+

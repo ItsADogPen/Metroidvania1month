@@ -115,7 +115,7 @@ func _ready():
 
 func horizontal_patrol():
 	if not rays.right_corner.is_colliding() || not rays.left_corner.is_colliding():
-		var move_direction = int(rays.right_corner.is_colliding()) - int(rays.left_corner.is_colliding())	
+		var move_direction = int(rays.right_corner.is_colliding()) - int(rays.left_corner.is_colliding())
 		motion.x *= move_direction
 	
 	if rays.right.is_colliding() || rays.left.is_colliding():

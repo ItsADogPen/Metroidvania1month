@@ -18,8 +18,8 @@ func _initialize():
 
 func _physics_process(delta):
 	
-	move_gravity(delta)
-	check_movement_direction()
+#	move_gravity(delta)
+#	check_movement_direction()
 	
 	if is_alive():
 		movement()
@@ -35,12 +35,12 @@ func move_gravity(delta):
 	if !isAir:
 		motion.y = 0
 
-func check_movement_direction():
-	
-	if rays.left_corner.is_colliding() || rays.right_corner.is_colliding():
-		isAir = false
-	else:
-		isAir = true
+#func check_movement_direction():
+#
+#	if rays.left_corner.is_colliding() || rays.right_corner.is_colliding():
+#		isAir = false
+#	else:
+#		isAir = true
 
 
 func movement():

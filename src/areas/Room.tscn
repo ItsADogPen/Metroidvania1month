@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/areas/room.gd" type="Script" id=1]
 [ext_resource path="res://assets/Environment/caves/cave5.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://assets/Environment/caves/cave1.png" type="Texture" id=6]
 [ext_resource path="res://src/tiles/Placeholder_Tiles.tres" type="TileSet" id=7]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/souls/DoubleJumpSoul.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/enemies/Slime/Slime.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/souls/DoubleJumpSoul.tscn" type="PackedScene" id=10]
 
 [node name="Room" type="Node2D"]
 position = Vector2( 9.26562, 31.9671 )
@@ -64,12 +65,15 @@ tile_data = PoolIntArray( -589742, 536870932, 0, -589741, 536870933, 0, -589740,
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="MushroomBoyAI" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 9738.97, 799.528 )
 
+[node name="Slime" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 11542.6, 604.43 )
+
 [node name="Souls" type="Node2D" parent="."]
 
-[node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 9 )]
+[node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 10 )]
 position = Vector2( 8935.42, 820.974 )
+
