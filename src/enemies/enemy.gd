@@ -7,10 +7,11 @@ const UP = Vector2(0, -1)
 
 export(String, "Regular", "Transform", "Monster") var level
 
-enum State {PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING}
+enum State {PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE}
 
-export var REGULAR_HEALTH = 10
-export var MONSTER_HEALTH = 20
+export(int) var REGULAR_HEALTH = 10
+export(int) var MONSTER_HEALTH = 20
+export(bool) var invincible = false
 
 export var ACCELERATION = 200
 export var SPEED = 0
@@ -121,12 +122,31 @@ func _initialize():
 	reboot_horizontal_motion()
 
 func take_damage(damage: int):
+	print(damage)
+	if invincible:
+		return
+		
 	if is_alive() and state != State.TRANSFORMING:
 		stats.health -= damage
-		if not stats.transformed and level == "Transform":
-			_transform()
+		
 		if not is_alive():
-			_die()
+			if not stats.transformed and level == "Transform":
+				_transform()
+			else:
+				_die()
+		else:
+			motion.x = 0
+			state = State.TAKE_DAMAGE
+			if stats.transformed:
+				sprite.play("transformed_take_damage")
+			else:
+				sprite.play("normal_take_damage")
+			yield(sprite, "animation_finished")
+			
+			if chasing:
+				state = State.CHASE
+			else:
+				state = State.PATROL
 
 
 func _transform():

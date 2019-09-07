@@ -207,7 +207,6 @@ func _controls(delta):
 	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
 			stateMachine = "attacking"
-			print(stateMachine)
 	
 	# Handle dashing
 	if dash and upgrades["dash"]:
