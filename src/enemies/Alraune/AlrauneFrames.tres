@@ -81,26 +81,26 @@
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack10.png" type="Texture" id=79]
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack11.png" type="Texture" id=80]
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack12.png" type="Texture" id=81]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange1.png" type="Texture" id=82]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange2.png" type="Texture" id=83]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange3.png" type="Texture" id=84]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange4.png" type="Texture" id=85]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange5.png" type="Texture" id=86]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange6.png" type="Texture" id=87]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange7.png" type="Texture" id=88]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange8.png" type="Texture" id=89]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange9.png" type="Texture" id=90]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange10.png" type="Texture" id=91]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes1.png" type="Texture" id=92]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes2.png" type="Texture" id=93]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes3.png" type="Texture" id=94]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes4.png" type="Texture" id=95]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes5.png" type="Texture" id=96]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes6.png" type="Texture" id=97]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes7.png" type="Texture" id=98]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes8.png" type="Texture" id=99]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes9.png" type="Texture" id=100]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes10.png" type="Texture" id=101]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes1.png" type="Texture" id=82]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes2.png" type="Texture" id=83]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes3.png" type="Texture" id=84]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes4.png" type="Texture" id=85]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes5.png" type="Texture" id=86]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes6.png" type="Texture" id=87]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes7.png" type="Texture" id=88]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes8.png" type="Texture" id=89]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes9.png" type="Texture" id=90]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes10.png" type="Texture" id=91]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange1.png" type="Texture" id=92]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange2.png" type="Texture" id=93]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange3.png" type="Texture" id=94]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange4.png" type="Texture" id=95]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange5.png" type="Texture" id=96]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange6.png" type="Texture" id=97]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange7.png" type="Texture" id=98]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange8.png" type="Texture" id=99]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange9.png" type="Texture" id=100]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/HumanformClose range attack/HumanformAttackCloseRange10.png" type="Texture" id=101]
 
 [resource]
 animations = [ {
@@ -136,11 +136,11 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ) ],
 "loop": false,
-"name": "normal_attack_direct",
+"name": "normal_attack_spikes",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ) ],
 "loop": false,
-"name": "normal_attack_spikes",
+"name": "normal_attack_direct",
 "speed": 5.0
 } ]

@@ -469,4 +469,3 @@ region_rect = Rect2( 512, 496, 64, 64 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite33/StaticBody2D"]
 polygon = PoolVector2Array( -24, 32, 32, -24, 32, 32 )
-

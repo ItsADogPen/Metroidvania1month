@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/areas/room.gd" type="Script" id=1]
+[ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=2]
 
 [node name="BaseRoom" type="Node2D"]
 position = Vector2( 9.26562, 31.9671 )
@@ -17,3 +18,9 @@ transform = Transform2D( 1, 0, 0, 1, 140, 0 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Souls" type="Node2D" parent="."]
+
+[node name="CheckPoints" type="Node2D" parent="."]
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]

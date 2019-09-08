@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BaseRoom",
+"language": "GDScript",
+"path": "res://src/areas/room.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://src/souls/Soul.gd"
 } ]
 _global_script_class_icons={
+"BaseRoom": "",
 "Enemy": "",
 "EnemyPathFollow": "",
 "Player": "",
