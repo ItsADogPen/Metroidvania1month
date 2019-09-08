@@ -7,11 +7,18 @@ const UP = Vector2(0, -1)
 
 export(String, "Regular", "Transform", "Monster") var level
 
-enum State {PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE}
+enum State {IDLE, PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE}
 
+export(bool) var invincible = false
 export(int) var REGULAR_HEALTH = 10
 export(int) var MONSTER_HEALTH = 20
-export(bool) var invincible = false
+
+
+
+export(bool) var moves = true
+
+export(float) var REGULAR_ATTACK_COOLDOWN = 1.0
+export(float) var MONSTER_ATTACK_COOLDOWN = 1.0
 
 export var ACCELERATION = 200
 export var SPEED = 0
@@ -21,6 +28,7 @@ export var MAX_GRAVITY = 1000
 
 var state = State.PATROL
 
+var can_attack: bool = true
 
 signal animation_event
 
@@ -48,8 +56,17 @@ onready var rays = {
 	"left_corner": $RayCasts/LeftCorner
 }
 
-onready var hit_detection_area: Area2D = $AttackDetectionArea
+onready var hit_detection_areas = {
+	"normal": $AttackDetectionArea,
+	"transformed": $TransformedAttackDetectionArea
+}
 
+onready var touch_damage_areas = {
+	"normal": $NormalTouchDamageArea,
+	"transformed": $TransformedTouchDamageArea
+}
+
+onready var attack_timer = $AttackTimer as Timer
 
 export(int) var patrol_distance
 
@@ -66,11 +83,10 @@ var transforming = false
 
 var chasing = null
 
-func _ready():
-	hit_detection_area.connect("body_entered",self,"_on_body_entered_attack_zone")
-	
-	
+func _ready():	
 	stats.health = REGULAR_HEALTH
+	
+	attack_timer.connect("timeout", self, "_on_attack_timer_timeout")
 	
 	if level == "Monster":
 		_transform()
@@ -79,6 +95,9 @@ func _ready():
 	set_physics_process(false)
 	_initialize()
 	set_physics_process(true)
+	
+func _on_attack_timer_timeout():
+	can_attack = true
 
 func reboot_horizontal_motion():
 	var math = [1,-1]
@@ -108,9 +127,6 @@ func set_chase(player):
 	if state == State.PATROL:
 		state = State.CHASE
 	
-
-func _on_body_entered_attack_zone(body):
-	return
 	
 func _initialize():
 	if level == "Monster":
@@ -135,19 +151,30 @@ func take_damage(damage: int):
 			else:
 				_die()
 		else:
-			motion.x = 0
-			state = State.TAKE_DAMAGE
-			if stats.transformed:
-				sprite.play("transformed_take_damage")
-			else:
-				sprite.play("normal_take_damage")
-			yield(sprite, "animation_finished")
-			
-			if chasing:
-				state = State.CHASE
-			else:
-				state = State.PATROL
+			if state != State.ATTACK:
+				motion.x = 0
+				state = State.TAKE_DAMAGE
+				if stats.transformed:
+					sprite.play("transformed_take_damage")
+				else:
+					sprite.play("normal_take_damage")
+				yield(sprite, "animation_finished")
+				
+				if chasing:
+					state = State.CHASE
+				else:
+					state = State.PATROL
 
+func play_attack_timer():
+	can_attack = false
+	if stats.transformed:
+		# adds small randomness to boss timer
+		var timeout = MONSTER_ATTACK_COOLDOWN * (1 + (-0.5 + randf()) * 0.1)
+		attack_timer.start(timeout)
+	else:
+		# adds small randomness to boss timer
+		var timeout = REGULAR_ATTACK_COOLDOWN * (1 + (-0.5 + randf()) * 0.1)
+		attack_timer.start(timeout)
 
 func _transform():
 	motion.x = 0
@@ -202,24 +229,30 @@ func chase():
 	
 	motion.x = get_chasing_direction() * (SPEED + ACCELERATION)
 	
-	if hit_detection_area.overlaps_body(chasing):
-		attack()
+	if stats.transformed:
+		if hit_detection_areas.transformed.overlaps_body(chasing):
+			attack()
+	else:
+		if hit_detection_areas.normal.overlaps_body(chasing):
+			attack()
 	
 func attack():
-	motion.x = 0
-	
-	state = State.ATTACK
-	
-	if stats.transformed:
-		sprite.play("transformed_attack")
-	else:
-		sprite.play("normal_attack")
-	yield(sprite, "animation_finished")
-	
-	if chasing:
-		state = State.CHASE
-	else:
-		state = State.PATROL
+	if can_attack:
+		motion.x = 0
+		
+		state = State.ATTACK
+		
+		if stats.transformed:
+			sprite.play("transformed_attack")
+		else:
+			sprite.play("normal_attack")
+		yield(sprite, "animation_finished")
+		play_attack_timer()
+		
+		if chasing:
+			state = State.CHASE
+		else:
+			state = State.PATROL
 	
 	
 func set_animation():
@@ -230,6 +263,21 @@ func set_animation():
 		else:
 			if sprite.animation != "normal_walk":
 				sprite.play("normal_walk")
+
+
+func set_orientation():
+	if motion.x < 0:
+		for area in hit_detection_areas.values():
+			area.scale.x = -1
+		for area in touch_damage_areas.values():
+			area.scale.x = -1
+		sprite.scale.x = -1
+	elif motion.x > 0:
+		for area in hit_detection_areas.values():
+			area.scale.x = 1
+		for area in touch_damage_areas.values():
+			area.scale.x = 1
+		sprite.scale.x = 1
 
 
 func patrol():

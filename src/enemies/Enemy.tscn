@@ -37,3 +37,9 @@ shape = SubResource( 1 )
 [node name="LeftCorner" type="RayCast2D" parent="RayCasts"]
 
 [node name="RightCorner" type="RayCast2D" parent="RayCasts"]
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="NormalTouchDamageArea" type="Area2D" parent="."]
+
+[node name="TransformedTouchDamageArea" type="Area2D" parent="."]

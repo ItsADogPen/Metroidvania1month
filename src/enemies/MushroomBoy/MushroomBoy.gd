@@ -21,11 +21,6 @@ func _physics_process(delta):
 		
 	set_orientation()
 	
-func set_orientation():
-	if motion.x < 0:
-		sprite.scale.x = -1
-	elif motion.x > 0:
-		sprite.scale.x = 1
 
 func move_gravity(delta):
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.gd" type="Script" id=2]
@@ -25,8 +25,17 @@ extents = Vector2( 26.1634, 13.5806 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 80.8549, 23.8588 )
 
-[node name="MushroomBoy" instance=ExtResource( 1 )]
-scale = Vector2( 1.5, 1.5 )
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 77.0433, 20.6647 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 22.0683, 24.7655 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 29.3151, 23.5796 )
+
+[node name="MushroomBoy" index="0" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 level = "Transform"
 
@@ -102,3 +111,17 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxTotal" index="0"]
 position = Vector2( -2.94523, -23.9824 )
 shape = SubResource( 7 )
+
+[node name="TransformedAttackDetectionArea" type="Area2D" parent="." index="9"]
+position = Vector2( 0, -20.82 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedAttackDetectionArea" index="0"]
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
+position = Vector2( 0, -23.3215 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
+position = Vector2( 0, -23.5851 )
+shape = SubResource( 10 )
