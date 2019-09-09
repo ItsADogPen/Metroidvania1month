@@ -113,10 +113,10 @@ func _player_death():
 		position = last_checkpoint.position
 	
 	# Reset health and anim
-	isDead = false
 	hp_current = hp
 	animation.play("revive")
 	yield(animation, "animation_finished")
+	isDead = false
 
 func play_effect(effect: String):
 	AudioEngine.play_positioned_effect(effect, self.global_position)
