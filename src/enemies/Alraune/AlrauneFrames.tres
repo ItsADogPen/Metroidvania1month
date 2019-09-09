@@ -58,29 +58,29 @@
 [ext_resource path="res://assets/enemies/bossAlraune/Transformation/Transformation8.png" type="Texture" id=56]
 [ext_resource path="res://assets/enemies/bossAlraune/Transformation/Transformation9.png" type="Texture" id=57]
 [ext_resource path="res://assets/enemies/bossAlraune/Transformation/Transformation10.png" type="Texture" id=58]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack1.png" type="Texture" id=59]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack2.png" type="Texture" id=60]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack3.png" type="Texture" id=61]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack4.png" type="Texture" id=62]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack5.png" type="Texture" id=63]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack6.png" type="Texture" id=64]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack7.png" type="Texture" id=65]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack8.png" type="Texture" id=66]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack9.png" type="Texture" id=67]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack10.png" type="Texture" id=68]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack11.png" type="Texture" id=69]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack12.png" type="Texture" id=70]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack1.png" type="Texture" id=71]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack2.png" type="Texture" id=72]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack3.png" type="Texture" id=73]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack4.png" type="Texture" id=74]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack5.png" type="Texture" id=75]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack6.png" type="Texture" id=76]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack7.png" type="Texture" id=77]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack8.png" type="Texture" id=78]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack9.png" type="Texture" id=79]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack10.png" type="Texture" id=80]
-[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack11.png" type="Texture" id=81]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack1.png" type="Texture" id=59]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack2.png" type="Texture" id=60]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack3.png" type="Texture" id=61]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack4.png" type="Texture" id=62]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack5.png" type="Texture" id=63]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack6.png" type="Texture" id=64]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack7.png" type="Texture" id=65]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack8.png" type="Texture" id=66]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack9.png" type="Texture" id=67]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack10.png" type="Texture" id=68]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Tongue attack Monster/TongueAttack11.png" type="Texture" id=69]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack1.png" type="Texture" id=70]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack2.png" type="Texture" id=71]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack3.png" type="Texture" id=72]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack4.png" type="Texture" id=73]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack5.png" type="Texture" id=74]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack6.png" type="Texture" id=75]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack7.png" type="Texture" id=76]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack8.png" type="Texture" id=77]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack9.png" type="Texture" id=78]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack10.png" type="Texture" id=79]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack11.png" type="Texture" id=80]
+[ext_resource path="res://assets/enemies/bossAlraune/Attacks/Puke nectarMonster attack/PukeNectarAttack12.png" type="Texture" id=81]
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes1.png" type="Texture" id=82]
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes2.png" type="Texture" id=83]
 [ext_resource path="res://assets/enemies/bossAlraune/Attacks/AttackSpikesground/AttackSpikes3.png" type="Texture" id=84]
@@ -124,14 +124,14 @@ animations = [ {
 "name": "transformation",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ) ],
-"loop": false,
-"name": "transformed_attack_long_range",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ) ],
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
 "loop": false,
 "name": "transformed_attack_direct",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ) ],
+"loop": false,
+"name": "transformed_attack_long_range",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ) ],

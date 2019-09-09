@@ -8,6 +8,7 @@ radius = 23.3647
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemies",
 ]]
+collision_layer = 4
 script = ExtResource( 1 )
 level = "Regular"
 
@@ -19,7 +20,8 @@ level = "Regular"
 
 [node name="AttackDetectionArea" type="Area2D" parent="."]
 gravity = 0.0
-collision_mask = 3
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDetectionArea"]
 shape = SubResource( 1 )
@@ -41,5 +43,9 @@ shape = SubResource( 1 )
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="NormalTouchDamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="TransformedTouchDamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2

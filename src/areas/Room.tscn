@@ -82,9 +82,11 @@ tile_data = PoolIntArray( -589742, 536870932, 0, -589741, 536870933, 0, -589740,
 
 [node name="MushroomBoyAI" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 9738.97, 799.528 )
+collision_layer = 1
 
 [node name="Slime" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 11542.6, 604.43 )
+collision_layer = 1
 
 [node name="Checkpoints" type="Node2D" parent="."]
 

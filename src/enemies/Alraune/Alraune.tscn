@@ -8,30 +8,29 @@
 radius = 24.0263
 height = 14.5221
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 49.5057, 23.8943 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 75.4387, 34.0218 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 14.7829, 22.8437 )
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 23.6285
 height = 27.705
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16.4262, 33.0895 )
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 38.608
 height = 50.8312
 
 [node name="Alraune" index="0" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 0
-collision_mask = 3
 script = ExtResource( 2 )
 level = "Transform"
 REGULAR_ATTACK_COOLDOWN = 0.7
@@ -54,7 +53,7 @@ position = Vector2( -0.283092, -23.9433 )
 
 [node name="CollisionShape2D" parent="AttackDetectionArea" index="0"]
 position = Vector2( -78.2957, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="RayCasts" parent="." index="4"]
 visible = false
@@ -64,22 +63,22 @@ position = Vector2( 0.293884, -36.8088 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedAttackDetectionArea" index="0"]
 position = Vector2( -154.663, -1.63273 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
 position = Vector2( 0, -64.2555 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NormalTouchDamageArea" index="1"]
 position = Vector2( 0, -21.0291 )
 rotation = 1.57079
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 5.12124, -78.3249 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="1"]
 position = Vector2( -23.3889, -35.6981 )
 rotation = 1.57079
-shape = SubResource( 8 )
+shape = SubResource( 7 )

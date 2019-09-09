@@ -24,10 +24,23 @@ shape = SubResource( 1 )
 [node name="Slime" parent="Enemies/DetectionZone" index="1" instance=ExtResource( 4 )]
 position = Vector2( -153.422, -42.8164 )
 scale = Vector2( 1.6, 1.6 )
+collision_layer = 1
 level = "Monster"
 
 [node name="AnimatedSprite" parent="Enemies/DetectionZone/Slime" index="0"]
-frame = 0
+frame = 12
+
+[node name="AttackDetectionArea" parent="Enemies/DetectionZone/Slime" index="3"]
+collision_layer = 1
+collision_mask = 3
+
+[node name="NormalTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="9"]
+collision_layer = 1
+collision_mask = 1
+
+[node name="TransformedTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="10"]
+collision_layer = 1
+collision_mask = 1
 
 [node name="Player" parent="." index="7"]
 position = Vector2( 63.131, 380.283 )
