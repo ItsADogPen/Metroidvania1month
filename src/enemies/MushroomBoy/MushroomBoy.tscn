@@ -36,7 +36,6 @@ extents = Vector2( 29.3151, 23.5796 )
 
 [node name="MushroomBoy" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
-collision_layer = 4
 script = ExtResource( 2 )
 level = "Transform"
 
