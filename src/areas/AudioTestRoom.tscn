@@ -30,4 +30,3 @@ audio_track = "res://assets/audio/music/newPreBoss/Pre_Boss_mixed.ogg"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone2" index="0"]
 position = Vector2( 158.959, -104.681 )
 shape = SubResource( 2 )
-

@@ -29,5 +29,4 @@ scale = Vector2( 2, 2 )
 [node name="Player" parent="." index="7"]
 position = Vector2( 63.131, 188.059 )
 
-
 [editable path="Enemies/DetectionZone"]

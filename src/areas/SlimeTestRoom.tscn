@@ -28,7 +28,7 @@ collision_layer = 1
 level = "Monster"
 
 [node name="AnimatedSprite" parent="Enemies/DetectionZone/Slime" index="0"]
-frame = 12
+frame = 4
 
 [node name="AttackDetectionArea" parent="Enemies/DetectionZone/Slime" index="3"]
 collision_layer = 1
