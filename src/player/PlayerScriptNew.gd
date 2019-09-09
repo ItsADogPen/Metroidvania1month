@@ -117,13 +117,16 @@ func _player_death():
 	hp_current = hp
 	animation.play("idle")
 
+func play_effect(effect: String):
+	AudioEngine.play_positioned_effect(effect, self.global_position)
+
 func _anim_Check():
 	
 	if isDead == false:
 		
 		if stateMachine == "attacking":
 			animation.play("attackstab")
-			AudioEngine.effects.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg", self.global_position)
+#			AudioEngine.play_positioned_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg", self.global_position)
 #			AudioEngine.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
 			hitbox_timer.start()
 			
@@ -209,6 +212,7 @@ func _controls(delta):
 	if !stateMachine == "dash" || !stateMachine == "shield":
 		if attack_button && !isAir && !stateMachine == "run":
 			stateMachine = "attacking"
+			play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
 	
 	# Handle dashing
 	if dash and upgrades["dash"]:

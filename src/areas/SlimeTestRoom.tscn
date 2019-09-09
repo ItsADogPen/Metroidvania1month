@@ -27,7 +27,7 @@ scale = Vector2( 1.6, 1.6 )
 level = "Monster"
 
 [node name="AnimatedSprite" parent="Enemies/DetectionZone/Slime" index="0"]
-frame = 7
+frame = 0
 
 [node name="Player" parent="." index="7"]
 position = Vector2( 63.131, 380.283 )
