@@ -13,7 +13,8 @@ export(bool) var invincible = false
 export(int) var REGULAR_HEALTH = 10
 export(int) var MONSTER_HEALTH = 20
 
-
+export (int) var REGULAR_ATTACK = 2
+export (int) var MONSTER_ATTACK = 4
 
 export(bool) var moves = true
 
@@ -87,6 +88,8 @@ func _ready():
 	stats.health = REGULAR_HEALTH
 	
 	attack_timer.connect("timeout", self, "_on_attack_timer_timeout")
+	touch_damage_areas["normal"].connect("body_entered", self, "_on_normal_attack_hit")
+	touch_damage_areas["transformed"].connect("body_entered", self, "_on_monster_attack_hit")
 	
 	if level == "Monster":
 		_transform()
@@ -253,8 +256,15 @@ func attack():
 			state = State.CHASE
 		else:
 			state = State.PATROL
-	
-	
+
+func _on_normal_attack_hit(body):
+	if body is Player:
+		body.take_damage(REGULAR_ATTACK)
+
+func _on_monster_attack_hit(body):
+	if body is Player:
+		body.take_damage(MONSTER_ATTACK)
+
 func set_animation():
 	if state == State.PATROL or state == State.CHASE:
 		if stats.transformed:

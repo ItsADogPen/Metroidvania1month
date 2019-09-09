@@ -130,15 +130,17 @@ func _anim_Check():
 #			AudioEngine.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
 			hitbox_timer.start()
 			
-		if stateMachine == "run":
+		elif stateMachine == "run":
 			animation.offset.x = 0
 #			if animation.scale.x == -1:
 #				animation.offset.x = 15
 			animation.play("run")
-		if stateMachine == "jump":
+		elif stateMachine == "jump":
 			animation.play("jump")
-		if stateMachine == "idle":
+		elif stateMachine == "idle":
 			animation.play("idle")
+		elif stateMachine == "taking_damage":
+			animation.play("damage")
 	
 	if motion.x < 0:
 		animation.scale.x = -1
@@ -345,6 +347,12 @@ func take_damage(damage : int):
 	hp_current -= damage
 	if hp_current <= 0:
 		_player_death()
+	
+	stateMachine = "taking_damage"
+	animation.set_self_modulate(Color(1, 0, 0, 0.3))
+	yield(get_tree().create_timer(0.5), "timeout")
+	stateMachine = "idle"
+	animation.set_self_modulate(Color(1, 1, 1, 1))
 
 func set_checkpoint(point):
 	last_checkpoint = point
