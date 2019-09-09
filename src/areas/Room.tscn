@@ -93,36 +93,36 @@ position = Vector2( 12748.8, 3615.77 )
 [node name="Souls" type="Node2D" parent="."]
 
 [node name="DoubleJumpSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10232.6, 1332.48 )
+position = Vector2( 10049.9, 6239.73 )
 sprite_frames = ExtResource( 12 )
 
 [node name="JumpSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10408.2, 1327.35 )
+position = Vector2( 7407.75, 2279.52 )
 upgrade = "jump_speed"
 sprite_frames = ExtResource( 13 )
 
 [node name="MoveSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10314.4, 1329.93 )
+position = Vector2( 4767.56, 5408.04 )
 upgrade = "move_speed"
 sprite_frames = ExtResource( 14 )
 
 [node name="AttackSpeedSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10360.4, 1331.72 )
+position = Vector2( 11557.4, 8729.93 )
 upgrade = "attack_speed"
 sprite_frames = ExtResource( 15 )
 
 [node name="AttackSkillSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10273.7, 1331.17 )
+position = Vector2( 7020.65, 1258.79 )
 upgrade = "attack_aoe"
 sprite_frames = ExtResource( 16 )
 
 [node name="ShieldSkillSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10495.9, 1336.02 )
+position = Vector2( 7865, 4062.79 )
 upgrade = "shield_aoe"
 sprite_frames = ExtResource( 17 )
 
 [node name="DashSoul" parent="Souls" instance=ExtResource( 11 )]
-position = Vector2( 10450.6, 1329.15 )
+position = Vector2( 10124.2, 2588.43 )
 upgrade = "dash"
 sprite_frames = ExtResource( 18 )
 
