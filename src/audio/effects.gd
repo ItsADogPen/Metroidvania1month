@@ -17,7 +17,7 @@ func add_effect():
 	var effect_player = EffectPlayer.instance()
 	add_child(effect_player)
 
-	effect_player.connect("finished", self, "_on_effect_finished")
+	effect_player.connect("finished", self, "_on_effect_finished",[effect_player])
 
 	effect_players.append(effect_player)
 
@@ -32,6 +32,7 @@ func play_effect(track_name: String, effect_position: Vector2 = Vector2(0, 0)):
 				}
 			}
 			return
+
 
 func _on_effect_finished(effect_player: AudioStreamPlayer2D):
 	if effect_player.currently_playing in effects_playing:

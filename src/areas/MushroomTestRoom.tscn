@@ -25,7 +25,8 @@ shape = SubResource( 1 )
 [node name="MushroomBoy" parent="Enemies/DetectionZone" index="1" instance=ExtResource( 4 )]
 position = Vector2( 13.1543, -12.5172 )
 
-[node name="Player" parent="." index="5"]
+[node name="Player" parent="." index="7"]
 position = Vector2( 63.131, 188.059 )
+
 
 [editable path="Enemies/DetectionZone"]

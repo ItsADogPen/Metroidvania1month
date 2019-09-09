@@ -4,3 +4,4 @@
 
 [node name="SoundPlayer" type="AudioStreamPlayer"]
 script = ExtResource( 1 )
+

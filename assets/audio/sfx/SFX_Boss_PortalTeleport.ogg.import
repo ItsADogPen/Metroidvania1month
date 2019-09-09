@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Boss_PortalTeleport.ogg-95678882f500cc6b3a10fb3d0991f256.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_Boss_PortalTeleport.ogg"
+dest_files=[ "res://.import/SFX_Boss_PortalTeleport.ogg-95678882f500cc6b3a10fb3d0991f256.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

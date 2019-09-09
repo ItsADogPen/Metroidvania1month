@@ -19,3 +19,4 @@ script = ExtResource( 3 )
 
 [node name="Sounds" type="Node" parent="."]
 script = ExtResource( 4 )
+

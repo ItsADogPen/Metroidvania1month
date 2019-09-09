@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_SwordAttack.ogg-626ea74aafebc28e2be38ddff92f765e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_SwordAttack.ogg"
+dest_files=[ "res://.import/SFX_SwordAttack.ogg-626ea74aafebc28e2be38ddff92f765e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_SoulPop.ogg-f9e4451e17bbb6b444d9b8a90205489f.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_SoulPop.ogg"
+dest_files=[ "res://.import/SFX_SoulPop.ogg-f9e4451e17bbb6b444d9b8a90205489f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

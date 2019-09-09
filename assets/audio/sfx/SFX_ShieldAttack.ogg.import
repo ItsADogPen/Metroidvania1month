@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_ShieldAttack.ogg-2651cd4e550b50a639d25fed526ff59c.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_ShieldAttack.ogg"
+dest_files=[ "res://.import/SFX_ShieldAttack.ogg-2651cd4e550b50a639d25fed526ff59c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

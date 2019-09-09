@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pre_Boss_mixed.wav-bb16d36aa199829ecbfdcdbfd6ee4db4.sample"
+
+[deps]
+
+source_file="res://assets/audio/music/Pre_Boss_mixed.wav"
+dest_files=[ "res://.import/Pre_Boss_mixed.wav-bb16d36aa199829ecbfdcdbfd6ee4db4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

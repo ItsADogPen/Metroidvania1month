@@ -34,7 +34,7 @@ extents = Vector2( 22.0683, 24.7655 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 29.3151, 23.5796 )
 
-[node name="MushroomBoy" index="0" instance=ExtResource( 1 )]
+[node name="MushroomBoy" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 level = "Transform"
@@ -125,3 +125,4 @@ shape = SubResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 0, -23.5851 )
 shape = SubResource( 10 )
+

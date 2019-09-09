@@ -123,6 +123,8 @@ func _anim_Check():
 		
 		if stateMachine == "attacking":
 			animation.play("attackstab")
+			AudioEngine.effects.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg", self.global_position)
+#			AudioEngine.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
 			hitbox_timer.start()
 			
 		if stateMachine == "run":
@@ -296,6 +298,7 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("enemies"):
+#		AudioEngine.effects.play_effect("strsgdsfg", body.global_position)
 		body.take_damage(5)
 
 func _on_AnimationPlayer_animation_finished(anim_name):

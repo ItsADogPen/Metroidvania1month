@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_MushroomMonster_SmokePuff.ogg-4944a1941e9c98ff1e0b288926cf6090.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_MushroomMonster_SmokePuff.ogg"
+dest_files=[ "res://.import/SFX_MushroomMonster_SmokePuff.ogg-4944a1941e9c98ff1e0b288926cf6090.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

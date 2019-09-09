@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_BladeAttack.ogg-dd2d97dd01b704562aa552dd7cc103ea.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_BladeAttack.ogg"
+dest_files=[ "res://.import/SFX_BladeAttack.ogg-dd2d97dd01b704562aa552dd7cc103ea.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

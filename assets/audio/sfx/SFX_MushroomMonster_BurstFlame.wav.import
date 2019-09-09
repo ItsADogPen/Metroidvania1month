@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_MushroomMonster_BurstFlame.wav-f6053d2c83ef7d80954eb1eff25d917b.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_MushroomMonster_BurstFlame.wav"
+dest_files=[ "res://.import/SFX_MushroomMonster_BurstFlame.wav-f6053d2c83ef7d80954eb1eff25d917b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

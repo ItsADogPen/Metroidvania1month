@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_MushroomMonster_BurstFlame.ogg-19e2368a4620097851113fe780f38c2e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_MushroomMonster_BurstFlame.ogg"
+dest_files=[ "res://.import/SFX_MushroomMonster_BurstFlame.ogg-19e2368a4620097851113fe780f38c2e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

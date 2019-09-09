@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_Slime_Movement.ogg-3ed7dabb23a62f0fd34db2a052665c80.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_Slime_Movement.ogg"
+dest_files=[ "res://.import/SFX_Slime_Movement.ogg-3ed7dabb23a62f0fd34db2a052665c80.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

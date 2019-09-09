@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX_SwordAttack.wav-a8203bae2c17e4e4b3d9e9ef3bbea3af.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/SFX_SwordAttack.wav"
+dest_files=[ "res://.import/SFX_SwordAttack.wav-a8203bae2c17e4e4b3d9e9ef3bbea3af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
