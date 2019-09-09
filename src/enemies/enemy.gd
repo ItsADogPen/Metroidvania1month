@@ -194,6 +194,8 @@ func _transform():
 
 func _die():
 	$CollisionShape2D.shape = null
+	touch_damage_areas["normal"] = null
+	touch_damage_areas["transformed"] = null
 	motion.x = 0
 	state = State.DYING
 	if stats.transformed:
