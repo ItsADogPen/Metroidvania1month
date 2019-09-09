@@ -17,6 +17,7 @@ tile_data = PoolIntArray( -262109, 0, 0, -262108, 0, 2, -131077, 0, 0, -131076, 
 
 [node name="AudioZone" parent="AudioZones" index="0" instance=ExtResource( 3 )]
 position = Vector2( 319.486, 0 )
+audio_track = "res://assets/audio/music/newPreBoss/Pre_Boss_mixed.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone" index="0"]
 position = Vector2( 119.7, -106.4 )
@@ -24,7 +25,9 @@ shape = SubResource( 1 )
 
 [node name="AudioZone2" parent="AudioZones" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1249.71, 0 )
+audio_track = "res://assets/audio/music/newPreBoss/Pre_Boss_mixed.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone2" index="0"]
 position = Vector2( 158.959, -104.681 )
 shape = SubResource( 2 )
+

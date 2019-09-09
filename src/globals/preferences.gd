@@ -11,7 +11,7 @@ var preferences = {
 var temporary_preferences = null
 
 func _ready():
-	print(AudioEngine.master_volume)
+#	print(AudioEngine.master_volume)
 	var file = File.new()
 	if file.file_exists("user://preferences.json"):
 		preferences = DICT_UTIL.load_dictionary_from_json("user://preferences.json")

@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="metroidvaniamonth"
-run/main_scene="res://src/areas/BossAlrauneTestRoom.tscn"
+run/main_scene="res://src/areas/Room.tscn"
 config/icon="res://icon.png"
 
 [autoload]

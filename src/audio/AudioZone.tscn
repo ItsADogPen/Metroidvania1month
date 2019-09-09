@@ -4,3 +4,4 @@
 
 [node name="AudioZone" type="Area2D"]
 script = ExtResource( 1 )
+

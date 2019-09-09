@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/areas/room.gd" type="Script" id=1]
 [ext_resource path="res://assets/Environment/caves/cave5.png" type="Texture" id=2]
@@ -20,6 +20,10 @@
 [ext_resource path="res://assets/upgrade-souls/DashBuff/DashBuffSoulFrames.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://src/portal/Portal.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/audio/AudioZone.tscn" type="PackedScene" id=21]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 277.866, 249.548 )
 
 [node name="Room" type="Node2D"]
 position = Vector2( 9.26562, 31.9671 )
@@ -131,3 +135,12 @@ position = Vector2( 11748.1, 762.402 )
 flipped = true
 
 [node name="Player" parent="." instance=ExtResource( 20 )]
+position = Vector2( 8452.9, 794.725 )
+
+[node name="AudioZone" parent="." instance=ExtResource( 21 )]
+position = Vector2( 8967.58, 630.564 )
+audio_track = "res://assets/audio/music/newPreBoss/Pre_Boss_mixed.ogg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZone"]
+shape = SubResource( 1 )
+
