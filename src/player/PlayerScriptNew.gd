@@ -106,16 +106,17 @@ func _player_death():
 	isDead = true
 	animation.play("die")
 	yield(animation, "animation_finished")
-	yield(get_tree().create_timer(1.2),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
 	
 	# Teleport player back to last checkpoint
 	if last_checkpoint != null:
-		position = last_checkpoint.position + Vector2(0, -60)
+		position = last_checkpoint.position
 	
 	# Reset health and anim
 	isDead = false
 	hp_current = hp
-	animation.play("idle")
+	animation.play("revive")
+	yield(animation, "animation_finished")
 
 func play_effect(effect: String):
 	AudioEngine.play_positioned_effect(effect, self.global_position)
