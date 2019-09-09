@@ -52,7 +52,7 @@ config/icon="res://icon.png"
 
 Flow="*res://src/globals/Flow.tscn"
 Preferences="*res://src/globals/Preferences.tscn"
-AudioEngine="*res://src/audio/AudioEngine.tscn"
+AudioEngine="*res://src/audio_engine/AudioEngine.tscn"
 
 [display]
 

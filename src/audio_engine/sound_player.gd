@@ -21,7 +21,7 @@ func play_sound(track_path: String, loop: bool = true):
 	elif sound_audio_stream is AudioStreamSample:
 		sound_audio_stream.loop_begin = 0.0
 		sound_audio_stream.loop_end = sound_audio_stream.get_length()
-		sound_audio_stream.loop_mode = 1
+		sound_audio_stream.loop_mode = AudioStreamSample.LOOP_FORWARD
 	stream = sound_audio_stream
 	currently_playing = track_path
 	play()

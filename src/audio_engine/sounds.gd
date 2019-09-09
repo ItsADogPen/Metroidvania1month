@@ -1,7 +1,7 @@
 extends Node
 
 
-onready var SoundPlayer = preload("res://src/audio/SoundPlayer.tscn")
+onready var SoundPlayer = preload("res://src/audio_engine/SoundPlayer.tscn")
 
 
 onready var sound_players = []

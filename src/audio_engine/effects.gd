@@ -1,7 +1,7 @@
 extends Node
 
 # TODO merge effects and sounds to at least a base type they both vary from
-onready var EffectPlayer = preload("res://src/audio/EffectPlayer.tscn")
+onready var EffectPlayer = preload("res://src/audio_engine/EffectPlayer.tscn")
 
 
 onready var effect_players = []

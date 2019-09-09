@@ -44,8 +44,6 @@ func set_sounds_volume(new_sounds_volume: float):
 	for sound_player in sounds.sound_players:
 		sound_player.volume_db = convert_scale_to_db(master_volume * sounds_volume)
 
-
-
 func set_background_volume(new_background_volume: float):
 	background_volume = new_background_volume
 	background_player.volume_db = convert_scale_to_db(master_volume * background_volume)

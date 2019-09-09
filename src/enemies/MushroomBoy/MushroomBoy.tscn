@@ -125,4 +125,3 @@ shape = SubResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 0, -23.5851 )
 shape = SubResource( 10 )
-

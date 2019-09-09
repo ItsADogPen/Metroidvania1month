@@ -24,3 +24,5 @@ transform = Transform2D( 1, 0, 0, 1, 140, 0 )
 [node name="Portals" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioZones" type="Node2D" parent="."]

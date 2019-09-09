@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/audio/audio_engine.gd" type="Script" id=1]
-[ext_resource path="res://src/audio/speech_player.gd" type="Script" id=2]
-[ext_resource path="res://src/audio/effects.gd" type="Script" id=3]
-[ext_resource path="res://src/audio/sounds.gd" type="Script" id=4]
+[ext_resource path="res://src/audio_engine/audio_engine.gd" type="Script" id=1]
+[ext_resource path="res://src/audio_engine/speech_player.gd" type="Script" id=2]
+[ext_resource path="res://src/audio_engine/effects.gd" type="Script" id=3]
+[ext_resource path="res://src/audio_engine/sounds.gd" type="Script" id=4]
+
 
 [node name="AudioEngine" type="Node"]
 script = ExtResource( 1 )
