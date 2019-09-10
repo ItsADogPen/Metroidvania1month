@@ -1,6 +1,10 @@
 extends KinematicBody2D
 class_name Player
 
+# Signals
+signal soul_gained
+signal health_lost
+
 # Constants
 const DASH_DIST = 450
 const SLOPE_SLIDE_STOP = 4
@@ -60,6 +64,11 @@ func _ready():
 	# Setup player stats
 	hp = 10
 	hp_current = hp
+	
+	# Connect signals to health bar
+	var health_bar = get_node("/root/Game/UI/Overlay/HealthBar")
+	connect("soul_gained", health_bar, "_on_soul_gained")
+	connect("health_lost", health_bar, "_on_health_lost")
 
 func _physics_process(delta):
 	
@@ -327,8 +336,9 @@ func unlock_upgrade(power_gained : String):
 	
 	if upgrades.has(power_gained):
 		upgrades[power_gained] = true
+		emit_signal("soul_gained", power_gained)
 		
-		# Implement passive upgrades
+		# Implement passive upgrades and update UI
 		match power_gained:
 			"move_speed":
 				ACCEL *= 1.333
@@ -338,7 +348,7 @@ func unlock_upgrade(power_gained : String):
 				DOUBLE_JUMP_SPEED *= 1.25
 			"attack_speed":
 				anim_player.playback_speed = 1.4
-		
+	
 	else:
 		print("Error: No such upgrade as %s" % power_gained)
 
@@ -346,21 +356,22 @@ func unlock_upgrade(power_gained : String):
 func take_damage(damage : int):
 	
 	if stateMachine != "taking_damage":
-	
+		stateMachine = "taking_damage"
+		
+		#emit_signal("health_lost")
 		hp_current -= damage
 		if hp_current <= 0:
 			_player_death()
 		
-		stateMachine = "taking_damage"
-		animation.set_self_modulate(Color(1, 0, 0, 0.3))
+		animation.set_self_modulate(Color(1, 0, 0, 0.7))
 		yield(get_tree().create_timer(1.5), "timeout")
 		stateMachine = "idle"
 		animation.set_self_modulate(Color(1, 1, 1, 1))
 
 func hit_spikes():
 	take_damage(2)
-	motion.y = JUMP_SPEED * 1.5
-	motion = move_and_slide(motion, Vector2.UP, true)
+	var new_motion = motion.normalized() * -1 * JUMP_SPEED
+	motion = move_and_slide(new_motion, Vector2.UP, true)
 
 func set_checkpoint(point):
 	last_checkpoint = point

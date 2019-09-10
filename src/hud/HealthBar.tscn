@@ -18,41 +18,48 @@ frames = ExtResource( 2 )
 animation = "damage01"
 
 [node name="SoulSky" type="AnimatedSprite" parent="."]
+visible = false
 frames = ExtResource( 3 )
-animation = "idle"
-playing = true
-
-[node name="SoulBlue" type="AnimatedSprite" parent="."]
-frames = ExtResource( 4 )
-animation = "idle"
-frame = 5
-playing = true
-
-[node name="SoulGreen" type="AnimatedSprite" parent="."]
-frames = ExtResource( 5 )
-animation = "idle"
-frame = 4
-playing = true
-
-[node name="SoulPink" type="AnimatedSprite" parent="."]
-frames = ExtResource( 6 )
-animation = "idle"
-frame = 7
-playing = true
-
-[node name="SoulPurple" type="AnimatedSprite" parent="."]
-frames = ExtResource( 7 )
 animation = "idle"
 frame = 3
 playing = true
 
+[node name="SoulBlue" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 4 )
+animation = "idle"
+playing = true
+
+[node name="SoulGreen" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 5 )
+animation = "idle"
+frame = 7
+playing = true
+
+[node name="SoulPink" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 6 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="SoulPurple" type="AnimatedSprite" parent="."]
+visible = false
+frames = ExtResource( 7 )
+animation = "idle"
+frame = 6
+playing = true
+
 [node name="SoulRed" type="AnimatedSprite" parent="."]
+visible = false
 frames = ExtResource( 8 )
 animation = "idle"
-frame = 5
 playing = true
 
 [node name="SoulYellow" type="AnimatedSprite" parent="."]
+visible = false
 frames = ExtResource( 9 )
 animation = "idle"
+frame = 3
 playing = true
