@@ -11,8 +11,8 @@ const GRAV = 10
 const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
-var ACCEL = 900
-var JUMP_SPEED = -400
+var ACCEL = 800
+var JUMP_SPEED = -325
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 var WALL_JUMP_SPEED = JUMP_SPEED * -2
 
@@ -164,7 +164,7 @@ func _controls(delta):
 	var shield = Input.is_action_just_pressed("shield")
 	
 	# === x movement ===
-	motion.x += (int(right) - int(left)) * SPEED
+	motion.x = (int(right) - int(left)) * SPEED
 	
 	if (right == left and not isAir):
 		motion.x = 0
