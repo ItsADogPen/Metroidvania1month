@@ -4,142 +4,142 @@
 [ext_resource path="res://assets/tiles/Cave.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tiles/Grass.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Environment/DeatStatue.png" type="Texture" id=4]
-[ext_resource path="res://assets/portal/Portal idle1.png" type="Texture" id=5]
-[ext_resource path="res://assets/tiles/Overgrown.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/tiles/Standard.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/tiles/Swamp.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/environment/spikes.gd" type="Script" id=9]
-[ext_resource path="res://src/enemies/DetectionZone.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/enemies/Slime/Slime.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/enemies/Alraune/Alraune.tscn" type="PackedScene" id=13]
-[ext_resource path="res://src/souls/Soul.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/upgrade-souls/AttackBuff/AttackBuffSoulFrames.tres" type="SpriteFrames" id=15]
-[ext_resource path="res://assets/upgrade-souls/JumpBuff/JumpBuffSoulFrames.tres" type="SpriteFrames" id=16]
-[ext_resource path="res://assets/upgrade-souls/DashBuff/DashBuffSoulFrames.tres" type="SpriteFrames" id=17]
-[ext_resource path="res://assets/upgrade-souls/ShieldSkill/ShieldSkillSoulFrames.tres" type="SpriteFrames" id=18]
-[ext_resource path="res://assets/upgrade-souls/Double Jump buff/DoubleJumpFrames.tres" type="SpriteFrames" id=19]
-[ext_resource path="res://assets/upgrade-souls/SpeedBuff/SpeedBuffSoulFrames.tres" type="SpriteFrames" id=20]
-[ext_resource path="res://src/environment/Checkpoint.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/tiles/Overgrown.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tiles/Standard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/tiles/Swamp.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/environment/spikes.gd" type="Script" id=8]
+[ext_resource path="res://src/enemies/DetectionZone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/enemies/Slime/Slime.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/enemies/Alraune/Alraune.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/souls/Soul.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/upgrade-souls/AttackBuff/AttackBuffSoulFrames.tres" type="SpriteFrames" id=14]
+[ext_resource path="res://assets/upgrade-souls/JumpBuff/JumpBuffSoulFrames.tres" type="SpriteFrames" id=15]
+[ext_resource path="res://assets/upgrade-souls/DashBuff/DashBuffSoulFrames.tres" type="SpriteFrames" id=16]
+[ext_resource path="res://assets/upgrade-souls/ShieldSkill/ShieldSkillSoulFrames.tres" type="SpriteFrames" id=17]
+[ext_resource path="res://assets/upgrade-souls/Double Jump buff/DoubleJumpFrames.tres" type="SpriteFrames" id=18]
+[ext_resource path="res://assets/upgrade-souls/SpeedBuff/SpeedBuffSoulFrames.tres" type="SpriteFrames" id=19]
+[ext_resource path="res://src/environment/Checkpoint.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/portal/Portal.tscn" type="PackedScene" id=21]
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.7074, 0.249157 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 19.436, 54.1128 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16.7969, 101.472 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 13.625, 81.1914 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16.249, 322.28 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.8457, 255.516 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 172.568, 20.7905 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 339.949, 15.7598 )
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 101.045, 21.3755 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 158.104, 17.4346 )
 
-[sub_resource type="RectangleShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 233.18, 16.626 )
 
-[sub_resource type="RectangleShape2D" id=31]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 63.3887, 19.1147 )
 
-[sub_resource type="RectangleShape2D" id=32]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 74.4282, 18.7246 )
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 16.0493, 69.4287 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 18.0654, 201.627 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 71.5342, 18.4131 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 623.386, 12.0518 )
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 91.0342, 13.708 )
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 413.874, 14.3936 )
 
-[sub_resource type="RectangleShape2D" id=39]
+[sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 91.1743, 13.625 )
 
-[sub_resource type="RectangleShape2D" id=40]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 347.914, 82.8772 )
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 283.468, 101.472 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 450.468, 56.2427 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 160.061, 71.3472 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 399.523, 80.0918 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 172.568, 44.4639 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 263.479, 52.728 )
 
-[sub_resource type="RectangleShape2D" id=47]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 268.477, 51.8008 )
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 496.85, 62.7803 )
 
-[sub_resource type="RectangleShape2D" id=49]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 141.696, 48.0869 )
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=31]
 extents = Vector2( 497.277, 57.8916 )
 
-[sub_resource type="RectangleShape2D" id=51]
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 409.224, 59.751 )
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 177.645, 69.4287 )
 
-[sub_resource type="RectangleShape2D" id=53]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 453.119, 75.9043 )
 
-[sub_resource type="RectangleShape2D" id=54]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 146.281, 72.4482 )
 
-[sub_resource type="RectangleShape2D" id=55]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 215.193, 89.5811 )
 
-[sub_resource type="RectangleShape2D" id=56]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 144.338, 56.2061 )
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 120.155, 67.6094 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 244.361, 55.2627 )
 
-[node name="BaseRoom" index="0" instance=ExtResource( 1 )]
+[node name="BaseRoom" instance=ExtResource( 1 )]
 
 [node name="Tilesets" parent="." index="1"]
 editor/display_folded = true
@@ -155,593 +155,599 @@ position = Vector2( 2622.23, 172.332 )
 scale = Vector2( 0.448041, 0.368359 )
 texture = ExtResource( 4 )
 
-[node name="Portal idle1" type="Sprite" parent="Tilesets/Grass" index="2"]
-position = Vector2( 2416.91, 996.011 )
-scale = Vector2( 0.796571, 0.72649 )
-texture = ExtResource( 5 )
-offset = Vector2( 1041.9, -954.052 )
+[node name="Overgrown" parent="Tilesets" index="2" instance=ExtResource( 5 )]
 
-[node name="Portal idle1" type="Sprite" parent="Tilesets/Grass/Portal idle1" index="0"]
-position = Vector2( 566.374, 294.417 )
-texture = ExtResource( 5 )
+[node name="Standard" parent="Tilesets" index="3" instance=ExtResource( 6 )]
 
-[node name="Overgrown" parent="Tilesets" index="2" instance=ExtResource( 6 )]
+[node name="Swamp" parent="Tilesets" index="4" instance=ExtResource( 7 )]
 
-[node name="Standard" parent="Tilesets" index="3" instance=ExtResource( 7 )]
-
-[node name="Swamp" parent="Tilesets" index="4" instance=ExtResource( 8 )]
+[node name="SpikeAreas" parent="." index="2"]
+editor/display_folded = true
 
 [node name="Spikes01" type="Area2D" parent="SpikeAreas" index="0"]
 position = Vector2( 8256, 3823.15 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes01" index="0"]
 scale = Vector2( -80.3532, -92.5384 )
-shape = SubResource( 20 )
+shape = SubResource( 1 )
 
 [node name="Spikes02" type="Area2D" parent="SpikeAreas" index="1"]
 position = Vector2( 6843.03, 3841.12 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes02" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 2 )
 
 [node name="Spikes03" type="Area2D" parent="SpikeAreas" index="2"]
 position = Vector2( 6689.16, 4011.5 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes03" index="0"]
 position = Vector2( 4.16943, -3.24292 )
-shape = SubResource( 22 )
+shape = SubResource( 3 )
 
 [node name="Spikes04" type="Area2D" parent="SpikeAreas" index="3"]
 position = Vector2( 6842.21, 4198.11 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes04" index="0"]
 position = Vector2( -2.64062, 1.76025 )
-shape = SubResource( 23 )
+shape = SubResource( 4 )
 
 [node name="Spikes05" type="Area2D" parent="SpikeAreas" index="4"]
 position = Vector2( 5685.51, 3957.33 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes05" index="0"]
-shape = SubResource( 24 )
+shape = SubResource( 5 )
 
 [node name="Spikes06" type="Area2D" parent="SpikeAreas" index="5"]
 position = Vector2( 6084.85, 4171.68 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes06" index="0"]
 position = Vector2( -11.2524, 6.80225 )
-shape = SubResource( 25 )
+shape = SubResource( 6 )
 
 [node name="Spikes07" type="Area2D" parent="SpikeAreas" index="6"]
 position = Vector2( 5973.27, 5070.2 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes07" index="0"]
 position = Vector2( 4.41064, 0 )
-shape = SubResource( 26 )
+shape = SubResource( 7 )
 
 [node name="Spikes08" type="Area2D" parent="SpikeAreas" index="7"]
 position = Vector2( 6610.45, 5173.34 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes08" index="0"]
 position = Vector2( -35.0239, -12.2178 )
-shape = SubResource( 27 )
+shape = SubResource( 8 )
 
 [node name="Spikes09" type="Area2D" parent="SpikeAreas" index="8"]
 position = Vector2( 7709.52, 4935.17 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes09" index="0"]
 position = Vector2( -7.16943, -10.1885 )
-shape = SubResource( 28 )
+shape = SubResource( 9 )
 
 [node name="Spikes10" type="Area2D" parent="SpikeAreas" index="9"]
 position = Vector2( 8450.87, 7134.18 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes10" index="0"]
 position = Vector2( -3.24316, -0.463379 )
-shape = SubResource( 29 )
+shape = SubResource( 10 )
 
 [node name="Spikes11" type="Area2D" parent="SpikeAreas" index="10"]
 position = Vector2( 9352.76, 7081.44 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes11" index="0"]
 position = Vector2( -15.9219, 1.32715 )
-shape = SubResource( 30 )
+shape = SubResource( 11 )
 
 [node name="Spikes12" type="Area2D" parent="SpikeAreas" index="11"]
 position = Vector2( 9174.02, 8146.36 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes12" index="0"]
 position = Vector2( -4.59961, -5.01758 )
-shape = SubResource( 31 )
+shape = SubResource( 12 )
 
 [node name="Spikes13" type="Area2D" parent="SpikeAreas" index="12"]
 position = Vector2( 8048.68, 8141.32 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes13" index="0"]
 position = Vector2( -8.62549, -0.663086 )
-shape = SubResource( 32 )
+shape = SubResource( 13 )
 
 [node name="Spikes14" type="Area2D" parent="SpikeAreas" index="13"]
 position = Vector2( 7711.33, 8307.48 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes14" index="0"]
 position = Vector2( -2.39551, -2.39551 )
-shape = SubResource( 33 )
+shape = SubResource( 14 )
 
 [node name="Spikes15" type="Area2D" parent="SpikeAreas" index="14"]
 position = Vector2( 7507.42, 8330.14 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes15" index="0"]
 position = Vector2( -0.000488281, 25.7207 )
-shape = SubResource( 34 )
+shape = SubResource( 15 )
 
 [node name="Spikes16" type="Area2D" parent="SpikeAreas" index="15"]
 position = Vector2( 7807, 8574.34 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes16" index="0"]
 position = Vector2( -6.60156, -1.76074 )
-shape = SubResource( 35 )
+shape = SubResource( 16 )
 
 [node name="Spikes17" type="Area2D" parent="SpikeAreas" index="16"]
 position = Vector2( 8136.8, 9197.4 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes17" index="0"]
 position = Vector2( 29.9287, -8.16211 )
-shape = SubResource( 36 )
+shape = SubResource( 17 )
 
 [node name="Spikes18" type="Area2D" parent="SpikeAreas" index="17"]
 position = Vector2( 9765.64, 8967.07 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes18" index="0"]
 position = Vector2( 2.15234, -13.2158 )
-shape = SubResource( 37 )
+shape = SubResource( 18 )
 
 [node name="Spikes19" type="Area2D" parent="SpikeAreas" index="18"]
 position = Vector2( 7613.52, 10083.6 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes19" index="0"]
 position = Vector2( -58.6025, -27.5205 )
-shape = SubResource( 38 )
+shape = SubResource( 19 )
 
 [node name="Spikes20" type="Area2D" parent="SpikeAreas" index="19"]
 position = Vector2( 7041.98, 10699.4 )
 collision_layer = 9
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes20" index="0"]
 position = Vector2( -11.9712, -20.4395 )
-shape = SubResource( 39 )
+shape = SubResource( 20 )
 
 [node name="Enemies" parent="." index="4"]
 editor/display_folded = true
 
-[node name="DetectionZone" parent="Enemies" index="0" instance=ExtResource( 10 )]
+[node name="DetectionZone" parent="Enemies" index="0" instance=ExtResource( 9 )]
 position = Vector2( 7178.82, 3661.91 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone" index="1"]
-shape = SubResource( 40 )
+shape = SubResource( 21 )
 
-[node name="MushroomBoy2" parent="Enemies/DetectionZone" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy2" parent="Enemies/DetectionZone" index="2" instance=ExtResource( 10 )]
 position = Vector2( 114.13, 80.0701 )
 
-[node name="MushroomBoy3" parent="Enemies/DetectionZone" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy3" parent="Enemies/DetectionZone" index="3" instance=ExtResource( 10 )]
 position = Vector2( -195.87, 80.0701 )
 
-[node name="DetectionZone2" parent="Enemies" index="1" instance=ExtResource( 10 )]
+[node name="DetectionZone2" parent="Enemies" index="1" instance=ExtResource( 9 )]
 position = Vector2( 6388.82, 3691.91 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone2" index="1"]
-shape = SubResource( 41 )
+shape = SubResource( 22 )
 
-[node name="MushroomBoy4" parent="Enemies/DetectionZone2" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy4" parent="Enemies/DetectionZone2" index="2" instance=ExtResource( 10 )]
 position = Vector2( 204.13, 98.0701 )
 
-[node name="MushroomBoy5" parent="Enemies/DetectionZone2" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy5" parent="Enemies/DetectionZone2" index="3" instance=ExtResource( 10 )]
 position = Vector2( -115.87, 98.0701 )
 
-[node name="DetectionZone3" parent="Enemies" index="2" instance=ExtResource( 10 )]
+[node name="DetectionZone3" parent="Enemies" index="2" instance=ExtResource( 9 )]
 position = Vector2( 6798.82, 4541.91 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone3" index="1"]
 position = Vector2( -10.875, 10.627 )
-shape = SubResource( 42 )
+shape = SubResource( 23 )
 
-[node name="MushroomBoy8" parent="Enemies/DetectionZone3" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy8" parent="Enemies/DetectionZone3" index="2" instance=ExtResource( 10 )]
 position = Vector2( -68.7446, 64.6973 )
 
-[node name="MushroomBoy9" parent="Enemies/DetectionZone3" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy9" parent="Enemies/DetectionZone3" index="3" instance=ExtResource( 10 )]
 position = Vector2( 101.255, 64.6973 )
 
-[node name="MushroomBoy6" parent="Enemies/DetectionZone3" index="4" instance=ExtResource( 11 )]
+[node name="MushroomBoy6" parent="Enemies/DetectionZone3" index="4" instance=ExtResource( 10 )]
 position = Vector2( -108.745, 63.6973 )
 
-[node name="MushroomBoy7" parent="Enemies/DetectionZone3" index="5" instance=ExtResource( 11 )]
+[node name="MushroomBoy7" parent="Enemies/DetectionZone3" index="5" instance=ExtResource( 10 )]
 position = Vector2( 141.255, 63.6973 )
 
-[node name="DetectionZone4" parent="Enemies" index="3" instance=ExtResource( 10 )]
+[node name="DetectionZone4" parent="Enemies" index="3" instance=ExtResource( 9 )]
 position = Vector2( 7125.82, 4518.91 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone4" index="1"]
 position = Vector2( 1585.94, 368.926 )
-shape = SubResource( 42 )
+shape = SubResource( 23 )
 
-[node name="MushroomBoy10" parent="Enemies/DetectionZone4" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy10" parent="Enemies/DetectionZone4" index="2" instance=ExtResource( 10 )]
 position = Vector2( 1532.4, 424.22 )
 
-[node name="MushroomBoy11" parent="Enemies/DetectionZone4" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy11" parent="Enemies/DetectionZone4" index="3" instance=ExtResource( 10 )]
 position = Vector2( 1902.4, 424.22 )
 
-[node name="DetectionZone5" parent="Enemies" index="4" instance=ExtResource( 10 )]
+[node name="DetectionZone5" parent="Enemies" index="4" instance=ExtResource( 9 )]
 position = Vector2( 9480.41, 4872.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone5" index="1"]
-shape = SubResource( 43 )
+shape = SubResource( 24 )
 
-[node name="MushroomBoy12" parent="Enemies/DetectionZone5" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy12" parent="Enemies/DetectionZone5" index="2" instance=ExtResource( 10 )]
 position = Vector2( -72.1885, 70.3086 )
 
-[node name="DetectionZone6" parent="Enemies" index="5" instance=ExtResource( 10 )]
+[node name="DetectionZone6" parent="Enemies" index="5" instance=ExtResource( 9 )]
 position = Vector2( 9561.41, 6162.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone6" index="1"]
-shape = SubResource( 44 )
+shape = SubResource( 25 )
 
-[node name="MushroomBoy14" parent="Enemies/DetectionZone6" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy14" parent="Enemies/DetectionZone6" index="2" instance=ExtResource( 10 )]
 position = Vector2( -133.188, 79.3086 )
 
-[node name="MushroomBoy15" parent="Enemies/DetectionZone6" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy15" parent="Enemies/DetectionZone6" index="3" instance=ExtResource( 10 )]
 position = Vector2( 136.812, 79.3086 )
 
-[node name="DetectionZone19" parent="Enemies" index="6" instance=ExtResource( 10 )]
+[node name="DetectionZone19" parent="Enemies" index="6" instance=ExtResource( 9 )]
 position = Vector2( 8038.52, 5476.55 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone19" index="1"]
-shape = SubResource( 45 )
+shape = SubResource( 26 )
 
-[node name="MushroomBoy13" parent="Enemies/DetectionZone19" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy13" parent="Enemies/DetectionZone19" index="2" instance=ExtResource( 10 )]
 position = Vector2( 59.7046, 43.584 )
 
-[node name="DetectionZone7" parent="Enemies" index="7" instance=ExtResource( 10 )]
+[node name="DetectionZone7" parent="Enemies" index="7" instance=ExtResource( 9 )]
 position = Vector2( 8855.41, 7005.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone7" index="1"]
-shape = SubResource( 46 )
+shape = SubResource( 27 )
 
-[node name="MushroomBoy16" parent="Enemies/DetectionZone7" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy16" parent="Enemies/DetectionZone7" index="2" instance=ExtResource( 10 )]
 position = Vector2( -97.1885, 53.3091 )
 
-[node name="DetectionZone8" parent="Enemies" index="8" instance=ExtResource( 10 )]
+[node name="DetectionZone8" parent="Enemies" index="8" instance=ExtResource( 9 )]
 position = Vector2( 8037.41, 7054.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone8" index="1"]
-shape = SubResource( 47 )
+shape = SubResource( 28 )
 
-[node name="MushroomBoy17" parent="Enemies/DetectionZone8" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy17" parent="Enemies/DetectionZone8" index="2" instance=ExtResource( 10 )]
 position = Vector2( 60.811, 50.3086 )
 
-[node name="DetectionZone9" parent="Enemies" index="9" instance=ExtResource( 10 )]
+[node name="DetectionZone9" parent="Enemies" index="9" instance=ExtResource( 9 )]
 position = Vector2( 8611.41, 8052.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone9" index="1"]
-shape = SubResource( 48 )
+shape = SubResource( 29 )
 
-[node name="MushroomBoy18" parent="Enemies/DetectionZone9" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy18" parent="Enemies/DetectionZone9" index="2" instance=ExtResource( 10 )]
 position = Vector2( 411.811, 59.3086 )
 
-[node name="MushroomBoy22" parent="Enemies/DetectionZone9" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy22" parent="Enemies/DetectionZone9" index="3" instance=ExtResource( 10 )]
 position = Vector2( -138.189, 59.3086 )
 
-[node name="MushroomBoy19" parent="Enemies/DetectionZone9" index="4" instance=ExtResource( 11 )]
+[node name="MushroomBoy19" parent="Enemies/DetectionZone9" index="4" instance=ExtResource( 10 )]
 position = Vector2( 181.812, 59.3086 )
 
-[node name="MushroomBoy23" parent="Enemies/DetectionZone9" index="5" instance=ExtResource( 11 )]
+[node name="MushroomBoy23" parent="Enemies/DetectionZone9" index="5" instance=ExtResource( 10 )]
 position = Vector2( -298.189, 59.3086 )
 
-[node name="MushroomBoy20" parent="Enemies/DetectionZone9" index="6" instance=ExtResource( 11 )]
+[node name="MushroomBoy20" parent="Enemies/DetectionZone9" index="6" instance=ExtResource( 10 )]
 position = Vector2( 18.8105, 59.3086 )
 
-[node name="MushroomBoy21" parent="Enemies/DetectionZone9" index="7" instance=ExtResource( 11 )]
+[node name="MushroomBoy21" parent="Enemies/DetectionZone9" index="7" instance=ExtResource( 10 )]
 position = Vector2( -461.189, 59.3086 )
 
-[node name="DetectionZone20" parent="Enemies" index="10" instance=ExtResource( 10 )]
+[node name="DetectionZone20" parent="Enemies" index="10" instance=ExtResource( 9 )]
 position = Vector2( 9891.41, 8402.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone20" index="1"]
-shape = SubResource( 49 )
+shape = SubResource( 30 )
 
-[node name="MushroomBoy24" parent="Enemies/DetectionZone20" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy24" parent="Enemies/DetectionZone20" index="2" instance=ExtResource( 10 )]
 position = Vector2( 1.81055, 47.3057 )
 
-[node name="DetectionZone10" parent="Enemies" index="11" instance=ExtResource( 10 )]
+[node name="DetectionZone10" parent="Enemies" index="11" instance=ExtResource( 9 )]
 position = Vector2( 8181.41, 9112.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone10" index="1"]
-shape = SubResource( 50 )
+shape = SubResource( 31 )
 
-[node name="MushroomBoy27" parent="Enemies/DetectionZone10" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy27" parent="Enemies/DetectionZone10" index="2" instance=ExtResource( 10 )]
 position = Vector2( 395.271, 56.5654 )
 
-[node name="MushroomBoy30" parent="Enemies/DetectionZone10" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy30" parent="Enemies/DetectionZone10" index="3" instance=ExtResource( 10 )]
 position = Vector2( -104.729, 56.5664 )
 
-[node name="MushroomBoy28" parent="Enemies/DetectionZone10" index="4" instance=ExtResource( 11 )]
+[node name="MushroomBoy28" parent="Enemies/DetectionZone10" index="4" instance=ExtResource( 10 )]
 position = Vector2( 145.273, 56.5664 )
 
-[node name="MushroomBoy29" parent="Enemies/DetectionZone10" index="5" instance=ExtResource( 11 )]
+[node name="MushroomBoy29" parent="Enemies/DetectionZone10" index="5" instance=ExtResource( 10 )]
 position = Vector2( -354.727, 56.5654 )
 
-[node name="DetectionZone11" parent="Enemies" index="12" instance=ExtResource( 10 )]
+[node name="DetectionZone11" parent="Enemies" index="12" instance=ExtResource( 9 )]
 position = Vector2( 10251.4, 8872.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone11" index="1"]
-shape = SubResource( 51 )
+shape = SubResource( 32 )
 
-[node name="MushroomBoy25" parent="Enemies/DetectionZone11" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy25" parent="Enemies/DetectionZone11" index="2" instance=ExtResource( 10 )]
 position = Vector2( -158.188, 57.3057 )
 
-[node name="MushroomBoy26" parent="Enemies/DetectionZone11" index="3" instance=ExtResource( 11 )]
+[node name="MushroomBoy26" parent="Enemies/DetectionZone11" index="3" instance=ExtResource( 10 )]
 position = Vector2( 71.8115, 57.3057 )
 
-[node name="DetectionZone12" parent="Enemies" index="13" instance=ExtResource( 10 )]
+[node name="DetectionZone12" parent="Enemies" index="13" instance=ExtResource( 9 )]
 position = Vector2( 6327.09, 8189.46 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone12" index="1"]
-shape = SubResource( 52 )
+shape = SubResource( 33 )
 
-[node name="MushroomBoy32" parent="Enemies/DetectionZone12" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy32" parent="Enemies/DetectionZone12" index="2" instance=ExtResource( 10 )]
 position = Vector2( 79.5796, 67.9814 )
 
-[node name="DetectionZone13" parent="Enemies" index="14" instance=ExtResource( 10 )]
+[node name="DetectionZone13" parent="Enemies" index="14" instance=ExtResource( 9 )]
 position = Vector2( 5971.09, 7846.46 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone13" index="1"]
-shape = SubResource( 53 )
+shape = SubResource( 34 )
 
-[node name="MushroomBoy31" parent="Enemies/DetectionZone13" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy31" parent="Enemies/DetectionZone13" index="2" instance=ExtResource( 10 )]
 position = Vector2( -144.42, 73.9819 )
 
-[node name="DetectionZone14" parent="Enemies" index="15" instance=ExtResource( 10 )]
+[node name="DetectionZone14" parent="Enemies" index="15" instance=ExtResource( 9 )]
 position = Vector2( 7007.55, 9290.23 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone14" index="1"]
-shape = SubResource( 54 )
+shape = SubResource( 35 )
 
-[node name="MushroomBoy33" parent="Enemies/DetectionZone14" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy33" parent="Enemies/DetectionZone14" index="2" instance=ExtResource( 10 )]
 position = Vector2( -90.8843, 71.2129 )
 
-[node name="DetectionZone15" parent="Enemies" index="16" instance=ExtResource( 10 )]
+[node name="DetectionZone15" parent="Enemies" index="16" instance=ExtResource( 9 )]
 position = Vector2( 7560.59, 9967.4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone15" index="1"]
-shape = SubResource( 55 )
+shape = SubResource( 36 )
 
-[node name="MushroomBoy34" parent="Enemies/DetectionZone15" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy34" parent="Enemies/DetectionZone15" index="2" instance=ExtResource( 10 )]
 position = Vector2( -0.199219, 65.9336 )
 
-[node name="DetectionZone16" parent="Enemies" index="17" instance=ExtResource( 10 )]
+[node name="DetectionZone16" parent="Enemies" index="17" instance=ExtResource( 9 )]
 position = Vector2( 6814.59, 10603.4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone16" index="1"]
-shape = SubResource( 56 )
+shape = SubResource( 37 )
 
-[node name="MushroomBoy36" parent="Enemies/DetectionZone16" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy36" parent="Enemies/DetectionZone16" index="2" instance=ExtResource( 10 )]
 position = Vector2( 6.97705, 56.1377 )
 
-[node name="DetectionZone17" parent="Enemies" index="18" instance=ExtResource( 10 )]
+[node name="DetectionZone17" parent="Enemies" index="18" instance=ExtResource( 9 )]
 position = Vector2( 7223.59, 10592.4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone17" index="1"]
-shape = SubResource( 57 )
+shape = SubResource( 38 )
 
-[node name="MushroomBoy35" parent="Enemies/DetectionZone17" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy35" parent="Enemies/DetectionZone17" index="2" instance=ExtResource( 10 )]
 position = Vector2( 17.9775, 67.1377 )
 
-[node name="DetectionZone18" parent="Enemies" index="19" instance=ExtResource( 10 )]
+[node name="DetectionZone18" parent="Enemies" index="19" instance=ExtResource( 9 )]
 position = Vector2( 7824.59, 10991.4 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone18" index="1"]
-shape = SubResource( 58 )
+shape = SubResource( 39 )
 
-[node name="MushroomBoy37" parent="Enemies/DetectionZone18" index="2" instance=ExtResource( 11 )]
+[node name="MushroomBoy37" parent="Enemies/DetectionZone18" index="2" instance=ExtResource( 10 )]
 position = Vector2( 9.43359, 51.4795 )
 
-[node name="Slime" parent="Enemies" index="20" instance=ExtResource( 12 )]
+[node name="Slime" parent="Enemies" index="20" instance=ExtResource( 11 )]
 position = Vector2( 5713.08, 4319.99 )
 
-[node name="Slime2" parent="Enemies" index="21" instance=ExtResource( 12 )]
+[node name="Slime2" parent="Enemies" index="21" instance=ExtResource( 11 )]
 position = Vector2( 5714.08, 4560.99 )
 
-[node name="Slime3" parent="Enemies" index="22" instance=ExtResource( 12 )]
+[node name="Slime3" parent="Enemies" index="22" instance=ExtResource( 11 )]
 position = Vector2( 6494.08, 4320.99 )
 
-[node name="Slime6" parent="Enemies" index="23" instance=ExtResource( 12 )]
+[node name="Slime6" parent="Enemies" index="23" instance=ExtResource( 11 )]
 position = Vector2( 7990.11, 4752.43 )
 
-[node name="Slime7" parent="Enemies" index="24" instance=ExtResource( 12 )]
+[node name="Slime7" parent="Enemies" index="24" instance=ExtResource( 11 )]
 position = Vector2( 8840.11, 4704.43 )
 
-[node name="Slime8" parent="Enemies" index="25" instance=ExtResource( 12 )]
+[node name="Slime8" parent="Enemies" index="25" instance=ExtResource( 11 )]
 position = Vector2( 9130.11, 5758.43 )
 
-[node name="Slime10" parent="Enemies" index="26" instance=ExtResource( 12 )]
+[node name="Slime10" parent="Enemies" index="26" instance=ExtResource( 11 )]
 position = Vector2( 8210.11, 6333.43 )
 
-[node name="Slime16" parent="Enemies" index="27" instance=ExtResource( 12 )]
+[node name="Slime16" parent="Enemies" index="27" instance=ExtResource( 11 )]
 position = Vector2( 9993.03, 8829.52 )
 
-[node name="Slime17" parent="Enemies" index="28" instance=ExtResource( 12 )]
+[node name="Slime17" parent="Enemies" index="28" instance=ExtResource( 11 )]
 position = Vector2( 8351.51, 8973.82 )
 
-[node name="Slime18" parent="Enemies" index="29" instance=ExtResource( 12 )]
+[node name="Slime18" parent="Enemies" index="29" instance=ExtResource( 11 )]
 position = Vector2( 7921.51, 8973.82 )
 
-[node name="Slime19" parent="Enemies" index="30" instance=ExtResource( 12 )]
+[node name="Slime19" parent="Enemies" index="30" instance=ExtResource( 11 )]
 position = Vector2( 7471.88, 7917.67 )
 
-[node name="Slime20" parent="Enemies" index="31" instance=ExtResource( 12 )]
+[node name="Slime20" parent="Enemies" index="31" instance=ExtResource( 11 )]
 position = Vector2( 6349.97, 7726 )
 
-[node name="Slime21" parent="Enemies" index="32" instance=ExtResource( 12 )]
+[node name="Slime21" parent="Enemies" index="32" instance=ExtResource( 11 )]
 position = Vector2( 5829.97, 7726 )
 
-[node name="Slime22" parent="Enemies" index="33" instance=ExtResource( 12 )]
+[node name="Slime22" parent="Enemies" index="33" instance=ExtResource( 11 )]
 position = Vector2( 6119.97, 8110 )
 
-[node name="Slime23" parent="Enemies" index="34" instance=ExtResource( 12 )]
+[node name="Slime23" parent="Enemies" index="34" instance=ExtResource( 11 )]
 position = Vector2( 6518.97, 8781 )
 
-[node name="Slime24" parent="Enemies" index="35" instance=ExtResource( 12 )]
+[node name="Slime24" parent="Enemies" index="35" instance=ExtResource( 11 )]
 position = Vector2( 6336.97, 9069 )
 
-[node name="Slime25" parent="Enemies" index="36" instance=ExtResource( 12 )]
+[node name="Slime25" parent="Enemies" index="36" instance=ExtResource( 11 )]
 position = Vector2( 6336.97, 9454 )
 
-[node name="Slime26" parent="Enemies" index="37" instance=ExtResource( 12 )]
+[node name="Slime26" parent="Enemies" index="37" instance=ExtResource( 11 )]
 position = Vector2( 7136.97, 9213 )
 
-[node name="Slime27" parent="Enemies" index="38" instance=ExtResource( 12 )]
+[node name="Slime27" parent="Enemies" index="38" instance=ExtResource( 11 )]
 position = Vector2( 7848.24, 9885.46 )
 
-[node name="Slime29" parent="Enemies" index="39" instance=ExtResource( 12 )]
+[node name="Slime29" parent="Enemies" index="39" instance=ExtResource( 11 )]
 position = Vector2( 7446.24, 10364.5 )
 
-[node name="Slime28" parent="Enemies" index="40" instance=ExtResource( 12 )]
+[node name="Slime28" parent="Enemies" index="40" instance=ExtResource( 11 )]
 position = Vector2( 7498.24, 9885.46 )
 
-[node name="Slime30" parent="Enemies" index="41" instance=ExtResource( 12 )]
+[node name="Slime30" parent="Enemies" index="41" instance=ExtResource( 11 )]
 position = Vector2( 7020.13, 10510 )
 
-[node name="Slime11" parent="Enemies" index="42" instance=ExtResource( 12 )]
+[node name="Slime11" parent="Enemies" index="42" instance=ExtResource( 11 )]
 position = Vector2( 7800.11, 6333.43 )
 
-[node name="Slime12" parent="Enemies" index="43" instance=ExtResource( 12 )]
+[node name="Slime12" parent="Enemies" index="43" instance=ExtResource( 11 )]
 position = Vector2( 7530.11, 6333.43 )
 
-[node name="Slime13" parent="Enemies" index="44" instance=ExtResource( 12 )]
+[node name="Slime13" parent="Enemies" index="44" instance=ExtResource( 11 )]
 position = Vector2( 7370.11, 6381.43 )
 
-[node name="Slime14" parent="Enemies" index="45" instance=ExtResource( 12 )]
+[node name="Slime14" parent="Enemies" index="45" instance=ExtResource( 11 )]
 position = Vector2( 7220.11, 6381.43 )
 
-[node name="Slime15" parent="Enemies" index="46" instance=ExtResource( 12 )]
+[node name="Slime15" parent="Enemies" index="46" instance=ExtResource( 11 )]
 position = Vector2( 7080.11, 6333.43 )
 
-[node name="Slime9" parent="Enemies" index="47" instance=ExtResource( 12 )]
+[node name="Slime9" parent="Enemies" index="47" instance=ExtResource( 11 )]
 position = Vector2( 9240.11, 6046.43 )
 
-[node name="Slime4" parent="Enemies" index="48" instance=ExtResource( 12 )]
+[node name="Slime4" parent="Enemies" index="48" instance=ExtResource( 11 )]
 position = Vector2( 6324.08, 4848.99 )
 
-[node name="Slime5" parent="Enemies" index="49" instance=ExtResource( 12 )]
+[node name="Slime5" parent="Enemies" index="49" instance=ExtResource( 11 )]
 position = Vector2( 6614.08, 4943.99 )
 
-[node name="Alraune" parent="Enemies" index="50" instance=ExtResource( 13 )]
+[node name="Alraune" parent="Enemies" index="50" instance=ExtResource( 12 )]
 position = Vector2( 9508.8, 10223 )
 
-[node name="AttackBuff" parent="Souls" index="0" instance=ExtResource( 14 )]
+[node name="Souls" parent="." index="5"]
+editor/display_folded = true
+
+[node name="AttackBuff" parent="Souls" index="0" instance=ExtResource( 13 )]
 position = Vector2( 7089.98, 4092.8 )
 scale = Vector2( 2, 2 )
 upgrade = "attack_speed"
-sprite_frames = ExtResource( 15 )
+sprite_frames = ExtResource( 14 )
 
-[node name="JumpBuff" parent="Souls" index="1" instance=ExtResource( 14 )]
+[node name="JumpBuff" parent="Souls" index="1" instance=ExtResource( 13 )]
 position = Vector2( 7189.85, 4952.67 )
 scale = Vector2( 2, 2 )
 upgrade = "jump_speed"
-sprite_frames = ExtResource( 16 )
+sprite_frames = ExtResource( 15 )
 
-[node name="DashBuff" parent="Souls" index="2" instance=ExtResource( 14 )]
+[node name="DashBuff" parent="Souls" index="2" instance=ExtResource( 13 )]
 position = Vector2( 8787.63, 5424.05 )
 scale = Vector2( 2, 2 )
 upgrade = "dash"
-sprite_frames = ExtResource( 17 )
+sprite_frames = ExtResource( 16 )
 
-[node name="ShieldSkill" parent="Souls" index="3" instance=ExtResource( 14 )]
+[node name="ShieldSkill" parent="Souls" index="3" instance=ExtResource( 13 )]
 position = Vector2( 6794.43, 6468.45 )
 scale = Vector2( 2, 2 )
 upgrade = "shield_aoe"
-sprite_frames = ExtResource( 18 )
+sprite_frames = ExtResource( 17 )
 
-[node name="DoubleJumpBuff" parent="Souls" index="4" instance=ExtResource( 14 )]
+[node name="DoubleJumpBuff" parent="Souls" index="4" instance=ExtResource( 13 )]
 position = Vector2( 8037.96, 7818.33 )
 scale = Vector2( 2, 2 )
-sprite_frames = ExtResource( 19 )
+sprite_frames = ExtResource( 18 )
 
-[node name="SpeedBuff" parent="Souls" index="5" instance=ExtResource( 14 )]
+[node name="SpeedBuff" parent="Souls" index="5" instance=ExtResource( 13 )]
 position = Vector2( 6282.01, 7326.55 )
 scale = Vector2( 2, 2 )
 upgrade = "move_speed"
-sprite_frames = ExtResource( 20 )
+sprite_frames = ExtResource( 19 )
 
-[node name="AttackSkill" parent="Souls" index="6" instance=ExtResource( 14 )]
+[node name="AttackSkill" parent="Souls" index="6" instance=ExtResource( 13 )]
 position = Vector2( 10564.8, 8879.85 )
 scale = Vector2( 2, 2 )
 upgrade = "attack_aoe"
-sprite_frames = ExtResource( 15 )
+sprite_frames = ExtResource( 14 )
 
 [node name="CheckPoints" parent="." index="6"]
 editor/display_folded = true
 
-[node name="Checkpoint" parent="CheckPoints" index="0" instance=ExtResource( 21 )]
+[node name="Checkpoint" parent="CheckPoints" index="0" instance=ExtResource( 20 )]
 position = Vector2( 8249.59, 4318.98 )
 
-[node name="Checkpoint2" parent="CheckPoints" index="1" instance=ExtResource( 21 )]
+[node name="Checkpoint2" parent="CheckPoints" index="1" instance=ExtResource( 20 )]
 position = Vector2( 6342.12, 4511 )
 
-[node name="Checkpoint3" parent="CheckPoints" index="2" instance=ExtResource( 21 )]
+[node name="Checkpoint3" parent="CheckPoints" index="2" instance=ExtResource( 20 )]
 position = Vector2( 5372.12, 5039 )
 
-[node name="Checkpoint4" parent="CheckPoints" index="3" instance=ExtResource( 21 )]
+[node name="Checkpoint4" parent="CheckPoints" index="3" instance=ExtResource( 20 )]
 position = Vector2( 6839.54, 5519.1 )
 
-[node name="Checkpoint5" parent="CheckPoints" index="4" instance=ExtResource( 21 )]
+[node name="Checkpoint5" parent="CheckPoints" index="4" instance=ExtResource( 20 )]
 position = Vector2( 8288.85, 7873.95 )
 
-[node name="Checkpoint6" parent="CheckPoints" index="5" instance=ExtResource( 21 )]
+[node name="Checkpoint6" parent="CheckPoints" index="5" instance=ExtResource( 20 )]
 position = Vector2( 8648.52, 8546 )
 
-[node name="Checkpoint7" parent="CheckPoints" index="6" instance=ExtResource( 21 )]
+[node name="Checkpoint7" parent="CheckPoints" index="6" instance=ExtResource( 20 )]
 position = Vector2( 5984.63, 7489.73 )
 
-[node name="Checkpoint8" parent="CheckPoints" index="7" instance=ExtResource( 21 )]
+[node name="Checkpoint8" parent="CheckPoints" index="7" instance=ExtResource( 20 )]
 position = Vector2( 8130.39, 10034.1 )
 
+[node name="Portal01" parent="Portals" index="0" instance=ExtResource( 21 )]
+position = Vector2( 9817, 899 )
+flipped = true
+goto_location = Vector2( 8672, 3636 )
+
+[node name="Portal02" parent="Portals" index="1" instance=ExtResource( 21 )]
+position = Vector2( 8672, 3636 )
+flipped = true
+goto_location = Vector2( 9817, 899 )
+
 [node name="Player" parent="." index="8"]
-position = Vector2( 8471.93, 3689.12 )
+position = Vector2( 8472.74, 3689.12 )

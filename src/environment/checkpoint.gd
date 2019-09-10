@@ -1,6 +1,5 @@
 extends Area2D
 
-onready var area = $Area2D
 onready var sprite = $AnimatedSprite
 
 var _reached = false
