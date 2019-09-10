@@ -128,3 +128,4 @@ shape = SubResource( 7 )
 position = Vector2( 0, 22.1236 )
 rotation = -0.785397
 shape = SubResource( 8 )
+
