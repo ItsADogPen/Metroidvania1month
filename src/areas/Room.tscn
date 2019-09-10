@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://src/areas/BaseRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/Cave.tscn" type="PackedScene" id=2]
@@ -24,6 +24,63 @@
 
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 1.21229, 0.227753 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 19.9175, 47.6279 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 18.4258, 72.3308 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 20.1084, 72.209 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 21.2207, 314.42 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 22.8125, 236.588 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 124.937, 19.8418 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 290.826, 20.9575 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 75.3057, 20.4131 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 144.071, 23.0532 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 218.103, 21.7109 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 48.374, 21.8877 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 76.9443, 24.1221 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 22.0444, 49.96 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 21.6211, 197.089 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 73.7886, 21.5752 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 646.48, 20.5254 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 76.0039, 21.1631 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 372.216, 17.3535 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 77.0537, 17.3945 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347.914, 82.8772 )
@@ -114,6 +171,9 @@ texture = ExtResource( 5 )
 
 [node name="Swamp" parent="Tilesets" index="4" instance=ExtResource( 8 )]
 
+[node name="SpikeAreas" parent="." index="2"]
+editor/display_folded = true
+
 [node name="Spikes01" type="Area2D" parent="SpikeAreas" index="0"]
 position = Vector2( 8256, 3820 )
 collision_layer = 9
@@ -122,6 +182,175 @@ script = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes01" index="0"]
 scale = Vector2( -80.3532, -92.5384 )
 shape = SubResource( 20 )
+
+[node name="Spikes02" type="Area2D" parent="SpikeAreas" index="1"]
+position = Vector2( 6843.03, 3840.04 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes02" index="0"]
+shape = SubResource( 21 )
+
+[node name="Spikes03" type="Area2D" parent="SpikeAreas" index="2"]
+position = Vector2( 6687.9, 4011.5 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes03" index="0"]
+position = Vector2( 4.16943, -3.24292 )
+shape = SubResource( 22 )
+
+[node name="Spikes04" type="Area2D" parent="SpikeAreas" index="3"]
+position = Vector2( 6845.36, 4198.11 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes04" index="0"]
+position = Vector2( -2.64062, 1.76025 )
+shape = SubResource( 23 )
+
+[node name="Spikes05" type="Area2D" parent="SpikeAreas" index="4"]
+position = Vector2( 5685.51, 3957.33 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes05" index="0"]
+shape = SubResource( 24 )
+
+[node name="Spikes06" type="Area2D" parent="SpikeAreas" index="5"]
+position = Vector2( 6084.85, 4171.68 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes06" index="0"]
+position = Vector2( -11.2524, 6.80225 )
+shape = SubResource( 25 )
+
+[node name="Spikes07" type="Area2D" parent="SpikeAreas" index="6"]
+position = Vector2( 5973.27, 5070.2 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes07" index="0"]
+position = Vector2( 4.41064, 0 )
+shape = SubResource( 26 )
+
+[node name="Spikes08" type="Area2D" parent="SpikeAreas" index="7"]
+position = Vector2( 6610.45, 5175.91 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes08" index="0"]
+position = Vector2( -35.0239, -12.2178 )
+shape = SubResource( 27 )
+
+[node name="Spikes09" type="Area2D" parent="SpikeAreas" index="8"]
+position = Vector2( 7709.52, 4933.22 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes09" index="0"]
+position = Vector2( -7.16943, -10.1885 )
+shape = SubResource( 28 )
+
+[node name="Spikes10" type="Area2D" parent="SpikeAreas" index="9"]
+position = Vector2( 8450.87, 7134.18 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes10" index="0"]
+position = Vector2( -3.24316, -0.463379 )
+shape = SubResource( 29 )
+
+[node name="Spikes11" type="Area2D" parent="SpikeAreas" index="10"]
+position = Vector2( 9352.76, 7081.44 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes11" index="0"]
+position = Vector2( -15.9219, 1.32715 )
+shape = SubResource( 30 )
+
+[node name="Spikes12" type="Area2D" parent="SpikeAreas" index="11"]
+position = Vector2( 9174.02, 8146.36 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes12" index="0"]
+position = Vector2( -4.59961, -5.01758 )
+shape = SubResource( 31 )
+
+[node name="Spikes13" type="Area2D" parent="SpikeAreas" index="12"]
+position = Vector2( 8048.68, 8141.32 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes13" index="0"]
+position = Vector2( -8.62549, -0.663086 )
+shape = SubResource( 32 )
+
+[node name="Spikes14" type="Area2D" parent="SpikeAreas" index="13"]
+position = Vector2( 7711.33, 8307.48 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes14" index="0"]
+position = Vector2( -2.39551, -2.39551 )
+shape = SubResource( 33 )
+
+[node name="Spikes15" type="Area2D" parent="SpikeAreas" index="14"]
+position = Vector2( 7507.42, 8330.14 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes15" index="0"]
+position = Vector2( -0.000488281, 25.7207 )
+shape = SubResource( 34 )
+
+[node name="Spikes16" type="Area2D" parent="SpikeAreas" index="15"]
+position = Vector2( 7807, 8574.34 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes16" index="0"]
+position = Vector2( -6.60156, -1.76074 )
+shape = SubResource( 35 )
+
+[node name="Spikes17" type="Area2D" parent="SpikeAreas" index="16"]
+position = Vector2( 8136.8, 9203.72 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes17" index="0"]
+position = Vector2( 29.9287, -8.16211 )
+shape = SubResource( 36 )
+
+[node name="Spikes18" type="Area2D" parent="SpikeAreas" index="17"]
+position = Vector2( 9765.64, 8967.07 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes18" index="0"]
+position = Vector2( 2.15234, -13.2158 )
+shape = SubResource( 37 )
+
+[node name="Spikes19" type="Area2D" parent="SpikeAreas" index="18"]
+position = Vector2( 7613.52, 10081.4 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes19" index="0"]
+position = Vector2( -58.6025, -27.5205 )
+shape = SubResource( 38 )
+
+[node name="Spikes20" type="Area2D" parent="SpikeAreas" index="19"]
+position = Vector2( 7041.98, 10699.4 )
+collision_layer = 9
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes20" index="0"]
+position = Vector2( -11.9712, -20.4395 )
+shape = SubResource( 39 )
 
 [node name="Enemies" parent="." index="4"]
 editor/display_folded = true
