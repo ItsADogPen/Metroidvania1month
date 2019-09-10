@@ -29,10 +29,10 @@ extents = Vector2( 80.8549, 23.8588 )
 extents = Vector2( 77.0433, 20.6647 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 22.0683, 24.7655 )
+extents = Vector2( 18.4548, 16.6186 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 29.3151, 23.5796 )
+extents = Vector2( 21.4589, 19.6622 )
 
 [node name="MushroomBoy" index="0" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
@@ -119,10 +119,10 @@ position = Vector2( 0, -20.82 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
-position = Vector2( 0, -23.3215 )
+position = Vector2( 0, -17.1881 )
 shape = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
-position = Vector2( 0, -23.5851 )
+position = Vector2( 0, -17.8996 )
 shape = SubResource( 10 )
 
