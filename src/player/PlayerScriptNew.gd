@@ -11,7 +11,7 @@ const GRAV = 10
 const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
-var ACCEL = 800
+var ACCEL = 500
 var JUMP_SPEED = -325
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 var WALL_JUMP_SPEED = JUMP_SPEED * -2
@@ -168,7 +168,7 @@ func _controls(delta):
 	
 	if (right == left and not isAir):
 		motion.x = 0
-		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield":
+		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield" && !stateMachine == "taking_damage":
 			stateMachine = "idle"
 	else:
 		SPEED = ACCEL
@@ -193,7 +193,7 @@ func _controls(delta):
 			else:
 				motion.y = DOUBLE_JUMP_SPEED
 		
-	if isAir and stateMachine != "walljumping":
+	if isAir and stateMachine != "walljumping" and stateMachine != "taking_damage":
 		stateMachine = "jump"
 	
 	# Handle wall jumping
@@ -345,15 +345,17 @@ func unlock_upgrade(power_gained : String):
 # Called when player takes damage
 func take_damage(damage : int):
 	
-	hp_current -= damage
-	if hp_current <= 0:
-		_player_death()
+	if stateMachine != "taking_damage":
 	
-	stateMachine = "taking_damage"
-	animation.set_self_modulate(Color(1, 0, 0, 0.3))
-	yield(get_tree().create_timer(0.5), "timeout")
-	stateMachine = "idle"
-	animation.set_self_modulate(Color(1, 1, 1, 1))
+		hp_current -= damage
+		if hp_current <= 0:
+			_player_death()
+		
+		stateMachine = "taking_damage"
+		animation.set_self_modulate(Color(1, 0, 0, 0.3))
+		yield(get_tree().create_timer(1.5), "timeout")
+		stateMachine = "idle"
+		animation.set_self_modulate(Color(1, 1, 1, 1))
 
 func hit_spikes():
 	take_damage(2)
