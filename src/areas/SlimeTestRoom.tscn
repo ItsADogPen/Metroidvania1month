@@ -42,7 +42,7 @@ collision_mask = 1
 collision_layer = 1
 collision_mask = 1
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 position = Vector2( 63.131, 380.283 )
 
 [editable path="Enemies/DetectionZone"]

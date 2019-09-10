@@ -355,6 +355,11 @@ func take_damage(damage : int):
 	stateMachine = "idle"
 	animation.set_self_modulate(Color(1, 1, 1, 1))
 
+func hit_spikes():
+	take_damage(2)
+	motion.y = JUMP_SPEED * 1.5
+	motion = move_and_slide(motion, Vector2.UP, true)
+
 func set_checkpoint(point):
 	last_checkpoint = point
 

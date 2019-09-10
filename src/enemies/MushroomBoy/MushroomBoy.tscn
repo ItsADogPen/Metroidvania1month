@@ -4,7 +4,7 @@
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoy.gd" type="Script" id=2]
 [ext_resource path="res://src/enemies/MushroomBoy/MushroomBoyFrames.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=1]
 resource_name = "normal_attack"
 length = 1.3
 tracks/0/type = "method"
@@ -52,7 +52,7 @@ tracks/2/keys = {
 "values": [ "normal_attack" ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 resource_name = "transformed_attack"
 length = 2.1
 step = 0.067
@@ -116,31 +116,31 @@ tracks/2/keys = {
 "values": [ "transformed_attack" ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 14.719, 17.1155 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 45.1557, 19.7624 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 49.894, 20.9468 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24.9641, 12.4547 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 26.1634, 13.5806 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 80.8549, 23.8588 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 77.0433, 20.6647 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 18.4548, 16.6186 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 21.4589, 19.6622 )
 
 [node name="MushroomBoy" instance=ExtResource( 1 )]
@@ -155,17 +155,17 @@ frame = 19
 offset = Vector2( 15, -43 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/normal_attack = SubResource( 11 )
-anims/transformed_attack = SubResource( 12 )
+anims/normal_attack = SubResource( 1 )
+anims/transformed_attack = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 visible = false
 position = Vector2( -0.539968, -17.3042 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="AttackDetectionArea" index="0"]
 position = Vector2( -0.679688, -19.4391 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Down" parent="RayCasts" index="0"]
 position = Vector2( 0, 0.154643 )
@@ -203,42 +203,42 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalHitBox" index="0"]
 position = Vector2( -3.7867, -22.4688 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="TransformedHitBoxLeft" type="Area2D" parent="." index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxLeft" index="0"]
 position = Vector2( -40.9856, -12.7715 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="TransformedHitBoxRight" type="Area2D" parent="." index="7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxRight" index="0"]
 position = Vector2( 35.5477, -14.1162 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="TransformedHitBoxTotal" type="Area2D" parent="." index="8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedHitBoxTotal" index="0"]
 position = Vector2( -2.94523, -23.9824 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="TransformedAttackDetectionArea" type="Area2D" parent="." index="9"]
 position = Vector2( -0.679688, -20.82 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedAttackDetectionArea" index="0"]
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="NormalTouchDamageArea" parent="." index="11"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
 position = Vector2( 0, -17.1881 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="TransformedTouchDamageArea" parent="." index="12"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 0, -17.8996 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )

@@ -26,7 +26,7 @@ shape = SubResource( 1 )
 position = Vector2( 423.634, 148.489 )
 scale = Vector2( 2, 2 )
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="8"]
 position = Vector2( 63.131, 188.059 )
 
 [editable path="Enemies/DetectionZone"]
