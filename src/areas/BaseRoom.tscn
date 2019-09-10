@@ -13,6 +13,8 @@ transform = Transform2D( 1, 0, 0, 1, 140, 0 )
 
 [node name="Tilesets" type="Node2D" parent="."]
 
+[node name="SpikeAreas" type="Node2D" parent="."]
+
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
