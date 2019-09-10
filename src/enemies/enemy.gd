@@ -91,6 +91,9 @@ func _ready():
 	touch_damage_areas["normal"].connect("body_entered", self, "_on_normal_attack_hit")
 	touch_damage_areas["transformed"].connect("body_entered", self, "_on_monster_attack_hit")
 	
+	for child in touch_damage_areas["transformed"].get_children():
+		if child is CollisionShape2D: child.set_disabled(true)
+	
 	if level == "Monster":
 		_transform()
 		
@@ -186,6 +189,10 @@ func _transform():
 	stats.transformed = true
 	sprite.play("transformation")
 	yield(sprite, "animation_finished")
+	for child in touch_damage_areas["normal"].get_children():
+		if child is CollisionShape2D: child.set_disabled(true)
+	for child in touch_damage_areas["transformed"].get_children():
+		if child is CollisionShape2D: child.set_disabled(false)
 	if chasing:
 		state = State.CHASE
 	else:
