@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://src/areas/BaseRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/Cave.tscn" type="PackedScene" id=2]
@@ -19,7 +19,8 @@
 [ext_resource path="res://assets/upgrade-souls/ShieldSkill/ShieldSkillSoulFrames.tres" type="SpriteFrames" id=17]
 [ext_resource path="res://assets/upgrade-souls/Double Jump buff/DoubleJumpFrames.tres" type="SpriteFrames" id=18]
 [ext_resource path="res://assets/upgrade-souls/SpeedBuff/SpeedBuffSoulFrames.tres" type="SpriteFrames" id=19]
-[ext_resource path="res://src/environment/Checkpoint.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/upgrade-souls/AttackSkill/AttackSkillSoulFrames.tres" type="SpriteFrames" id=20]
+[ext_resource path="res://src/environment/Checkpoint.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 347.914, 82.8772 )
@@ -33,10 +34,10 @@ extents = Vector2( 450.468, 56.2427 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 160.061, 71.3472 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 399.523, 80.0918 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 172.568, 44.4639 )
 
 [sub_resource type="RectangleShape2D" id=7]
@@ -45,10 +46,10 @@ extents = Vector2( 263.479, 52.728 )
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 268.477, 51.8008 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 496.85, 62.7803 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 141.696, 48.0869 )
 
 [sub_resource type="RectangleShape2D" id=11]
@@ -109,6 +110,9 @@ texture = ExtResource( 5 )
 [node name="Standard" parent="Tilesets" index="3" instance=ExtResource( 7 )]
 
 [node name="Swamp" parent="Tilesets" index="4" instance=ExtResource( 8 )]
+
+[node name="Enemies" parent="." index="3"]
+editor/display_folded = true
 
 [node name="DetectionZone" parent="Enemies" index="0" instance=ExtResource( 9 )]
 position = Vector2( 7178.82, 3661.91 )
@@ -179,7 +183,7 @@ position = Vector2( -72.1885, 70.3086 )
 position = Vector2( 9561.41, 6162.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone6" index="1"]
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="MushroomBoy14" parent="Enemies/DetectionZone6" index="2" instance=ExtResource( 10 )]
 position = Vector2( -133.188, 79.3086 )
@@ -191,7 +195,7 @@ position = Vector2( 136.812, 79.3086 )
 position = Vector2( 8038.52, 5476.55 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone19" index="1"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="MushroomBoy13" parent="Enemies/DetectionZone19" index="2" instance=ExtResource( 10 )]
 position = Vector2( 59.7046, 43.584 )
@@ -218,7 +222,7 @@ position = Vector2( 60.811, 50.3086 )
 position = Vector2( 8611.41, 8052.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone9" index="1"]
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="MushroomBoy18" parent="Enemies/DetectionZone9" index="2" instance=ExtResource( 10 )]
 position = Vector2( 411.811, 59.3086 )
@@ -242,7 +246,7 @@ position = Vector2( -461.189, 59.3086 )
 position = Vector2( 9891.41, 8402.82 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone20" index="1"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="MushroomBoy24" parent="Enemies/DetectionZone20" index="2" instance=ExtResource( 10 )]
 position = Vector2( 1.81055, 47.3057 )
@@ -433,64 +437,73 @@ position = Vector2( 6614.08, 4943.99 )
 [node name="Alraune" parent="Enemies" index="50" instance=ExtResource( 12 )]
 position = Vector2( 9508.8, 10223 )
 
-[node name="Souls" parent="." index="4"]
-editor/display_folded = true
-
 [node name="AttackBuff" parent="Souls" index="0" instance=ExtResource( 13 )]
-position = Vector2( 7088.48, 4119.09 )
+position = Vector2( 7089.98, 4092.8 )
+scale = Vector2( 2, 2 )
+upgrade = "attack_speed"
 sprite_frames = ExtResource( 14 )
 
 [node name="JumpBuff" parent="Souls" index="1" instance=ExtResource( 13 )]
-position = Vector2( 7188.48, 4982.09 )
+position = Vector2( 7189.85, 4952.67 )
+scale = Vector2( 2, 2 )
+upgrade = "jump_speed"
 sprite_frames = ExtResource( 15 )
 
 [node name="DashBuff" parent="Souls" index="2" instance=ExtResource( 13 )]
-position = Vector2( 8859.9, 5446.4 )
+position = Vector2( 8787.63, 5424.05 )
+scale = Vector2( 2, 2 )
+upgrade = "dash"
 sprite_frames = ExtResource( 16 )
 
 [node name="ShieldSkill" parent="Souls" index="3" instance=ExtResource( 13 )]
-position = Vector2( 6831.08, 6475.78 )
+position = Vector2( 6794.43, 6468.45 )
+scale = Vector2( 2, 2 )
+upgrade = "shield_aoe"
 sprite_frames = ExtResource( 17 )
 
 [node name="DoubleJumpBuff" parent="Souls" index="4" instance=ExtResource( 13 )]
-position = Vector2( 8039.42, 7842.23 )
+position = Vector2( 8037.96, 7818.33 )
+scale = Vector2( 2, 2 )
 sprite_frames = ExtResource( 18 )
 
 [node name="SpeedBuff" parent="Souls" index="5" instance=ExtResource( 13 )]
-position = Vector2( 6254.28, 7354.28 )
+position = Vector2( 6282.01, 7326.55 )
+scale = Vector2( 2, 2 )
+upgrade = "move_speed"
 sprite_frames = ExtResource( 19 )
 
-[node name="AttackBuff2" parent="Souls" index="6" instance=ExtResource( 13 )]
-position = Vector2( 10564.8, 8898.38 )
-sprite_frames = ExtResource( 14 )
+[node name="AttackSkill" parent="Souls" index="6" instance=ExtResource( 13 )]
+position = Vector2( 10564.8, 8879.85 )
+scale = Vector2( 2, 2 )
+upgrade = "attack_aoe"
+sprite_frames = ExtResource( 20 )
 
 [node name="CheckPoints" parent="." index="5"]
 editor/display_folded = true
 
-[node name="Checkpoint" parent="CheckPoints" index="0" instance=ExtResource( 20 )]
+[node name="Checkpoint" parent="CheckPoints" index="0" instance=ExtResource( 21 )]
 position = Vector2( 8249.59, 4318.98 )
 
-[node name="Checkpoint2" parent="CheckPoints" index="1" instance=ExtResource( 20 )]
+[node name="Checkpoint2" parent="CheckPoints" index="1" instance=ExtResource( 21 )]
 position = Vector2( 6342.12, 4511 )
 
-[node name="Checkpoint3" parent="CheckPoints" index="2" instance=ExtResource( 20 )]
+[node name="Checkpoint3" parent="CheckPoints" index="2" instance=ExtResource( 21 )]
 position = Vector2( 5372.12, 5039 )
 
-[node name="Checkpoint4" parent="CheckPoints" index="3" instance=ExtResource( 20 )]
+[node name="Checkpoint4" parent="CheckPoints" index="3" instance=ExtResource( 21 )]
 position = Vector2( 6839.54, 5519.1 )
 
-[node name="Checkpoint5" parent="CheckPoints" index="4" instance=ExtResource( 20 )]
+[node name="Checkpoint5" parent="CheckPoints" index="4" instance=ExtResource( 21 )]
 position = Vector2( 8288.85, 7873.95 )
 
-[node name="Checkpoint6" parent="CheckPoints" index="5" instance=ExtResource( 20 )]
+[node name="Checkpoint6" parent="CheckPoints" index="5" instance=ExtResource( 21 )]
 position = Vector2( 8648.52, 8546 )
 
-[node name="Checkpoint7" parent="CheckPoints" index="6" instance=ExtResource( 20 )]
+[node name="Checkpoint7" parent="CheckPoints" index="6" instance=ExtResource( 21 )]
 position = Vector2( 5984.63, 7489.73 )
 
-[node name="Checkpoint8" parent="CheckPoints" index="7" instance=ExtResource( 20 )]
+[node name="Checkpoint8" parent="CheckPoints" index="7" instance=ExtResource( 21 )]
 position = Vector2( 8130.39, 10034.1 )
 
 [node name="Player" parent="." index="7"]
 position = Vector2( 8471.93, 3689.12 )
-

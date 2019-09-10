@@ -19,39 +19,39 @@
 [ext_resource path="res://assets/player/NewNew/run/NormalRun6.png" type="Texture" id=17]
 [ext_resource path="res://assets/player/NewNew/run/NormalRun7.png" type="Texture" id=18]
 [ext_resource path="res://assets/player/NewNew/run/NormalRun8.png" type="Texture" id=19]
-[ext_resource path="res://assets/player/NewNew/attackstab/Stab2.png" type="Texture" id=20]
-[ext_resource path="res://assets/player/NewNew/attackstab/Stab3.png" type="Texture" id=21]
-[ext_resource path="res://assets/player/NewNew/attackstab/Stab4.png" type="Texture" id=22]
-[ext_resource path="res://assets/player/NewNew/attackstab/Stab5.png" type="Texture" id=23]
-[ext_resource path="res://assets/player/NewNew/attackstab/Stab6.png" type="Texture" id=24]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground6.png" type="Texture" id=25]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground7.png" type="Texture" id=26]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground9.png" type="Texture" id=27]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground8.png" type="Texture" id=28]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground10.png" type="Texture" id=29]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground11.png" type="Texture" id=30]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground12.png" type="Texture" id=31]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground13.png" type="Texture" id=32]
-[ext_resource path="res://assets/player/NewNew/dash/Dash1.png" type="Texture" id=33]
-[ext_resource path="res://assets/player/NewNew/dash/Dash2.png" type="Texture" id=34]
-[ext_resource path="res://assets/player/NewNew/dash/Dash3.png" type="Texture" id=35]
-[ext_resource path="res://assets/player/NewNew/dash/Dash4.png" type="Texture" id=36]
-[ext_resource path="res://assets/player/NewNew/dash/Dash5.png" type="Texture" id=37]
-[ext_resource path="res://assets/player/NewNew/dash/Dash6.png" type="Texture" id=38]
-[ext_resource path="res://assets/player/NewNew/dash/Dash7.png" type="Texture" id=39]
-[ext_resource path="res://assets/player/NewNew/dash/Dash8.png" type="Texture" id=40]
-[ext_resource path="res://assets/player/NewNew/dash/Dash9.png" type="Texture" id=41]
-[ext_resource path="res://assets/player/NewNew/dash/Dash10.png" type="Texture" id=42]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground2.png" type="Texture" id=43]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground3.png" type="Texture" id=44]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground4.png" type="Texture" id=45]
-[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground5.png" type="Texture" id=46]
-[ext_resource path="res://assets/player/NewNew/dash/Dash11.png" type="Texture" id=47]
-[ext_resource path="res://assets/player/NewNew/dash/Dash12.png" type="Texture" id=48]
-[ext_resource path="res://assets/player/NewNew/dash/Dash13.png" type="Texture" id=49]
-[ext_resource path="res://assets/player/NewNew/dash/Dash14.png" type="Texture" id=50]
-[ext_resource path="res://assets/player/NewNew/dash/Dash15.png" type="Texture" id=51]
-[ext_resource path="res://assets/player/NewNew/dash/Dash17.png" type="Texture" id=52]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground6.png" type="Texture" id=20]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground7.png" type="Texture" id=21]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground9.png" type="Texture" id=22]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground8.png" type="Texture" id=23]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground10.png" type="Texture" id=24]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground11.png" type="Texture" id=25]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground12.png" type="Texture" id=26]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground13.png" type="Texture" id=27]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab2.png" type="Texture" id=28]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab3.png" type="Texture" id=29]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab4.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab5.png" type="Texture" id=31]
+[ext_resource path="res://assets/player/NewNew/attackstab/Stab6.png" type="Texture" id=32]
+[ext_resource path="res://assets/player/NewNew/dash/Dash11.png" type="Texture" id=33]
+[ext_resource path="res://assets/player/NewNew/dash/Dash12.png" type="Texture" id=34]
+[ext_resource path="res://assets/player/NewNew/dash/Dash13.png" type="Texture" id=35]
+[ext_resource path="res://assets/player/NewNew/dash/Dash14.png" type="Texture" id=36]
+[ext_resource path="res://assets/player/NewNew/dash/Dash15.png" type="Texture" id=37]
+[ext_resource path="res://assets/player/NewNew/dash/Dash17.png" type="Texture" id=38]
+[ext_resource path="res://assets/player/NewNew/dash/Dash1.png" type="Texture" id=39]
+[ext_resource path="res://assets/player/NewNew/dash/Dash2.png" type="Texture" id=40]
+[ext_resource path="res://assets/player/NewNew/dash/Dash3.png" type="Texture" id=41]
+[ext_resource path="res://assets/player/NewNew/dash/Dash4.png" type="Texture" id=42]
+[ext_resource path="res://assets/player/NewNew/dash/Dash5.png" type="Texture" id=43]
+[ext_resource path="res://assets/player/NewNew/dash/Dash6.png" type="Texture" id=44]
+[ext_resource path="res://assets/player/NewNew/dash/Dash7.png" type="Texture" id=45]
+[ext_resource path="res://assets/player/NewNew/dash/Dash8.png" type="Texture" id=46]
+[ext_resource path="res://assets/player/NewNew/dash/Dash9.png" type="Texture" id=47]
+[ext_resource path="res://assets/player/NewNew/dash/Dash10.png" type="Texture" id=48]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground2.png" type="Texture" id=49]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground3.png" type="Texture" id=50]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground4.png" type="Texture" id=51]
+[ext_resource path="res://assets/player/NewNew/stabground/AttackSwords from ground5.png" type="Texture" id=52]
 [ext_resource path="res://assets/player/NewNew/die/Death3.png" type="Texture" id=53]
 [ext_resource path="res://assets/player/NewNew/die/Death4.png" type="Texture" id=54]
 [ext_resource path="res://assets/player/NewNew/die/Death5.png" type="Texture" id=55]
@@ -151,35 +151,35 @@ animations = [ {
 "name": "run",
 "speed": 13.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
-"loop": false,
-"name": "attackstab",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": true,
 "name": "stabground-loop",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 32 ) ],
+"frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "stabground-end",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 42 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "attackstab",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": false,
+"name": "dash-post",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 48 ), ExtResource( 48 ) ],
 "loop": false,
 "name": "dash-pre",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
 "loop": false,
 "name": "stabground-pre",
 "speed": 14.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
-"loop": false,
-"name": "dash-post",
-"speed": 25.0
 }, {
 "frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ) ],
 "loop": false,
@@ -310,7 +310,6 @@ drag_margin_bottom = 0.0
 modulate = Color( 0.662745, 1, 0.0666667, 1 )
 position = Vector2( 1, -19 )
 shape = SubResource( 4 )
-
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="timeout" from="HitboxTimer" to="." method="_on_HitboxTimer_timeout"]

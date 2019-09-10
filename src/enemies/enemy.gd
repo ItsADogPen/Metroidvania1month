@@ -67,6 +67,9 @@ onready var touch_damage_areas = {
 	"transformed": $TransformedTouchDamageArea
 }
 
+onready var attack_hit_boxes = {
+}
+
 onready var attack_timer = $AttackTimer as Timer
 
 export(int) var patrol_distance
@@ -255,10 +258,10 @@ func attack():
 		state = State.ATTACK
 		
 		if stats.transformed:
-			sprite.play("transformed_attack")
+			animation_player.play("transformed_attack")
 		else:
-			sprite.play("normal_attack")
-		yield(sprite, "animation_finished")
+			animation_player.play("normal_attack")
+		yield(animation_player, "animation_finished")
 		play_attack_timer()
 		
 		if chasing:
@@ -290,11 +293,15 @@ func set_orientation():
 			area.scale.x = -1
 		for area in touch_damage_areas.values():
 			area.scale.x = -1
+		for area in attack_hit_boxes.values():
+			area.scale.x = -1
 		sprite.scale.x = -1
 	elif motion.x > 0:
 		for area in hit_detection_areas.values():
 			area.scale.x = 1
 		for area in touch_damage_areas.values():
+			area.scale.x = 1
+		for area in attack_hit_boxes.values():
 			area.scale.x = 1
 		sprite.scale.x = 1
 
@@ -306,3 +313,10 @@ func patrol():
 	restore_speed()
 	
 	horizontal_patrol()
+
+
+func check_hit_player(hitbox: NodePath):
+	if chasing:
+		print(get_node(hitbox))
+		if get_node(hitbox).overlaps_body(chasing):
+			chasing.take_damage(1)

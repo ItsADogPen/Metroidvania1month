@@ -1,6 +1,14 @@
 extends Enemy
 
 
+func _ready():
+	attack_hit_boxes = {
+		"normal": $NormalHitBox,
+		"transformed_right": $TransformedHitBoxRight,
+		"transformed_left": $TransformedHitBoxLeft,
+		"transformed_total": $TransformedHitBoxTotal,
+	}
+
 func _physics_process(delta):
 	move_gravity(delta)
 	check_movement_direction()
@@ -38,3 +46,4 @@ func check_movement_direction():
 		isAir = false
 	else:
 		isAir = true
+	

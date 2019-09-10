@@ -28,7 +28,7 @@ collision_layer = 1
 level = "Monster"
 
 [node name="AnimatedSprite" parent="Enemies/DetectionZone/Slime" index="0"]
-frame = 9
+frame = 4
 
 [node name="AttackDetectionArea" parent="Enemies/DetectionZone/Slime" index="3"]
 collision_layer = 1
@@ -44,7 +44,6 @@ collision_mask = 1
 
 [node name="Player" parent="." index="7"]
 position = Vector2( 63.131, 380.283 )
-scale = Vector2( 1.5, 1.5 )
 
 [editable path="Enemies/DetectionZone"]
 
