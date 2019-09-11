@@ -13,8 +13,14 @@ func _ready():
 func _on_body_entered(body):
 	if body is Player:
 		
+		# Move player to target position
 		var offset = Vector2(140, 20)
 		if flipped:
 			offset *= -1
+		var new_pos = goto_location + offset
+		body.position = new_pos
 		
-		body.position = goto_location + offset
+		# Create a checkpoint for the 
+		var portal_checkpoint = Node2D.new()
+		portal_checkpoint.position = new_pos
+		body.set_checkpoint(portal_checkpoint)

@@ -65,6 +65,11 @@ func _ready():
 	hp = 10
 	hp_current = hp
 	
+	# Create an initial point to teleport to on death
+	var temp_checkpoint = Node2D.new()
+	temp_checkpoint.position = position
+	set_checkpoint(temp_checkpoint)
+	
 	# Connect signals to health bar
 	var health_bar = get_node("/root/Game/UI/Overlay/HealthBar")
 	connect("soul_gained", health_bar, "_on_soul_gained")
