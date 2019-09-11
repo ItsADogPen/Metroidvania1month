@@ -4,6 +4,7 @@ class_name Player
 # Signals
 signal soul_gained
 signal health_lost
+signal reset_health
 
 # Constants
 const DASH_DIST = 450
@@ -62,7 +63,7 @@ onready var map = get_parent()
 func _ready():
 	
 	# Setup player stats
-	hp = 10
+	hp = 4
 	hp_current = hp
 	
 	# Create an initial point to teleport to on death
@@ -74,6 +75,7 @@ func _ready():
 	var health_bar = get_node("/root/Game/UI/Overlay/HealthBar")
 	connect("soul_gained", health_bar, "_on_soul_gained")
 	connect("health_lost", health_bar, "_on_health_lost")
+	connect("reset_health", health_bar, "_on_health_reset")
 
 func _physics_process(delta):
 	
@@ -130,6 +132,7 @@ func _player_death():
 	hp_current = hp
 	animation.play("revive")
 	yield(animation, "animation_finished")
+	emit_signal("reset_health")
 	isDead = false
 
 func play_effect(effect: String):
@@ -363,7 +366,7 @@ func take_damage(damage : int):
 	if stateMachine != "taking_damage":
 		stateMachine = "taking_damage"
 		
-		#emit_signal("health_lost")
+		emit_signal("health_lost")
 		hp_current -= damage
 		if hp_current <= 0:
 			_player_death()

@@ -2,7 +2,7 @@ extends Node2D
 
 onready var frame = $Frame
 
-var damage_counter = 1
+var damage_counter = 0
 
 func _on_soul_gained(power):
 	match power:
@@ -23,8 +23,12 @@ func _on_soul_gained(power):
 
 func _on_health_lost():
 	
-	frame.play()
-	yield(frame, "animation_finished")
-	frame.stop()
 	damage_counter += 1
-	frame.animation = "damage%2d" % damage_counter
+	frame.animation = "damage%02d" % damage_counter
+	frame.play()
+
+func _on_health_reset():
+	
+	damage_counter = 0
+	frame.animation = "damage01"
+	frame.stop()
