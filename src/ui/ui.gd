@@ -2,6 +2,7 @@ extends CanvasLayer
 
 
 onready var menus_node = get_node("Menus")
+onready var dialogue_panel = get_node("Dialogue/DialoguePanel")
 
 onready var menus = [
 	{
