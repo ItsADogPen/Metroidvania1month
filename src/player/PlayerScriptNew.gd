@@ -377,7 +377,7 @@ func take_damage(damage : int):
 		animation.set_self_modulate(Color(1, 1, 1, 1))
 
 func hit_spikes():
-	take_damage(2)
+	take_damage(1)
 	motion.y = JUMP_SPEED * 1.5
 	motion = move_and_slide(motion, Vector2.UP, true)
 

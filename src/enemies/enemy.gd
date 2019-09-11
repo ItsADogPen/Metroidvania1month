@@ -13,8 +13,8 @@ export(bool) var invincible = false
 export(int) var REGULAR_HEALTH = 10
 export(int) var MONSTER_HEALTH = 20
 
-export (int) var REGULAR_ATTACK = 2
-export (int) var MONSTER_ATTACK = 4
+export (int) var REGULAR_ATTACK = 1
+export (int) var MONSTER_ATTACK = 2
 
 export(bool) var moves = true
 
