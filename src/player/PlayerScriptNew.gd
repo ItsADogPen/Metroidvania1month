@@ -370,8 +370,8 @@ func take_damage(damage : int):
 
 func hit_spikes():
 	take_damage(2)
-	var new_motion = motion.normalized() * -1 * JUMP_SPEED
-	motion = move_and_slide(new_motion, Vector2.UP, true)
+	motion.y = JUMP_SPEED * 1.5
+	motion = move_and_slide(motion, Vector2.UP, true)
 
 func set_checkpoint(point):
 	last_checkpoint = point
