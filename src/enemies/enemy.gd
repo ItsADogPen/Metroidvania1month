@@ -285,7 +285,13 @@ func set_animation():
 		else:
 			if sprite.animation != "normal_walk":
 				sprite.play("normal_walk")
-
+	elif state == State.IDLE:
+		if stats.transformed:
+			if sprite.animation != "transformed_idle":
+				sprite.play("transformed_idle")
+		else:
+			if sprite.animation != "normal_idle":
+				sprite.play("normal_idle")
 
 func set_orientation():
 	if motion.x < 0:
