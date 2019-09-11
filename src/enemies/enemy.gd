@@ -193,9 +193,11 @@ func _transform():
 	sprite.play("transformation")
 	yield(sprite, "animation_finished")
 	for child in touch_damage_areas["normal"].get_children():
-		if child is CollisionShape2D: child.set_disabled(true)
+		if child is CollisionShape2D:
+			child.set_disabled(true)
 	for child in touch_damage_areas["transformed"].get_children():
-		if child is CollisionShape2D: child.set_disabled(false)
+		if child is CollisionShape2D:
+			child.set_disabled(false)
 	if chasing:
 		state = State.CHASE
 	else:
@@ -204,10 +206,13 @@ func _transform():
 
 func _die():
 	$CollisionShape2D.shape = null
-	touch_damage_areas["normal"] = null
-	touch_damage_areas["transformed"] = null
+	for touch_damage_area in touch_damage_areas.values():
+		for child in touch_damage_area.get_children():
+			if child is CollisionShape2D:
+				child.set_disabled(true)
 	motion.x = 0
 	state = State.DYING
+	
 	if stats.transformed:
 		sprite.play("transformed_death")
 	else:
@@ -270,12 +275,14 @@ func attack():
 			state = State.PATROL
 
 func _on_normal_attack_hit(body):
-	if body is Player:
-		body.take_damage(REGULAR_ATTACK)
+	if not stats.transformed and state != State.DYING:
+		if body is Player:
+			body.take_damage(REGULAR_ATTACK)
 
 func _on_monster_attack_hit(body):
-	if body is Player:
-		body.take_damage(MONSTER_ATTACK)
+	if stats.transformed and state != State.DYING:
+		if body is Player:
+			body.take_damage(MONSTER_ATTACK)
 
 func set_animation():
 	if state == State.PATROL or state == State.CHASE:

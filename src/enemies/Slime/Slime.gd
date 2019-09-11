@@ -1,7 +1,6 @@
 extends Enemy
 
 
-	
 func _physics_process(delta):
 	move_gravity(delta)
 	check_movement_direction()
@@ -39,8 +38,6 @@ func move_gravity(delta):
 	else:
 		if rays.up.is_colliding():
 			motion.y = ACCELERATION * 0.5
-
-
 	
 	if !isAir:
 		motion.y = 0

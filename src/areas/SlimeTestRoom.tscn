@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 514.733, 149.967 )
 
-[node name="SlimeTestRoom" instance=ExtResource( 1 )]
+[node name="SlimeTestRoom" index="0" instance=ExtResource( 1 )]
 
 [node name="TileMap" type="TileMap" parent="Tilesets" index="0"]
 tile_set = ExtResource( 2 )
