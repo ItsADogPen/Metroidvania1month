@@ -31,3 +31,4 @@ transform = Transform2D( 1, 0, 0, 1, 140, 0 )
 
 [node name="DialogueZones" type="Node2D" parent="."]
 
+[node name="Decorations" type="Node2D" parent="."]
