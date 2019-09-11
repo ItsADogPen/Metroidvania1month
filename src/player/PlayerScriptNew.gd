@@ -366,7 +366,7 @@ func take_damage(damage : int):
 	if stateMachine != "taking_damage":
 		stateMachine = "taking_damage"
 		
-		emit_signal("health_lost")
+		emit_signal("health_lost", damage)
 		hp_current -= damage
 		if hp_current <= 0:
 			_player_death()

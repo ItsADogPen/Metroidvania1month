@@ -21,9 +21,10 @@ func _on_soul_gained(power):
 		"dash":
 			$SoulYellow.visible = true
 
-func _on_health_lost():
+func _on_health_lost(num : int):
 	
-	damage_counter += 1
+	damage_counter += num
+	damage_counter = min(damage_counter, 4)
 	frame.animation = "damage%02d" % damage_counter
 	frame.play()
 
