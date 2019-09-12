@@ -5,73 +5,36 @@ var file : String = "res://src/dialogues/DialoguesStrings.json"
 onready var text_label = $RichTextLabel
 
 var scene_dialogues = {}
+var current_line = 0
 
 func _ready():
-	
-	_switch(false)
-	
-	pass
+	visible = false
 
 func _process(delta):
 	
-	var enter = Input.is_action_just_pressed("enter")
-	
-	if visible == true && enter:
-		
-		_dialogue_Manager(scene_dialogues.keys(), enter)
-	
-	
-	
-	pass
+	if Input.is_action_just_pressed("enter"):
+		continue_dialogue()
 
-
-func _switch(argument:bool):
+func show_dialogue(scene_name):
 	
-	visible = argument
-	
-
-
-func _dialogue_2():
-	
-	
+	# Get all dialogue from file
 	var data_file = File.new()
 	data_file.open(file, data_file.READ)
 	var data_text = parse_json(data_file.get_as_text())
 	data_file.close()
 	
+	scene_dialogues = data_text[scene_name]
 	
-	var dialogues = data_text["dialogue2"]
-	
-	
-	_switch(true)
-	
-	var string_1 = "dialogue_"
-	var num = 1
-	for i in dialogues.size():
-		
-		scene_dialogues[string_1+str(num)] = dialogues[str(num)]
-		
-		
-		num += 1
-	
-	num = 1
-	text_label.text = scene_dialogues[string_1+str(num)]
-	scene_dialogues.erase(string_1+str(num))
-	
-	
-	pass
+	current_line = 1
+	text_label.text = scene_dialogues[str(current_line)]
+	visible = true
 
-func _dialogue_Manager(keys:Array, enter_key):
+func continue_dialogue():
 	
+	current_line += 1
 	
-	if enter_key:
-		
-		if scene_dialogues.size() > 0:
-			text_label.text = scene_dialogues[keys[0]]
-			scene_dialogues.erase(keys[0])
-		else:
-			_switch(false)
-	
-	
-	
-	pass
+	# Make sure there is a next line to show
+	if current_line <= len(scene_dialogues):
+		text_label.text = scene_dialogues[str(current_line)]
+	else:
+		visible = false
