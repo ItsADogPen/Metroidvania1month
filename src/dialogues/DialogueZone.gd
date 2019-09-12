@@ -1,7 +1,7 @@
 extends Area2D
 class_name DialogueZone
 
-export (String, "dialogue2") var scene_name = "dialogue2"
+export (String, "dialogue1", "dialogue2", "dialogue3", "dialogue3-mid", "dialogue3-over", "dialogue4", "dialogue5") var scene_name = "dialogue2"
 
 var shown = false
 
