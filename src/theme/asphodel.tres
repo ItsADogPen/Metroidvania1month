@@ -1,0 +1,47 @@
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[ext_resource path="res://src/theme/pause_button_texture_hover.tres" type="StyleBox" id=1]
+[ext_resource path="res://src/theme/pause_button_texture_normal.tres" type="StyleBox" id=2]
+[ext_resource path="res://src/theme/ui_stylebox.tres" type="StyleBox" id=3]
+
+[resource]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = ExtResource( 1 )
+Button/styles/hover = ExtResource( 1 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 1 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Label/styles/normal = null
+Panel/styles/panel = ExtResource( 3 )
+Panel/styles/panelf = ExtResource( 3 )
+Panel/styles/panelnc = ExtResource( 3 )
+RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_as_outline = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
