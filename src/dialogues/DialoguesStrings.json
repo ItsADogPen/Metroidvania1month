@@ -76,7 +76,14 @@
 		"4" : "Could it be I was some kind of killer? Anyway I should get moving."
 	},
 
-	"Merly23" : {},
+	"Merly23" : 
+	{
+		"1": "Oh mighty warrior",
+		"2": "this game jam was on tatters",
+		"3": "Yet it was saved by brave coders",
+		"4": "Now rest safe and enjoy",
+		"5": "But trust nobody"
+	},
 
 	"Antony" : {},
 
@@ -84,7 +91,14 @@
 
 	"Jordan" : {},
 
-	"Inherently" : {},
+	"Inherently" : 
+	{
+		"1": "A desparate plea in the chat...",
+		"2": "Their coder had left in a spat!",
+		"3": "With just days to go,",
+		"4": "And no code to show,",
+		"5": "We put on a jam-saving act."
+	},
 
 	"Doggie" : 
 	{
