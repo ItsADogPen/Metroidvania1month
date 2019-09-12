@@ -1,5 +1,23 @@
 {
-
+	
+	"dialogue1":
+	{
+	
+		"1" : "I don’t remember what happened...",
+		"2" : "I was...I was doing something important.",
+		"3" : "However I have no memories of it.",
+		"4" : "I only know I woke up in this dark space lighted by the Hunters moon. I felt shivers running down my spine and a mixed feeling, like if someone was constantly watching me.",
+		"5" : "Behind me was a bottomless pit with these distorted voices, calling for help.",
+		"6" : "These familiar cries constantly saying my name.",
+		"7" : "In front only had a large path, which I had no idea where it would lead me.",
+		"8" : "I felt like this place was giving me an important choice. I could give up and follow the voices down the pit or go through the unknown path."
+		
+	},
+	
+	
+	
+	
+	
 	"dialogue2" : 
 	{
 	
@@ -20,18 +38,89 @@
 		"15": "It's important to me, I don't care if that happens. At least I would be able to go home.",
 		"16": "Cross the portal to the first circle, the Forest of Lies and Fraud. There, you will find the first guardian, Rosemary. She is... a little nasty. And pretty dangerous, so be careful with her. Don't be fooled by the things you see and hear; they'll do anything to hold you back."
 	
+	},
+	
+	
+	
+	
+	"dialogue3":
+	{
+	
+		
+		"1" : "Welcome sweetie, you have made quite a mess in my domain. I’m a little mad about it but I will let it slip if you come to me kindly. We can have some fun together.",
+		"2" : "I’m not that into girls, so I had rather pass. Too bad I’m here to kill you anyway.",
+		"3" : "You are not fun and you called me slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun",
+		"4" : "Go ahead, but you will never beat me, Dead Plant."
+	
+	},
+
+
+
+	"dialogue3-mid":
+	{
+		"1" : "Ara ara, now you angered me off. Hope you are ready to be my supper. En garde!"
+	},
+	
+	
+	"dialogue3-over":
+	{
+	
+		"1" : "Y-you truly...are strong… I-I..., never…thought this would be my end.",
+		"2" : "Sorry, but your death will bring me closer to revival by the hands of the Grim Reaper.",
+		"3" : "hahaha...wait...no…I can still...fight...aaaaahh....",
+		"4" : "You have fought well, Sothis… but you won’t take her life yet… the cycle must not be destroyed. As with the Grim Reaper how many have come with the same ideal as you. He lies to you. We will see soon.",
+		"5" : "Wait! What did you… dammit, she is gone! I wonder what she meant to say. Whatever, maybe there is something more I have to check. And then I will go back and tell him what happened."
+	
+	
+	},
+
+
+	"dialogue4":
+	{
+	
+		"1" : "I have failed to kill her, she escaped through a portal.",
+		"2" : " I have noticed the portal only sends me to the first circle. I need you to open the next portal",
+		"3" : "I’m afraid that isn’t possible, it took centuries to open the portal you crossed. I may need more to open the next.",
+		"4" : "My powers are slowly coming back but they are not enough for such task.",
+		"5" : "Are you telling me I have to wait centuries here?!",
+		"6" : "I’m afraid to say that it the case. Time in this realm flows slower than in the human world and it’s not that simple as a snap of your fingers.",
+		"7" : "You can keep training your skills for next battle if you wish",
+		"8" : "It’s the single thing I can do right now. Also I have been wondering but why I’m on a swimsuit?",
+		"9" : "You arrived as you died. Perhaps your life ended on the beach or you could have drawn on the sea. I can do nothing to change it.",
+		"10": "...Weird",
+		"11": "There is books floating around, maybe they contain something important"
+	
+	
+	
+	
+	},
+
+
+	"dialogue5":
+	{
+	
+		"1" : "There is books floating around, maybe they contain something important",
+		"2" : "You couldn’t protect them. You doomed them, you abandoned them and let them die. You sinner, burn in hell, monster, murderer, murderer, murderer, murd...",
+		"3" : "This book might be related to my past, but seems incomplete. I may need time to properly think about what it means.",
+		"4" : "Could it be I was some kind of killer? Anyway I should get moving"
+	
+	},
+
+
+	"membersbooks":
+	{
+	
+	
+		"Merly23" : "",
+		"Antony" : "",
+		"Willow" : "",
+		"Jordan" : "",
+		"Inherently" : "",
+		"Doggie" : "",
+		"Agent" : ""
+	
+	
 	}
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 }
