@@ -29,6 +29,4 @@ scale = Vector2( 2, 2 )
 [node name="Player" parent="." index="9"]
 position = Vector2( 63.131, 188.059 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="13"]
-
 [editable path="Enemies/DetectionZone"]

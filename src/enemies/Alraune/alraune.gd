@@ -58,12 +58,17 @@ func chase():
 	
 	# Attack logic will have to come in the attack function perhaps?
 	if can_attack:
+		
 		if stats.transformed:
 			if hit_detection_areas.transformed.overlaps_body(chasing):
 				attack()
+			else:
+				projectile_attack()
 		else:
 			if hit_detection_areas.normal.overlaps_body(chasing):
 				attack()
+			else:
+				projectile_attack()
 	
 func set_orientation():
 	if chasing and not state == State.DYING:
@@ -103,10 +108,30 @@ func attack():
 		state = State.ATTACK
 		
 		if stats.transformed:
-			sprite.play("transformed_attack_direct")
+			if randf() < 0.3:
+				animation_player.play("transformed_attack_spit")
+			else:
+				animation_player.play("transformed_attack")
 		else:
-			sprite.play("normal_attack_direct")
-		yield(sprite, "animation_finished")
+			animation_player.play("normal_attack")
+		yield(animation_player, "animation_finished")
+		play_attack_timer()
+		
+		if chasing:
+			state = State.CHASE
+		else:
+			state = State.PATROL
+	
+func projectile_attack():
+	if can_attack:
+		state = State.ATTACK
+		
+		if stats.transformed:
+			animation_player.play("transformed_attack_projectile")
+		else:
+			animation_player.play("normal_attack_projectile")
+		yield(animation_player, "animation_finished")
+		
 		play_attack_timer()
 		
 		if chasing:
