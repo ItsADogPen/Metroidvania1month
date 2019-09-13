@@ -12,10 +12,12 @@ func _ready():
 	AudioEngine.play_background_music(default_track)
 #	AudioEngine.play_sound("res://assets/audio/music/Pre_Boss_mixed.wav", true)
 	
+	# Disable dialogue zones that are triggered by in-game events
+	get_node("DialogueZones/DialogueZone03-mid/CollisionShape2D").set_disabled(true)
+	get_node("DialogueZones/DialogueZone03-end/CollisionShape2D").set_disabled(true)
+	get_node("DialogueZones/DialogueZone04/CollisionShape2D").set_disabled(true)
 	
 	#randomize()
-	pass
-
 
 func _on_body_exited(body):
 	AudioEngine.play_background_music(default_track)

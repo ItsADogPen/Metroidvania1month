@@ -1,5 +1,8 @@
 extends Enemy
 
+onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-mid")
+onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-end")
+onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone04")
 
 func _physics_process(delta):
 	move_gravity(delta)
@@ -110,3 +113,39 @@ func set_animation():
 		else:
 			if sprite.animation != "normal_idle":
 				sprite.play("normal_idle")
+
+# Identical to _transform from enemy.gd, but with line to show dialogue
+func _transform():
+	motion.x = 0
+	state = State.TRANSFORMING
+	stats.health = MONSTER_HEALTH
+	stats.transformed = true
+	sprite.play("transformation")
+	yield(sprite, "animation_finished")
+	for child in touch_damage_areas["normal"].get_children():
+		if child is CollisionShape2D:
+			child.set_disabled(true)
+	for child in touch_damage_areas["transformed"].get_children():
+		if child is CollisionShape2D:
+			child.set_disabled(false)
+	if chasing:
+		state = State.CHASE
+	else:
+		state = State.PATROL
+	mid_battle_dialog.get_node("CollisionShape2D").set_disabled(false)
+
+# Identical to _die from enemy.gd, but with lines to show dialogue
+func _die():
+	$CollisionShape2D.shape = null
+	for touch_damage_area in touch_damage_areas.values():
+		for child in touch_damage_area.get_children():
+			if child is CollisionShape2D:
+				child.set_disabled(true)
+	motion.x = 0
+	state = State.DYING
+	if stats.transformed:
+		sprite.play("transformed_death")
+	else:
+		sprite.play("normal_death")
+	end_battle_dialog.get_node("CollisionShape2D").set_disabled(false)
+	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)

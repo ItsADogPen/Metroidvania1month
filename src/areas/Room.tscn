@@ -779,7 +779,7 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 10227, 11048.8 )
+position = Vector2( 8830.57, 10216.3 )
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 25 )]
 position = Vector2( 8642.72, 959.52 )
@@ -796,19 +796,16 @@ scale = Vector2( 10, 10 )
 scene_name = "dialogue3"
 
 [node name="DialogueZone03-mid" parent="DialogueZones" index="3" instance=ExtResource( 25 )]
-visible = false
-position = Vector2( 9241.27, 10131.3 )
-scale = Vector2( 10, 10 )
+position = Vector2( 9260.91, 10038 )
+scale = Vector2( 20, 20 )
 scene_name = "dialogue3-mid"
 
 [node name="DialogueZone03-end" parent="DialogueZones" index="4" instance=ExtResource( 25 )]
-visible = false
-position = Vector2( 9241.27, 10131.3 )
-scale = Vector2( 10, 10 )
+position = Vector2( 9260.91, 10038 )
+scale = Vector2( 20, 20 )
 scene_name = "dialogue3-over"
 
 [node name="DialogueZone04" parent="DialogueZones" index="5" instance=ExtResource( 25 )]
-visible = false
 position = Vector2( 7896, 810 )
 scale = Vector2( 21, 20 )
 scene_name = "dialogue4"
