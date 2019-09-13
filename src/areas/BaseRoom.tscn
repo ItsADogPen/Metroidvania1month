@@ -19,6 +19,8 @@ transform = Transform2D( 1, 0, 0, 1, 140, 0 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="Barricades" type="Node2D" parent="."]
+
 [node name="Souls" type="Node2D" parent="."]
 
 [node name="CheckPoints" type="Node2D" parent="."]
