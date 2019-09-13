@@ -1,0 +1,20 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
+
+[ext_resource path="res://assets/Environment/barricades/Barricade1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Environment/barricades/Barricade2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Environment/barricades/Barricade3.png" type="Texture" id=3]
+[ext_resource path="res://assets/Environment/barricades/Barricade4.png" type="Texture" id=4]
+[ext_resource path="res://assets/Environment/barricades/Barricade5.png" type="Texture" id=5]
+
+[resource]
+animations = [ {
+"frames": [ null, ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), null ],
+"loop": true,
+"name": "open",
+"speed": 5.0
+} ]
