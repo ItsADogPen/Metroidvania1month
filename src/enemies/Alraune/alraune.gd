@@ -3,7 +3,7 @@ extends Enemy
 onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-mid")
 onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-end")
 onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone04")
-
+onready var secret_room_barricade = get_node("/root/Game/Room/Barricades/OvergrownBarricade02")
 
 signal projectile(type)
 
@@ -172,6 +172,7 @@ func _transform():
 func _die():
 	end_battle_dialog._on_body_entered(get_node("/root/Game/Room/Player"))
 	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)
+	secret_room_barricade.open_door()
 	$CollisionShape2D.shape = null
 	for touch_damage_area in touch_damage_areas.values():
 		for child in touch_damage_area.get_children():
