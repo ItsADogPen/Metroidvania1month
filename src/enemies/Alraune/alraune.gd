@@ -150,6 +150,7 @@ func set_animation():
 
 # Identical to _transform from enemy.gd, but with line to show dialogue
 func _transform():
+	mid_battle_dialog._on_body_entered(get_node("/root/Game/Room/Player"))
 	motion.x = 0
 	state = State.TRANSFORMING
 	stats.health = MONSTER_HEALTH
@@ -166,10 +167,11 @@ func _transform():
 		state = State.CHASE
 	else:
 		state = State.PATROL
-	mid_battle_dialog.get_node("CollisionShape2D").set_disabled(false)
 
 # Identical to _die from enemy.gd, but with lines to show dialogue
 func _die():
+	end_battle_dialog._on_body_entered(get_node("/root/Game/Room/Player"))
+	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)
 	$CollisionShape2D.shape = null
 	for touch_damage_area in touch_damage_areas.values():
 		for child in touch_damage_area.get_children():
@@ -181,8 +183,6 @@ func _die():
 		sprite.play("transformed_death")
 	else:
 		sprite.play("normal_death")
-	end_battle_dialog.get_node("CollisionShape2D").set_disabled(false)
-	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)
 
 func shoot_projectile():
 	if stats.transformed:
