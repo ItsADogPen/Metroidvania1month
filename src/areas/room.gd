@@ -12,10 +12,11 @@ func _ready():
 	AudioEngine.play_background_music(default_track)
 #	AudioEngine.play_sound("res://assets/audio/music/Pre_Boss_mixed.wav", true)
 	
-	# Disable dialogue zones that are triggered by in-game events
+	# Disable zones that are triggered by in-game events
 	get_node("DialogueZones/DialogueZone03-mid/CollisionShape2D").set_disabled(true)
 	get_node("DialogueZones/DialogueZone03-end/CollisionShape2D").set_disabled(true)
 	get_node("DialogueZones/DialogueZone04/CollisionShape2D").set_disabled(true)
+	get_node("Portals/Portal03/CollisionShape2D").set_disabled(true)
 	
 	for boss in get_tree().get_nodes_in_group("alraune"):
 		boss.connect("projectile", self, "_on_boss_projectile")

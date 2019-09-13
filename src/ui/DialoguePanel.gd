@@ -48,5 +48,8 @@ func trigger_event():
 		"dialogue2":
 			# Hardcoding node paths is bad, mmmkay? Mmmkay.
 			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
+		"dialogue3-over":
+			get_node("/root/Game/Room/Portals/Portal03").visible = true
+			get_node("/root/Game/Room/Portals/Portal03/CollisionShape2D").set_disabled(false)
 		_:
 			pass

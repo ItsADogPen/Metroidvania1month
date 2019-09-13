@@ -14,9 +14,7 @@ func _on_body_entered(body):
 	if body is Player:
 		
 		# Move player to target position
-		var offset = Vector2(140, 20)
-		if flipped:
-			offset *= -1
+		var offset = Vector2(-140, -20)
 		var new_pos = goto_location + offset
 		body.position = new_pos
 		
