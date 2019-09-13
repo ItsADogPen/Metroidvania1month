@@ -4,6 +4,7 @@ var file : String = "res://src/dialogues/DialoguesStrings.json"
 
 onready var text_label = $RichTextLabel
 
+var scene = ""
 var scene_dialogues = {}
 var current_line = 0
 
@@ -16,6 +17,8 @@ func _process(delta):
 		continue_dialogue()
 
 func show_dialogue(scene_name):
+	
+	scene = scene_name
 	
 	# Get all dialogue from file
 	var data_file = File.new()
@@ -38,3 +41,12 @@ func continue_dialogue():
 		text_label.text = scene_dialogues[str(current_line)]
 	else:
 		visible = false
+		trigger_event()
+
+func trigger_event():
+	match scene:
+		"dialogue2":
+			# Hardcoding node paths is bad, mmmkay? Mmmkay.
+			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
+		_:
+			pass
