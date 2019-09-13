@@ -686,6 +686,7 @@ scale = Vector2( 3, 3 )
 position = Vector2( 8327, 9959 )
 scale = Vector2( 3, 3 )
 start_open = true
+trigger_close = true
 
 [node name="OvergrownBarricade02" parent="Barricades" index="3" instance=ExtResource( 14 )]
 position = Vector2( 8468.1, 10560.2 )
@@ -777,9 +778,6 @@ goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
 position = Vector2( 8739.73, 1054.4 )
-
-[node name="DialogueZones" parent="." index="11"]
-editor/display_folded = true
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 25 )]
 position = Vector2( 8642.72, 959.52 )
