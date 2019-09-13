@@ -144,7 +144,7 @@ extents = Vector2( 120.155, 67.6094 )
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 244.361, 55.2627 )
 
-[node name="BaseRoom" instance=ExtResource( 1 )]
+[node name="BaseRoom" index="0" instance=ExtResource( 1 )]
 
 [node name="Tilesets" parent="." index="1"]
 editor/display_folded = true
@@ -775,8 +775,8 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Portal03" parent="Portals" index="2" instance=ExtResource( 24 )]
-visible = false
-position = Vector2( 8404.83, 9931.71 )
+position = Vector2( 10645.3, 10941.9 )
+flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
