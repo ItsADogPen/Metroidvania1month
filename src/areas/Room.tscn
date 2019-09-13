@@ -775,7 +775,7 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Portal03" parent="Portals" index="2" instance=ExtResource( 24 )]
-position = Vector2( 10645.3, 10941.9 )
+position = Vector2( 10644.6, 10921.5 )
 flipped = true
 goto_location = Vector2( 9817, 899 )
 
