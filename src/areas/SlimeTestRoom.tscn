@@ -6,9 +6,9 @@
 [ext_resource path="res://src/enemies/Slime/Slime.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 514.733, 149.967 )
+extents = Vector2( 621.741, 149.967 )
 
-[node name="SlimeTestRoom" index="0" instance=ExtResource( 1 )]
+[node name="SlimeTestRoom" instance=ExtResource( 1 )]
 
 [node name="TileMap" type="TileMap" parent="Tilesets" index="0"]
 tile_set = ExtResource( 2 )
@@ -24,8 +24,6 @@ shape = SubResource( 1 )
 [node name="Slime" parent="Enemies/DetectionZone" index="1" instance=ExtResource( 4 )]
 position = Vector2( -153.422, -42.8164 )
 scale = Vector2( 1.6, 1.6 )
-collision_layer = 1
-level = "Monster"
 
 [node name="AnimatedSprite" parent="Enemies/DetectionZone/Slime" index="0"]
 frame = 4
@@ -34,15 +32,15 @@ frame = 4
 collision_layer = 1
 collision_mask = 3
 
-[node name="NormalTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="9"]
+[node name="NormalTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="8"]
 collision_layer = 1
 collision_mask = 1
 
-[node name="TransformedTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="10"]
+[node name="TransformedTouchDamageArea" parent="Enemies/DetectionZone/Slime" index="9"]
 collision_layer = 1
 collision_mask = 1
 
-[node name="Player" parent="." index="8"]
+[node name="Player" parent="." index="9"]
 position = Vector2( 63.131, 380.283 )
 
 [editable path="Enemies/DetectionZone"]

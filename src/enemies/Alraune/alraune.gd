@@ -1,6 +1,16 @@
 extends Enemy
 
 
+
+signal projectile
+
+func _ready():
+	attack_hit_boxes = {
+		"normal": $NormalHitBox,
+		"transformed_direct": $TransformedDirectHitBox,
+		"transformed_spit": $TransformedSpitHitBox,
+	}
+
 func _physics_process(delta):
 	move_gravity(delta)
 	check_movement_direction()
@@ -110,3 +120,9 @@ func set_animation():
 		else:
 			if sprite.animation != "normal_idle":
 				sprite.play("normal_idle")
+				
+func shoot_projectile():
+	if stats.transformed:
+		emit_signal("projectile", "transformed")
+	else:
+		emit_signal("projectile", "normal")

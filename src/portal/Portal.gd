@@ -20,6 +20,8 @@ func _on_body_entered(body):
 		var new_pos = goto_location + offset
 		body.position = new_pos
 		
+		body.motion.x = -body.motion.x
+		
 		# Create a checkpoint for the 
 		var portal_checkpoint = Node2D.new()
 		portal_checkpoint.position = new_pos

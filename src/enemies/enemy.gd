@@ -239,7 +239,10 @@ func horizontal_patrol():
 func get_chasing_direction():
 	if chasing:
 		var distance = chasing.global_position.x - global_position.x
+		if abs(distance) < 2:
+			return 0
 		return sign(distance)
+		
 	
 func chase():
 	if motion.x == 0:
@@ -248,6 +251,11 @@ func chase():
 	restore_speed()
 	
 	motion.x = get_chasing_direction() * (SPEED + ACCELERATION)
+	
+	if motion.x > 0 and !rays.right_corner.is_colliding():
+		motion.x = 0
+	elif motion.x < 0 and !rays.left_corner.is_colliding():
+		motion.x = 0
 	
 	if stats.transformed:
 		if hit_detection_areas.transformed.overlaps_body(chasing):
