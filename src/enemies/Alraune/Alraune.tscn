@@ -258,17 +258,18 @@ extents = Vector2( 52.8322, 10 )
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 56.2641, 19.7599 )
 
-[node name="Alraune" index="0" instance=ExtResource( 1 )]
+[node name="Alraune" groups=[
+"alraune",
+] instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 collision_layer = 0
 script = ExtResource( 2 )
 level = "Transform"
-REGULAR_ATTACK_COOLDOWN = 0.7
-MONSTER_ATTACK_COOLDOWN = 0.5
+REGULAR_ATTACK_COOLDOWN = 1.2
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
-animation = "transformed_attack_projectile"
+animation = "normal_attack_direct"
 frame = 9
 offset = Vector2( -60, -58 )
 

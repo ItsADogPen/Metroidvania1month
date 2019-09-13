@@ -5,7 +5,7 @@ onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/Dialogue
 onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone04")
 
 
-signal projectile
+signal projectile(type)
 
 func _ready():
 	attack_hit_boxes = {

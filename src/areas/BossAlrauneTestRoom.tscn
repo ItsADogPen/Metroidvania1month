@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 764.242, 204.416 )
 
-[node name="BossAlrauneTestRoom" index="0" instance=ExtResource( 1 )]
+[node name="BossAlrauneTestRoom" instance=ExtResource( 1 )]
 
 [node name="TileMap" type="TileMap" parent="Tilesets" index="0"]
 tile_set = ExtResource( 2 )

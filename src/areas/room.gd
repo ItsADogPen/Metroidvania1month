@@ -17,7 +17,18 @@ func _ready():
 	get_node("DialogueZones/DialogueZone03-end/CollisionShape2D").set_disabled(true)
 	get_node("DialogueZones/DialogueZone04/CollisionShape2D").set_disabled(true)
 	
+	for boss in get_tree().get_nodes_in_group("alraune"):
+		boss.connect("projectile", self, "_on_boss_projectile")
+	
+	
+	
 	#randomize()
+	
+func _on_boss_projectile(projectile_type):
+	if projectile_type == "normal":
+		print("Normal projectile fired")
+	else:
+		print("Transformed projectile fired!")
 
 func _on_body_exited(body):
 	AudioEngine.play_background_music(default_track)

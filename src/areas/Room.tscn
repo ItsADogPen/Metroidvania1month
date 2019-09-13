@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://src/areas/BaseRoom.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tiles/Cave.tscn" type="PackedScene" id=2]
@@ -144,7 +144,10 @@ extents = Vector2( 120.155, 67.6094 )
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 244.361, 55.2627 )
 
-[node name="BaseRoom" instance=ExtResource( 1 )]
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 331.979, 166.973 )
+
+[node name="BaseRoom" index="0" instance=ExtResource( 1 )]
 
 [node name="Tilesets" parent="." index="1"]
 editor/display_folded = true
@@ -658,8 +661,18 @@ position = Vector2( 6324.08, 4848.99 )
 [node name="Slime5" parent="Enemies" index="47" instance=ExtResource( 11 )]
 position = Vector2( 6614.08, 4943.99 )
 
-[node name="Alraune" parent="Enemies" index="48" instance=ExtResource( 12 )]
+[node name="DetectionZone21" parent="Enemies" index="48" instance=ExtResource( 9 )]
 position = Vector2( 9508.8, 10223 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Alraune" parent="Enemies/DetectionZone21" index="1" instance=ExtResource( 12 )]
+scale = Vector2( 1, 1 )
+REGULAR_ATTACK_COOLDOWN = 1.0
+MONSTER_ATTACK_COOLDOWN = 0.8
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemies/DetectionZone21" index="2"]
+position = Vector2( -185.19, -79.957 )
+shape = SubResource( 40 )
 
 [node name="StatueBarricade01" parent="Barricades" index="0" instance=ExtResource( 13 )]
 position = Vector2( 8869.79, 983.237 )
@@ -766,7 +779,7 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 8830.57, 10216.3 )
+position = Vector2( 8039.57, 10014.3 )
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 25 )]
 position = Vector2( 8642.72, 959.52 )
@@ -783,16 +796,19 @@ scale = Vector2( 10, 10 )
 scene_name = "dialogue3"
 
 [node name="DialogueZone03-mid" parent="DialogueZones" index="3" instance=ExtResource( 25 )]
-position = Vector2( 9260.91, 10038 )
-scale = Vector2( 20, 20 )
+visible = false
+position = Vector2( 9241.27, 10131.3 )
+scale = Vector2( 10, 10 )
 scene_name = "dialogue3-mid"
 
 [node name="DialogueZone03-end" parent="DialogueZones" index="4" instance=ExtResource( 25 )]
-position = Vector2( 9260.91, 10038 )
-scale = Vector2( 20, 20 )
+visible = false
+position = Vector2( 9241.27, 10131.3 )
+scale = Vector2( 10, 10 )
 scene_name = "dialogue3-over"
 
 [node name="DialogueZone04" parent="DialogueZones" index="5" instance=ExtResource( 25 )]
+visible = false
 position = Vector2( 7896, 810 )
 scale = Vector2( 21, 20 )
 scene_name = "dialogue4"
