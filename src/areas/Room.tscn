@@ -763,9 +763,6 @@ position = Vector2( 5984.63, 7489.73 )
 [node name="Checkpoint8" parent="CheckPoints" index="7" instance=ExtResource( 23 )]
 position = Vector2( 8130.39, 10034.1 )
 
-[node name="Portals" parent="." index="8"]
-editor/display_folded = true
-
 [node name="Portal01" parent="Portals" index="0" instance=ExtResource( 24 )]
 position = Vector2( 9817, 899 )
 flipped = true
@@ -776,8 +773,13 @@ position = Vector2( 8672, 3636 )
 flipped = true
 goto_location = Vector2( 9817, 899 )
 
+[node name="Portal03" parent="Portals" index="2" instance=ExtResource( 24 )]
+position = Vector2( 10645.3, 10941.9 )
+flipped = true
+goto_location = Vector2( 9817, 899 )
+
 [node name="Player" parent="." index="9"]
-position = Vector2( 8739.73, 1054.4 )
+position = Vector2( 10227, 11048.8 )
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 25 )]
 position = Vector2( 8642.72, 959.52 )
