@@ -4,6 +4,16 @@ onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/Dialogue
 onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-end")
 onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone04")
 
+
+signal projectile
+
+func _ready():
+	attack_hit_boxes = {
+		"normal": $NormalHitBox,
+		"transformed_direct": $TransformedDirectHitBox,
+		"transformed_spit": $TransformedSpitHitBox,
+	}
+
 func _physics_process(delta):
 	move_gravity(delta)
 	check_movement_direction()
@@ -103,9 +113,8 @@ func attack():
 			state = State.CHASE
 		else:
 			state = State.PATROL
-	
-	
-func set_animation():	
+
+func set_animation():
 	if state == State.PATROL or state == State.CHASE:
 		if stats.transformed:
 			if sprite.animation != "transformed_idle":
@@ -149,3 +158,9 @@ func _die():
 		sprite.play("normal_death")
 	end_battle_dialog.get_node("CollisionShape2D").set_disabled(false)
 	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)
+
+func shoot_projectile():
+	if stats.transformed:
+		emit_signal("projectile", "transformed")
+	else:
+		emit_signal("projectile", "normal")
