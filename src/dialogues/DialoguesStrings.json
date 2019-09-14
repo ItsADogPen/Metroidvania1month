@@ -15,10 +15,10 @@
 	"dialogue2" : 
 	{
 		"1" : { "text" : "Welcometh to mine own altar, hath lost soul. I has't many names. Some calleth me Mot, oth'rs calleth me Ankou... Feeleth free to calleth me as thee wisheth.", "color" : "grey" },
-		"2" : { "text" : "Uh… I didn't understand a lick of what you were saying. You were stalking me all the way through?", "color" : "white" },
+		"2" : { "text" : "Uh... I didn't understand a lick of what you were saying. You were stalking me all the way through?", "color" : "white" },
 		"3" : { "text" : "I apologise for mine own previous speech, it has been ages since I have seen someone here. I have many names, like Ankou, Mot, Grim Reaper, even just Grim. Feel free to call mine own as thee wish.", "color" : "grey" },
 		"4" : { "text" : "Could you please explain to me what I'm doing and how I arrived here, Statue of Bone Daddy?", "color" : "white" },
-		"5" : { "text" : "Ahhh... P-please… j-just call mine own Grim Reaper.", "color" : "grey" },
+		"5" : { "text" : "Ahhh... P-please... j-just call mine own Grim Reaper.", "color" : "grey" },
 		"6" : { "text" : "Sure... but that doesn't explain anything!", "color" : "white" },
 		"7" : { "text" : "Th..you here because you are lost. Your sins don't allow you to go to heaven and they are too big for you to be accepted in hell!", "color" : "grey" },
 		"8" : { "text" : "What can I do, to escape this place and go back home though? I'm sure there is a way.", "color" : "white" },
@@ -74,6 +74,19 @@
 		"2" : { "text" : "You couldn't protect them. You doomed them, you abandoned them and let them die. You sinner, burn in hell, monster, murderer, murderer, murderer, murd...", "color" : "black" },
 		"3" : { "text" : "This book might be related to my past, but seems incomplete. I may need time to properly think about what it means.", "color" : "white" },
 		"4" : { "text" : "Could it be I was some kind of killer? Anyway I should get moving.", "color" : "white" }
+	},
+
+	"dialogue6":
+	{
+		"1" : { "text" : "I decided to follow those familiar voices and jumped into the pit. I found them, but in a never ending loop. ", "color" : "white" },
+		"2" : { "text" : "I closed my eyes and waited, months...", "color" : "white" },
+		"3" : { "text" : "Years...", "color" : "white" },
+		"4" : { "text" : "Centuries...", "color" : "white" },
+		"5" : { "text" : "...Always falling while those voices haunted me for the rest of my life.", "color" : "white" },
+		"6" : { "text" : "I... I couldn't endure it anymore. Those voices reminded me of everything and I felt and the guilt burned me, greater than my desire to live.", "color" : "white" },
+		"7" : { "text" : "I apologise my daughter, but I won't fulfill my promise.", "color" : "white" },
+		"8" : { "text" : "With the last strength I had, I pushed my swords deep into my stomach. As my eyes closed, the last words that came from my lips were,", "color" : "white" },
+		"9" : { "text" : "\"I'm sorry.\"", "color" : "white" }
 	},
 
 	"Merly23" : 
