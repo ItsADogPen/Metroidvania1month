@@ -1,26 +1,22 @@
 extends Area2D
 
+export var damage_frame = 1
 
-var owner_group = null
+onready var animated_sprite = $AnimatedSprite
 
-export var velocity = 200
-export var gravity_influence = 0
 
-var acceleration = Vector2(0, 0)
-
-func ready():
-	connect("body_entered", self, "_on_body_entered")
-		
-func set_owner(owner):
-	owner_group = owner
+func _ready():
+	animated_sprite.connect("frame_changed", self, "_on_frame_changed")
 	
-func _on_body_entered(body: Node):
-	if not body.is_in_group(owner_group):
-		print("hit")
+func play():
+	animated_sprite.play("default")
+	yield(animated_sprite, "animation_finished")
+	queue_free()
 
-func _physics_process(delta):
-	acceleration += Vector2(0, gravity_influence) * delta
-	var actual_velocity = Vector2(
-	
-	position += 1 / 2 * acceleration * delta * delta + velocity + Vector2(velocity, 0) * delta
+func _on_frame_changed():
+	if animated_sprite.frame == damage_frame:
+		for body in get_overlapping_bodies():
+			if body is Player:
+				body.take_enemy_damage(1)
+
 

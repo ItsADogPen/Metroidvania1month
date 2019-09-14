@@ -18,7 +18,7 @@ const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
 var ACCEL = 500
-var JUMP_SPEED = -240
+var JUMP_SPEED = -280
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 
 onready var effect_player = AudioEngine.effects.effect_players[0]
