@@ -4,7 +4,7 @@
 [ext_resource path="res://src/enemies/Alraune/alraune.gd" type="Script" id=2]
 [ext_resource path="res://src/enemies/Alraune/AlrauneFrames.tres" type="SpriteFrames" id=3]
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=1]
 resource_name = "normal_attack"
 length = 1.125
 step = 0.125
@@ -50,7 +50,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=2]
 resource_name = "normal_attack_projectile"
 length = 1.125
 step = 0.125
@@ -93,7 +93,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=3]
 resource_name = "transformed_attack"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -134,7 +134,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=4]
 resource_name = "transformed_attack_projectile"
 length = 2.375
 step = 0.125
@@ -177,7 +177,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=5]
 resource_name = "transformed_attack_spit"
 length = 1.1
 tracks/0/type = "value"
@@ -222,40 +222,40 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 24.0263
 height = 14.5221
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 49.5057, 23.8943 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 55.5858, 19.9527 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 14.7829, 22.8437 )
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=10]
 radius = 23.6285
 height = 27.705
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 16.4262, 33.0895 )
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=12]
 radius = 38.608
 height = 50.8312
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=13]
 radius = 20.8155
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 26.8643, 10 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 52.8322, 10 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 56.2641, 19.7599 )
 
 [node name="Alraune" groups=[
@@ -274,23 +274,23 @@ frame = 9
 offset = Vector2( -60, -58 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/normal_attack = SubResource( 9 )
-anims/normal_attack_projectile = SubResource( 15 )
-anims/transformed_attack = SubResource( 11 )
-anims/transformed_attack_projectile = SubResource( 16 )
-anims/transformed_attack_spit = SubResource( 13 )
+anims/normal_attack = SubResource( 1 )
+anims/normal_attack_projectile = SubResource( 2 )
+anims/transformed_attack = SubResource( 3 )
+anims/transformed_attack_projectile = SubResource( 4 )
+anims/transformed_attack_spit = SubResource( 5 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( -1.28819, -24.3774 )
 rotation = 1.57079
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="AttackDetectionArea" parent="." index="3"]
 position = Vector2( -0.283092, -23.9433 )
 
 [node name="CollisionShape2D" parent="AttackDetectionArea" index="0"]
 position = Vector2( -78.2957, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 
 [node name="RayCasts" parent="." index="4"]
 visible = false
@@ -300,51 +300,51 @@ position = Vector2( 0.293884, -36.8088 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedAttackDetectionArea" index="0"]
 position = Vector2( -131.763, 5.38111 )
-shape = SubResource( 3 )
+shape = SubResource( 8 )
 
 [node name="NormalTouchDamageArea" parent="." index="7"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
 position = Vector2( 0, -64.2555 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NormalTouchDamageArea" index="1"]
 position = Vector2( 0, -21.0291 )
 rotation = 1.57079
-shape = SubResource( 5 )
+shape = SubResource( 10 )
 
 [node name="TransformedTouchDamageArea" parent="." index="8"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 5.12124, -78.3249 )
-shape = SubResource( 6 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="1"]
 position = Vector2( -23.3889, -35.6981 )
 rotation = 1.57079
-shape = SubResource( 7 )
+shape = SubResource( 12 )
 
 [node name="TransformeGetHitByAttackArea" type="CollisionShape2D" parent="." index="9"]
 position = Vector2( -67.3136, -28.6638 )
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="NormalHitBox" type="Area2D" parent="." index="10"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NormalHitBox" index="0"]
 position = Vector2( -55.3772, -11.7337 )
-shape = SubResource( 10 )
+shape = SubResource( 14 )
 
 [node name="TransformedDirectHitBox" type="Area2D" parent="." index="11"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransformedDirectHitBox" index="0"]
 position = Vector2( -127.869, -31.7058 )
-shape = SubResource( 12 )
+shape = SubResource( 15 )
 
 [node name="TransformedSpitHitBox" type="Area2D" parent="." index="12"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransformedSpitHitBox" index="0"]
 position = Vector2( -136.045, -22.9461 )
 rotation = -0.313664
-shape = SubResource( 14 )
+shape = SubResource( 16 )

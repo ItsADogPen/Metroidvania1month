@@ -21,6 +21,15 @@ func _ready():
 		boss.connect("projectile", self, "_on_boss_projectile")
 	
 	
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy.global_position.y < $Levels/First.global_position.y:
+			enemy.level = "Regular"
+		else:
+			if enemy.name.begins_with("Mushroom"):
+				enemy.level = "Transform"
+			elif enemy.name.begins_with("Slime"):
+				enemy.level = "Monster"
+				enemy._transform()
 	
 	#randomize()
 	

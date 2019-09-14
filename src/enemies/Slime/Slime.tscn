@@ -136,25 +136,25 @@ extents = Vector2( 6.55812, 29.0476 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 84.2309 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 13.0845, 53.3148 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 32.2776, 10.6141 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 102.024, 54.7061 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 44.2296, 54.7061 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 37.616, 6.55219 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 18.0037, 17.2543 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 98.9583, 44.7451 )
 
-[node name="Slime" index="0" instance=ExtResource( 1 )]
+[node name="Slime" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 invincible = true
@@ -165,7 +165,7 @@ MAX_GRAVITY = -1000
 position = Vector2( 0, 59.9455 )
 frames = ExtResource( 3 )
 animation = "transformed_attack"
-frame = 17
+frame = 14
 
 [node name="AnimationPlayer" parent="." index="1"]
 anims/normal_attack = SubResource( 1 )
@@ -229,47 +229,46 @@ position = Vector2( 0, 60.4245 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxNormal" index="0"]
 position = Vector2( 0.166911, -7.26832 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBoxNormal" index="1"]
 position = Vector2( 2.50344, 49.0006 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="TransformedAttackDetectionArea" type="Area2D" parent="." index="6"]
-editor/display_folded = true
 visible = false
 position = Vector2( 0, 65.5697 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransformedAttackDetectionArea" index="0"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="NormalTouchDamageArea" parent="." index="8"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NormalTouchDamageArea" index="0"]
 position = Vector2( 2.00277, 6.81904 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="NormalTouchDamageArea" index="1"]
 position = Vector2( -0.351379, 19.3127 )
 rotation = -0.785397
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="TransformedTouchDamageArea" parent="." index="9"]
 visible = false
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="0"]
 position = Vector2( 2.00277, 7.65353 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TransformedTouchDamageArea" index="1"]
 position = Vector2( -0.17568, 19.8398 )
 rotation = -0.785397
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="HitBoxTornado" type="Area2D" parent="." index="10"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxTornado" index="0"]
 position = Vector2( 0.709086, 74.0017 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
