@@ -9,6 +9,7 @@ var scene_dialogues = {}
 var current_line = 0
 
 func _ready():
+	text_label.set_override_selected_font_color(true)
 	visible = false
 
 func _process(delta):
@@ -29,7 +30,9 @@ func show_dialogue(scene_name):
 	scene_dialogues = data_text[scene_name]
 	
 	current_line = 1
-	text_label.text = scene_dialogues[str(current_line)]
+	text_label.text = scene_dialogues[str(current_line)]["text"]
+	text_label.add_color_override("default_color", match_color(scene_dialogues[str(current_line)]["color"]))
+	
 	visible = true
 
 func continue_dialogue():
@@ -38,10 +41,24 @@ func continue_dialogue():
 	
 	# Make sure there is a next line to show
 	if current_line <= len(scene_dialogues):
-		text_label.text = scene_dialogues[str(current_line)]
+		text_label.text = scene_dialogues[str(current_line)]["text"]
+		text_label.add_color_override("default_color", match_color(scene_dialogues[str(current_line)]["color"]))
 	else:
 		visible = false
 		trigger_event()
+
+func match_color(col : String) -> Color:
+	match col:
+		"white":
+			return Color(1, 1, 1)
+		"grey":
+			return Color(0.3, 0.3, 0.3)
+		"green":
+			return Color(0, 1, 0)
+		"red":
+			return Color(1, 0, 0)
+		_:
+			return Color(0, 0, 0)
 
 func trigger_event():
 	match scene:
