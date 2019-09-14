@@ -4,6 +4,7 @@ class_name BaseRoom
 onready var projectiles = $Projectiles
 onready var audio_zones = $AudioZones
 onready var tilesets = $Tilesets
+onready var health_bar = get_node("/root/Game/UI/HealthBar")
 
 onready var SpikesInstance = preload("res://src/projectiles/SpikesProjectile.tscn")
 onready var BulbInstance = preload("res://src/projectiles/BulbProjectile.tscn")
@@ -88,6 +89,7 @@ func _on_audio_zone_exited(body):
 	pass
 	
 func _on_player_death():
+	health_bar.deactivate()
 	$Enemies/DetectionZone/Alraune.reset_after_death()
 	$Barricades/OvergrownBarricade01.open_door()
 	if get_node("DialogueZones/DialogueBossStart").shown:

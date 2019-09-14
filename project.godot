@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="metroidvaniamonth"
-run/main_scene="res://src/Game.tscn"
+run/main_scene="res://src/menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

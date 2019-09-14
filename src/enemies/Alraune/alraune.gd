@@ -1,6 +1,7 @@
 extends Enemy
 
 onready var dialogue_panel = get_node("/root/Game/UI/Dialogue/DialoguePanel")
+onready var health_bar = get_node("/root/Game/UI/HealthBar")
 
 onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossTransform")
 onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossDeath")
@@ -9,6 +10,15 @@ onready var secret_room_barricade = get_node("/root/Game/Room/Barricades/Overgro
 
 signal projectile(type)
 signal new_phase
+
+
+func activate():
+	if state != State.DEATH:
+		health_bar.activate()
+		if chasing:
+			state = State.CHASE
+		else:
+			state = State.PATROL
 
 func reset_after_death():
 	if state != State.DEATH:
@@ -218,6 +228,9 @@ func _die():
 		
 	state = State.DEATH
 	set_physics_process(false)
+	yield(sprite, "animation_finished")
+	health_bar.deactivate()
+
 
 func shoot_projectile():
 	if stats.transformed:

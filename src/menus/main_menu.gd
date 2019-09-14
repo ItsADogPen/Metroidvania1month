@@ -2,9 +2,9 @@ extends Control
 
 
 onready var main_buttons = {
-	"start": get_node("MainMenuContainer/VBoxContainer/StartButton"),
-	"options": get_node("MainMenuContainer/VBoxContainer/OptionsButton"),
-	"exit": get_node("MainMenuContainer/VBoxContainer/ExitButton"),
+	"start": get_node("MainMenuContainer/StartButton"),
+	"options": get_node("MainMenuContainer/OptionsButton"),
+	"exit": get_node("MainMenuContainer/ExitButton"),
 }
 
 onready var options_buttons = {
