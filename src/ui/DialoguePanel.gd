@@ -65,5 +65,7 @@ func trigger_event():
 		"dialogue2":
 			# Hardcoding node paths is bad, mmmkay? Mmmkay.
 			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
+		"dialogue4":
+			get_node("/root/Game/Room/Barricades/StatueBarricade02").open_door()
 		_:
 			pass
