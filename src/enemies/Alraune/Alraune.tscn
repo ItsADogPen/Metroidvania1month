@@ -270,6 +270,7 @@ REGULAR_ATTACK_COOLDOWN = 1.2
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
 animation = "normal_idle"
+frame = 6
 playing = true
 offset = Vector2( -60, -58 )
 

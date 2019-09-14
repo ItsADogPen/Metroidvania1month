@@ -14,6 +14,7 @@ func _on_body_entered(body):
 		play_dialogue()
 		
 func play_dialogue():
+	get_node("/root/Game/Room/Player").start_dialogue()
 	dialogue_panel.show_dialogue(scene_name)
 	shown = true
 	

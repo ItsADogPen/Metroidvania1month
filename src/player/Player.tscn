@@ -143,14 +143,14 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 12 ) ],
-"loop": true,
+"loop": false,
 "name": "damage",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
+"loop": false,
 "name": "stabground-loop",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
@@ -180,7 +180,7 @@ animations = [ {
 "frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ) ],
 "loop": false,
 "name": "die",
-"speed": 15.0
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
 "loop": false,
@@ -195,58 +195,55 @@ animations = [ {
 "frames": [ ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 121 ), ExtResource( 122 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 130 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 134 ) ],
 "loop": false,
 "name": "revive",
-"speed": 15.0
+"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18.5, 3 )
 
 [sub_resource type="Animation" id=3]
-resource_name = "attack"
+resource_name = "stab"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ "attackstab" ]
 }
-tracks/1/type = "method"
-tracks/1/path = NodePath("..")
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"values": [ {
-"args": [ "\"res://assets/audio/sfx/SFX_BladeAttack.ogg\"" ],
-"method": "play_effect"
-}, {
-"args": [  ],
-"method": "_activate_Attack_Hitbox"
-}, {
-"args": [  ],
-"method": "_deactivate_Hitbox"
-} ]
+"times": PoolRealArray( 0, 0.32 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 4 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:animation")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "attackstab" ]
+"times": PoolRealArray( 0.1, 0.16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "res://assets/audio/sfx/SFX_BladeAttack.ogg" ],
+"method": "play_effect"
+}, {
+"args": [ NodePath("StabHitbox") ],
+"method": "check_hit_enemies"
+} ]
 }
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -261,23 +258,21 @@ script = ExtResource( 1 )
 position = Vector2( 7.5, -49 )
 frames = SubResource( 1 )
 animation = "attackstab"
-frame = 3
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="StabHitbox" type="Area2D" parent="."]
 position = Vector2( 0, -20 )
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StabHitbox"]
 position = Vector2( 43.5, -2.5 )
 shape = SubResource( 2 )
-disabled = true
 
 [node name="HitboxTimer" type="Timer" parent="."]
 wait_time = 0.01
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimatedSprite")
-anims/attack = SubResource( 3 )
+anims/stab = SubResource( 3 )
 
 [node name="Side_Ray_Left" type="RayCast2D" parent="."]
 position = Vector2( 1, -19 )
@@ -314,6 +309,6 @@ modulate = Color( 0.662745, 1, 0.0666667, 1 )
 position = Vector2( 0.700236, -17.1014 )
 shape = SubResource( 4 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
+[connection signal="body_entered" from="StabHitbox" to="." method="_on_Hitbox_body_entered"]
 [connection signal="timeout" from="HitboxTimer" to="." method="_on_HitboxTimer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

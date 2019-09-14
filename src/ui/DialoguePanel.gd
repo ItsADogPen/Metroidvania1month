@@ -72,6 +72,7 @@ func show_line():
 		visible = false
 		trigger_event()
 		emit_signal("finished")
+		get_node("/root/Game/Room/Player").end_dialogue()
 
 func continue_dialogue():
 	

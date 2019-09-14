@@ -21,7 +21,7 @@ export(bool) var moves = true
 export(float) var REGULAR_ATTACK_COOLDOWN = 1.0
 export(float) var MONSTER_ATTACK_COOLDOWN = 1.0
 
-export var ACCELERATION = 200
+export var ACCELERATION = 250
 export var SPEED = 0
 export var FRICTION = 0
 export var GRAVITY = 10
@@ -101,12 +101,15 @@ func deactivate():
 		state = State.IDLE
 
 func check_touch_damage():
+	if state == State.DEATH or state == State.DYING:
+		return
+		
 	if stats.transformed:
 		if touch_damage_areas.transformed.overlaps_body(chasing):
-			chasing.take_damage(1)
+			chasing.take_enemy_damage(1)
 	else:
 		if touch_damage_areas.normal.overlaps_body(chasing):
-			chasing.take_damage(1)
+			chasing.take_enemy_damage(1)
 
 func _ready():	
 	stats.health = REGULAR_HEALTH
@@ -224,6 +227,9 @@ func _transform():
 
 
 func _die():
+	if animation_player.is_playing():
+		animation_player.stop(true)
+		
 	$CollisionShape2D.shape = null
 	for touch_damage_area in touch_damage_areas.values():
 		for child in touch_damage_area.get_children():
@@ -356,9 +362,7 @@ func patrol():
 	
 	horizontal_patrol()
 
-
 func check_hit_player(hitbox: NodePath):
 	if chasing:
-		print(get_node(hitbox))
 		if get_node(hitbox).overlaps_body(chasing):
-			chasing.take_damage(1)
+			chasing.take_enemy_damage(1)

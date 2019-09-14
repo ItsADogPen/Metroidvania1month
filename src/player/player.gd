@@ -18,17 +18,18 @@ const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
 var ACCEL = 500
-var JUMP_SPEED = -350
+var JUMP_SPEED = -240
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
-var WALL_JUMP_SPEED = JUMP_SPEED * -2
+
+onready var effect_player = AudioEngine.effects.effect_players[0]
 
 # Instance variables
 var hp : int = 1
 var hp_current : int = 1
 var isDead : bool = false
 
-#enum State {IDLE, PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE, DIALOGUE, DEATH}
-#var state = State.IDLE
+enum State {IDLE, RUN, ATTACK, JUMP, TAKE_DAMAGE, DYING, REVIVING, DIALOGUE, DASH}
+var state = State.IDLE
 var stateMachine : String = "idle"
 var isAir : bool
 var remaining_jumps : int = 2
@@ -50,11 +51,9 @@ var upgrades = {
 
 # Player sprite elements
 var motion: Vector2 = Vector2()
-onready var anim_player = $AnimationPlayer
-onready var animation = $AnimatedSprite
-onready var hitbox = $Hitbox
-onready var hitbox_shape = $Hitbox/CollisionShape2D
-onready var hitbox_timer = $HitboxTimer
+onready var animation_player = $AnimationPlayer
+onready var sprites = $AnimatedSprite
+onready var stab_hitbox = $StabHitbox
 
 # Collision dection rays
 onready var side_ray_L = $Side_Ray_Left
@@ -65,6 +64,16 @@ onready var dash_ray_R = $Dash_Check_Right
 onready var ShieldScene = preload("res://src/player/skills/shield/Shield.tscn")
 onready var map = get_parent()
 
+var jump_boosting = false
+var jump_boost_speed = 0
+
+
+func check_hit_enemies(hitbox: NodePath):
+	print(hitbox)
+	print(get_node(hitbox))
+	for body in get_node(hitbox).get_overlapping_bodies():
+		if body.is_in_group("enemies"):
+			body.take_damage(5)
 
 func _ready():
 	
@@ -82,24 +91,48 @@ func _ready():
 	connect("soul_gained", health_bar, "_on_soul_gained")
 	connect("health_lost", health_bar, "_on_health_lost")
 	connect("reset_health", health_bar, "_on_health_reset")
+	
+func start_dialogue():
+	state = State.DIALOGUE
+
+func end_dialogue():
+	state = State.IDLE
 
 func _physics_process(delta):
-	
 	_gravity(delta)
+
+	if state == State.TAKE_DAMAGE:
+		print("moving_with_motion", motion)
+		motion = move_and_slide(motion, Vector2.UP, true)
+		return
+	if state == State.DIALOGUE:
+		set_animation()
+		motion.x = 0
+		motion = move_and_slide(motion, Vector2.UP, true)
+		return
+	if state == State.ATTACK:
+		return
+	if state == State.DYING:
+		motion.x = 0
+		motion = move_and_slide(motion, Vector2.UP, true)
+		return 
+	if state == State.REVIVING:
+		motion.x = 0
+		motion = move_and_slide(motion, Vector2.UP, true)
+		return
+	
 	if is_on_floor():
 		isAir = false
 		_reset_jumps()
 	else:
 		isAir = true
-	
-	if isDead == false:
-		_anim_Check()
-		_controls(delta)
 		
-		if stateMachine == "jump":
-			motion = move_and_slide(motion, Vector2.UP, true)
-		else:
-			motion = move_and_slide_with_snap(motion, SNAP_DOWN, Vector2.UP, true, SLOPE_SLIDE_STOP, SNAP_ANGLE)
+	if state == State.IDLE or state == State.RUN or state == State.JUMP:
+		set_animation()
+		set_orientation()
+		process_controls(delta)
+		
+		motion = move_and_slide(motion, Vector2.UP, true)
 	
 	if Input.is_action_just_pressed("Death_Test_Button"):
 		_player_death()
@@ -108,7 +141,7 @@ func _physics_process(delta):
 		toggle_upgrades()
 		
 	# Doesn't do the trick
-	motion.y = max(motion.y, JUMP_SPEED)
+	# motion.y = max(motion.y, JUMP_SPEED)
 
 func _check_HP():
 	
@@ -124,85 +157,113 @@ func _reset_jumps():
 
 func _player_death():
 	
-	# Death animation
-	isDead = true
-	animation.play("die")
-	yield(animation, "animation_finished")
+	# Death sprites
+
+	state = State.DYING
+	sprites.play("die")
+	yield(sprites, "animation_finished")
 	yield(get_tree().create_timer(1),"timeout")
 	
 	# Teleport player back to last checkpoint
 	if last_checkpoint != null:
 		position = last_checkpoint.position
 	
+	state = State.REVIVING
 	# Reset health and anim
 	hp_current = hp
-	animation.play("revive")
-	yield(animation, "animation_finished")
+	sprites.play("revive")
+	yield(sprites, "animation_finished")
 	emit_signal("death")
 	emit_signal("reset_health")
-	isDead = false
+	state = State.IDLE
 
 func play_effect(effect: String):
 	AudioEngine.play_positioned_effect(effect, self.global_position)
 
-func _anim_Check():
-	
-	if isDead == false:
-		
-		if stateMachine == "attacking":
-			animation.play("attackstab")
-#			AudioEngine.play_positioned_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg", self.global_position)
-#			AudioEngine.play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
-			hitbox_timer.start()
-			
-		elif stateMachine == "run":
-			animation.offset.x = 0
-#			if animation.scale.x == -1:
-#				animation.offset.x = 15
-			animation.play("run")
-		elif stateMachine == "jump":
-			animation.play("jump")
-		elif stateMachine == "idle":
-			animation.play("idle")
-		elif stateMachine == "taking_damage":
-			animation.play("damage")
-	
-	if motion.x < 0:
-		animation.scale.x = -1
-		hitbox.scale.x = -1
-		animation.offset.x = 15
-	if motion.x > 0:
-		animation.scale.x = 1
-		hitbox.scale.x = 1
-		if animation.offset.x != 0:
-			animation.offset.x = 0
+func set_animation():
+	match state:
+		State.DIALOGUE:
+			if is_on_floor():
+				sprites.play("idle")
+		State.IDLE:
+			sprites.play("idle")
+		State.RUN:
+			sprites.offset.x = 0
+			sprites.play("run")
+		State.JUMP:
+			sprites.play("jump")
 
-func _controls(delta):
+func set_orientation():
+	if motion.x < 0:
+		sprites.scale.x = -1
+		stab_hitbox.scale.x = -1
+		sprites.offset.x = 15
+	if motion.x > 0:
+		sprites.scale.x = 1
+		stab_hitbox.scale.x = 1
+		if sprites.offset.x != 0:
+			sprites.offset.x = 0
+
+func stop_hold_jump():
+	jump_boosting = false
+	
+func _on_fall_jump():
+	remaining_jumps = max(0, remaining_jumps - 1)
+
+func process_controls(delta):
 	
 	# Get player input
-	var left = Input.is_action_pressed("ui_left")
-	var right = Input.is_action_pressed("ui_right")
-	var jump = Input.is_action_just_pressed("jump")
-	var attack_button = Input.is_action_just_pressed("basic_attack")
+	var left_pressed = Input.is_action_pressed("ui_left")
+	var right_pressed = Input.is_action_pressed("ui_right")
+	var jump_pressed = Input.is_action_just_pressed("jump")
+	var jump_held = not jump_pressed and Input.is_action_pressed("jump")
+	var stab_pressed = Input.is_action_just_pressed("basic_attack")
 	var dash = Input.is_action_just_pressed("dash")
 	var shield = Input.is_action_just_pressed("shield")
 	
 	# === x movement ===
-	motion.x = (int(right) - int(left)) * SPEED
+	var speed_change = (int(right_pressed) - int(left_pressed)) * ACCEL * delta * 12
+	if sign(motion.x) != sign(speed_change):
+		motion.x = speed_change
+	else:
+		motion.x += speed_change
 	
-	if (right == left and not isAir):
+	if isAir and right_pressed == left_pressed:
 		motion.x = 0
-		if !stateMachine == "attacking" && !stateMachine == "dash" && !stateMachine == "shield" && !stateMachine == "taking_damage":
-			stateMachine = "idle"
+	if not isAir and right_pressed == left_pressed:
+		motion.x = 0
+		state = State.IDLE
 	else:
 		SPEED = ACCEL
-		if left || right:
-			stateMachine = "run"
+		if (left_pressed or right_pressed) and not isAir:
+			state = State.RUN
 	
 	motion.x = clamp(motion.x, -ACCEL, ACCEL)
 	
 	# === y movement ===
-	if jump && remaining_jumps > 0:
+	if jump_pressed:
+		if remaining_jumps > 0:
+			jump_boosting = true
+			if upgrades["double_jump"] and isAir:
+				motion.y = DOUBLE_JUMP_SPEED
+			else:
+				motion.y = JUMP_SPEED
+			remaining_jumps -= 1
+			jump_boost_speed = motion.y
+			get_tree().create_timer(0.3).connect("timeout", self, "stop_hold_jump")
+			state = State.JUMP
+			
+	if jump_held:
+		if jump_boosting:
+			motion.y = jump_boost_speed
+			
+	# falling shortly allows a jump...
+	if isAir and state != State.JUMP:
+		state = State.JUMP
+		get_tree().create_timer(0.1).connect("timeout", self, "_on_fall_jump")
+
+	"""
+	if jump_pressed && remaining_jumps > 0:
 		
 		# Only jump if on ground or doublejumps are unlocked
 		if not isAir or upgrades["double_jump"]:
@@ -219,56 +280,39 @@ func _controls(delta):
 		
 	if isAir and stateMachine != "walljumping" and stateMachine != "taking_damage":
 		stateMachine = "jump"
+	"""
 	
-	# Handle wall jumping
-	if isAir and jump:
-		
-		if side_ray_L.is_colliding() && right:
-			stateMachine = "walljumping"
-			motion.y = JUMP_SPEED
-			motion.x += WALL_JUMP_SPEED
-		
-		elif side_ray_R.is_colliding() && left:
-			stateMachine = "walljumping"
-			motion.y = JUMP_SPEED
-			motion.x -= WALL_JUMP_SPEED
-		
-		if stateMachine != "walljumping":
-			stateMachine = "jump"
-	
-	if !stateMachine == "dash" || !stateMachine == "shield":
-		if attack_button && !isAir && !stateMachine == "run":
-			stateMachine = "attacking"
-			play_effect("res://assets/audio/sfx/SFX_BladeAttack.ogg")
+	if state == State.IDLE or state == State.RUN:
+		if stab_pressed:
+			stab()
 	
 	# Handle dashing
 	if dash and upgrades["dash"]:
-		
 		stateMachine = "dash"
-		animation.play("dash-pre")
-		yield(animation,"animation_finished")
+		sprites.play("dash-pre")
+		yield(sprites,"animation_finished")
 		
 		var ray_checkers = [dash_ray_L,dash_ray_R]
 		for i in ray_checkers: i.enabled = true
 		
-		if ray_checkers[0].is_colliding() && animation.scale.x == -1:
+		if ray_checkers[0].is_colliding() && sprites.scale.x == -1:
 			
 			var colli_point = ray_checkers[0].get_collision_point()
 			global_position = colli_point
 			
-		elif !ray_checkers[0].is_colliding() && animation.scale.x == -1:
+		elif !ray_checkers[0].is_colliding() && sprites.scale.x == -1:
 			
 			var math_vector = Vector2()
 			math_vector.x = (math_vector.x+DASH_DIST)*-1
 			
 			global_position = global_position + math_vector
 			
-		elif ray_checkers[1].is_colliding() && animation.scale.x == 1:
+		elif ray_checkers[1].is_colliding() && sprites.scale.x == 1:
 			
 			var colli_point = ray_checkers[1].get_collision_point()
 			global_position = colli_point
 			
-		elif !ray_checkers[1].is_colliding() && animation.scale.x == 1:
+		elif !ray_checkers[1].is_colliding() && sprites.scale.x == 1:
 			
 			var math_vector = Vector2()
 			math_vector.x = math_vector.x + DASH_DIST
@@ -277,7 +321,7 @@ func _controls(delta):
 			
 		elif !ray_checkers[0].is_colliding() && !ray_checkers[1].is_colliding():
 			
-			var facing = animation.scale.x
+			var facing = sprites.scale.x
 			
 			var math_vector = Vector2()
 			math_vector.x = math_vector.x+DASH_DIST
@@ -285,16 +329,16 @@ func _controls(delta):
 			
 			global_position = global_position + math_vector
 		
-		animation.play("dash-post")
-		yield(animation,"animation_finished")
+		sprites.play("dash-post")
+		yield(sprites,"animation_finished")
 		stateMachine = "idle"
 	
 	# Handle shield move
 	if shield and upgrades["shield_aoe"]:
 		stateMachine = "shield"
 		print("SHIELD")
-		animation.play("stabground-pre")
-		yield(animation,"animation_finished")
+		sprites.play("stabground-pre")
+		yield(sprites,"animation_finished")
 		
 		var load_shield = ShieldScene.instance()
 		map.projectiles_container.add_child(load_shield)
@@ -302,18 +346,27 @@ func _controls(delta):
 		yield(get_tree().create_timer(0.2),"timeout")
 		load_shield._play_Anim("beginning")
 		
-		animation.play("stabground-loop")
+		sprites.play("stabground-loop")
 		yield(get_tree().create_timer(2),"timeout")
-		animation.play("stabground-end")
+		sprites.play("stabground-end")
 		load_shield._play_Anim("end")
-		yield(animation,"animation_finished")
+		yield(sprites,"animation_finished")
 		load_shield._destroy()
 		stateMachine = "idle"
 	
 	motion.normalized()
 
+func stab():
+	animation_player.play("stab")
+	state = State.ATTACK
+	yield(animation_player, "animation_finished")
+	state = State.IDLE
+
+func take_damage_animation():
+	animation_player.play("take_damage")
+	state = State.TAKE_DAMAGE
+
 func _gravity(delta):
-	
 	motion.y += GRAV
 	if motion.y > GRAV_CAP:
 		motion.y = GRAV_CAP
@@ -323,30 +376,19 @@ func _attack_Machine():
 
 func _on_AnimatedSprite_animation_finished():
 	
-	if animation.animation == "attackstab":
+	if sprites.animation == "attackstab":
 		
 		stateMachine = "idle"
 
-func _on_Hitbox_body_entered(body):
-	if body.is_in_group("enemies"):
-#		AudioEngine.effects.play_effect("strsgdsfg", body.global_position)
-		body.take_damage(5)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	
-	anim_player.stop(true)
+	animation_player.stop(true)
 	stateMachine = "idle"
-	print("anim_player STOPPED")
-
-func _on_HitboxTimer_timeout():
-	
-	hitbox_shape.disabled = false
-	yield(get_tree().create_timer(0.1),"timeout")
-	hitbox_shape.disabled = true
+	print("animation_player STOPPED")
 
 # Triggers when a new upgrade is found
 func unlock_upgrade(power_gained : String):
-	
 	print("Upgrade signal received for %s" % power_gained)
 	
 	if upgrades.has(power_gained):
@@ -359,37 +401,58 @@ func unlock_upgrade(power_gained : String):
 				ACCEL *= 1.333
 			"jump_speed":
 				JUMP_SPEED *= 1.25
-				WALL_JUMP_SPEED *= 1.25
 				DOUBLE_JUMP_SPEED *= 1.25
 			"attack_speed":
-				anim_player.playback_speed = 1.4
+				animation_player.playback_speed = 1.4
 	
 	else:
 		print("Error: No such upgrade as %s" % power_gained)
 
+func can_not_take_damage():
+	return invincible or state == State.DYING or state == State.REVIVING
+
 # Called when player takes damage
 func take_damage(damage : int):
-	if invincible:
+	if can_not_take_damage():
 		return
-	if stateMachine != "taking_damage":
-		stateMachine = "taking_damage"
+	# if stateMachine != "taking_damage":
+	# 	stateMachine = "taking_damage"
 		
-		emit_signal("health_lost", damage)
-		hp_current -= damage
-		if hp_current <= 0:
-			_player_death()
-		else:
-			$AnimatedSprite.material = load("res://src/player/shader.tres")
-			invincible = true
-			yield(get_tree().create_timer(1.0), "timeout")
-			invincible = false
-			$AnimatedSprite.material = null
-			stateMachine = "idle"
+	emit_signal("health_lost", damage)
+	hp_current -= damage
+	if hp_current <= 0:
+		_player_death()
+	else:
+		state = State.TAKE_DAMAGE
+		$AnimatedSprite.material = load("res://src/player/shader.tres")
+		invincible = true
+		sprites.play("damage")
+		yield(get_tree().create_timer(0.45), "timeout")
+		state = State.IDLE
+		yield(get_tree().create_timer(0.6), "timeout")
+		invincible = false
+		$AnimatedSprite.material = null
+
+func take_enemy_damage(damage: int):
+	if not can_not_take_damage():
+		print("Taking enemy damage...")
+		if animation_player.is_playing():
+			animation_player.stop(true)
+		take_damage(damage)
+		var direction = sprites.scale.x
+		motion.y = -120
+		motion.x = direction * -80
+		print("motion in function", motion)
+		motion = move_and_slide(motion, Vector2.UP, true)
 
 func hit_spikes():
-	take_damage(1)
-	motion.y = JUMP_SPEED * 1.5
-	motion = move_and_slide(motion, Vector2.UP, true)
+	if not can_not_take_damage():
+		take_damage(1)
+		var direction = sprites.scale.x
+		motion.y = -120
+		motion.x = direction * -80
+		print("motion in function", motion)
+		motion = move_and_slide(motion, Vector2.UP, true)
 
 func set_checkpoint(point):
 	last_checkpoint = point
@@ -398,3 +461,5 @@ func set_checkpoint(point):
 func toggle_upgrades():
 	for key in upgrades.keys():
 		unlock_upgrade(key)
+
+
