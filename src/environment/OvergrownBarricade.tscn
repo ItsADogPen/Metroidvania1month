@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/environment/barricade.gd" type="Script" id=1]
 [ext_resource path="res://src/environment/overgrown_barricade_frames.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17.4438, 20.7928 )
-
-[sub_resource type="RectangleShape2D" id=2]
 
 [node name="OvergrownBarricade" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -18,10 +16,3 @@ animation = "open"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -9.11331, 3.98708 )
 shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 54.5182, -3.8147e-06 )
-scale = Vector2( 3, 3 )
-shape = SubResource( 2 )
