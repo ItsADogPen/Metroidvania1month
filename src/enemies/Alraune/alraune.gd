@@ -8,13 +8,20 @@ onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/Dialogue
 onready var secret_room_barricade = get_node("/root/Game/Room/Barricades/OvergrownBarricade02")
 
 signal projectile(type)
-
+signal new_phase
 
 func reset_after_death():
 	if state != State.DEATH:
 		stats.transformed = false
 		stats.health = REGULAR_HEALTH
 		state = State.IDLE
+		set_animation()
+		for child in touch_damage_areas["normal"].get_children():
+			if child is CollisionShape2D:
+				child.set_disabled(false)
+		for child in touch_damage_areas["transformed"].get_children():
+			if child is CollisionShape2D:
+				child.set_disabled(true)
 
 
 func _ready():
@@ -169,6 +176,7 @@ func set_animation():
 
 # Identical to _transform from enemy.gd, but with line to show dialogue
 func _transform():
+	emit_signal("new_phase")
 	mid_battle_dialog.play_dialogue()
 	state = State.DIALOGUE
 	yield(dialogue_panel, "finished")
@@ -190,6 +198,7 @@ func _transform():
 
 # Identical to _die from enemy.gd, but with lines to show dialogue
 func _die():
+	emit_signal("new_phase")
 	end_battle_dialog.play_dialogue()
 	state = State.DIALOGUE
 	yield(dialogue_panel, "finished")

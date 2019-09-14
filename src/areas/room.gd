@@ -24,6 +24,7 @@ func _ready():
 	
 	for boss in get_tree().get_nodes_in_group("alraune"):
 		boss.connect("projectile", self, "_on_boss_projectile")
+		boss.connect("new_phase", self, "_on_boss_new_phase")
 		
 	$Player.connect("death", self, "_on_player_death")
 	
@@ -39,6 +40,10 @@ func _ready():
 				enemy._transform()
 	
 	#randomize()
+	
+func _on_boss_new_phase():
+	for projectile in projectiles.get_children():
+		projectile.queue_free()
 	
 func get_tile_under_player_position():
 	var player_position = $Player.global_position

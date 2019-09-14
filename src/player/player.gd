@@ -360,7 +360,8 @@ func stab():
 	animation_player.play("stab")
 	state = State.ATTACK
 	yield(animation_player, "animation_finished")
-	state = State.IDLE
+	if state == State.ATTACK:
+		state = State.IDLE
 
 func take_damage_animation():
 	animation_player.play("take_damage")
@@ -409,7 +410,7 @@ func unlock_upgrade(power_gained : String):
 		print("Error: No such upgrade as %s" % power_gained)
 
 func can_not_take_damage():
-	return invincible or state == State.DYING or state == State.REVIVING
+	return invincible or state == State.DYING or state == State.REVIVING or state == State.DIALOGUE
 
 # Called when player takes damage
 func take_damage(damage : int):
