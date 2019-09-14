@@ -144,11 +144,15 @@ func attack():
 		state = State.ATTACK
 		
 		if stats.transformed:
+			sprite.play("transformed_attack_intro")
+			yield(sprite, "animation_finished")
 			if randf() < 0.3:
 				animation_player.play("transformed_attack_spit")
 			else:
 				animation_player.play("transformed_attack")
 		else:
+			sprite.play("normal_attack_intro")
+			yield(sprite, "animation_finished")
 			animation_player.play("normal_attack")
 		yield(animation_player, "animation_finished")
 		play_attack_timer()
@@ -163,8 +167,12 @@ func projectile_attack():
 		state = State.ATTACK
 		
 		if stats.transformed:
+			sprite.play("transformed_attack_intro")
+			yield(sprite, "animation_finished")
 			animation_player.play("transformed_attack_projectile")
 		else:
+			sprite.play("normal_attack_intro")
+			yield(sprite, "animation_finished")
 			animation_player.play("normal_attack_projectile")
 		yield(animation_player, "animation_finished")
 		
