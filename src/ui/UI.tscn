@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/ui/ui.gd" type="Script" id=1]
 [ext_resource path="res://src/hud/HealthBar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/theme/asphodel.tres" type="Theme" id=3]
 [ext_resource path="res://src/ui/EscapeMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/ui/DialoguePanel.gd" type="Script" id=5]
+[ext_resource path="res://assets/font/jancient.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://src/ui/font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/Hud/portraits/MainCharacter.png" type="Texture" id=8]
+[ext_resource path="res://assets/Hud/portraits/Alraune form.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="UI" type="CanvasLayer"]
 pause_mode = 2
@@ -52,4 +63,31 @@ margin_top = 26.0
 margin_right = -32.0
 margin_bottom = -26.0
 theme = ExtResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 text = "In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available..."
+
+[node name="Label" type="Label" parent="Dialogue/DialoguePanel"]
+margin_left = 451.632
+margin_top = 130.497
+margin_right = 496.632
+margin_bottom = 149.497
+custom_fonts/font = ExtResource( 7 )
+text = "Enter..."
+
+[node name="PlayerPortait" type="TextureRect" parent="Dialogue/DialoguePanel"]
+margin_left = -72.0169
+margin_top = 28.8868
+margin_right = 7.98309
+margin_bottom = 108.887
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TargetPortrait" type="TextureRect" parent="Dialogue/DialoguePanel"]
+margin_left = 513.121
+margin_top = 28.8868
+margin_right = 593.121
+margin_bottom = 108.887
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 9 )
+expand = true

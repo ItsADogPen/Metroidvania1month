@@ -10,6 +10,8 @@ func _ready():
 	}
 
 func _physics_process(delta):
+	if chasing:
+		check_touch_damage()
 	move_gravity(delta)
 	check_movement_direction()
 	set_animation()

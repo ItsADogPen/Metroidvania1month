@@ -2,6 +2,7 @@
 	
 	"dialogue1":
 	{
+		"target": null,
 		"1" : { "text" : "I don't remember what happened...", "color" : "white" },
 		"2" : { "text" : "I was... I was doing something important.", "color" : "white" },
 		"3" : { "text" : "But it's all so fuzzy...", "color" : "white" },
@@ -14,6 +15,9 @@
 
 	"dialogue2" : 
 	{
+		"target": {
+			"grey": "death"
+		},
 		"1" : { "text" : "Welcometh to mine own altar, hath lost soul. I has't many names. Some calleth me Mot, oth'rs calleth me Ankou... Feeleth free to calleth me as thee wisheth.", "color" : "grey" },
 		"2" : { "text" : "Uh... I didn't understand a lick of what you were saying. You were stalking me all the way through?", "color" : "white" },
 		"3" : { "text" : "I apologise for mine own previous speech, it has been ages since I have seen someone here. I have many names, like Ankou, Mot, Grim Reaper, even just Grim. Feel free to call mine own as thee wish.", "color" : "grey" },
@@ -34,19 +38,37 @@
 	
 	"dialogue3":
 	{
+		"target": {
+			"green": "rosemary-normal"
+		},
 		"1" : { "text" : "Welcome sweetie, you have made quite a mess in my domain. I'm a little mad about it but I will let it slip if you come to me kindly. We can have some fun together.", "color" : "green" },
 		"2" : { "text" : "I'm not that into girls, so I had rather pass. Too bad I'm here to kill you anyway.", "color" : "white" },
 		"3" : { "text" : "You are not fun and you called me a slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun!", "color" : "green" },
 		"4" : { "text" : "Go ahead, but you will never beat me, Dead Plant.", "color" : "white" }
 	},
 
+	"dialogue-retry":
+	{
+		"target": {
+			"green": "rosemary-normal"
+		},
+		"1" : { "text" : "Back for another try eh?! Some people never learn...", "color" : "green" }
+	},
+
 	"dialogue3-mid":
 	{
+		"target": {
+			"green": "rosemary-normal"
+		},
 		"1" : { "text" : "Ara ara, now you angered me. Hope you are ready to be my supper. En garde!", "color" : "green" }
 	},
 	
 	"dialogue3-over":
 	{
+		"target": {
+			"green": "rosemary-monster",
+			"red": "mystery-voice"
+		},
 		"1" : { "text" : "Y-you truly... are strong... I-I..., never... thought this would be my end.", "color" : "green" },
 		"2" : { "text" : "Sorry, but your death will bring me closer to revival by the hands of the Grim Reaper.", "color" : "white" },
 		"3" : { "text" : "hahaha...wait...no... I can still... fight... aaaaahh....", "color" : "green" },
@@ -56,6 +78,9 @@
 
 	"dialogue4":
 	{
+		"target": {
+			"grey": "death"
+		},
 		"1" : { "text" : "I have failed to kill her, she escaped through a portal.", "color" : "white" },
 		"2" : { "text" : "I have noticed the portal only sends me to the first circle. I need you to open the next portal.", "color" : "white" },
 		"3" : { "text" : "I'm afraid that isn't possible. It took centuries to open the portal you crossed. I may need more to open the next.", "color" : "grey" },
@@ -70,6 +95,9 @@
 
 	"dialogue5":
 	{
+		"target": {
+			"black": "book-death"
+		},
 		"1" : { "text" : "There are books floating around. Maybe they contain something important.", "color" : "white" },
 		"2" : { "text" : "You couldn't protect them. You doomed them, you abandoned them and let them die. You sinner, burn in hell, monster, murderer, murderer, murderer, murd...", "color" : "black" },
 		"3" : { "text" : "This book might be related to my past, but seems incomplete. I may need time to properly think about what it means.", "color" : "white" },
@@ -91,6 +119,9 @@
 
 	"Merly23" : 
 	{
+		"target": {
+			"black": "book-merly"
+		},
 		"1": { "text" : "Oh mighty warrior", "color" : "black" },
 		"2": { "text" : "this game jam was on tatters", "color" : "black" },
 		"3": { "text" : "Yet it was saved by brave coders", "color" : "black" },
@@ -106,6 +137,9 @@
 
 	"Inherently" : 
 	{
+		"target": {
+			"black": "book-inher"
+		},
 		"1": { "text" : "A desparate plea in the chat...", "color" : "black" },
 		"2": { "text" : "Their coder had left in a spat!", "color" : "black" },
 		"3": { "text" : "With just days to go,", "color" : "black" },
@@ -115,6 +149,9 @@
 
 	"Doggie" : 
 	{
+		"target": {
+			"black": "book-doggie"
+		},
 		"1" : { "text" : "I wasn't part of the original team,", "color" : "black" },
 		"2" : { "text" : "I was given urgent invite by virtual correspondence,", "color" : "black" },
 		"3" : { "text" : "By the first night, I re-wrote the base left behind by tally,", "color" : "black" },

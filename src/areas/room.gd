@@ -8,17 +8,20 @@ export(String, FILE, "*.ogg") var default_track : String = "res://assets/audio/m
 
 func _ready():
 	for zone in audio_zones.get_children():
-		zone.connect("body_exited", self, "_on_body_exited")
+		zone.connect("body_exited", self, "_on_audio_zone_exited")
 	AudioEngine.play_background_music(default_track)
 #	AudioEngine.play_sound("res://assets/audio/music/Pre_Boss_mixed.wav", true)
 	
 	# Disable dialogue zones that are triggered by in-game events
-	get_node("DialogueZones/DialogueZone03-mid/CollisionShape2D").set_disabled(true)
-	get_node("DialogueZones/DialogueZone03-end/CollisionShape2D").set_disabled(true)
+	get_node("DialogueZones/DialogueBossTransform/CollisionShape2D").set_disabled(true)
+	get_node("DialogueZones/DialogueBossDeath/CollisionShape2D").set_disabled(true)
 	get_node("DialogueZones/DialogueZone04/CollisionShape2D").set_disabled(true)
+	get_node("DialogueZones/DialogueBossStartRetry/CollisionShape2D").set_disabled(true)
 	
 	for boss in get_tree().get_nodes_in_group("alraune"):
 		boss.connect("projectile", self, "_on_boss_projectile")
+		
+	$Player.connect("death", self, "_on_player_death")
 	
 	
 	for enemy in get_tree().get_nodes_in_group("enemies"):
@@ -39,6 +42,12 @@ func _on_boss_projectile(projectile_type):
 	else:
 		print("Transformed projectile fired!")
 
-func _on_body_exited(body):
+func _on_audio_zone_exited(body):
 	AudioEngine.play_background_music(default_track)
 	pass
+	
+func _on_player_death():
+	$Enemies/DetectionZone/Alraune.reset_after_death()
+	$Barricades/OvergrownBarricade01.open_door()
+	if get_node("DialogueZones/DialogueBossStart").shown:
+		get_node("DialogueZones/DialogueBossStartRetry").reset()

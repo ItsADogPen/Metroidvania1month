@@ -5,6 +5,7 @@ class_name Player
 signal soul_gained
 signal health_lost
 signal reset_health
+signal death
 
 # Constants
 const DASH_DIST = 450
@@ -17,7 +18,7 @@ const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
 var ACCEL = 500
-var JUMP_SPEED = -325
+var JUMP_SPEED = -350
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 var WALL_JUMP_SPEED = JUMP_SPEED * -2
 
@@ -25,11 +26,16 @@ var WALL_JUMP_SPEED = JUMP_SPEED * -2
 var hp : int = 1
 var hp_current : int = 1
 var isDead : bool = false
+
+#enum State {IDLE, PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE, DIALOGUE, DEATH}
+#var state = State.IDLE
 var stateMachine : String = "idle"
 var isAir : bool
 var remaining_jumps : int = 2
 var last_checkpoint
 var SPEED = 0
+
+var invincible = false
 
 # Upgrades the player can collect over time
 var upgrades = {
@@ -122,7 +128,7 @@ func _player_death():
 	isDead = true
 	animation.play("die")
 	yield(animation, "animation_finished")
-	yield(get_tree().create_timer(0.6),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	
 	# Teleport player back to last checkpoint
 	if last_checkpoint != null:
@@ -132,6 +138,7 @@ func _player_death():
 	hp_current = hp
 	animation.play("revive")
 	yield(animation, "animation_finished")
+	emit_signal("death")
 	emit_signal("reset_health")
 	isDead = false
 
@@ -362,7 +369,8 @@ func unlock_upgrade(power_gained : String):
 
 # Called when player takes damage
 func take_damage(damage : int):
-	
+	if invincible:
+		return
 	if stateMachine != "taking_damage":
 		stateMachine = "taking_damage"
 		
@@ -370,11 +378,13 @@ func take_damage(damage : int):
 		hp_current -= damage
 		if hp_current <= 0:
 			_player_death()
-		
-		animation.set_self_modulate(Color(1, 0, 0, 0.7))
-		yield(get_tree().create_timer(1.5), "timeout")
-		stateMachine = "idle"
-		animation.set_self_modulate(Color(1, 1, 1, 1))
+		else:
+			$AnimatedSprite.material = load("res://src/player/shader.tres")
+			invincible = true
+			yield(get_tree().create_timer(1.0), "timeout")
+			invincible = false
+			$AnimatedSprite.material = null
+			stateMachine = "idle"
 
 func hit_spikes():
 	take_damage(1)

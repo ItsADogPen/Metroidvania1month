@@ -1,11 +1,21 @@
 extends Enemy
 
-onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-mid")
-onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone03-end")
+onready var dialogue_panel = get_node("/root/Game/UI/Dialogue/DialoguePanel")
+
+onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossTransform")
+onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossDeath")
 onready var death_post_dialog = get_node("/root/Game/Room/DialogueZones/DialogueZone04")
 onready var secret_room_barricade = get_node("/root/Game/Room/Barricades/OvergrownBarricade02")
 
 signal projectile(type)
+
+
+func reset_after_death():
+	if state != State.DEATH:
+		stats.transformed = false
+		stats.health = REGULAR_HEALTH
+		state = State.IDLE
+
 
 func _ready():
 	attack_hit_boxes = {
@@ -14,12 +24,20 @@ func _ready():
 		"transformed_spit": $TransformedSpitHitBox,
 	}
 
+	state = State.IDLE
+
 func _physics_process(delta):
+	if chasing:
+		check_touch_damage()
 	move_gravity(delta)
 	check_movement_direction()
 	set_animation()
 	
 	if is_alive():
+		if state == State.IDLE:
+			pass
+		if state == State.DIALOGUE:
+			pass
 		if state == State.PATROL:
 			patrol()
 		elif state == State.CHASE:
@@ -30,6 +48,7 @@ func _physics_process(delta):
 			pass
 		elif state == State.DYING:
 			pass
+		motion.x = 0
 		motion = move_and_slide(motion, Vector2(0, -1), SLOPE_SLIDE_STOP)
 		
 	set_orientation()
@@ -140,7 +159,7 @@ func projectile_attack():
 			state = State.PATROL
 
 func set_animation():
-	if state == State.PATROL or state == State.CHASE:
+	if state == State.PATROL or state == State.CHASE or state == State.DIALOGUE:
 		if stats.transformed:
 			if sprite.animation != "transformed_idle":
 				sprite.play("transformed_idle")
@@ -150,8 +169,9 @@ func set_animation():
 
 # Identical to _transform from enemy.gd, but with line to show dialogue
 func _transform():
-	mid_battle_dialog._on_body_entered(get_node("/root/Game/Room/Player"))
-	motion.x = 0
+	mid_battle_dialog.play_dialogue()
+	state = State.DIALOGUE
+	yield(dialogue_panel, "finished")
 	state = State.TRANSFORMING
 	stats.health = MONSTER_HEALTH
 	stats.transformed = true
@@ -170,7 +190,9 @@ func _transform():
 
 # Identical to _die from enemy.gd, but with lines to show dialogue
 func _die():
-	end_battle_dialog._on_body_entered(get_node("/root/Game/Room/Player"))
+	end_battle_dialog.play_dialogue()
+	state = State.DIALOGUE
+	yield(dialogue_panel, "finished")
 	death_post_dialog.get_node("CollisionShape2D").set_disabled(false)
 	secret_room_barricade.open_door()
 	$CollisionShape2D.shape = null
@@ -184,6 +206,9 @@ func _die():
 		sprite.play("transformed_death")
 	else:
 		sprite.play("normal_death")
+		
+	state = State.DEATH
+	set_physics_process(false)
 
 func shoot_projectile():
 	if stats.transformed:

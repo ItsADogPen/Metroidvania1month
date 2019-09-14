@@ -7,7 +7,7 @@ const UP = Vector2(0, -1)
 
 export(String, "Regular", "Transform", "Monster") var level
 
-enum State {IDLE, PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE}
+enum State {IDLE, PATROL, CHASE, ATTACK, TAKE_DAMAGE, TRANSFORMING, DYING, TAKE_DAMAGE, DIALOGUE, DEATH}
 
 export(bool) var invincible = false
 export(int) var REGULAR_HEALTH = 10
@@ -87,12 +87,31 @@ var transforming = false
 
 var chasing = null
 
+
+func activate():
+	if state != State.DEATH:
+		if chasing:
+			state = State.CHASE
+		else:
+			state = State.PATROL
+
+
+func deactivate():
+	if state != State.DEATH:
+		state = State.IDLE
+
+func check_touch_damage():
+	if stats.transformed:
+		if touch_damage_areas.transformed.overlaps_body(chasing):
+			chasing.take_damage(1)
+	else:
+		if touch_damage_areas.normal.overlaps_body(chasing):
+			chasing.take_damage(1)
+
 func _ready():	
 	stats.health = REGULAR_HEALTH
 	
 	attack_timer.connect("timeout", self, "_on_attack_timer_timeout")
-	touch_damage_areas["normal"].connect("body_entered", self, "_on_normal_attack_hit")
-	touch_damage_areas["transformed"].connect("body_entered", self, "_on_monster_attack_hit")
 	
 	for child in touch_damage_areas["transformed"].get_children():
 		if child is CollisionShape2D: child.set_disabled(true)
@@ -219,7 +238,9 @@ func _die():
 		sprite.play("normal_death")
 
 	yield(sprite, "animation_finished")
-	self.queue_free()
+	state = State.DEATH
+	set_physics_process(false)
+
 #	sprite.hide()
 #	yield(get_tree().create_timer(0.1),"timeout")
 

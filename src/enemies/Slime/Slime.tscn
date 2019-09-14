@@ -158,6 +158,7 @@ extents = Vector2( 98.9583, 44.7451 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 invincible = true
+ACCELERATION = 150
 GRAVITY = -10
 MAX_GRAVITY = -1000
 

@@ -147,6 +147,7 @@ extents = Vector2( 21.4589, 19.6622 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 level = "Transform"
+ACCELERATION = 150
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
