@@ -208,12 +208,12 @@ extents = Vector2( 118.807, 102.042 )
 [sub_resource type="RectangleShape2D" id=57]
 extents = Vector2( 712.159, 243.143 )
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 810.081, 250.148 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=59]
 
-[node name="BaseRoom" index="0" instance=ExtResource( 1 )]
+[node name="BaseRoom" instance=ExtResource( 1 )]
 default_track = "res://assets/audio/music/MetroidvaniaMainTheme.ogg"
 
 [node name="Cave" parent="Tilesets" index="0" instance=ExtResource( 2 )]
@@ -1034,7 +1034,7 @@ audio_track = "res://assets/audio/music/newPreBoss/Pre_Boss_mixed.ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone" index="0"]
 position = Vector2( 205.999, 0 )
-shape = SubResource( 59 )
+shape = SubResource( 58 )
 
 [node name="AudioZone2" parent="AudioZones" index="1" instance=ExtResource( 26 )]
 position = Vector2( 7769.43, 812.617 )
@@ -1042,7 +1042,7 @@ audio_track = "res://assets/audio/music/The Charon Arrives mixed .ogg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone2" index="0"]
 position = Vector2( 205.999, 0 )
-shape = SubResource( 59 )
+shape = SubResource( 58 )
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 27 )]
 position = Vector2( 8642.72, 959.52 )
@@ -1097,7 +1097,7 @@ editor/display_folded = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbyssBarrier" index="0"]
 position = Vector2( 3616.29, 7405.23 )
 scale = Vector2( 1, 600 )
-shape = SubResource( 58 )
+shape = SubResource( 59 )
 
 [node name="Books" parent="." index="14"]
 editor/display_folded = true

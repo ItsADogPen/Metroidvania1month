@@ -196,6 +196,8 @@ func set_animation():
 # Identical to _transform from enemy.gd, but with line to show dialogue
 func _transform():
 	emit_signal("new_phase")
+	if animation_player.is_playing():
+		animation_player.stop(true)
 	mid_battle_dialog.play_dialogue()
 	state = State.DIALOGUE
 	yield(dialogue_panel, "finished")
@@ -222,6 +224,8 @@ func play_effect(effect: String):
 # Identical to _die from enemy.gd, but with lines to show dialogue
 func _die():
 	emit_signal("new_phase")
+	if animation_player.is_playing():
+		animation_player.stop(true)
 	end_battle_dialog.play_dialogue()
 	state = State.DIALOGUE
 	yield(dialogue_panel, "finished")
