@@ -34,8 +34,8 @@
 [ext_resource path="res://src/books/doggie_book_frames.tres" type="SpriteFrames" id=32]
 [ext_resource path="res://src/books/inher_book_frames.tres" type="SpriteFrames" id=33]
 [ext_resource path="res://src/books/jordan_book_frames.tres" type="SpriteFrames" id=34]
-[ext_resource path="res://src/books/merly_book_frames.tres" type="SpriteFrames" id=35]
-[ext_resource path="res://src/books/willow_book_frames.tres" type="SpriteFrames" id=36]
+[ext_resource path="res://src/books/willow_book_frames.tres" type="SpriteFrames" id=35]
+[ext_resource path="res://src/books/merly_book_frames.tres" type="SpriteFrames" id=36]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.7074, 0.249157 )
@@ -425,6 +425,9 @@ script = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes20" index="0"]
 position = Vector2( -11.9712, -20.4395 )
 shape = SubResource( 20 )
+
+[node name="Enemies" parent="." index="4"]
+editor/display_folded = true
 
 [node name="Mushrooms" type="Node2D" parent="Enemies" index="0"]
 
@@ -1056,6 +1059,9 @@ audio_track = "res://assets/audio/music/The Charon Arrives mixed .ogg"
 position = Vector2( 205.999, 0 )
 shape = SubResource( 58 )
 
+[node name="DialogueZones" parent="." index="11"]
+editor/display_folded = true
+
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 27 )]
 position = Vector2( 8642.72, 959.52 )
 scale = Vector2( 5, 10 )
@@ -1111,80 +1117,81 @@ position = Vector2( 3616.29, 7405.23 )
 scale = Vector2( 1, 600 )
 shape = SubResource( 59 )
 
-[node name="Books" parent="." index="14"]
-editor/display_folded = true
-
 [node name="AgentBook" type="AnimatedSprite" parent="Books" index="0"]
-position = Vector2( 9622.63, 10952.4 )
+position = Vector2( 10002.6, 10809.3 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 29 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="DialogueZone" parent="Books/AgentBook" index="0" instance=ExtResource( 27 )]
+visible = false
 scene_name = "Agent"
 
 [node name="AntonyBook" type="AnimatedSprite" parent="Books" index="1"]
-position = Vector2( 10008.6, 10870.4 )
+position = Vector2( 10157.9, 10857.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 30 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/AntonyBook" index="0" instance=ExtResource( 27 )]
+visible = false
 scene_name = "Antony"
 
 [node name="DeathBook" type="AnimatedSprite" parent="Books" index="2"]
-position = Vector2( 9820.6, 10938.4 )
+position = Vector2( 9969.89, 10925.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 31 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="DoggieBook" type="AnimatedSprite" parent="Books" index="3"]
-position = Vector2( 9927.6, 10968.4 )
+position = Vector2( 10076.9, 10955.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 32 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/DoggieBook" index="0" instance=ExtResource( 27 )]
 scene_name = "Doggie"
 
 [node name="InherBook" type="AnimatedSprite" parent="Books" index="4"]
-position = Vector2( 10189.3, 10908.4 )
+position = Vector2( 10217.3, 10976 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 33 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="DialogueZone" parent="Books/InherBook" index="0" instance=ExtResource( 27 )]
 scene_name = "Inherently"
 
 [node name="JordanBook" type="AnimatedSprite" parent="Books" index="5"]
-position = Vector2( 9704.01, 10884.9 )
+position = Vector2( 9853.3, 10872.1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 34 )
+frame = 5
 playing = true
 
 [node name="DialogueZone" parent="Books/JordanBook" index="0" instance=ExtResource( 27 )]
+visible = false
 scene_name = "Jordan"
 
 [node name="MerlyBook" type="AnimatedSprite" parent="Books" index="6"]
-position = Vector2( 10066.7, 10995.5 )
+position = Vector2( 9762.44, 10908.1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 35 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="DialogueZone" parent="Books/MerlyBook" index="0" instance=ExtResource( 27 )]
 scene_name = "Merly23"
 
 [node name="WillowBook" type="AnimatedSprite" parent="Books" index="7"]
-position = Vector2( 9768.89, 11026.1 )
+position = Vector2( 9857.31, 11009 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 36 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/WillowBook" index="0" instance=ExtResource( 27 )]
