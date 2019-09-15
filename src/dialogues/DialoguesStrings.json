@@ -200,6 +200,13 @@
 		"32": { "text" : "Shame without merit, no matter the size of your calibre.", "color" : "black" }
 	},
 
-	"Agent" : {}
-
+	"Agent" : {
+			"target": {
+				"green": "book-agent"
+			},
+			"1": { "text" : "Many dream day that they truly can say,", "color" : "green" },
+			"2": { "text" : "they've mastered the art that is their life juice!", "color" : "green" },
+			"3": { "text" : "But when all the fuel seems to decay,", "color" : "green" },
+			"4": { "text" : "it's wise idea trying different way.,", "color" : "green" },
+			"5": { "text" : "Because forcing self to beat is just self-abuse..", "color" : "green" }
 }
