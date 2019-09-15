@@ -233,9 +233,6 @@ tile_data = PoolIntArray( 12976332, 0, 0, 12976333, 0, 1, 12976334, 0, 1, 129763
 visible = false
 tile_data = PoolIntArray( 13697177, 0, 0, 13697178, 0, 1, 13697179, 0, 1, 13697180, 0, 1, 13697181, 0, 1, 13697182, 0, 2, 13762712, 0, 0, 13762713, 0, 131078, 13762714, 0, 65537, 13762715, 0, 65537, 13762716, 0, 65537, 13762717, 0, 65537, 13762718, 0, 131077, 13762719, 0, 2, 13828247, 0, 0, 13828248, 0, 131078, 13828249, 0, 65537, 13828250, 0, 65537, 13828251, 0, 65537, 13828252, 0, 65537, 13828253, 0, 65537, 13828254, 0, 65537, 13828255, 0, 131077, 13828256, 0, 2, 13893776, 0, 196608, 13893777, 0, 6, 13893778, 0, 1, 13893779, 0, 1, 13893780, 0, 1, 13893781, 0, 1, 13893782, 0, 1, 13893783, 0, 131078, 13893784, 0, 65537, 13893785, 0, 65537, 13893786, 0, 65537, 13893787, 0, 65537, 13893788, 0, 65537, 13893789, 0, 65537, 13893790, 0, 65537, 13893791, 0, 65537, 13893792, 0, 131077, 13893793, 0, 1, 13893794, 0, 2, 13959313, 0, 131072, 13959314, 0, 131073, 13959315, 0, 65542, 13959316, 0, 65537, 13959317, 0, 65537, 13959318, 0, 65537, 13959319, 0, 65537, 13959320, 0, 65537, 13959321, 0, 65537, 13959322, 0, 65537, 13959323, 0, 65537, 13959324, 0, 65537, 13959325, 0, 65537, 13959326, 0, 65537, 13959327, 0, 65541, 13959328, 0, 131073, 13959329, 0, 131073, 13959330, 0, 131074, 14024851, 0, 131072, 14024852, 0, 131073, 14024853, 0, 131073, 14024854, 0, 65542, 14024855, 0, 65537, 14024856, 0, 65537, 14024857, 0, 65537, 14024858, 0, 65537, 14024859, 0, 65537, 14024860, 0, 65537, 14024861, 0, 65537, 14024862, 0, 65541, 14024863, 0, 131074, 14090390, 0, 131072, 14090391, 0, 131073, 14090392, 0, 131073, 14090393, 0, 131073, 14090394, 0, 131073, 14090395, 0, 131073, 14090396, 0, 131073, 14090397, 0, 131073, 14090398, 0, 131074 )
 
-[node name="SpikeAreas" parent="." index="2"]
-editor/display_folded = true
-
 [node name="Spikes01" type="Area2D" parent="SpikeAreas" index="0"]
 position = Vector2( 8256, 3823.15 )
 collision_layer = 9
@@ -321,7 +318,7 @@ collision_layer = 9
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeAreas/Spikes10" index="0"]
-position = Vector2( -3.24316, -0.463379 )
+position = Vector2( 2.20606, -11.7021 )
 shape = SubResource( 10 )
 
 [node name="Spikes11" type="Area2D" parent="SpikeAreas" index="10"]
@@ -576,7 +573,7 @@ position = Vector2( 5971.09, 7846.46 )
 shape = SubResource( 34 )
 
 [node name="MushroomBoy31" parent="Enemies/Mushrooms/DetectionZone13" index="2" instance=ExtResource( 11 )]
-position = Vector2( -144.42, 73.9819 )
+position = Vector2( -144.42, 70.9819 )
 
 [node name="DetectionZone14" parent="Enemies/Mushrooms" index="15" instance=ExtResource( 10 )]
 position = Vector2( 6675.31, 9381.94 )
@@ -627,7 +624,6 @@ position = Vector2( 9.43359, 47.4795 )
 [node name="Slimes" type="Node2D" parent="Enemies" index="1"]
 
 [node name="DetectionZone25" parent="Enemies/Slimes" index="0" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( 6526.93, 8784.98 )
 scale = Vector2( 1.2, 1.2 )
 
@@ -636,8 +632,9 @@ position = Vector2( -16.5396, 67.9966 )
 shape = SubResource( 40 )
 
 [node name="Slime23" parent="Enemies/Slimes/DetectionZone25" index="2" instance=ExtResource( 12 )]
-position = Vector2( 1.37354, 0.662598 )
+position = Vector2( 1.37354, -1.83691 )
 scale = Vector2( 1, 1 )
+moves = false
 
 [node name="DetectionZone26" parent="Enemies/Slimes" index="1" instance=ExtResource( 10 )]
 editor/display_folded = true
@@ -653,7 +650,6 @@ position = Vector2( 0.487305, 0.630859 )
 scale = Vector2( 1, 1 )
 
 [node name="DetectionZone31" parent="Enemies/Slimes" index="2" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( 6302.73, 8172.65 )
 scale = Vector2( 1.2, 1.2 )
 
@@ -662,8 +658,9 @@ position = Vector2( -14.7017, 0 )
 shape = SubResource( 42 )
 
 [node name="Slime22" parent="Enemies/Slimes/DetectionZone31" index="2" instance=ExtResource( 12 )]
-position = Vector2( -16.5859, -88.8589 )
+position = Vector2( -16.5859, -91.3589 )
 scale = Vector2( 1.33333, 1.33333 )
+moves = false
 
 [node name="DetectionZone29" parent="Enemies/Slimes" index="3" instance=ExtResource( 10 )]
 editor/display_folded = true
@@ -679,7 +676,6 @@ position = Vector2( -28.916, -20.064 )
 scale = Vector2( 1.35, 1.35 )
 
 [node name="DetectionZone30" parent="Enemies/Slimes" index="4" instance=ExtResource( 10 )]
-editor/display_folded = true
 position = Vector2( 5827.38, 7746.65 )
 scale = Vector2( 1.2, 1.2 )
 
@@ -825,7 +821,7 @@ position = Vector2( -7.96387, -45.9434 )
 shape = SubResource( 53 )
 
 [node name="Slime16" parent="Enemies/Slimes/DetectionZone34" index="2" instance=ExtResource( 12 )]
-position = Vector2( -13.4775, -120.689 )
+position = Vector2( -13.4775, -122.356 )
 scale = Vector2( 1, 1 )
 
 [node name="DetectionZone37" parent="Enemies/Slimes" index="15" instance=ExtResource( 10 )]
@@ -860,7 +856,7 @@ position = Vector2( -5.40381, -4.95312 )
 shape = SubResource( 55 )
 
 [node name="Slime6" parent="Enemies/Slimes/DetectionZone36" index="2" instance=ExtResource( 12 )]
-position = Vector2( 31.1045, -88.7202 )
+position = Vector2( 31.1045, -87.887 )
 scale = Vector2( 1.32, 1.32 )
 
 [node name="DetectionZone40" parent="Enemies/Slimes" index="18" instance=ExtResource( 10 )]
@@ -896,7 +892,7 @@ position = Vector2( -49.5059, 38.1099 )
 shape = SubResource( 44 )
 
 [node name="Slime19" parent="Enemies/Slimes/DetectionZone42" index="2" instance=ExtResource( 12 )]
-position = Vector2( -17.4004, -45.8291 )
+position = Vector2( -17.4004, -46.6626 )
 scale = Vector2( 1.33333, 1.33333 )
 
 [node name="DetectionZone43" parent="Enemies/Slimes" index="21" instance=ExtResource( 10 )]
@@ -937,9 +933,6 @@ start_open = true
 [node name="OvergrownBarricade02" parent="Barricades" index="3" instance=ExtResource( 15 )]
 position = Vector2( 8468.1, 10560.2 )
 scale = Vector2( 4, 4 )
-
-[node name="Souls" parent="." index="6"]
-editor/display_folded = true
 
 [node name="AttackBuff" parent="Souls" index="0" instance=ExtResource( 16 )]
 position = Vector2( 7089.98, 4092.8 )
@@ -1028,7 +1021,7 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 7906.02, 8103.65 )
+position = Vector2( 6495.45, 9649.59 )
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 26 )]
 position = Vector2( 8642.72, 959.52 )
@@ -1092,7 +1085,7 @@ editor/display_folded = true
 position = Vector2( 9622.63, 10952.4 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 28 )
-frame = 6
+frame = 3
 playing = true
 
 [node name="DialogueZone" parent="Books/AgentBook" index="0" instance=ExtResource( 26 )]
@@ -1102,7 +1095,7 @@ scene_name = "Agent"
 position = Vector2( 10008.6, 10870.4 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 29 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/AntonyBook" index="0" instance=ExtResource( 26 )]
@@ -1112,14 +1105,14 @@ scene_name = "Antony"
 position = Vector2( 9820.6, 10938.4 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 30 )
-frame = 2
+frame = 7
 playing = true
 
 [node name="DoggieBook" type="AnimatedSprite" parent="Books" index="3"]
 position = Vector2( 9927.6, 10968.4 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 31 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/DoggieBook" index="0" instance=ExtResource( 26 )]
@@ -1129,7 +1122,7 @@ scene_name = "Doggie"
 position = Vector2( 10189.3, 10908.4 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 32 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="DialogueZone" parent="Books/InherBook" index="0" instance=ExtResource( 26 )]
@@ -1139,6 +1132,7 @@ scene_name = "Inherently"
 position = Vector2( 9704.01, 10884.9 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 33 )
+frame = 5
 playing = true
 
 [node name="DialogueZone" parent="Books/JordanBook" index="0" instance=ExtResource( 26 )]
@@ -1148,7 +1142,7 @@ scene_name = "Jordan"
 position = Vector2( 10066.7, 10995.5 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 34 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="DialogueZone" parent="Books/MerlyBook" index="0" instance=ExtResource( 26 )]
@@ -1158,7 +1152,7 @@ scene_name = "Merly23"
 position = Vector2( 9768.89, 11026.1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 35 )
-frame = 7
+frame = 4
 playing = true
 
 [node name="DialogueZone" parent="Books/WillowBook" index="0" instance=ExtResource( 26 )]
