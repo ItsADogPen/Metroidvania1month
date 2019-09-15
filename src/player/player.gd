@@ -99,8 +99,11 @@ func end_dialogue():
 	state = State.IDLE
 
 func _physics_process(delta):
+	if state == State.DASH:
+		return
+	
 	_gravity(delta)
-
+		
 	if state == State.TAKE_DAMAGE:
 		print("moving_with_motion", motion)
 		motion = move_and_slide(motion, Vector2.UP, true)
@@ -211,7 +214,6 @@ func _on_fall_jump():
 	remaining_jumps = max(0, remaining_jumps - 1)
 
 func process_controls(delta):
-	
 	# Get player input
 	var left_pressed = Input.is_action_pressed("ui_left")
 	var right_pressed = Input.is_action_pressed("ui_right")
@@ -288,73 +290,76 @@ func process_controls(delta):
 	
 	# Handle dashing
 	if dash and upgrades["dash"]:
-		stateMachine = "dash"
-		sprites.play("dash-pre")
-		yield(sprites,"animation_finished")
-		
-		var ray_checkers = [dash_ray_L,dash_ray_R]
-		for i in ray_checkers: i.enabled = true
-		
-		if ray_checkers[0].is_colliding() && sprites.scale.x == -1:
-			
-			var colli_point = ray_checkers[0].get_collision_point()
-			global_position = colli_point
-			
-		elif !ray_checkers[0].is_colliding() && sprites.scale.x == -1:
-			
-			var math_vector = Vector2()
-			math_vector.x = (math_vector.x+DASH_DIST)*-1
-			
-			global_position = global_position + math_vector
-			
-		elif ray_checkers[1].is_colliding() && sprites.scale.x == 1:
-			
-			var colli_point = ray_checkers[1].get_collision_point()
-			global_position = colli_point
-			
-		elif !ray_checkers[1].is_colliding() && sprites.scale.x == 1:
-			
-			var math_vector = Vector2()
-			math_vector.x = math_vector.x + DASH_DIST
-			
-			global_position = global_position + math_vector
-			
-		elif !ray_checkers[0].is_colliding() && !ray_checkers[1].is_colliding():
-			
-			var facing = sprites.scale.x
-			
-			var math_vector = Vector2()
-			math_vector.x = math_vector.x+DASH_DIST
-			math_vector.x = (math_vector.x)*facing
-			
-			global_position = global_position + math_vector
-		
-		sprites.play("dash-post")
-		yield(sprites,"animation_finished")
-		stateMachine = "idle"
+		dash()
 	
 	# Handle shield move
-	if shield and upgrades["shield_aoe"]:
-		stateMachine = "shield"
-		print("SHIELD")
-		sprites.play("stabground-pre")
-		yield(sprites,"animation_finished")
-		
-		var load_shield = ShieldScene.instance()
-		map.projectiles_container.add_child(load_shield)
-		load_shield.global_position = self.global_position
-		yield(get_tree().create_timer(0.2),"timeout")
-		load_shield._play_Anim("beginning")
-		
-		sprites.play("stabground-loop")
-		yield(get_tree().create_timer(2),"timeout")
-		sprites.play("stabground-end")
-		load_shield._play_Anim("end")
-		yield(sprites,"animation_finished")
-		load_shield._destroy()
-		stateMachine = "idle"
+#	if shield and upgrades["shield_aoe"]:
+#		stateMachine = "shield"
+#		print("SHIELD")
+#		sprites.play("stabground-pre")
+#		yield(sprites,"animation_finished")
+#
+#		var load_shield = ShieldScene.instance()
+#		map.projectiles_container.add_child(load_shield)
+#		load_shield.global_position = self.global_position
+#		yield(get_tree().create_timer(0.2),"timeout")
+#		load_shield._play_Anim("beginning")
+#
+#		sprites.play("stabground-loop")
+#		yield(get_tree().create_timer(2),"timeout")
+#		sprites.play("stabground-end")
+#		load_shield._play_Anim("end")
+#		yield(sprites,"animation_finished")
+#		load_shield._destroy()
+#		stateMachine = "idle"
 	
 	motion.normalized()
+	
+func dash():
+	state = State.DASH
+	sprites.play("dash-pre")
+	yield(sprites,"animation_finished")
+	
+	var ray_checkers = [dash_ray_L,dash_ray_R]
+	for i in ray_checkers: i.enabled = true
+	
+	if ray_checkers[0].is_colliding() && sprites.scale.x == -1:
+		
+		var colli_point = ray_checkers[0].get_collision_point()
+		global_position = colli_point
+		
+	elif !ray_checkers[0].is_colliding() && sprites.scale.x == -1:
+		
+		var math_vector = Vector2()
+		math_vector.x = (math_vector.x+DASH_DIST)*-1
+		
+		global_position = global_position + math_vector
+		
+	elif ray_checkers[1].is_colliding() && sprites.scale.x == 1:
+		
+		var colli_point = ray_checkers[1].get_collision_point()
+		global_position = colli_point
+		
+	elif !ray_checkers[1].is_colliding() && sprites.scale.x == 1:
+		
+		var math_vector = Vector2()
+		math_vector.x = math_vector.x + DASH_DIST
+		
+		global_position = global_position + math_vector
+		
+	elif !ray_checkers[0].is_colliding() && !ray_checkers[1].is_colliding():
+		
+		var facing = sprites.scale.x
+		
+		var math_vector = Vector2()
+		math_vector.x = math_vector.x+DASH_DIST
+		math_vector.x = (math_vector.x)*facing
+		
+		global_position = global_position + math_vector
+	
+	sprites.play("dash-post")
+	yield(sprites,"animation_finished")
+	state = State.IDLE
 
 func stab():
 	animation_player.play("stab")
