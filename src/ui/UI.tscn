@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/Hud/portraits/Sothis (determination).png" type="Texture" id=20]
 [ext_resource path="res://assets/Hud/portraits/Alraune (smirk).png" type="Texture" id=21]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 use_mipmaps = true
 use_filter = true
@@ -37,7 +37,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 18
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -77,7 +77,7 @@ margin_left = 682.853
 margin_top = 57.2812
 margin_right = 751.853
 margin_bottom = 80.2812
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "Rosemary"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HealthBar"]
@@ -118,7 +118,7 @@ margin_top = 26.0
 margin_right = -32.0
 margin_bottom = -26.0
 theme = ExtResource( 3 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "In publishing and graphic design, lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available..."
 
 [node name="Label" type="Label" parent="Dialogue/DialoguePanel"]

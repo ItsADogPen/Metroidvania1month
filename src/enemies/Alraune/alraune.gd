@@ -2,6 +2,7 @@ extends Enemy
 
 onready var dialogue_panel = get_node("/root/Game/UI/Dialogue/DialoguePanel")
 onready var health_bar = get_node("/root/Game/UI/HealthBar")
+onready var effect_player = AudioEngine.effects.effect_players[8]
 
 onready var mid_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossTransform")
 onready var end_battle_dialog = get_node("/root/Game/Room/DialogueZones/DialogueBossDeath")
@@ -201,6 +202,7 @@ func _transform():
 	state = State.TRANSFORMING
 	stats.health = MONSTER_HEALTH
 	stats.transformed = true
+	play_effect("res://assets/audio/sfx/SFX_Boss_Transform.ogg")
 	sprite.play("transformation")
 	yield(sprite, "animation_finished")
 	for child in touch_damage_areas["normal"].get_children():
@@ -214,6 +216,9 @@ func _transform():
 	else:
 		state = State.PATROL
 
+
+func play_effect(effect: String):
+	effect_player.play_effect(effect, global_position)
 # Identical to _die from enemy.gd, but with lines to show dialogue
 func _die():
 	emit_signal("new_phase")
@@ -229,6 +234,9 @@ func _die():
 				child.set_disabled(true)
 	motion.x = 0
 	state = State.DYING
+	play_effect("res://assets/audio/sfx/SFX_Boss_PortalTeleport.ogg")
+	# hehe you started this gloomy!
+	get_node("/root/Game/Room/AudioZones/AudioZone/CollisionShape2D").set_disabled(true)
 	if stats.transformed:
 		sprite.play("transformed_death")
 	else:

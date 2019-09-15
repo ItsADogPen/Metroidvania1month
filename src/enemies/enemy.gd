@@ -88,6 +88,9 @@ var transforming = false
 var chasing = null
 
 
+func play_effect(effect: String):
+	AudioEngine.play_positioned_effect(effect, global_position)
+
 func activate():
 	if state != State.DEATH:
 		if chasing:

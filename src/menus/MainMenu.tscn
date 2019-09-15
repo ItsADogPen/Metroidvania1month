@@ -53,7 +53,7 @@ texture = ExtResource( 2 )
 [node name="Title" type="AnimatedSprite" parent="."]
 position = Vector2( 39.2649, -202.003 )
 frames = ExtResource( 3 )
-frame = 5
+frame = 36
 playing = true
 centered = false
 
@@ -73,31 +73,35 @@ position = Vector2( 0, -224.849 )
 position = Vector2( 684.582, 274.212 )
 frames = ExtResource( 4 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Soul02" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 756.74, 274.159 )
 frames = ExtResource( 5 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="Player" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 547.058, 231.192 )
 frames = ExtResource( 6 )
 animation = "idle"
+frame = 7
 playing = true
 
 [node name="Mushroom" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 346.814, 266.469 )
 frames = ExtResource( 7 )
 animation = "normal_idle"
-frame = 1
+frame = 4
 playing = true
 
 [node name="Mushroom2" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 427.015, 266.469 )
 frames = ExtResource( 7 )
 animation = "normal_idle"
+frame = 3
 playing = true
 
 [node name="Slime" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]

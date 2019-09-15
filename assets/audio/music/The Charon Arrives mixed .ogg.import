@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The Charon Arrives mixed .ogg-9e6686614d183ebdb9c64e8fb74b6c29.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/The Charon Arrives mixed .ogg"
+dest_files=[ "res://.import/The Charon Arrives mixed .ogg-9e6686614d183ebdb9c64e8fb74b6c29.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

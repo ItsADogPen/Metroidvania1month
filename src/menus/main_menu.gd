@@ -36,6 +36,7 @@ func _ready():
 	options_slider["volume"].value = Preferences.preferences.volume * 100
 
 	AudioEngine.set_master_volume(Preferences.preferences.volume)
+	AudioEngine.play_background_music("res://assets/audio/music/Sea of Eden (Menu Song).ogg")
 	
 #	AudioEngine.play_sound("res://assets/audio/menu/menu.ogg")
 	

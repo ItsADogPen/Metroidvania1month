@@ -39,9 +39,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.375, 0.52 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.13, 0.375, 0.52 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Boss_TentacleAttack.ogg" ],
+"method": "play_effect"
+}, {
 "args": [ NodePath("NormalHitBox") ],
 "method": "check_hit_player"
 }, {
@@ -85,9 +88,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.52 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.26, 0.52 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Boss_TentacleAttack.ogg" ],
+"method": "play_effect"
+}, {
 "args": [  ],
 "method": "shoot_projectile"
 } ]
@@ -126,9 +132,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Boss_TongueAttack.ogg" ],
+"method": "play_effect"
+}, {
 "args": [ NodePath("TransformedDirectHitBox") ],
 "method": "check_hit_player"
 } ]
@@ -169,9 +178,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1.125 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.39, 1.125 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Boss_TentacleAttack.ogg" ],
+"method": "play_effect"
+}, {
 "args": [  ],
 "method": "shoot_projectile"
 } ]
@@ -211,9 +223,12 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.3, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Boss_PoisonAttack.ogg" ],
+"method": "play_effect"
+}, {
 "args": [ NodePath("TransformedSpitHitBox") ],
 "method": "check_hit_player"
 }, {
@@ -270,8 +285,8 @@ MONSTER_ATTACK_COOLDOWN = 0.8
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
-animation = "normal_idle"
-frame = 7
+animation = "transformed_attack_projectile"
+frame = 19
 playing = true
 offset = Vector2( -60, -58 )
 

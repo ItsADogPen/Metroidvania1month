@@ -18,10 +18,10 @@ const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
 var ACCEL = 500
-var JUMP_SPEED = -240
+var JUMP_SPEED = -230
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 
-onready var effect_player = AudioEngine.effects.effect_players[0]
+onready var effect_player = AudioEngine.effects.effect_players[9]
 
 # Instance variables
 var hp : int = 1
@@ -178,7 +178,7 @@ func _player_death():
 	state = State.IDLE
 
 func play_effect(effect: String):
-	AudioEngine.play_positioned_effect(effect, self.global_position)
+	effect_player.play_effect(effect, global_position)
 
 func set_animation():
 	match state:
@@ -250,7 +250,7 @@ func process_controls(delta):
 				motion.y = JUMP_SPEED
 			remaining_jumps -= 1
 			jump_boost_speed = motion.y
-			get_tree().create_timer(0.4).connect("timeout", self, "stop_hold_jump")
+			get_tree().create_timer(0.45).connect("timeout", self, "stop_hold_jump")
 			state = State.JUMP
 			
 	if jump_held:

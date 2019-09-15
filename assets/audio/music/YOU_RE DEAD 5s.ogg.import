@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/YOU_RE DEAD 5s.ogg-0e89cb5660fa56e4711ab2a4dc35e0d6.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/YOU_RE DEAD 5s.ogg"
+dest_files=[ "res://.import/YOU_RE DEAD 5s.ogg-0e89cb5660fa56e4711ab2a4dc35e0d6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
