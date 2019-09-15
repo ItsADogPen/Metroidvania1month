@@ -149,7 +149,7 @@ extents = Vector2( 18.0037, 17.2543 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 98.9583, 44.7451 )
 
-[node name="Slime" instance=ExtResource( 1 )]
+[node name="Slime" index="0" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 invincible = true

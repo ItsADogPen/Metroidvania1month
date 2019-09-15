@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=2]
+[gd_scene load_steps=157 format=2]
 
 [ext_resource path="res://src/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/NewNew/idle/Idle1.png" type="Texture" id=2]
@@ -134,6 +134,23 @@
 [ext_resource path="res://assets/player/NewNew/Revive/Revive30.png" type="Texture" id=132]
 [ext_resource path="res://assets/player/NewNew/Revive/Revive31.png" type="Texture" id=133]
 [ext_resource path="res://assets/player/NewNew/Revive/Revive32.png" type="Texture" id=134]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain1.png" type="Texture" id=135]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain2.png" type="Texture" id=136]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain3.png" type="Texture" id=137]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain4.png" type="Texture" id=138]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain5.png" type="Texture" id=139]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain6.png" type="Texture" id=140]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain7.png" type="Texture" id=141]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain8.png" type="Texture" id=142]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain9.png" type="Texture" id=143]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain10.png" type="Texture" id=144]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain11.png" type="Texture" id=145]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain12.png" type="Texture" id=146]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain13.png" type="Texture" id=147]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain14.png" type="Texture" id=148]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain15.png" type="Texture" id=149]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain16.png" type="Texture" id=150]
+[ext_resource path="res://assets/player/NewNew/Attacks/Stabchain17.png" type="Texture" id=151]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -196,6 +213,11 @@ animations = [ {
 "loop": false,
 "name": "revive",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 135 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 142 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 145 ), ExtResource( 146 ), ExtResource( 147 ), ExtResource( 148 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 151 ) ],
+"loop": true,
+"name": "stabfast",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -246,6 +268,57 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "stab_fast"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "stabfast" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 16 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "res://assets/audio/sfx/SFX_BladeAttack.ogg" ],
+"method": "play_effect"
+}, {
+"args": [ NodePath("StabHitbox") ],
+"method": "check_hit_enemies"
+}, {
+"args": [ NodePath("StabHitbox") ],
+"method": "check_hit_enemies"
+}, {
+"args": [ NodePath("StabHitbox") ],
+"method": "check_hit_enemies"
+} ]
+}
+
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 17.1189 )
 
@@ -257,7 +330,8 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 7.5, -49 )
 frames = SubResource( 1 )
-animation = "attackstab"
+animation = "stabfast"
+frame = 10
 
 [node name="StabHitbox" type="Area2D" parent="."]
 position = Vector2( 0, -20 )
@@ -273,6 +347,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/stab = SubResource( 3 )
+anims/stab_fast = SubResource( 5 )
 
 [node name="Side_Ray_Left" type="RayCast2D" parent="."]
 position = Vector2( 1, -19 )

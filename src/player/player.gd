@@ -288,7 +288,10 @@ func process_controls(delta):
 	
 	if state == State.IDLE or state == State.RUN:
 		if stab_pressed:
-			stab()
+			if upgrades.attack_speed:
+				stab_fast()
+			else:
+				stab()
 	
 	# Handle dashing
 	if dash and upgrades["dash"]:
@@ -370,6 +373,13 @@ func stab():
 	if state == State.ATTACK:
 		state = State.IDLE
 
+func stab_fast():
+	animation_player.play("stab_fast")
+	state = State.ATTACK
+	yield(animation_player, "animation_finished")
+	if state == State.ATTACK:
+		state = State.IDLE
+	
 func take_damage_animation():
 	animation_player.play("take_damage")
 	state = State.TAKE_DAMAGE

@@ -273,7 +273,7 @@ extents = Vector2( 52.8322, 10 )
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 56.2641, 19.7599 )
 
-[node name="Alraune" index="0" groups=[
+[node name="Alraune" groups=[
 "alraune",
 ] instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )

@@ -8,8 +8,7 @@ func _physics_process(delta):
 	check_movement_direction()
 	set_animation()
 	
-	if not moves:
-		motion.x = 0
+	
 		
 	if is_alive():
 		if state == State.PATROL:
@@ -18,6 +17,9 @@ func _physics_process(delta):
 			chase()
 		elif state == State.ATTACK:
 			pass
+		
+		if not moves:
+			motion.x = 0
 			
 		motion = move_and_slide(motion, Vector2(0, 1), SLOPE_SLIDE_STOP)
 		
