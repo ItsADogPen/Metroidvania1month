@@ -1,20 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://src/environment/torch_frames.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://src/environment/sparks_particles.tres" type="Material" id=2]
 
 [node name="Torch" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-frame = 1
+frame = 3
 playing = true
-
-[node name="Particles2D" type="Particles2D" parent="."]
-visible = false
-position = Vector2( 0, -5 )
-amount = 7
-lifetime = 0.6
-randomness = 0.3
-fixed_fps = 10
-process_material = ExtResource( 2 )

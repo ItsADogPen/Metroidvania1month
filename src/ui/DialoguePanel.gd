@@ -124,6 +124,8 @@ func trigger_event():
 			get_node("/root/Game/Room/Barricades/OvergrownBarricade01").close_door()
 		"dialogue3-over":
 			get_node("/root/Game/Room/Barricades/OvergrownBarricade01").open_door()
+			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
+			get_node("/root/Game/Room/Barricades/StatueBarricade02").open_door()
 		"dialogue4":
 			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
 			get_node("/root/Game/Room/Barricades/StatueBarricade02").open_door()
