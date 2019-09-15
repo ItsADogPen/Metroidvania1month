@@ -923,6 +923,9 @@ shape = SubResource( 57 )
 position = Vector2( 294.898, 239.777 )
 ACCELERATION = 200
 
+[node name="Barricades" parent="." index="5"]
+editor/display_folded = true
+
 [node name="StatueBarricade01" parent="Barricades" index="0" instance=ExtResource( 13 )]
 position = Vector2( 8869.79, 983.237 )
 scale = Vector2( 3, 3 )
@@ -939,6 +942,9 @@ start_open = true
 [node name="OvergrownBarricade02" parent="Barricades" index="3" instance=ExtResource( 14 )]
 position = Vector2( 8468.1, 10560.2 )
 scale = Vector2( 4, 4 )
+
+[node name="Souls" parent="." index="6"]
+editor/display_folded = true
 
 [node name="AttackBuff" parent="Souls" index="0" instance=ExtResource( 15 )]
 position = Vector2( 7089.98, 4092.8 )
@@ -980,6 +986,9 @@ position = Vector2( 10564.8, 8879.85 )
 scale = Vector2( 2, 2 )
 upgrade = "attack_aoe"
 sprite_frames = ExtResource( 22 )
+
+[node name="CheckPoints" parent="." index="7"]
+editor/display_folded = true
 
 [node name="Checkpoint" parent="CheckPoints" index="0" instance=ExtResource( 23 )]
 position = Vector2( 8249.59, 4318.98 )
@@ -1027,7 +1036,10 @@ flipped = true
 goto_location = Vector2( 9817, 899 )
 
 [node name="Player" parent="." index="9"]
-position = Vector2( 6081, 8365.98 )
+position = Vector2( 8749.82, 1054.41 )
+
+[node name="AudioZones" parent="." index="10"]
+editor/display_folded = true
 
 [node name="AudioZone" parent="AudioZones" index="0" instance=ExtResource( 25 )]
 position = Vector2( 8907.64, 9965.18 )
@@ -1044,6 +1056,9 @@ audio_track = "res://assets/audio/music/The Charon Arrives mixed .ogg"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AudioZones/AudioZone2" index="0"]
 position = Vector2( 205.999, 0 )
 shape = SubResource( 58 )
+
+[node name="DialogueZones" parent="." index="11"]
+editor/display_folded = true
 
 [node name="DialogueZone01" parent="DialogueZones" index="0" instance=ExtResource( 26 )]
 position = Vector2( 8642.72, 959.52 )
@@ -1104,7 +1119,7 @@ shape = SubResource( 59 )
 position = Vector2( 10002.6, 10809.3 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 28 )
-frame = 7
+frame = 5
 playing = true
 
 [node name="DialogueZone" parent="Books/AgentBook" index="0" instance=ExtResource( 26 )]
@@ -1114,22 +1129,25 @@ scene_name = "Agent"
 position = Vector2( 10157.9, 10857.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 29 )
+frame = 6
 playing = true
 
 [node name="DialogueZone" parent="Books/AntonyBook" index="0" instance=ExtResource( 26 )]
+visible = false
 scene_name = "Antony"
 
 [node name="DeathBook" type="AnimatedSprite" parent="Books" index="2"]
 position = Vector2( 9969.89, 10925.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 30 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="DoggieBook" type="AnimatedSprite" parent="Books" index="3"]
 position = Vector2( 10076.9, 10955.6 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 31 )
+frame = 6
 playing = true
 
 [node name="DialogueZone" parent="Books/DoggieBook" index="0" instance=ExtResource( 26 )]
@@ -1139,7 +1157,7 @@ scene_name = "Doggie"
 position = Vector2( 10217.3, 10976 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 32 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="DialogueZone" parent="Books/InherBook" index="0" instance=ExtResource( 26 )]
@@ -1149,7 +1167,7 @@ scene_name = "Inherently"
 position = Vector2( 9853.3, 10872.1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 33 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="DialogueZone" parent="Books/JordanBook" index="0" instance=ExtResource( 26 )]
@@ -1159,7 +1177,7 @@ scene_name = "Jordan"
 position = Vector2( 9762.44, 10908.1 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 34 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="DialogueZone" parent="Books/MerlyBook" index="0" instance=ExtResource( 26 )]
@@ -1169,6 +1187,7 @@ scene_name = "Merly23"
 position = Vector2( 9857.31, 11009 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 35 )
+frame = 6
 playing = true
 
 [node name="DialogueZone" parent="Books/WillowBook" index="0" instance=ExtResource( 26 )]
