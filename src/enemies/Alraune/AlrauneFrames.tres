@@ -175,7 +175,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
-"loop": true,
+"loop": false,
 "name": "transformed_attack_intro",
 "speed": 5.0
 } ]

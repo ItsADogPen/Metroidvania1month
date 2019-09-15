@@ -14,9 +14,12 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.9, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0.5, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
+"args": [ "res://assets/audio/sfx/SFX_Mushroom_GasRelease.ogg" ],
+"method": "play_effect"
+}, {
 "args": [ NodePath("NormalHitBox") ],
 "method": "check_hit_player"
 }, {
@@ -63,23 +66,32 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.469, 0.536, 0.603, 1.206, 1.273, 1.809, 1.876, 1.943 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.28, 0.469, 0.536, 0.603, 1.05, 1.206, 1.273, 1.61, 1.809, 1.876, 1.943 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
-"args": [ NodePath("TransformedHitBoxRight") ],
-"method": "check_hit_player"
+"args": [ "res://assets/audio/sfx/SFX_MushroomMonster_Swing.ogg" ],
+"method": "play_effect"
 }, {
 "args": [ NodePath("TransformedHitBoxRight") ],
 "method": "check_hit_player"
 }, {
 "args": [ NodePath("TransformedHitBoxRight") ],
 "method": "check_hit_player"
+}, {
+"args": [ NodePath("TransformedHitBoxRight") ],
+"method": "check_hit_player"
+}, {
+"args": [ "res://assets/audio/sfx/SFX_MushroomMonster_SmokePuff.ogg" ],
+"method": "play_effect"
 }, {
 "args": [ NodePath("TransformedHitBoxTotal") ],
 "method": "check_hit_player"
 }, {
 "args": [ NodePath("TransformedHitBoxTotal") ],
 "method": "check_hit_player"
+}, {
+"args": [ "res://assets/audio/sfx/SFX_MushroomMonster_Swing.ogg" ],
+"method": "play_effect"
 }, {
 "args": [ NodePath("TransformedHitBoxLeft") ],
 "method": "check_hit_player"
@@ -143,7 +155,7 @@ extents = Vector2( 15.1644, 10.4954 )
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 17.4539, 12.7889 )
 
-[node name="MushroomBoy" instance=ExtResource( 1 )]
+[node name="MushroomBoy" index="0" instance=ExtResource( 1 )]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 level = "Transform"
@@ -152,7 +164,7 @@ ACCELERATION = 150
 [node name="AnimatedSprite" parent="." index="0"]
 frames = ExtResource( 3 )
 animation = "transformed_attack"
-frame = 19
+frame = 16
 offset = Vector2( 15, -43 )
 
 [node name="AnimationPlayer" parent="." index="1"]

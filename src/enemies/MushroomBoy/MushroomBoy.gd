@@ -1,7 +1,11 @@
 extends Enemy
 
 
+
 func _ready():
+	transformation_sound = "res://assets/audio/sfx/SFX_Mushroom_BreakOpen.ogg"
+	death_sound = "res://assets/audio/sfx/SFX_MushroomMonster_BurstFlame.ogg"
+	
 	attack_hit_boxes = {
 		"normal": $NormalHitBox,
 		"transformed_right": $TransformedHitBoxRight,

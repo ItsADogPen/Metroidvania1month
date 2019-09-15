@@ -251,6 +251,8 @@ func process_controls(delta):
 			else:
 				motion.y = JUMP_SPEED
 			remaining_jumps -= 1
+			var index = (randi() % 3) + 1
+			play_effect("res://assets/audio/sfx/SFX_Jump" + str(index) + ".ogg")
 			jump_boost_speed = motion.y
 			get_tree().create_timer(0.45).connect("timeout", self, "stop_hold_jump")
 			state = State.JUMP

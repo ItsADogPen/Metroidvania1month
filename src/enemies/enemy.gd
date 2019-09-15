@@ -4,6 +4,8 @@ class_name Enemy
 
 const UP = Vector2(0, -1)
 
+onready var transformation_sound = null
+onready var death_sound = null
 
 export(String, "Regular", "Transform", "Monster") var level
 
@@ -212,6 +214,10 @@ func play_attack_timer():
 
 func _transform():
 	motion.x = 0
+	
+	if transformation_sound:
+		play_effect(transformation_sound)
+		
 	state = State.TRANSFORMING
 	stats.health = MONSTER_HEALTH
 	stats.transformed = true
@@ -232,6 +238,9 @@ func _transform():
 func _die():
 	if animation_player.is_playing():
 		animation_player.stop(true)
+		
+	if death_sound:
+		play_effect(death_sound)
 		
 	$CollisionShape2D.shape = null
 	for touch_damage_area in touch_damage_areas.values():
