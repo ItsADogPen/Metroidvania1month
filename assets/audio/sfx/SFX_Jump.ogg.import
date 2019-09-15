@@ -2,13 +2,11 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/SFX_Jump.ogg-90b03d49dcf689d7d0dde3b6b33ea445.oggstr"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Jump.ogg"
-dest_files=[ "res://.import/SFX_Jump.ogg-90b03d49dcf689d7d0dde3b6b33ea445.oggstr" ]
-
 [params]
 
 loop=true

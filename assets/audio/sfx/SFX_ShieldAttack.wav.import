@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_ShieldAttack.wav-fd45df7177ad307aa5ce7c2e1acf9a7f.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_ShieldAttack.wav"
-dest_files=[ "res://.import/SFX_ShieldAttack.wav-fd45df7177ad307aa5ce7c2e1acf9a7f.sample" ]
-
 [params]
 
 force/8_bit=false

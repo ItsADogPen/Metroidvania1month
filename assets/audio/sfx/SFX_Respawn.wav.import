@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Respawn.wav-b19097d02731a7179858f3aa14eae606.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Respawn.wav"
-dest_files=[ "res://.import/SFX_Respawn.wav-b19097d02731a7179858f3aa14eae606.sample" ]
-
 [params]
 
 force/8_bit=false

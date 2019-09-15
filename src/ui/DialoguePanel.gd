@@ -8,9 +8,12 @@ onready var target_portrait = $TargetPortrait
 
 onready var portraits = {
 	"death": preload("res://assets/Hud/portraits/Death.png"),
-	"rosemary-normal": preload("res://assets/Hud/portraits/Alraune form.png"),
-	"rosemary-monster": preload("res://assets/Hud/portraits/Monster form.png"),
-	"mystery-voice": preload("res://assets/Hud/portraits/Mystery Voice.png"),
+	"rosemary-normal": preload("res://assets/Hud/portraits/Alraune (smirk).png"),
+	"rosemary-angry": preload("res://assets/Hud/portraits/Alraune (angry).png"),
+	"rosemary-concern": preload("res://assets/Hud/portraits/Alraune (concern).png"),
+	"rosemary-worried": preload("res://assets/Hud/portraits/Alraune (worried).png"),
+	"rosemary-monster": preload("res://assets/Hud/portraits/Alraune (monster).png"),
+	"mystery-voice": preload("res://assets/Hud/portraits/Mysterious (face).png"),
 	"book-merly": preload("res://assets/Books/MerlyBook1.png"),
 	"book-agent": preload("res://assets/Books/AgentBook1.png"),
 	"book-antony": preload("res://assets/Books/AntonyBook1.png"),
@@ -86,8 +89,18 @@ func match_color(col : String) -> Color:
 		"white":
 			return Color(1, 1, 1)
 		"grey":
-			return Color(0.3, 0.3, 0.3)
+			return Color(0.6, 0.6, 0.6)
 		"green":
+			return Color(0, 1, 0)
+		"rosemary-normal":
+			return Color(0, 1, 0)
+		"rosemary-angry":
+			return Color(0, 1, 0)
+		"rosemary-concern":
+			return Color(0, 1, 0)
+		"rosemary-worried":
+			return Color(0, 1, 0)
+		"rosemary-monster":
 			return Color(0, 1, 0)
 		"red":
 			return Color(1, 0, 0)

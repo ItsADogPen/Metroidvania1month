@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Boss_PoisonAttack.wav-6f57a2cd85477d559cc5e8031ebf9d27.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Boss_PoisonAttack.wav"
-dest_files=[ "res://.import/SFX_Boss_PoisonAttack.wav-6f57a2cd85477d559cc5e8031ebf9d27.sample" ]
-
 [params]
 
 force/8_bit=false

@@ -39,11 +39,12 @@
 	"dialogue3":
 	{
 		"target": {
-			"green": "rosemary-normal"
+			"green": "rosemary-normal",
+			"rosemary-angry": "rosemary-angry"
 		},
 		"1" : { "text" : "Welcome sweetie, you have made quite a mess in my domain. I'm a little mad about it but I will let it slip if you come to me kindly. We can have some fun together.", "color" : "green" },
 		"2" : { "text" : "I'm not that into girls, so I had rather pass. Too bad I'm here to kill you anyway.", "color" : "white" },
-		"3" : { "text" : "You are not fun and you called me a slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun!", "color" : "green" },
+		"3" : { "text" : "You are not fun and you called me a slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun!", "color" : "rosemary-angry" },
 		"4" : { "text" : "Go ahead, but you will never beat me, Dead Plant.", "color" : "white" }
 	},
 
@@ -58,7 +59,7 @@
 	"dialogue3-mid":
 	{
 		"target": {
-			"green": "rosemary-normal"
+			"green": "rosemary-concern"
 		},
 		"1" : { "text" : "Ara ara, now you angered me. Hope you are ready to be my supper. En garde!", "color" : "green" }
 	},

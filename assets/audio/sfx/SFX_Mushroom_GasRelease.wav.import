@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Mushroom_GasRelease.wav-1094335047da894b2a4ad619eebe8ab5.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Mushroom_GasRelease.wav"
-dest_files=[ "res://.import/SFX_Mushroom_GasRelease.wav-1094335047da894b2a4ad619eebe8ab5.sample" ]
-
 [params]
 
 force/8_bit=false

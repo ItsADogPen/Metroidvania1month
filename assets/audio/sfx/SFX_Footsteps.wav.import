@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Footsteps.wav-b38842f75e00c1ee869876c8b23c3f97.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Footsteps.wav"
-dest_files=[ "res://.import/SFX_Footsteps.wav-b38842f75e00c1ee869876c8b23c3f97.sample" ]
-
 [params]
 
 force/8_bit=false

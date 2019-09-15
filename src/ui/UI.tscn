@@ -19,8 +19,8 @@
 [ext_resource path="res://assets/Boxes UI/HealthBoss/HealthBar.png" type="Texture" id=17]
 [ext_resource path="res://src/ui/DialoguePanel.gd" type="Script" id=18]
 [ext_resource path="res://src/ui/font.tres" type="DynamicFont" id=19]
-[ext_resource path="res://assets/Hud/portraits/MainCharacter.png" type="Texture" id=20]
-[ext_resource path="res://assets/Hud/portraits/Alraune form.png" type="Texture" id=21]
+[ext_resource path="res://assets/Hud/portraits/Sothis (determination).png" type="Texture" id=20]
+[ext_resource path="res://assets/Hud/portraits/Alraune (smirk).png" type="Texture" id=21]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -130,19 +130,19 @@ custom_fonts/font = ExtResource( 19 )
 text = "Enter..."
 
 [node name="PlayerPortait" type="TextureRect" parent="Dialogue/DialoguePanel"]
-margin_left = -72.0169
-margin_top = 28.8868
-margin_right = 7.98309
-margin_bottom = 108.887
+margin_left = -77.869
+margin_top = 30.3498
+margin_right = 2.13098
+margin_bottom = 110.35
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 20 )
 expand = true
 
 [node name="TargetPortrait" type="TextureRect" parent="Dialogue/DialoguePanel"]
-margin_left = 513.121
-margin_top = 28.8868
-margin_right = 593.121
-margin_bottom = 108.887
+margin_left = 519.948
+margin_top = 29.8621
+margin_right = 599.948
+margin_bottom = 109.862
 rect_min_size = Vector2( 80, 80 )
 texture = ExtResource( 21 )
 expand = true

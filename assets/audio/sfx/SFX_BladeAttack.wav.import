@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_BladeAttack.wav-1ecc9f102019286be20859ef723b6ef1.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_BladeAttack.wav"
-dest_files=[ "res://.import/SFX_BladeAttack.wav-1ecc9f102019286be20859ef723b6ef1.sample" ]
-
 [params]
 
 force/8_bit=false

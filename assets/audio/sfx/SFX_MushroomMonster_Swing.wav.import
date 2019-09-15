@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_MushroomMonster_Swing.wav-a03a940e53ed6f318c68595d6ef54203.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_MushroomMonster_Swing.wav"
-dest_files=[ "res://.import/SFX_MushroomMonster_Swing.wav-a03a940e53ed6f318c68595d6ef54203.sample" ]
-
 [params]
 
 force/8_bit=false

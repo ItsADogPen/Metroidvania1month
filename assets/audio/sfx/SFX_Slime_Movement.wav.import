@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Slime_Movement.wav-3c68e0d231637ac756b9cf253a2490b3.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Slime_Movement.wav"
-dest_files=[ "res://.import/SFX_Slime_Movement.wav-3c68e0d231637ac756b9cf253a2490b3.sample" ]
-
 [params]
 
 force/8_bit=false

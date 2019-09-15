@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_SwordAttack.wav-a8203bae2c17e4e4b3d9e9ef3bbea3af.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_SwordAttack.wav"
-dest_files=[ "res://.import/SFX_SwordAttack.wav-a8203bae2c17e4e4b3d9e9ef3bbea3af.sample" ]
-
 [params]
 
 force/8_bit=false

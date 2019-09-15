@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_SoulPop.wav-3156a7b446ad556cbc9e4db209be76fb.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_SoulPop.wav"
-dest_files=[ "res://.import/SFX_SoulPop.wav-3156a7b446ad556cbc9e4db209be76fb.sample" ]
-
 [params]
 
 force/8_bit=false

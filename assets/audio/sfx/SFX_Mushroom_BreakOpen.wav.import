@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Mushroom_BreakOpen.wav-0e23e0680ed394409efa3a237634db1e.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Mushroom_BreakOpen.wav"
-dest_files=[ "res://.import/SFX_Mushroom_BreakOpen.wav-0e23e0680ed394409efa3a237634db1e.sample" ]
-
 [params]
 
 force/8_bit=false

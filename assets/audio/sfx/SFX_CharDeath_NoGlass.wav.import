@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_CharDeath_NoGlass.wav-32fb706f3f7361fbce790eae3924355f.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_CharDeath_NoGlass.wav"
-dest_files=[ "res://.import/SFX_CharDeath_NoGlass.wav-32fb706f3f7361fbce790eae3924355f.sample" ]
-
 [params]
 
 force/8_bit=false

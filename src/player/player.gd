@@ -18,7 +18,7 @@ const GRAV_CAP = 1000
 
 # Stats that can change with upgrades
 var ACCEL = 500
-var JUMP_SPEED = -280
+var JUMP_SPEED = -240
 var DOUBLE_JUMP_SPEED = (JUMP_SPEED * 0.925)
 
 onready var effect_player = AudioEngine.effects.effect_players[0]
@@ -250,7 +250,7 @@ func process_controls(delta):
 				motion.y = JUMP_SPEED
 			remaining_jumps -= 1
 			jump_boost_speed = motion.y
-			get_tree().create_timer(0.3).connect("timeout", self, "stop_hold_jump")
+			get_tree().create_timer(0.4).connect("timeout", self, "stop_hold_jump")
 			state = State.JUMP
 			
 	if jump_held:

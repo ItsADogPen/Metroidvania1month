@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_MushroomMonster_SmokePuff.wav-bf1ea95f79b8e7f2aaa60bf8a8b680f6.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_MushroomMonster_SmokePuff.wav"
-dest_files=[ "res://.import/SFX_MushroomMonster_SmokePuff.wav-bf1ea95f79b8e7f2aaa60bf8a8b680f6.sample" ]
-
 [params]
 
 force/8_bit=false

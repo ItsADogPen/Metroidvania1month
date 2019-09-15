@@ -2,13 +2,11 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/SFX_Jump.wav-7ec7aae8bb6a0c19e1515a3715865700.sample"
+valid=false
 
 [deps]
 
 source_file="res://assets/audio/sfx/SFX_Jump.wav"
-dest_files=[ "res://.import/SFX_Jump.wav-7ec7aae8bb6a0c19e1515a3715865700.sample" ]
-
 [params]
 
 force/8_bit=false
