@@ -132,10 +132,23 @@
 
 	"Antony" : {},
 
-	"Willow" : {},
-
-	"Jordan" : {},
-
+	"Willow" : {
+		"target": {
+			"black": "book-willow"
+		},
+		"1": { "text" : "And thou shallt fear the name Regression", "color" : "black" },
+		"2": { "text" : "For by coming here thou hast shown more commitment to this game than he!", "color" : "black" },
+		"3": { "text" : "But I regress...", "color" : "black" },
+		"4": { "text" : "If you're interested, definitely take part in a jam yourself sometime,", "color" : "black" },
+		"5": { "text" : "And hopefully find yourself in good company as I did.", "color" : "black" }
+	},
+	"Jordan" : {
+		"target": {
+			"black": "book-jordan"
+		},
+		"1": { "text" : "Hey everyone! Thanks for playing!", "color" : "black" },
+		"2": { "text" : "I made music for the game, I hope you enjoyed my compositions ^^", "color" : "black" },
+	},
 	"Inherently" : 
 	{
 		"target": {
