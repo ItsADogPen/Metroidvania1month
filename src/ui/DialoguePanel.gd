@@ -113,6 +113,7 @@ func trigger_event():
 			# Hardcoding node paths is bad, mmmkay? Mmmkay.
 			# Definitely mmkay.
 			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
+			get_node("/root/Game/Room/Barricades/StatueBarricade02").open_door()
 		"dialogue-retry":
 			# activates boss
 			get_node("/root/Game/Room/Enemies/DetectionZone/Alraune").activate()
@@ -124,6 +125,9 @@ func trigger_event():
 		"dialogue3-over":
 			get_node("/root/Game/Room/Barricades/OvergrownBarricade01").open_door()
 		"dialogue4":
+			get_node("/root/Game/Room/Barricades/StatueBarricade01").open_door()
 			get_node("/root/Game/Room/Barricades/StatueBarricade02").open_door()
+		"dialogue6":
+			Flow.go_to_main_menu()
 		_:
 			pass

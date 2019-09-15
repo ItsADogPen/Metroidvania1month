@@ -243,7 +243,11 @@ func process_controls(delta):
 	motion.x = clamp(motion.x, -ACCEL, ACCEL)
 	
 	# === y movement ===
-	if jump_pressed:
+	
+	if jump_boosting and not jump_held:
+		jump_boosting = false
+	
+	if jump_pressed:			
 		if remaining_jumps > 0:
 			jump_boosting = true
 			if upgrades["double_jump"] and isAir:
@@ -256,6 +260,7 @@ func process_controls(delta):
 			jump_boost_speed = motion.y
 			get_tree().create_timer(0.45).connect("timeout", self, "stop_hold_jump")
 			state = State.JUMP
+		
 			
 	if jump_held:
 		if jump_boosting:

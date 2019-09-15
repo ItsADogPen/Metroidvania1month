@@ -53,7 +53,7 @@ texture = ExtResource( 2 )
 [node name="Title" type="AnimatedSprite" parent="."]
 position = Vector2( 39.2649, -202.003 )
 frames = ExtResource( 3 )
-frame = 36
+frame = 7
 playing = true
 centered = false
 
@@ -67,41 +67,41 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterSprites" type="Node2D" parent="MainMenuContainer"]
+editor/display_folded = true
 position = Vector2( 0, -224.849 )
 
 [node name="Soul01" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 684.582, 274.212 )
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 3
+frame = 6
 playing = true
 
 [node name="Soul02" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 756.74, 274.159 )
 frames = ExtResource( 5 )
 animation = "idle"
-frame = 3
+frame = 6
 playing = true
 
 [node name="Player" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 547.058, 231.192 )
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 7
+frame = 8
 playing = true
 
 [node name="Mushroom" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 346.814, 266.469 )
 frames = ExtResource( 7 )
 animation = "normal_idle"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Mushroom2" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
 position = Vector2( 427.015, 266.469 )
 frames = ExtResource( 7 )
 animation = "normal_idle"
-frame = 3
 playing = true
 
 [node name="Slime" type="AnimatedSprite" parent="MainMenuContainer/CharacterSprites"]
@@ -138,6 +138,7 @@ texture_hover = ExtResource( 22 )
 [node name="Label" type="Label" parent="MainMenuContainer/OptionsButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 23 )
 text = "OPTIONS"
 align = 1
 valign = 1
@@ -154,6 +155,7 @@ texture_hover = ExtResource( 22 )
 [node name="Label" type="Label" parent="MainMenuContainer/ExitButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 23 )
 text = "EXIT"
 align = 1
 valign = 1
@@ -218,6 +220,7 @@ texture_hover = ExtResource( 22 )
 [node name="Label" type="Label" parent="OptionsMenuContainer/VBoxContainer/Buttons/ApplyButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 23 )
 text = "APPLY"
 align = 1
 valign = 1
@@ -233,6 +236,7 @@ texture_hover = ExtResource( 22 )
 [node name="Label" type="Label" parent="OptionsMenuContainer/VBoxContainer/Buttons/BackButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 23 )
 text = "BACK"
 align = 1
 valign = 1

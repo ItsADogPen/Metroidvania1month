@@ -212,7 +212,7 @@ extents = Vector2( 810.081, 250.148 )
 
 [sub_resource type="RectangleShape2D" id=59]
 
-[node name="BaseRoom" index="0" instance=ExtResource( 1 )]
+[node name="BaseRoom" instance=ExtResource( 1 )]
 default_track = "res://assets/audio/music/MetroidvaniaMainTheme.ogg"
 
 [node name="Cave" parent="Tilesets" index="0" instance=ExtResource( 2 )]
