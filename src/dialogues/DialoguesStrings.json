@@ -1,213 +1,576 @@
 {
-	
-	"dialogue1":
-	{
+
+	"dialogue1": {
 		"target": null,
-		"1" : { "text" : "I don't remember what happened...", "color" : "white" },
-		"2" : { "text" : "I was... I was doing something important.", "color" : "white" },
-		"3" : { "text" : "But it's all so fuzzy...", "color" : "white" },
-		"4" : { "text" : "I woke up in this dark space lit by the Hunter's moon. I felt shivers running down my spine and a mixed feeling, like someone was constantly watching me.", "color" : "white" },
-		"5" : { "text" : "Behind me was a bottomless pit with distorted voices, calling for help.", "color" : "white" },
-		"6" : { "text" : "These familiar cries constantly saying my name.", "color" : "white" },
-		"7" : { "text" : "In front only had a large path, which I had no idea where it would lead me.", "color" : "white" },
-		"8" : { "text" : "I felt like this place is giving me an important choice. I could give up and follow the voices down the pit, or go through the unknown path.", "color" : "white" }
+		"1": {
+			"text": "I don't remember what happened...",
+			"color": "white"
+		},
+		"2": {
+			"text": "I was... I was doing something important.",
+			"color": "white"
+		},
+		"3": {
+			"text": "But it's all so fuzzy...",
+			"color": "white"
+		},
+		"4": {
+			"text": "I woke up in this dark space lit by the Hunter's moon. I felt shivers running down my spine and a mixed feeling, like someone was constantly watching me.",
+			"color": "white"
+		},
+		"5": {
+			"text": "Behind me was a bottomless pit with distorted voices, calling for help.",
+			"color": "white"
+		},
+		"6": {
+			"text": "These familiar cries constantly saying my name.",
+			"color": "white"
+		},
+		"7": {
+			"text": "In front only had a large path, which I had no idea where it would lead me.",
+			"color": "white"
+		},
+		"8": {
+			"text": "I felt like this place is giving me an important choice. I could give up and follow the voices down the pit, or go through the unknown path.",
+			"color": "white"
+		}
 	},
 
-	"dialogue2" : 
-	{
+	"dialogue2": {
 		"target": {
 			"grey": "death"
 		},
-		"1" : { "text" : "Welcometh to mine own altar, hath lost soul. I has't many names. Some calleth me Mot, oth'rs calleth me Ankou... Feeleth free to calleth me as thee wisheth.", "color" : "grey" },
-		"2" : { "text" : "Uh... I didn't understand a lick of what you were saying. You were stalking me all the way through?", "color" : "white" },
-		"3" : { "text" : "I apologise for mine own previous speech, it has been ages since I have seen someone here. I have many names, like Ankou, Mot, Grim Reaper, even just Grim. Feel free to call mine own as thee wish.", "color" : "grey" },
-		"4" : { "text" : "Could you please explain to me what I'm doing and how I arrived here, Statue of Bone Daddy?", "color" : "white" },
-		"5" : { "text" : "Ahhh... P-please... j-just call mine own Grim Reaper.", "color" : "grey" },
-		"6" : { "text" : "Sure... but that doesn't explain anything!", "color" : "white" },
-		"7" : { "text" : "Th..you here because you are lost. Your sins don't allow you to go to heaven and they are too big for you to be accepted in hell!", "color" : "grey" },
-		"8" : { "text" : "What can I do, to escape this place and go back home though? I'm sure there is a way.", "color" : "white" },
-		"9" : { "text" : "There is none. You died, and now you'll remain here forever. You are stuck for all eternity in this realm.", "color" : "grey" },
-		"10": { "text" : "I-imposible... t-there must be a way... anything...", "color" : "white" },
-		"11": { "text" : "It is possible... but at the same time, impossible. None of the ones that tried have succeeded and came back to tell it. According to the old runes, written before the war between realms, souls could be revived in their original world after defeating the guardians of their sins in hell.", "color" : "grey" },
-		"12": { "text" : "You might have to defeat all of the 9 guardians, each worse and stronger than the last. It's reckless though as each guardian was specially created to restrain sinners from leaving.", "color" : "grey" },
-		"13": { "text" : "It's the only way I can return and I have no choice. Maybe I could die, but I won't waste my time forever. I left something important and I need to go back.", "color" : "white" },
-		"14": { "text" : "Be aware that what you might find down may not please you. Your memories were sealed for a reason. Maybe you couldn't bear with them and you'drather forget. Madness could swallow you.", "color" : "grey" },
-		"15": { "text" : "It's important to me, I don't care if that happens. At least I would be able to go home.", "color" : "white" },
-		"16": { "text" : "Cross the portal to the first circle, the Forest of Lies and Fraud. There, you will find the first guardian, Rosemary. She is... a little nasty. And pretty dangerous, so be careful with her. Don't be fooled by the things you see and hear; they'll do anything to hold you back.", "color" : "grey" }
+		"1": {
+			"text": "Welcometh to mine own altar, hath lost soul. I has't many names. Some calleth me Mot, oth'rs calleth me Ankou... Feeleth free to calleth me as thee wisheth.",
+			"color": "grey"
+		},
+		"2": {
+			"text": "Uh... I didn't understand a lick of what you were saying. You were stalking me all the way through?",
+			"color": "white"
+		},
+		"3": {
+			"text": "I apologise for mine own previous speech, it has been ages since I have seen someone here. I have many names, like Ankou, Mot, Grim Reaper, even just Grim. Feel free to call mine own as thee wish.",
+			"color": "grey"
+		},
+		"4": {
+			"text": "Could you please explain to me what I'm doing and how I arrived here, Statue of Bone Daddy?",
+			"color": "white"
+		},
+		"5": {
+			"text": "Ahhh... P-please... j-just call mine own Grim Reaper.",
+			"color": "grey"
+		},
+		"6": {
+			"text": "Sure... but that doesn't explain anything!",
+			"color": "white"
+		},
+		"7": {
+			"text": "Th..you here because you are lost. Your sins don't allow you to go to heaven and they are too big for you to be accepted in hell!",
+			"color": "grey"
+		},
+		"8": {
+			"text": "What can I do, to escape this place and go back home though? I'm sure there is a way.",
+			"color": "white"
+		},
+		"9": {
+			"text": "There is none. You died, and now you'll remain here forever. You are stuck for all eternity in this realm.",
+			"color": "grey"
+		},
+		"10": {
+			"text": "I-imposible... t-there must be a way... anything...",
+			"color": "white"
+		},
+		"11": {
+			"text": "It is possible... but at the same time, impossible. None of the ones that tried have succeeded and came back to tell it. According to the old runes, written before the war between realms, souls could be revived in their original world after defeating the guardians of their sins in hell.",
+			"color": "grey"
+		},
+		"12": {
+			"text": "You might have to defeat all of the 9 guardians, each worse and stronger than the last. It's reckless though as each guardian was specially created to restrain sinners from leaving.",
+			"color": "grey"
+		},
+		"13": {
+			"text": "It's the only way I can return and I have no choice. Maybe I could die, but I won't waste my time forever. I left something important and I need to go back.",
+			"color": "white"
+		},
+		"14": {
+			"text": "Be aware that what you might find down may not please you. Your memories were sealed for a reason. Maybe you couldn't bear with them and you'drather forget. Madness could swallow you.",
+			"color": "grey"
+		},
+		"15": {
+			"text": "It's important to me, I don't care if that happens. At least I would be able to go home.",
+			"color": "white"
+		},
+		"16": {
+			"text": "Cross the portal to the first circle, the Forest of Lies and Fraud. There, you will find the first guardian, Rosemary. She is... a little nasty. And pretty dangerous, so be careful with her. Don't be fooled by the things you see and hear; they'll do anything to hold you back.",
+			"color": "grey"
+		}
 	},
-	
-	"dialogue3":
-	{
+
+	"dialogue3": {
 		"target": {
 			"green": "rosemary-normal",
 			"rosemary-angry": "rosemary-angry"
 		},
-		"1" : { "text" : "Welcome sweetie, you have made quite a mess in my domain. I'm a little mad about it but I will let it slip if you come to me kindly. We can have some fun together.", "color" : "green" },
-		"2" : { "text" : "I'm not that into girls, so I had rather pass. Too bad I'm here to kill you anyway.", "color" : "white" },
-		"3" : { "text" : "You are not fun and you called me a slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun!", "color" : "rosemary-angry" },
-		"4" : { "text" : "Go ahead, but you will never beat me, Dead Plant.", "color" : "white" }
+		"1": {
+			"text": "Welcome sweetie, you have made quite a mess in my domain. I'm a little mad about it but I will let it slip if you come to me kindly. We can have some fun together.",
+			"color": "green"
+		},
+		"2": {
+			"text": "I'm not that into girls, so I had rather pass. Too bad I'm here to kill you anyway.",
+			"color": "white"
+		},
+		"3": {
+			"text": "You are not fun and you called me a slut so I will have to eliminate you. Let me show you the fury of a guardian. Maybe after we can have lots of fun!",
+			"color": "rosemary-angry"
+		},
+		"4": {
+			"text": "Go ahead, but you will never beat me, Dead Plant.",
+			"color": "white"
+		}
 	},
 
-	"dialogue-retry":
-	{
+	"dialogue-retry": {
 		"target": {
 			"green": "rosemary-normal"
 		},
-		"1" : { "text" : "Back for another try eh?! Some people never learn...", "color" : "green" }
+		"1": {
+			"text": "Back for another try eh?! Some people never learn...",
+			"color": "green"
+		}
 	},
 
-	"dialogue3-mid":
-	{
+	"dialogue3-mid": {
 		"target": {
 			"green": "rosemary-concern"
 		},
-		"1" : { "text" : "Ara ara, now you angered me. Hope you are ready to be my supper. En garde!", "color" : "green" }
+		"1": {
+			"text": "Ara ara, now you angered me. Hope you are ready to be my supper. En garde!",
+			"color": "green"
+		}
 	},
-	
-	"dialogue3-over":
-	{
+
+	"dialogue3-over": {
 		"target": {
 			"green": "rosemary-monster",
 			"red": "mystery-voice"
 		},
-		"1" : { "text" : "Y-you truly... are strong... I-I..., never... thought this would be my end.", "color" : "green" },
-		"2" : { "text" : "Sorry, but your death will bring me closer to revival by the hands of the Grim Reaper.", "color" : "white" },
-		"3" : { "text" : "hahaha...wait...no... I can still... fight... aaaaahh....", "color" : "green" },
-		"4" : { "text" : "You have fought well, Sothis... but you won't take her life yet... the cycle must not be destroyed. As with the Grim Reaper how many have come with the same ideal as you. He lies to you. We will see soon.", "color" : "red" },
-		"5" : { "text" : "Wait! What did you... dammit, she is gone! I wonder what she meant to say. Whatever, maybe there is something more I have to see. Then I will go back and tell him what happened.", "color" : "white" }
+		"1": {
+			"text": "Y-you truly... are strong... I-I..., never... thought this would be my end.",
+			"color": "green"
+		},
+		"2": {
+			"text": "Sorry, but your death will bring me closer to revival by the hands of the Grim Reaper.",
+			"color": "white"
+		},
+		"3": {
+			"text": "hahaha...wait...no... I can still... fight... aaaaahh....",
+			"color": "green"
+		},
+		"4": {
+			"text": "You have fought well, Sothis... but you won't take her life yet... the cycle must not be destroyed. As with the Grim Reaper how many have come with the same ideal as you. He lies to you. We will see soon.",
+			"color": "red"
+		},
+		"5": {
+			"text": "Wait! What did you... dammit, she is gone! I wonder what she meant to say. Whatever, maybe there is something more I have to see. Then I will go back and tell him what happened.",
+			"color": "white"
+		}
 	},
 
-	"dialogue4":
-	{
+	"dialogue4": {
 		"target": {
 			"grey": "death"
 		},
-		"1" : { "text" : "I have failed to kill her, she escaped through a portal.", "color" : "white" },
-		"2" : { "text" : "I have noticed the portal only sends me to the first circle. I need you to open the next portal.", "color" : "white" },
-		"3" : { "text" : "I'm afraid that isn't possible. It took centuries to open the portal you crossed. I may need more to open the next.", "color" : "grey" },
-		"4" : { "text" : "My powers are slowly coming back but they are not enough for such task.", "color" : "grey" },
-		"5" : { "text" : "Are you telling me I have to wait centuries here?!", "color" : "white" },
-		"6" : { "text" : "I'm afraid to say that it the case. Time in this realm flows slower than in the human world and it's not so simple as a snap of your fingers.", "color" : "grey" },
-		"7" : { "text" : "You can keep training your skills for the next battle if you wish.", "color" : "grey" },
-		"8" : { "text" : "It's the only thing I can do right now. Also I have been wondering, but why am I in a swimsuit?", "color" : "white" },
-		"9" : { "text" : "You arrived as you died. Perhaps your life ended on the beach, or you could have drawn on the sea. I can do nothing to change it.", "color" : "grey" },
-		"10": { "text" : "...Weird.", "color" : "white" }
+		"1": {
+			"text": "I have failed to kill her, she escaped through a portal.",
+			"color": "white"
+		},
+		"2": {
+			"text": "I have noticed the portal only sends me to the first circle. I need you to open the next portal.",
+			"color": "white"
+		},
+		"3": {
+			"text": "I'm afraid that isn't possible. It took centuries to open the portal you crossed. I may need more to open the next.",
+			"color": "grey"
+		},
+		"4": {
+			"text": "My powers are slowly coming back but they are not enough for such task.",
+			"color": "grey"
+		},
+		"5": {
+			"text": "Are you telling me I have to wait centuries here?!",
+			"color": "white"
+		},
+		"6": {
+			"text": "I'm afraid to say that it the case. Time in this realm flows slower than in the human world and it's not so simple as a snap of your fingers.",
+			"color": "grey"
+		},
+		"7": {
+			"text": "You can keep training your skills for the next battle if you wish.",
+			"color": "grey"
+		},
+		"8": {
+			"text": "It's the only thing I can do right now. Also I have been wondering, but why am I in a swimsuit?",
+			"color": "white"
+		},
+		"9": {
+			"text": "You arrived as you died. Perhaps your life ended on the beach, or you could have drawn on the sea. I can do nothing to change it.",
+			"color": "grey"
+		},
+		"10": {
+			"text": "...Weird.",
+			"color": "white"
+		}
 	},
 
-	"dialogue5":
-	{
+	"dialogue5": {
 		"target": {
 			"black": "book-death"
 		},
-		"1" : { "text" : "There are books floating around. Maybe they contain something important.", "color" : "white" },
-		"2" : { "text" : "You couldn't protect them. You doomed them, you abandoned them and let them die. You sinner, burn in hell, monster, murderer, murderer, murderer, murd...", "color" : "black" },
-		"3" : { "text" : "This book might be related to my past, but seems incomplete. I may need time to properly think about what it means.", "color" : "white" },
-		"4" : { "text" : "Could it be I was some kind of killer? Anyway I should get moving.", "color" : "white" }
+		"1": {
+			"text": "There are books floating around. Maybe they contain something important.",
+			"color": "white"
+		},
+		"2": {
+			"text": "You couldn't protect them. You doomed them, you abandoned them and let them die. You sinner, burn in hell, monster, murderer, murderer, murderer, murd...",
+			"color": "black"
+		},
+		"3": {
+			"text": "This book might be related to my past, but seems incomplete. I may need time to properly think about what it means.",
+			"color": "white"
+		},
+		"4": {
+			"text": "Could it be I was some kind of killer? Anyway I should get moving.",
+			"color": "white"
+		}
 	},
 
-	"dialogue6":
-	{
-		"1" : { "text" : "I decided to follow those familiar voices and jumped into the pit. I found them, but in a never ending loop. ", "color" : "white" },
-		"2" : { "text" : "I closed my eyes and waited, months...", "color" : "white" },
-		"3" : { "text" : "Years...", "color" : "white" },
-		"4" : { "text" : "Centuries...", "color" : "white" },
-		"5" : { "text" : "...Always falling while those voices haunted me for the rest of my life.", "color" : "white" },
-		"6" : { "text" : "I... I couldn't endure it anymore. Those voices reminded me of everything and I felt and the guilt burned me, greater than my desire to live.", "color" : "white" },
-		"7" : { "text" : "I apologise my daughter, but I won't fulfill my promise.", "color" : "white" },
-		"8" : { "text" : "With the last strength I had, I pushed my swords deep into my stomach. As my eyes closed, the last words that came from my lips were,", "color" : "white" },
-		"9" : { "text" : "\"I'm sorry.\"", "color" : "white" }
+	"dialogue6": {
+		"1": {
+			"text": "I decided to follow those familiar voices and jumped into the pit. I found them, but in a never ending loop. ",
+			"color": "white"
+		},
+		"2": {
+			"text": "I closed my eyes and waited, months...",
+			"color": "white"
+		},
+		"3": {
+			"text": "Years...",
+			"color": "white"
+		},
+		"4": {
+			"text": "Centuries...",
+			"color": "white"
+		},
+		"5": {
+			"text": "...Always falling while those voices haunted me for the rest of my life.",
+			"color": "white"
+		},
+		"6": {
+			"text": "I... I couldn't endure it anymore. Those voices reminded me of everything and I felt and the guilt burned me, greater than my desire to live.",
+			"color": "white"
+		},
+		"7": {
+			"text": "I apologise my daughter, but I won't fulfill my promise.",
+			"color": "white"
+		},
+		"8": {
+			"text": "With the last strength I had, I pushed my swords deep into my stomach. As my eyes closed, the last words that came from my lips were,",
+			"color": "white"
+		},
+		"9": {
+			"text": "\"I'm sorry.\"",
+			"color": "white"
+		}
 	},
 
-	"Merly23" : 
-	{
+	"Merly23": {
 		"target": {
 			"black": "book-merly"
 		},
-		"1": { "text" : "Oh mighty warrior", "color" : "black" },
-		"2": { "text" : "this game jam was on tatters", "color" : "black" },
-		"3": { "text" : "Yet it was saved by brave coders", "color" : "black" },
-		"4": { "text" : "Now rest safe and enjoy", "color" : "black" },
-		"5": { "text" : "But trust nobody", "color" : "black" }
+		"1": {
+			"text": "Oh mighty warrior",
+			"color": "black"
+		},
+		"2": {
+			"text": "this game jam was on tatters",
+			"color": "black"
+		},
+		"3": {
+			"text": "Yet it was saved by brave coders",
+			"color": "black"
+		},
+		"4": {
+			"text": "Now rest safe and enjoy",
+			"color": "black"
+		},
+		"5": {
+			"text": "But trust nobody",
+			"color": "black"
+		},
+		"6": {
+			"text": "- Merly",
+			"color": "black"
+		}
 	},
 
-	"Antony" : {},
-
-	"Willow" : {
+	"Antony": {
+		"target": {
+			"black": "book-antony"
+		},
+		"1": {
+			"text": "Hopy you ears got treated well",
+			"color": "black"
+		},
+		"2": {
+			"text": "Stay tuned to enjoy the boss music in all its glory",
+			"color": "black"
+		},
+		"3": {
+			"text": "- Antony",
+			"color": "black"
+		}
+	},
+	"Willow": {
 		"target": {
 			"black": "book-willow"
 		},
-		"1": { "text" : "And thou shallt fear the name Regression", "color" : "black" },
-		"2": { "text" : "For by coming here thou hast shown more commitment to this game than he!", "color" : "black" },
-		"3": { "text" : "But I regress...", "color" : "black" },
-		"4": { "text" : "If you're interested, definitely take part in a jam yourself sometime,", "color" : "black" },
-		"5": { "text" : "And hopefully find yourself in good company as I did.", "color" : "black" }
+		"1": {
+			"text": "And thou shallt fear the name Regression",
+			"color": "black"
+		},
+		"2": {
+			"text": "For by coming here thou hast shown more commitment to this game than he!",
+			"color": "black"
+		},
+		"3": {
+			"text": "But I regress...",
+			"color": "black"
+		},
+		"4": {
+			"text": "If you're interested, definitely take part in a jam yourself sometime,",
+			"color": "black"
+		},
+		"5": {
+			"text": "And hopefully find yourself in good company as I did.",
+			"color": "black"
+		},
+		"6": {
+			"text": "- Willow",
+			"color": "black"
+		}
 	},
-	"Jordan" : {
+	"Jordan": {
 		"target": {
 			"black": "book-jordan"
 		},
-		"1": { "text" : "Hey everyone! Thanks for playing!", "color" : "black" },
-		"2": { "text" : "I made SFX for the game, I hope you enjoyed my compositions ^^", "color" : "black" },
+		"1": {
+			"text": "Hey everyone! Thanks for playing!",
+			"color": "black"
+		},
+		"2": {
+			"text": "I made SFX for the game, I hope you enjoyed my compositions ^^",
+			"color": "black"
+		},
+		"3": {
+			"text": "- Jordan",
+			"color": "black"
+		}
 	},
-	"Inherently" : 
-	{
+	"Inherently": {
 		"target": {
 			"black": "book-inher"
 		},
-		"1": { "text" : "A desparate plea in the chat...", "color" : "black" },
-		"2": { "text" : "Their coder had left in a spat!", "color" : "black" },
-		"3": { "text" : "With just days to go,", "color" : "black" },
-		"4": { "text" : "And li'l code to show,", "color" : "black" },
-		"5": { "text" : "We put on a jam-saving act.", "color" : "black" }
+		"1": {
+			"text": "A desparate plea in the chat...",
+			"color": "black"
+		},
+		"2": {
+			"text": "Their coder had left in a spat!",
+			"color": "black"
+		},
+		"3": {
+			"text": "With just days to go,",
+			"color": "black"
+		},
+		"4": {
+			"text": "And li'l code to show,",
+			"color": "black"
+		},
+		"5": {
+			"text": "We put on a jam-saving act.",
+			"color": "black"
+		},
+		"6": {
+			"text": "- InherentlyGloomy",
+			"color": "black"
+		}
 	},
 
-	"Doggie" : 
-	{
+	"Doggie": {
 		"target": {
 			"black": "book-doggie"
 		},
-		"1" : { "text" : "I wasn't part of the original team,", "color" : "black" },
-		"2" : { "text" : "I was given urgent invite by virtual correspondence,", "color" : "black" },
-		"3" : { "text" : "By the first night, I re-wrote the base left behind by tally,", "color" : "black" },
-		"4" : { "text" : "By the next two nights, I made progress that the project never had in its first two weeks", "color" : "black" },
-		"5" : { "text" : "On that breach, folley broke out, and desertion procured,", "color" : "black" },
-		"6" : { "text" : "By another swift correspondence by Managerial, a person of higher calibre joined the ranks,", "color" : "black" },
-		"7" : { "text" : "By the next hour, said person left the team,", "color" : "black" },
-		"8" : { "text" : "I sent my apologies, for disappointing with a lack of progress, ", "color" : "black" },
-		"9" : { "text" : "Thou not so, no reply returned > completely ignored, yet I quickly returned to the task at hand, ", "color" : "black" },
-		"10": { "text" : "By the next few hours, by swifter correspondence yet again by Management, two other people with high calibre skills joined the ranks, ", "color" : "black" },
-		"11": { "text" : "Sensibly, I handed responsibility over to them, and I regressed to assistory, ", "color" : "black" },
-		"12": { "text" : "And so, at a snail's pace, was my mild contributions, ", "color" : "black" },
-		"13": { "text" : "And such declares my only worth of salt at three full days, ", "color" : "black" },
-		"14": { "text" : "Yet by my own surprise, three days never done before, ", "color" : "black" },
-		"15": { "text" : "For lack of a better word, a great confidence booster, ", "color" : "black" },
-		"16": { "text" : "Despite the mixed feelings and a lack of actual enjoyment, ", "color" : "black" },
-		"17": { "text" : "And as my dead friends once told me, ", "color" : "black" },
-		"18": { "text" : "''Shame to those who leave without merit, and Merit to those who stay with some measure of shame'', ", "color" : "black" },
-		"19": { "text" : "And truth to be told, ", "color" : "black" },
-		"20": { "text" : "By ego's ignore, ", "color" : "black" },
-		"21": { "text" : "or fallacious desertion, ", "color" : "black" },
-		"22": { "text" : "None will dare walk to a dead person's grave, and utter - ", "color" : "black" },
-		"23": { "text" : "''You are dead, and so are your words'', ", "color" : "black" },
-		"24": { "text" : "So as such, because of so, that dead people say - ", "color" : "black" },
-		"25": { "text" : "''Shame to those who leave without merit, and Merit to those who stay with some measure of shame'', ", "color" : "black" },
-		"26": { "text" : "And as such, I leave this project with some Merit, and with some measure of Shame in between my legs, ", "color" : "black" },
-		"27": { "text" : "Because that is better than leaving without merit.", "color" : "black" },
-		"28": { "text" : "Thank you to the people whom have remained despite a dreadful project, the people whom have made things feel a little bit better.., ", "color" : "black" },
-		"29": { "text" : "And for those not, ", "color" : "black" },
-		"30": { "text" : "by ego's ignore, ", "color" : "black" },
-		"31": { "text" : "or fallacious desertion, ", "color" : "black" },
-		"32": { "text" : "Shame without merit, no matter the size of your calibre.", "color" : "black" }
+		"1": {
+			"text": "I wasn't part of the original team,",
+			"color": "black"
+		},
+		"2": {
+			"text": "I was given urgent invite by virtual correspondence,",
+			"color": "black"
+		},
+		"3": {
+			"text": "By the first night, I re-wrote the base left behind by tally,",
+			"color": "black"
+		},
+		"4": {
+			"text": "By the next two nights, I made progress that the project never had in its first two weeks",
+			"color": "black"
+		},
+		"5": {
+			"text": "On that breach, folley broke out, and desertion procured,",
+			"color": "black"
+		},
+		"6": {
+			"text": "By another swift correspondence by Managerial, a person of higher calibre joined the ranks,",
+			"color": "black"
+		},
+		"7": {
+			"text": "By the next hour, said person left the team,",
+			"color": "black"
+		},
+		"8": {
+			"text": "I sent my apologies, for disappointing with a lack of progress, ",
+			"color": "black"
+		},
+		"9": {
+			"text": "Thou not so, no reply returned > completely ignored, yet I quickly returned to the task at hand, ",
+			"color": "black"
+		},
+		"10": {
+			"text": "By the next few hours, by swifter correspondence yet again by Management, two other people with high calibre skills joined the ranks, ",
+			"color": "black"
+		},
+		"11": {
+			"text": "Sensibly, I handed responsibility over to them, and I regressed to assistory, ",
+			"color": "black"
+		},
+		"12": {
+			"text": "And so, at a snail's pace, was my mild contributions, ",
+			"color": "black"
+		},
+		"13": {
+			"text": "And such declares my only worth of salt at three full days, ",
+			"color": "black"
+		},
+		"14": {
+			"text": "Yet by my own surprise, three days never done before, ",
+			"color": "black"
+		},
+		"15": {
+			"text": "For lack of a better word, a great confidence booster, ",
+			"color": "black"
+		},
+		"16": {
+			"text": "Despite the mixed feelings and a lack of actual enjoyment, ",
+			"color": "black"
+		},
+		"17": {
+			"text": "And as my dead friends once told me, ",
+			"color": "black"
+		},
+		"18": {
+			"text": "''Shame to those who leave without merit, and Merit to those who stay with some measure of shame'', ",
+			"color": "black"
+		},
+		"19": {
+			"text": "And truth to be told, ",
+			"color": "black"
+		},
+		"20": {
+			"text": "By ego's ignore, ",
+			"color": "black"
+		},
+		"21": {
+			"text": "or fallacious desertion, ",
+			"color": "black"
+		},
+		"22": {
+			"text": "None will dare walk to a dead person's grave, and utter - ",
+			"color": "black"
+		},
+		"23": {
+			"text": "''You are dead, and so are your words'', ",
+			"color": "black"
+		},
+		"24": {
+			"text": "So as such, because of so, that dead people say - ",
+			"color": "black"
+		},
+		"25": {
+			"text": "''Shame to those who leave without merit, and Merit to those who stay with some measure of shame'', ",
+			"color": "black"
+		},
+		"26": {
+			"text": "And as such, I leave this project with some Merit, and with some measure of Shame in between my legs, ",
+			"color": "black"
+		},
+		"27": {
+			"text": "Because that is better than leaving without merit.",
+			"color": "black"
+		},
+		"28": {
+			"text": "Thank you to the people whom have remained despite a dreadful project, the people whom have made things feel a little bit better.., ",
+			"color": "black"
+		},
+		"29": {
+			"text": "And for those not, ",
+			"color": "black"
+		},
+		"30": {
+			"text": "by ego's ignore, ",
+			"color": "black"
+		},
+		"31": {
+			"text": "or fallacious desertion, ",
+			"color": "black"
+		},
+		"32": {
+			"text": "Shame without merit, no matter the size of your calibre.",
+			"color": "black"
+		},
+		"33": {
+			"text": "- DoggieBalloon",
+			"color": "black"
+		}
 	},
 
-	"Agent" : {
+	"Agent": {
 		"target": {
 			"green": "book-agent"
 		},
-		"1": { "text" : "Many dream day that they truly can say,", "color" : "green" },
-		"2": { "text" : "they've mastered the art that is their life juice!", "color" : "green" },
-		"3": { "text" : "But when all the fuel seems to decay,", "color" : "green" },
-		"4": { "text" : "it's wise idea trying different way.,", "color" : "green" },
-		"5": { "text" : "Because forcing self to beat is just self-abuse..", "color" : "green" }
+		"1": {
+			"text": "Many dream day that they truly can say,",
+			"color": "green"
+		},
+		"2": {
+			"text": "they've mastered the art that is their life juice!",
+			"color": "green"
+		},
+		"3": {
+			"text": "But when all the fuel seems to decay,",
+			"color": "green"
+		},
+		"4": {
+			"text": "it's wise idea trying different way.,",
+			"color": "green"
+		},
+		"5": {
+			"text": "Because forcing self to beat is just self-abuse..",
+			"color": "green"
+		},
+		"6": {
+			"text": "- AgentAPM",
+			"color": "black"
+		}
 	}
 }
