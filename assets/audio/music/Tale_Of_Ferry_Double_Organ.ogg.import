@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tale_Of_Ferry_Double_Organ.ogg-e8b131472a087c8a0e609697b4e912c6.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Tale_Of_Ferry_Double_Organ.ogg"
+dest_files=[ "res://.import/Tale_Of_Ferry_Double_Organ.ogg-e8b131472a087c8a0e609697b4e912c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
